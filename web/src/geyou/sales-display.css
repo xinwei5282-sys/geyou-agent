@@ -1,0 +1,242 @@
+/* Customer-facing product presentation, sharing one consultation flow across landscape and portrait layouts. */
+.sales-viewer .app-sheet-surface{max-height:94dvh}
+.sales-viewer .viewer-layout{min-width:0}
+.sales-viewer .viewer-category{font-size:13px;color:#63766a}
+.sales-viewer .viewer-copy{padding:20px 0 0}
+.sales-viewer .viewer-copy h2{font-size:24px;line-height:1.5;margin:8px 0}
+.sales-viewer .viewer-price{font-size:28px;color:var(--premium-brand);margin:8px 0 18px}
+.sales-viewer .viewer-price small{font-size:14px;color:var(--premium-muted)}
+.sales-viewer dl{margin:0}
+.sales-viewer dl>div,.sales-compare dl>div{padding:15px 0;border-top:1px solid #e3e8dd}
+.sales-viewer dt,.sales-compare dt{font-size:13px;color:#63766a;margin-bottom:8px}
+.sales-viewer dd,.sales-compare dd{margin:0;line-height:1.8;font-size:16px;white-space:pre-line;overflow-wrap:anywhere}
+.sales-viewer .app-sheet-surface>footer{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.sales-viewer .viewer-paging{display:flex;gap:12px;align-items:center;flex-shrink:0}
+.sales-viewer .viewer-paging .btn{padding:10px;min-width:44px;min-height:48px}
+.sales-viewer .viewer-paging span{font-size:14px;white-space:nowrap}
+.sales-viewer .app-sheet-surface>footer>.btn{min-height:48px;flex:1;max-width:260px}
+.sales-viewer .sales-product-details .showroom-image{max-height:none}
+.sales-viewer .sales-photo-open{min-height:0}
+.tablet-sales-display button:focus-visible,.sales-viewer button:focus-visible{outline:3px solid #9bb4a5;outline-offset:3px}
+@media all{
+ .geyou-app .tablet-sales,.geyou-app .tablet-intake{max-width:1180px;padding-bottom:32px}
+ .geyou-app:has(.tablet-sales) .mobile-nav{display:none}
+ .geyou-app:has(.tablet-sales) .main-content{padding:24px 26px 40px}
+ .geyou-app .tablet-sales>.app-page-header{margin-bottom:22px;display:flex;align-items:center;justify-content:space-between}
+ .geyou-app .tablet-sales .app-page-title h1{text-align:left;font-size:27px}
+ .sales-category-tabs{list-style:none;padding-left:0;margin-top:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;border-bottom:1px solid var(--premium-line);padding-bottom:16px;margin-bottom:22px}
+ .sales-category-tabs li{display:flex;align-items:center;justify-content:center;gap:12px;min-height:52px;border:1px solid var(--premium-line);background:#fff;border-radius:10px;font-size:17px;color:#365546}
+ .sales-category-tabs li[aria-current=step]{background:var(--premium-brand);color:#fff;border-color:var(--premium-brand)}
+ .geyou-app .sales-category-tabs li[aria-current=step] small{color:#e2ece6!important}
+ .tablet-sales-columns{display:grid;grid-template-columns:minmax(0,1fr) 252px;gap:24px;align-items:start}
+ .tablet-catalog-heading{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:18px}
+ .tablet-catalog-heading h2{font-size:22px;margin:0}
+ .tablet-catalog-heading p{font-size:14px;color:var(--premium-muted);margin:3px 0 0}
+ .tablet-catalog-heading .btn{font-size:14px;padding:10px 14px}
+ .tablet-product-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+ .tablet-product{overflow:hidden;background:#fff;border:1px solid #dfe6df;border-radius:14px}
+ .tablet-product.selected{border-color:var(--premium-brand);box-shadow:0 0 0 1px var(--premium-brand)}
+ .tablet-product-image{position:relative;display:block;width:100%;padding:0;border:0;background:#edf1e9;text-align:left;cursor:pointer}
+ .tablet-product-image>span{position:absolute;bottom:12px;right:12px;background:#ffffffe8;border-radius:20px;font-size:12px;padding:6px 10px;color:#345641}
+ .tablet-product-image .showroom-image,.sales-compare .showroom-image{width:100%;height:auto!important;aspect-ratio:1;min-height:0;max-height:none;margin:0;border-radius:0}
+ .tablet-product-image .showroom-image:not(.reference-product-photo) img,.sales-compare .showroom-image:not(.reference-product-photo) img{width:100%;height:100%;object-fit:contain;position:static}
+ .tablet-product-copy{padding:18px}
+ .tablet-product-copy h3{font-size:19px;line-height:1.6;margin:0 0 8px}
+ .tablet-product-copy p{font-size:14px;color:#637466;line-height:1.65;min-height:46px;margin:0 0 12px;overflow-wrap:anywhere}
+ .tablet-product-copy>strong{font-size:25px;display:block;color:var(--premium-brand)}
+ .tablet-product-actions{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:16px}
+ .tablet-product-actions .btn{font-size:14px;padding:10px 14px;min-height:46px}
+ .tablet-product-actions .text-btn{display:flex;align-items:center;gap:6px;min-height:46px;font-size:14px}
+ .tablet-product-actions button:disabled{opacity:.4}
+ .tablet-selection{position:sticky;top:24px;max-height:calc(100dvh - 48px);display:flex;flex-direction:column;padding:20px;background:var(--premium-soft-gold);border:1px solid #dfe6da;border-radius:14px;overflow:hidden}
+ .tablet-selection header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-bottom:12px;border-bottom:1px solid #d8e1d4}
+ .tablet-selection h2{font-size:19px;margin:0}
+ .tablet-selection header>span{font-size:13px;color:#60715f}
+ .tablet-selection-items{overflow:auto;min-height:120px}
+ .tablet-selection-line{display:flex;gap:8px;align-items:center;padding:16px 0;border-bottom:1px solid #d8e1d4}
+ .tablet-selection-line>div{flex:1;min-width:0;display:grid;gap:8px}
+ .tablet-selection-line strong{font-size:15px;line-height:1.6;overflow-wrap:anywhere}
+ .tablet-selection-line span{font-size:13px;color:#657463}
+ .tablet-selection-line .text-btn{flex:none;min-width:44px;min-height:44px;display:grid;place-items:center}
+ .tablet-selection footer{padding-top:20px}
+ .tablet-selection footer>span{display:flex;align-items:center;justify-content:space-between;font-size:13px;gap:10px}
+ .tablet-selection footer strong{font-size:25px;color:var(--premium-brand)}
+ .tablet-selection footer .btn{width:100%;margin:18px 0 8px;min-height:50px}
+ .tablet-selection footer small{display:block;text-align:center;font-size:11px}
+ .tablet-selection .selection-empty{font-size:14px;line-height:1.9;color:#677663;padding:10px 0}
+ .tablet-advisor-notes{margin-top:24px;border-top:1px solid var(--premium-line);padding-top:12px}
+ .tablet-advisor-notes>.text-btn{min-height:46px;font-size:14px}
+ .tablet-intake .sales-context-card{display:grid;grid-template-columns:1fr 1fr;gap:0 24px;padding:28px}
+ .tablet-intake .sales-context-card>h2,.tablet-intake .sales-context-card>p,.tablet-intake .sales-preferences{grid-column:1/-1}
+ .tablet-intake .sales-preferences{display:grid;grid-template-columns:1fr 1fr;gap:0 24px}
+ .tablet-intake .sales-preferences>h3,.tablet-intake .sales-preferences>.field:last-child{grid-column:1/-1}
+ .tablet-intake .sales-preferences h3{margin-bottom:0}
+ .sales-viewer,.sales-compare{width:min(1120px,calc(100vw - 48px))!important;max-width:none!important;padding:0!important;margin:auto!important}
+ .sales-viewer .app-sheet-surface,.sales-compare .app-sheet-surface{width:100%;max-height:calc(100dvh - 48px);border-radius:18px}
+ .sales-viewer .app-sheet-content,.sales-compare .app-sheet-content{padding:24px 28px}
+ .sales-viewer .viewer-layout{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:32px;align-items:start}
+ .sales-viewer .viewer-copy{padding:0}
+ .sales-viewer .viewer-copy h2{font-size:26px}
+ .sales-viewer .viewer-copy dl>div{padding:14px 0}
+ .sales-viewer .viewer-copy dd{font-size:17px}
+ .sales-viewer .viewer-layout>.sales-product-details{position:sticky;top:0}
+ .sales-viewer .app-sheet-handle,.sales-compare .app-sheet-handle{display:none}
+ .sales-viewer .app-sheet-surface>footer{padding:18px 28px;background:var(--premium-page)}
+ .compare-table{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+ .compare-table>article{min-width:0}
+ .compare-table h2{font-size:21px;line-height:1.5;margin:18px 0 10px}
+ .compare-price{font-size:24px;color:var(--premium-brand)}
+ .compare-table dl{margin:18px 0 0}
+ .compare-table article>.btn{width:100%;min-height:48px;position:static;margin-top:16px}
+ .sales-compare .reference-product-photo img{position:absolute;width:222.14%;height:auto;max-width:none;left:-8.073%;top:-115.104%}
+ .sales-compare .reference-product-photo.clothes img{left:-114.063%}
+ .sales-compare .reference-product-photo.flower img{top:-279.948%}
+ .sales-compare .reference-product-photo.ceremony img{left:-114.063%;top:-279.948%}
+}
+@media(orientation:landscape) and (max-width:999px){
+ .tablet-sales-columns{grid-template-columns:minmax(0,1fr) 238px;gap:18px}
+ .tablet-product-grid{grid-template-columns:1fr}
+ .tablet-product-image .showroom-image{max-height:none;aspect-ratio:1}
+ .tablet-catalog-heading{align-items:flex-start}
+ .tablet-catalog-heading p{max-width:16em}
+ .sales-viewer .viewer-layout{gap:24px}
+}
+@media(orientation:portrait){
+ .phone-sales .app-page-header{gap:10px}
+ .phone-sales .app-page-action .btn{font-size:13px;padding:10px 12px;min-height:44px}
+ .sales-viewer{width:100%!important;max-width:100%!important;margin:0!important;inset:0!important;height:100dvh!important;max-height:100dvh!important;border-radius:0!important}
+ .sales-viewer .app-sheet-surface{height:100%;max-height:100%;border-radius:0;display:flex;flex-direction:column}
+ .sales-viewer .app-sheet-handle{display:none}
+ .sales-viewer .app-sheet-content{flex:1;overflow:auto;padding:16px}
+ .sales-viewer .app-sheet-surface>header{padding:12px 16px}
+ .sales-viewer .app-sheet-surface>footer{padding:12px 16px calc(12px + env(safe-area-inset-bottom));flex-shrink:0;gap:10px;background:var(--premium-page)}
+ .sales-viewer .viewer-paging{gap:6px}
+ .sales-viewer .app-sheet-surface>footer>.btn{font-size:14px;padding:10px 12px}
+}
+@media all{
+ .tablet-product-image .showroom-image,.sales-compare .showroom-image{position:relative;overflow:hidden}
+ .tablet-product-image .reference-product-photo img{position:absolute;width:222.14%;height:auto;max-width:none;left:-8.073%;top:-115.104%;object-fit:initial}
+ .tablet-product-image .reference-product-photo.clothes img{left:-114.063%}
+ .tablet-product-image .reference-product-photo.flower img{top:-279.948%}
+ .tablet-product-image .reference-product-photo.ceremony img{left:-114.063%;top:-279.948%}
+}
+
+@media all{
+ .sales-category-tabs li{font-size:15px;gap:8px;background:transparent;border:0}
+ .sales-category-tabs li>span{font-size:12px;width:23px;height:23px;display:grid;place-items:center;border:1px solid currentColor;border-radius:50%}
+ .tablet-stage-guide{margin-bottom:20px;padding:0 0 18px;border-bottom:1px solid var(--premium-line)}
+ .tablet-stage-guide>strong{font-size:17px;line-height:1.8;font-weight:500}
+ .tablet-stage-guide details{margin-top:8px;font-size:14px;color:#637466}
+ .tablet-stage-guide summary{cursor:pointer;min-height:32px;line-height:32px}
+ .tablet-stage-guide p{font-size:14px;line-height:1.8;margin:8px 0}
+ .tablet-customer-needs{padding-bottom:16px;margin-bottom:16px;border-bottom:1px solid #d8e1d4}
+ .tablet-customer-needs h3{font-size:16px;margin:0 0 10px}
+ .tablet-customer-needs p{font-size:13px;line-height:1.7;margin:5px 0;color:#5c6d60;overflow-wrap:anywhere}
+ .tablet-selection-items{min-height:70px}
+ .tablet-product-image .showroom-image.without-image{height:auto!important;aspect-ratio:1;min-height:0}
+ .sales-compare .showroom-image{width:min(100%,280px);aspect-ratio:1;margin:0 auto;height:auto!important;min-height:0}
+ .sales-compare .compare-table{align-items:start}
+ .sales-compare .compare-table h2{font-size:20px}
+ .tablet-catalog-heading p{font-size:12px}
+}
+/* iPad landscape is the primary face-to-face consultation workspace. */
+@media(min-width:1024px) and (orientation:landscape){
+ .geyou-app:has(.tablet-sales) .main-content{max-width:1280px;padding:18px 28px 36px}
+ .geyou-app .tablet-sales>.app-page-header{min-height:66px;padding:4px 0 10px;margin-bottom:14px}
+ .geyou-app .tablet-sales .app-page-title{display:flex;text-align:left;align-items:center;gap:12px}
+ .geyou-app .tablet-sales .app-page-title>.app-back{position:static;flex-shrink:0;width:44px;height:44px;padding:10px}
+ .geyou-app .tablet-sales .app-page-title>div{padding:0}
+ .geyou-app .tablet-sales .app-page-title h1{font-size:25px}
+ .geyou-app .tablet-sales .app-page-title p{margin-top:4px}
+ .geyou-app .tablet-sales .app-page-action{position:static;flex-shrink:0;max-width:none}
+ .tablet-sales .sales-category-tabs{margin-bottom:18px;padding-bottom:12px}
+ .tablet-sales .sales-category-tabs li{min-height:44px}
+ .tablet-sales-columns{grid-template-columns:minmax(0,1fr) 280px;gap:24px}
+ .tablet-stage-guide{margin-bottom:14px;padding-bottom:12px}
+ .tablet-catalog-heading{margin-bottom:14px}
+ .tablet-product-image .showroom-image{width:min(100%,250px);aspect-ratio:1;margin:0 auto;max-height:none}
+ .tablet-product-copy{padding:15px 18px}
+ .tablet-product-copy h3{font-size:18px;margin-bottom:5px}
+ .tablet-product-copy p{min-height:24px;margin-bottom:10px}
+ .tablet-product-actions{margin-top:12px}
+ .tablet-selection{top:18px;max-height:calc(100dvh - 36px)}
+}
+
+/* Portrait reflows the same controls and state; it is not a separate device flow. */
+@media(orientation:portrait){
+ .geyou-app:has(.tablet-sales) .main-content{max-width:760px;padding:16px 16px 110px}
+ .geyou-app .tablet-sales{padding-bottom:100px}
+ .geyou-app .tablet-sales>.app-page-header{padding:12px 0;min-height:76px;margin-bottom:14px;gap:8px}
+ .geyou-app .tablet-sales .app-page-title{display:flex;align-items:center;gap:8px;text-align:left;width:auto}
+ .geyou-app .tablet-sales .app-page-title>.app-back{position:static;flex-shrink:0;width:40px;height:44px}
+ .geyou-app .tablet-sales .app-page-title>div{padding:0}
+ .geyou-app .tablet-sales .app-page-title h1{font-size:20px;text-align:left}
+ .geyou-app .tablet-sales .app-page-title p{font-size:12px}
+ .geyou-app .tablet-sales .app-page-action{position:static;max-width:none;flex-shrink:0}
+ .geyou-app .tablet-sales .app-page-action .btn{font-size:12px;min-height:44px;padding:10px}
+ .tablet-sales-display .sales-category-tabs{display:none}
+ .tablet-sales-columns{display:flex;flex-direction:column;gap:24px}
+ .tablet-catalog,.tablet-selection{width:100%;box-sizing:border-box}
+ .tablet-product-grid{grid-template-columns:1fr}
+ .tablet-product-image .showroom-image{width:100%;max-width:440px;margin:auto}
+ .tablet-catalog-heading{gap:10px;align-items:center}
+ .tablet-catalog-heading h2{font-size:18px}
+ .tablet-catalog-heading .btn{font-size:13px;padding:10px;min-height:44px}
+ .tablet-catalog-heading p{font-size:12px;line-height:1.7}
+ .tablet-selection{position:static;max-height:none;padding:18px}
+ .tablet-selection footer{position:fixed;bottom:var(--keyboard-inset,0px);left:0;right:0;z-index:35;display:flex;align-items:center;gap:16px;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:var(--premium-page);border-top:1px solid var(--premium-line)}
+ .tablet-selection footer>span{display:grid;flex:1;gap:3px;font-size:12px}
+ .tablet-selection footer strong{font-size:22px}
+ .tablet-selection footer .btn{width:auto;margin:0;font-size:13px;padding:12px;min-height:48px}
+ .tablet-selection footer small{display:none}
+ .sales-viewer .viewer-layout{display:block;max-width:660px;margin:auto}
+ .sales-viewer .viewer-layout>.sales-product-details{position:static}
+ .sales-viewer .viewer-copy{padding-top:20px}
+ .sales-viewer .app-sheet-surface{max-height:100%;border-radius:0}
+ .sales-compare{width:100%!important;max-width:100%!important;margin:auto 0!important}
+ .sales-compare .app-sheet-content{padding:16px}
+ .sales-compare .compare-table{gap:16px}
+ .sales-compare .compare-table h2{font-size:16px}
+ .sales-compare .compare-price{font-size:18px}
+ .sales-compare .compare-table dd{font-size:14px}
+ .sales-compare .compare-table article>.btn{font-size:12px;padding:10px 6px;white-space:normal}
+}
+
+@media(orientation:landscape) and (max-height:600px){.tablet-selection{position:static;max-height:none}}
+/* Business steps are independent from product categories. */
+.consultation-layout{display:grid;grid-template-columns:156px minmax(0,1fr);gap:24px;align-items:start}
+.consultation-body{min-width:0}
+.consultation-steps{position:sticky;top:24px;padding-right:18px;border-right:1px solid var(--premium-line);align-self:start}
+.consultation-steps ol{list-style:none;margin:0;padding:0;display:grid;gap:16px}
+.consultation-steps button{display:flex;align-items:center;gap:10px;min-height:60px;width:100%;padding:12px 10px;border:0;border-radius:10px;color:#647269;background:transparent;text-align:left}
+.consultation-steps button[aria-current=step]{background:var(--premium-brand);color:white}
+.consultation-steps button:disabled{opacity:.5}
+.consultation-steps button>span{display:grid;place-items:center;width:25px;height:25px;border:1px solid currentColor;border-radius:50%;flex:none;font-size:12px}
+.consultation-steps button>strong{font-size:15px;font-weight:500;white-space:nowrap}
+.sales-product-categories{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 18px;padding-bottom:14px;border-bottom:1px solid var(--premium-line)}
+.sales-product-categories button{min-height:44px;padding:10px 18px;border-radius:8px;border:1px solid var(--premium-line);background:white;font-size:15px;color:#53675b}
+.sales-product-categories button[aria-pressed=true]{background:#e6eee4;color:var(--premium-brand);border-color:#9fb49e}
+.geyou-app .consultation-intake{max-width:1180px}
+.geyou-app:has(.consultation-intake) .main-content{max-width:1280px}
+@media(orientation:landscape){
+ .consultation-body .tablet-sales-columns{grid-template-columns:minmax(0,1fr) 240px;gap:20px}
+ .consultation-body .tablet-product-actions{gap:6px}
+ .consultation-body .tablet-product-actions .btn{padding:10px;font-size:13px}
+ .consultation-body .tablet-product-copy{padding:14px}
+ .consultation-body .tablet-catalog-heading h2{font-size:20px}
+ .consultation-body .sales-context-card{margin-top:0}
+}
+@media(orientation:portrait){
+ .consultation-layout{display:flex;flex-direction:column;gap:20px}
+ .consultation-steps{position:static;padding:0;border-right:0;border-bottom:1px solid var(--premium-line);width:100%;padding-bottom:12px}
+ .consultation-steps ol{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+ .consultation-steps button{justify-content:center;gap:5px;padding:8px 3px;min-height:48px}
+ .consultation-steps button>strong{font-size:13px}
+ .consultation-steps button>span{width:21px;height:21px;font-size:11px}
+ .consultation-body{width:100%}
+ .sales-product-categories{gap:8px}
+ .sales-product-categories button{flex:1;padding:10px 7px;font-size:13px;white-space:nowrap}
+ .consultation-body>.app-action-bar>div{flex-wrap:wrap;gap:8px}
+ .consultation-body>.app-action-bar .sales-total{flex-basis:100%;display:flex;align-items:center;justify-content:space-between}
+ .consultation-body>.app-action-bar .btn{min-width:0;flex:1;font-size:13px;padding:10px}
+}

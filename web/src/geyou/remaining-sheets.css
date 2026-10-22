@@ -1,0 +1,90 @@
+/* 31–33: measured against 853×1844 references at 390×844 CSS pixels. */
+.reference-sheet{--sheet-ink:#154d41;--sheet-serif:'Songti SC',STSong,SimSun,serif;color:#343f50;max-width:640px}
+.reference-sheet::backdrop{background:#17251ee0;opacity:.73;backdrop-filter:none}
+.reference-sheet .app-sheet-surface{border-radius:21px 21px 0 0;background:#fefefd;box-shadow:none}
+.reference-sheet .app-sheet-handle{width:38px;height:4px;margin:11px auto 0;background:#aeb9b8}
+.reference-sheet header{position:relative;display:block;padding:20px 22px 15px}
+.reference-sheet header h2{font:700 27px/1.25 var(--sheet-serif);color:var(--sheet-ink)}
+.reference-sheet header .app-back{position:absolute;right:10px;top:0;color:#8a9998;width:36px;height:36px}
+.reference-sheet .sheet-subtitle{font:12px/1.6 'PingFang SC',sans-serif;color:#878d99;margin:7px 0 0}
+.reference-sheet .app-sheet-content{padding:0 22px 0}
+.reference-sheet .sheet-subject{display:flex;gap:12px;align-items:center;background:#f1f5f1;border-radius:6px;padding:11px;margin:0 0 18px;min-height:65px}
+.reference-sheet .sheet-subject-icon{width:44px;height:44px;background:#e3ece7;border-radius:50%;display:grid;place-items:center;color:#0e594c;flex:none}
+.reference-sheet .sheet-subject>div{flex:1;min-width:0}
+.reference-sheet .sheet-subject strong{font:700 19px/1.3 var(--sheet-serif);color:#174c40;display:flex;gap:10px;align-items:center}
+.reference-sheet .sheet-subject strong small{font:10px sans-serif;background:#dceae3;color:#3c7468;padding:3px 6px;border-radius:3px}
+.reference-sheet .sheet-subject p{font:12px/1.6 sans-serif;color:#7c8391;margin:5px 0 0}
+.reference-sheet .sheet-subject p b{font:600 12px var(--sheet-serif);color:#27483f}
+.reference-sheet .sheet-form-row,.reference-sheet label.sheet-form-row{display:grid;grid-template-columns:85px minmax(0,1fr);gap:10px;align-items:start;margin:0 0 11px;font:13px/1.5 'PingFang SC',sans-serif}
+.reference-sheet .sheet-form-row>span{padding-top:9px;margin:0;color:#424c5b;font-size:13px}
+.reference-sheet .sheet-form-row input:not([type=checkbox]),.reference-sheet .sheet-form-row select,.reference-sheet .sheet-form-row textarea{width:100%;margin:0;min-height:34px;height:34px;border:1px solid #dcdfe4;border-radius:5px;background:#fff;padding:6px 11px;font:13px/20px 'PingFang SC',sans-serif;color:#3c4d55;box-shadow:none}
+.reference-sheet .sheet-form-row input[type=date]{background:#f9faf9}
+.reference-sheet .sheet-form-row textarea{height:75px;min-height:75px;resize:vertical;padding-bottom:19px}
+.reference-sheet .sheet-form-row textarea::placeholder{color:#a1a6b1}
+.reference-sheet .counted-input{position:relative;min-width:0}
+.reference-sheet .counted-input>small{position:absolute;bottom:6px;right:8px;font:9px sans-serif;color:#9da4af;pointer-events:none}
+.reference-sheet .sheet-info{display:flex;gap:10px;align-items:center;font:11px/1.6 sans-serif;color:#2f695d;background:#eef4ef;border-radius:6px;padding:12px;margin:17px 0 0}
+.reference-sheet footer{border:0;padding:15px 26px 28px;gap:9px}
+.reference-sheet footer>.btn,.reference-sheet .receipt-actions>.btn{min-height:44px;flex:1;border-radius:24px;font:500 17px var(--sheet-serif);padding:8px}
+.reference-sheet .btn-primary{background:#155b4c;color:white}
+.reference-sheet .btn-outline{border:1px solid #287667;color:#145848;background:white}
+.reference-sheet .stage-picker{position:relative}
+.reference-sheet .stage-picker>button{display:flex;align-items:center;justify-content:space-between;width:100%;height:35px;padding:5px 12px;border:1px solid #aec8bf;border-radius:5px;font:14px var(--sheet-serif);color:#164d42;background:white}
+.reference-sheet .stage-options{position:absolute;top:35px;left:0;width:125px;z-index:4;background:white;box-shadow:0 3px 8px #203b342b;padding:5px;border-radius:4px}
+.reference-sheet .stage-options>button{display:block;width:100%;text-align:left;padding:6px 10px;min-height:28px;font:13px sans-serif;color:#656d7a;border-radius:3px}
+.reference-sheet .stage-options>button[aria-selected=true]{background:var(--premium-soft-gold);color:#125346}
+.stage-sheet .app-sheet-surface{min-height:556px}
+.stage-sheet .sheet-form-row{margin-bottom:22px}
+.stage-sheet .sheet-subject{margin-bottom:18px}
+.stage-sheet .app-sheet-content{padding-bottom:0}
+.stage-sheet footer{margin-top:auto}
+.schedule-sheet .sheet-subject{margin-bottom:22px;min-height:56px;padding:8px 11px}
+.schedule-sheet .sheet-form-row{margin-bottom:10px}
+.schedule-sheet .schedule-visibility{border-top:1px solid #e1e5e5;padding:10px 0 0;display:grid;grid-template-columns:72px 38px 1fr;align-items:center;gap:8px;font-size:13px}
+.reference-toggle{width:37px;height:22px;border:0;border-radius:15px;background:#ced2d4;position:relative;min-height:0;padding:0}
+.reference-toggle:after{content:'';position:absolute;left:3px;top:3px;width:16px;height:16px;background:white;border-radius:50%}
+.reference-toggle[aria-checked=true]{background:#145c4d}.reference-toggle[aria-checked=true]:after{left:18px}
+.schedule-visibility small{font:9px/1.5 sans-serif;color:#8c929d}
+.schedule-sheet footer{padding:18px 20px 26px}
+.receipt-sheet .sheet-subject{margin-bottom:14px;gap:10px;padding:10px}
+.receipt-sheet .sheet-subject-icon{width:42px;height:42px}
+.receipt-sheet .sheet-subject strong{font-size:18px}
+.receipt-sheet .sheet-subject p{font-size:10px;white-space:nowrap}
+.receipt-sheet .sheet-subject p b{font-size:11px}
+.receipt-sheet .sheet-subject aside{border-left:1px solid #ccd9d3;padding-left:12px;flex:none}
+.receipt-sheet .sheet-subject aside>span{font:11px sans-serif;color:#758079;display:block;margin-bottom:3px}
+.receipt-sheet .sheet-subject aside>b{font:700 22px var(--sheet-serif);color:#164d40;white-space:nowrap}
+.receipt-sheet .sheet-subject aside small{font-size:12px;margin-left:3px}
+.receipt-sheet .sheet-form-row{grid-template-columns:85px minmax(0,1fr)}
+.receipt-sheet .receipt-verification{padding:11px 12px;margin-top:14px;align-items:center}
+.receipt-sheet .receipt-verification input{width:17px;height:17px;min-height:0;margin:0;accent-color:#155b4c;flex:none}
+.receipt-sheet .receipt-actions{display:flex;gap:9px;padding:19px 0 30px}
+@media(max-width:359px){.reference-sheet header{padding-left:17px}.reference-sheet .app-sheet-content{padding:0 17px}.reference-sheet .sheet-form-row{grid-template-columns:74px minmax(0,1fr);gap:8px}.reference-sheet .sheet-form-row>span{font-size:12px}.receipt-sheet .sheet-subject{gap:7px}.receipt-sheet .sheet-subject strong{font-size:15px;gap:6px}.receipt-sheet .sheet-subject p{white-space:normal}.receipt-sheet .sheet-subject aside{padding-left:7px}.receipt-sheet .sheet-subject aside>b{font-size:18px}}
+/* Form controls override the shared sheet defaults only for these references. */
+.app-sheet.reference-sheet .sheet-form-row input:not([type=checkbox]):not([type=radio]),.app-sheet.reference-sheet .sheet-form-row select,.app-sheet.reference-sheet .sheet-form-row textarea{height:34px;min-height:34px;padding:6px 11px;font:13px/20px 'PingFang SC',sans-serif}
+.app-sheet.reference-sheet .sheet-form-row textarea{display:block;height:75px;min-height:75px;padding-bottom:19px}
+.reference-sheet .sheet-form-row>span{font-weight:400}.reference-sheet header .app-back{background:transparent}
+.schedule-sheet header,.receipt-sheet header{padding-top:15px;padding-bottom:12px}.schedule-sheet header h2,.receipt-sheet header h2{font-size:25px}
+.app-sheet.reference-sheet .app-sheet-content .sheet-form-row :is(input:not([type=checkbox]):not([type=radio]):not([type=file]),select){height:34px;min-height:34px;padding:6px 11px;font:13px/20px 'PingFang SC',sans-serif}
+.app-sheet.reference-sheet .app-sheet-content .sheet-form-row textarea{height:75px;min-height:75px;padding-bottom:19px}
+.reference-sheet header{border-bottom:0}
+.reference-sheet .sheet-subject{min-height:63px;padding:9px}
+.schedule-sheet .sheet-subject{min-height:56px;margin-bottom:10px}
+.schedule-sheet .sheet-subject strong{font-size:17px}
+.schedule-sheet .sheet-subject-icon{width:38px;height:38px}
+.schedule-sheet footer{padding-top:16px;padding-bottom:26px}
+.stage-sheet .sheet-form-row{grid-template-columns:85px minmax(0,1fr);margin-bottom:22px}
+.stage-sheet label.field.sheet-form-row{margin-bottom:22px}
+.stage-sheet footer{padding-bottom:42px}
+.stage-sheet .stage-options>button{min-height:25px;padding:5px 10px}
+.receipt-sheet .receipt-actions{padding-bottom:37px}
+.schedule-sheet header,.receipt-sheet header{padding:12px 22px 8px}.schedule-sheet header h2,.receipt-sheet header h2{font-size:24px}
+.schedule-sheet .sheet-subtitle,.receipt-sheet .sheet-subtitle{margin-top:5px}
+.schedule-sheet .sheet-subject,.receipt-sheet .sheet-subject{padding:8px 10px;min-height:56px}
+.schedule-sheet .sheet-subject p,.receipt-sheet .sheet-subject p{font-size:11px;line-height:16px;margin-top:3px}
+.receipt-sheet .sheet-subject{margin-bottom:12px}.receipt-sheet .sheet-form-row{margin-bottom:7px}
+.app-sheet.reference-sheet .app-sheet-content .sheet-form-row textarea{font:12px/19px 'PingFang SC',sans-serif;resize:vertical}
+.app-sheet.stage-sheet .app-sheet-content .sheet-form-row input[type=date]{padding-left:122px;font-size:11px;background:#f9faf9}
+@media(max-width:359px){.app-sheet.stage-sheet .app-sheet-content .sheet-form-row input[type=date]{padding-left:75px}}
+.app-sheet.stage-sheet .app-sheet-content .sheet-form-row input[type=date]{padding-left:122px!important;font-size:11px!important}
+@media(max-width:359px){.app-sheet.stage-sheet .app-sheet-content .sheet-form-row input[type=date]{padding-left:100px!important;font-size:10px!important}}

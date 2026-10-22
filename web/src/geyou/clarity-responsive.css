@@ -1,0 +1,56 @@
+/* Shared palette and iPad layout, following the approved More page direction. */
+:root{--ref-paper:var(--premium-page);--ref-surface:#fff;--ref-ink:var(--premium-ink);--ref-muted:var(--premium-muted);--app-bg:var(--premium-page);--app-ink:var(--premium-ink);--app-muted:var(--premium-muted)}
+body,.geyou-app,.geyou-login{background:var(--premium-page)}
+.geyou-app{--ui-muted:var(--premium-muted);--ui-ink:var(--premium-ink);--ui-page:var(--premium-page);--ui-surface:#fff;--ui-line:var(--premium-line);color:var(--premium-ink)}
+.geyou-app .main-content{background:var(--premium-page);color:var(--premium-ink)}
+.geyou-app .main-content :is(.panel,.customer-mobile-row,.customer-context,.customer-context-summary,.talk-history-row,.memorial-card,.package-item,.quote-paper,.showroom-card,.showroom-detail-body,.showroom-agency,.catalog-mobile-row,.metric-card,.ct-notice-row,.member-compact-row,.settings-summary-row,.settings-card,.remaining-card,.public-info-grid>div){background-color:#fff}
+.geyou-app .main-content :is(h1,h2,h3){color:var(--premium-ink)}
+.geyou-app .main-content :is(.muted,.micro,.app-page-header p,.customer-profile dt,.customer-row-text small,.customer-record-body>small,.journey-row-meta,.memorial-card-compact p,.talk-record-meta,.conversation-note,.conversation-disclaimer,.quote-notes,.showroom-card-spec,.catalog-item-main small,.dashboard-note,.notice-portrait-hint,.notice-card-copy p,.memorial-context>span,.member-scope,.public-quote-meta small,.public-quote-footnote,.settings-state,.settings-count){color:var(--premium-muted)!important}
+.geyou-app .main-content:not(:has([data-flow-page])) small:not(.remaining-footer small):not(.remaining-brand small){font-size:12px!important;line-height:1.6;color:var(--premium-muted)}
+.geyou-app .main-content :is(.customer-profile dd,.customer-record-body p,.showroom-description,.showroom-agency p,.notice-card-copy h2,.member-compact-row strong,.settings-field>span,.remaining-card label,.ct-copy,.public-copy p){color:var(--premium-ink)}
+.geyou-app .main-content :is(.customer-filter-tabs,.catalog-view-tabs,.segmented,.content-filters,.quote-overview,.proposal-summary,.notice-binding,.memorial-context,.enterprise-summary-hero,.public-quote-meta,.memorial-empty){background-color:var(--premium-soft-gold)}
+.geyou-app .main-content :is(.customer-filter-tabs,.catalog-view-tabs,.segmented,.content-filters) button:not(.active){color:var(--premium-muted)}
+.geyou-app .main-content :is(.customer-filter-tabs,.catalog-view-tabs,.segmented,.content-filters) button.active{background:var(--premium-brand);color:#fff}
+.geyou-app .main-content :is(.customer-editor,.remaining-form,.ct-editor,.enterprise-page,.customer-new-page,.customer-edit-page,.conversation-page,.quote-page){background-color:transparent}
+.geyou-app .main-content :is(input:not([type=checkbox]):not([type=radio]):not([type=file]),textarea,select){background-color:#fff;color:var(--premium-ink);border-color:var(--premium-line)}
+.geyou-app .main-content :is(input,textarea)::placeholder{color:#717d76;opacity:1}
+.geyou-app .main-content .app-action-bar,.geyou-app .main-content .proposal-dock{background:var(--premium-page);border-top-color:var(--premium-line)}
+.geyou-app .mobile-nav{background:#fff;border-color:var(--premium-line)}
+.geyou-app .mobile-nav button{color:var(--premium-muted)}
+.geyou-app .mobile-nav button.active{color:var(--premium-brand)}
+.geyou-app .main-content :is(.content-filters button,.member-state,.journey-task-status,.notice-family-confirm,.restoration-tip,.public-quote-columns,.catalog-table-head){font-size:12px!important;line-height:1.6}
+.geyou-app .main-content :is(.showroom-empty,.empty,.memorial-empty){color:var(--premium-muted)}
+.geyou-app .main-content :is(.showroom-empty strong,.empty h2,.memorial-empty strong){color:var(--premium-ink)}
+.geyou-app .main-content :is(.notice-family-confirm,.restoration-tip,.portrait-detail-help){color:#53635a}
+.geyou-app .main-content .enterprise-summary-hero p{color:var(--premium-muted);font:13px/1.7 var(--ui-body)}
+.geyou-app .main-content :is(.public-copy p,.arrangement-item p){font-size:15px;line-height:1.9;color:#46584d}
+.geyou-app .main-content :is(.public-quote-status p,.arrangement-reminder p,.ct-introduction){color:var(--premium-muted);font-size:13px;line-height:1.7}
+.geyou-app .main-content .portrait-confirm-caption{color:var(--premium-muted);font-size:12px}
+.geyou-login .login-help{font-size:12px;color:var(--premium-muted)}
+.app-sheet{color:var(--premium-ink)}
+.app-sheet .app-sheet-surface{background:#fff}
+.app-sheet :is(.sheet-subtitle,.micro,.muted,.sheet-info,.date-format-hint,.counted-input>small){color:var(--premium-muted)}
+.app-sheet :is(input:not([type=checkbox]):not([type=radio]),textarea,select){color:var(--premium-ink);background:#fff;border-color:var(--premium-line)}
+@media(min-width:768px){
+ .geyou-app .main-content .enterprise-page:has(.settings-editor-body){max-width:720px;margin-left:auto;margin-right:auto}
+ .geyou-app .main-content .showroom-detail{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0 28px;max-width:960px;align-items:start}
+ .geyou-app .main-content .showroom-detail>.app-page-header{grid-column:1/-1;width:100%}
+ .geyou-app .main-content .showroom-detail>.showroom-image{grid-column:1;grid-row:2;width:100%;height:auto;aspect-ratio:789/470;max-height:420px;margin:0;border-radius:10px}
+ .geyou-app .main-content .showroom-detail>.showroom-detail-body{grid-column:2;grid-row:2;margin:0;padding:22px 20px;min-width:0}
+ .geyou-app .main-content .showroom-detail>.showroom-agency{grid-column:2;grid-row:3;margin:16px 0 0;padding:18px 20px}
+ .geyou-app .main-content .showroom-detail-body h1{font-size:23px;line-height:1.5}
+ .geyou-app .main-content .showroom-description{font-size:15px}
+ .geyou-app .main-content .showroom-detail .showroom-price{font-size:28px}
+ .geyou-app .main-content .settings-editor-body{padding-bottom:120px}
+ .geyou-app .main-content .content-list-page{max-width:960px}
+}
+@media(min-width:1000px){
+ .geyou-app .main-content .content-list-page .ct-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;align-items:start}
+ .geyou-app .main-content .content-list-tools{grid-column:1/-1}
+ .geyou-app .main-content .content-list-page .ct-notice-row{margin:0;min-height:178px}
+}
+
+/* Preserve contrast for supporting copy inside filled actions. */
+.geyou-app .main-content :is(.compact-start,.btn-primary,.public-contact) small{color:#e6eee9!important}
+/* These reference thumbnails use square crop coordinates. */
+.geyou-app .main-content .showroom-detail>.reference-detail-photo:not(.urn){aspect-ratio:1}

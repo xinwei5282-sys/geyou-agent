@@ -1,0 +1,368 @@
+/* Match the electronic notice editor: paper workspace, quiet bordered panels,
+   compact fields, forest buttons and the shared fixed action bar. */
+.geyou-app .main-content .restoration-picker-page,
+.geyou-app .main-content .memorial-detail-page,
+.geyou-app .main-content .restoration-list-page {
+  --restore-ink: var(--premium-ink);
+  --restore-green: var(--premium-brand);
+  --restore-muted: var(--premium-muted);
+  --restore-line: var(--premium-line);
+  --restore-paper: var(--premium-page);
+  width: min(100%, 1120px);
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 0 112px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--restore-ink);
+  box-shadow: none;
+}
+
+.geyou-app .main-content .restoration-picker-page .app-page-header,
+.geyou-app .main-content .memorial-detail-page .app-page-header,
+.geyou-app .main-content .restoration-list-page .app-page-header {
+  margin: 0 0 18px;
+}
+
+.geyou-app .main-content .restoration-picker-page .app-page-header h1,
+.geyou-app .main-content .memorial-detail-page .app-page-header h1,
+.geyou-app .main-content .restoration-list-page .app-page-header h1 {
+  color: var(--restore-ink);
+  font-family: inherit;
+  font-size: 30px;
+  font-weight: 650;
+}
+
+.geyou-app .main-content .restoration-picker-page .app-page-header p,
+.geyou-app .main-content .memorial-detail-page .app-page-header p,
+.geyou-app .main-content .restoration-list-page .app-page-header p {
+  color: var(--restore-muted);
+  font-size: 14px;
+}
+
+.geyou-app .main-content .restoration-picker-page .restoration-picker-controls,
+.geyou-app .main-content .restoration-picker-page .restoration-records,
+.geyou-app .main-content .memorial-detail-page .portrait-detail-card {
+  min-width: 0;
+  padding: 20px;
+  border: 1px solid var(--restore-line);
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: none;
+}
+
+.geyou-app .main-content .restoration-picker-page .restoration-picker-heading {
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--restore-line);
+}
+
+.geyou-app .main-content .restoration-picker-page .restoration-picker-heading > span,
+.geyou-app .main-content .restoration-picker-page .restoration-step {
+  color: var(--restore-green);
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.geyou-app .main-content .restoration-picker-page .restoration-picker-heading p {
+  margin: 5px 0 0;
+  color: var(--restore-muted);
+  font-size: 14px;
+}
+
+.geyou-app .main-content .restoration-picker-page .restoration-select {
+  gap: 7px;
+  margin: 14px 0;
+  color: var(--restore-ink);
+  font-size: 15px;
+}
+
+.geyou-app .main-content .restoration-picker-page .restoration-select select,
+.geyou-app .main-content .restoration-picker-page .phase-one-intake input {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 48px;
+  padding: 9px 12px;
+  border: 1px solid var(--premium-line);
+  border-radius: 6px;
+  background: #fff;
+  color: var(--restore-ink);
+  font: inherit;
+  font-size: 15px;
+}
+
+.geyou-app .main-content .restoration-picker-page .phase-one-intake {
+  display: grid;
+  gap: 12px;
+  margin: 18px 0 0;
+  padding: 16px;
+  border: 1px solid var(--restore-line);
+  border-radius: 8px;
+  background: var(--restore-paper);
+}
+
+.geyou-app .main-content .restoration-picker-page .phase-one-intake label {
+  display: grid;
+  gap: 6px;
+  color: var(--premium-ink);
+  font-size: 14px;
+}
+
+.geyou-app .main-content .restoration-picker-page .phase-one-intake .btn,
+.geyou-app .main-content .restoration-picker-page .restoration-upload,
+.geyou-app .main-content .memorial-detail-page .restoration-confirm-button {
+  min-height: 48px;
+  padding: 0 18px;
+  border: 0;
+  border-radius: 6px;
+  background: var(--restore-green);
+  color: #fff;
+  font-size: 15px;
+}
+
+.geyou-app .main-content .restoration-picker-page .restoration-records {
+  margin: 0;
+}
+
+.geyou-app .main-content .restoration-picker-page .restoration-records .section-head {
+  align-items: end;
+  margin: 0 0 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--restore-line);
+}
+
+.geyou-app .main-content .restoration-picker-page .restoration-records h3,
+.geyou-app .main-content .memorial-detail-page .portrait-detail-title h3 {
+  margin: 4px 0 0;
+  color: var(--restore-ink);
+  font-size: 19px;
+}
+
+.geyou-app .main-content .restoration-picker-page .restoration-record {
+  min-height: 82px;
+  padding: 10px 2px;
+  border-bottom: 1px solid var(--premium-soft-gold);
+  color: var(--restore-ink);
+}
+
+.geyou-app .main-content .restoration-picker-page .restoration-record img {
+  width: 58px;
+  height: 64px;
+  border-radius: 6px;
+}
+
+.geyou-app .main-content .restoration-picker-page .restoration-record strong { font-size: 15px; }
+.geyou-app .main-content .restoration-picker-page .restoration-record small { color: var(--restore-muted); font-size: 12px; }
+.geyou-app .main-content .restoration-picker-page .restoration-record .btn { min-height: 44px; border-radius: 6px; }
+
+.geyou-app .main-content .restoration-picker-page .restoration-records .empty {
+  padding: 22px 16px;
+  border: 1px dashed var(--premium-line);
+  border-radius: 6px;
+  background: var(--restore-paper);
+  color: var(--restore-muted);
+}
+
+.geyou-app .main-content .restoration-picker-page .restoration-tip,
+.geyou-app .main-content .memorial-detail-page .portrait-detail-help,
+.geyou-app .main-content .memorial-detail-page .portrait-confirm-caption {
+  padding: 12px 14px;
+  border: 0;
+  border-left: 3px solid var(--premium-line);
+  border-radius: 0;
+  background: var(--restore-paper);
+  color: var(--restore-muted);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.geyou-app .main-content .restoration-picker-page .restoration-tip { margin: 0; }
+.geyou-app .main-content .restoration-picker-page .restoration-tip svg,
+.geyou-app .main-content .memorial-detail-page .portrait-detail-help svg { flex: none; color: var(--restore-green); }
+
+.geyou-app .main-content .restoration-picker-page .restoration-picker-action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.geyou-app .main-content .restoration-picker-page .restoration-upload { margin: 0; }
+.geyou-app .main-content .restoration-picker-page .restoration-picker-action .micro { margin: 0; color: var(--restore-muted); }
+
+.geyou-app .main-content .restoration-picker-page .app-action-bar,
+.geyou-app .main-content .memorial-detail-page .app-action-bar { margin-top: 0; }
+.geyou-app .main-content .restoration-picker-page .app-action-bar > div,
+.geyou-app .main-content .memorial-detail-page .app-action-bar > div { display: flex; justify-content: flex-end; }
+.geyou-app .main-content .restoration-picker-page .app-action-bar .restoration-upload,
+.geyou-app .main-content .memorial-detail-page .app-action-bar .restoration-confirm-button { min-width: 180px; }
+
+.geyou-app .main-content .memorial-detail-page .memorial-context {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin: 0 0 14px;
+  padding: 14px 16px;
+  border: 1px solid var(--restore-line);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.geyou-app .main-content .memorial-detail-page .memorial-context span { display: grid; gap: 4px; color: var(--restore-muted); font-size: 13px; }
+.geyou-app .main-content .memorial-detail-page .memorial-context strong { color: var(--restore-ink); font-size: 17px; font-weight: 600; }
+
+.geyou-app .main-content .memorial-detail-page .portrait-detail-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(300px, .9fr);
+  grid-template-areas: "title title" "photo toolbar" "photo help" "photo download" "caption caption" "history history" "links links";
+  align-items: start;
+  gap: 14px 20px;
+  margin: 0;
+}
+
+.geyou-app .main-content .memorial-detail-page .portrait-detail-title { grid-area: title; }
+.geyou-app .main-content .memorial-detail-page .portrait-detail-title .tag { border-radius: 14px; background: var(--premium-soft-gold); color: var(--restore-green); }
+.geyou-app .main-content .memorial-detail-page .portrait-main-photo {
+  grid-area: photo;
+  height: min(56vh, 600px);
+  min-height: 360px;
+  margin: 0;
+  border-radius: 6px;
+  background: var(--restore-paper);
+}
+
+.geyou-app .main-content .memorial-detail-page .portrait-main-photo img {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.geyou-app .main-content .memorial-detail-page .portrait-toolbar {
+  grid-area: toolbar;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.geyou-app .main-content .memorial-detail-page .portrait-toolbar .btn,
+.geyou-app .main-content .memorial-detail-page .portrait-download {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 46px;
+  padding: 9px 12px;
+  border: 1px solid var(--premium-line);
+  border-radius: 6px;
+  background: #fff;
+  color: var(--restore-green);
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.geyou-app .main-content .memorial-detail-page .portrait-toolbar .btn-primary { border-color: var(--restore-green); background: var(--restore-green); color: #fff; }
+.geyou-app .main-content .memorial-detail-page .portrait-toolbar p { grid-column: 1/-1; margin: 0; color: var(--restore-muted); font-size: 12px; }
+.geyou-app .main-content .memorial-detail-page .portrait-detail-help { grid-area: help; margin: 0; }
+.geyou-app .main-content .memorial-detail-page .portrait-download { grid-area: download; }
+.geyou-app .main-content .memorial-detail-page .portrait-confirm-caption { grid-area: caption; margin: 0; }
+.geyou-app .main-content .memorial-detail-page .portrait-history-fold { grid-area: history; margin: 0; padding: 0; border: 1px solid var(--restore-line); border-radius: 8px; overflow: hidden; }
+.geyou-app .main-content .memorial-detail-page .portrait-history-fold summary { min-height: 48px; padding: 12px 14px; background: var(--restore-paper); color: var(--restore-ink); font-size: 15px; font-weight: 600; }
+.geyou-app .main-content .memorial-detail-page .portrait-history { margin: 0; padding: 0 14px; }
+.geyou-app .main-content .memorial-detail-page .portrait-record { grid-template-columns: 100px minmax(0, 1fr); gap: 10px 14px; padding: 12px 0; border: 0; border-top: 1px solid var(--premium-soft-gold); border-radius: 0; }
+.geyou-app .main-content .memorial-detail-page .portrait-images img { width: 48px; height: 64px; border-radius: 4px; }
+.geyou-app .main-content .memorial-detail-page .portrait-actions { grid-column: 2; }
+.geyou-app .main-content .memorial-detail-page .portrait-detail-links { grid-area: links; }
+.geyou-app .main-content .memorial-detail-page .portrait-detail-links button { color: var(--restore-green); }
+
+.geyou-app .unlinked-preview-switch { display: flex; gap: 8px; margin: 0 0 10px; }
+.geyou-app .unlinked-preview-switch button { flex: 1; min-height: 44px; border: 1px solid var(--restore-line); border-radius: 6px; background: #fff; color: var(--restore-ink); font-weight: 650; }
+.geyou-app .unlinked-preview-switch button.active { border-color: var(--restore-green); background: var(--restore-green); color: #fff; }
+.geyou-app .unlinked-preview-photo { display: grid; place-items: center; position: relative; min-height: 300px; height: min(58vh, 600px); overflow: hidden; border: 1px solid var(--restore-line); border-radius: 8px; background: var(--restore-paper); }
+.geyou-app .unlinked-preview-photo img { width: 100%; height: 100%; object-fit: contain; }
+.geyou-app .unlinked-preview-photo strong { position: absolute; left: 12px; bottom: 12px; padding: 5px 9px; border-radius: 14px; background: rgba(20,35,29,.78); color: #fff; font-size: 12px; }
+.geyou-app .unlinked-portrait-page .portrait-detail-help { margin: 12px 0; }
+.geyou-app .unlinked-portrait-page .portrait-toolbar { display: flex; flex-wrap: wrap; align-items: center; }
+.geyou-app .unlinked-status { color: var(--restore-muted); font-size: 13px; }
+.geyou-app .unlinked-upload-actions { display: grid; gap: 10px; margin-top: 16px; }
+.geyou-app .unlinked-upload-actions .btn { display: flex; width: 100%; min-height: 54px; align-items: center; justify-content: center; gap: 9px; font-size: 16px; }
+.geyou-app .unlinked-upload-actions input { display: none; }
+
+.geyou-app .main-content .restoration-picker-page button:focus-visible,
+.geyou-app .main-content .restoration-list-page button:focus-visible,
+.geyou-app .main-content .restoration-list-page a:focus-visible,
+.geyou-app .main-content .memorial-detail-page button:focus-visible,
+.geyou-app .main-content .restoration-picker-page select:focus-visible { outline: 2px solid var(--premium-line); outline-offset: 2px; }
+
+.geyou-app .main-content .restoration-list-page { width: min(100%, 1120px); }
+.geyou-app .main-content .restoration-list-page .app-page-header .btn { min-height: 44px; border-radius: 6px; background: var(--restore-green); font-size: 14px; }
+.geyou-app .main-content .restoration-list-search { display: flex; align-items: center; gap: 9px; min-height: 46px; margin: 0 0 14px; padding: 0 12px; border: 1px solid var(--premium-line); border-radius: 6px; background: #fff; color: var(--restore-muted); }
+.geyou-app .main-content .restoration-list-search input { min-width: 0; width: 100%; height: 44px; border: 0; outline: 0; background: transparent; color: var(--restore-ink); font: inherit; font-size: 15px; }
+.geyou-app .main-content .restoration-list-filters { display: flex; gap: 6px; margin-bottom: 14px; padding: 4px; border-radius: 7px; background: var(--premium-soft-gold); width: fit-content; max-width: 100%; }
+.geyou-app .main-content .restoration-list-filters button { display: flex; align-items: center; gap: 7px; min-height: 40px; padding: 7px 13px; border-radius: 5px; background: transparent; color: var(--premium-muted); font-size: 14px; white-space: nowrap; }
+.geyou-app .main-content .restoration-list-filters button.active { background: #fff; color: var(--restore-green); box-shadow: 0 1px 3px #243c3410; }
+.geyou-app .main-content .restoration-list-filters small { font-size: 11px; color: var(--restore-muted); }
+.geyou-app .main-content .restoration-list { display: grid; gap: 10px; }
+.geyou-app .main-content .restoration-list-row { display: grid; grid-template-columns: 72px minmax(180px, 1fr) minmax(180px, auto); align-items: center; gap: 14px; padding: 14px 16px; border: 1px solid var(--restore-line); border-radius: 8px; background: #fff; }
+.geyou-app .main-content .restoration-list-thumb { width: 64px; height: 76px; border-radius: 5px; background: var(--restore-paper); object-fit: cover; }
+.geyou-app .main-content .restoration-list-copy { display: grid; gap: 3px; min-width: 0; }
+.geyou-app .main-content .restoration-list-copy strong { color: var(--restore-ink); font-size: 17px; }
+.geyou-app .main-content .restoration-list-copy span,
+.geyou-app .main-content .restoration-list-copy time { color: var(--restore-muted); font-size: 12px; }
+.geyou-app .main-content .restoration-list-copy .restoration-status { width: fit-content; margin-top: 2px; padding: 2px 7px; border-radius: 10px; background: var(--premium-soft-gold); color: var(--premium-muted); }
+.geyou-app .main-content .restoration-list-copy .restoration-status.pending { background: #f4eee4; color: #765d42; }
+.geyou-app .main-content .restoration-list-copy .restoration-status.confirmed { background: var(--premium-soft-gold); color: var(--restore-green); }
+.geyou-app .main-content .restoration-list-actions { display: flex; align-items: center; justify-content: flex-end; flex-wrap: wrap; gap: 7px; }
+.geyou-app .main-content .restoration-list-actions .btn { display: inline-flex; align-items: center; justify-content: center; gap: 5px; min-height: 44px; padding: 8px 10px; border: 1px solid var(--premium-line); border-radius: 5px; background: #fff; color: var(--restore-green); font-size: 12px; text-decoration: none; white-space: nowrap; }
+.geyou-app .main-content .restoration-list-actions .btn-primary { border-color: var(--restore-green); background: var(--restore-green); color: #fff; }
+.geyou-app .main-content .restoration-list-empty { display: grid; justify-items: center; gap: 9px; padding: 42px 20px; border: 1px solid var(--restore-line); border-radius: 8px; background: #fff; color: var(--restore-muted); text-align: center; }
+.geyou-app .main-content .restoration-list-empty strong { color: var(--restore-ink); font-size: 18px; }
+.geyou-app .main-content .restoration-list-empty p { max-width: 440px; margin: 0; font-size: 14px; }
+.geyou-app .main-content .restoration-list-empty .btn { min-height: 44px; margin-top: 8px; border-radius: 6px; background: var(--restore-green); }
+.geyou-app .main-content .memorial-detail-page .portrait-downloads { grid-area: download; display: flex; flex-wrap: wrap; gap: 7px; }
+.geyou-app .main-content .memorial-detail-page .portrait-download { margin: 0; }
+.geyou-app .main-content .restoration-list-page .app-action-bar { display: none; }
+
+/* New restoration is a single column on every device. */
+.geyou-app.quality-app .main-content .restoration-picker-page { display: block; max-width: 960px; grid-template-columns: none; }
+.geyou-app.quality-app .main-content .restoration-picker-page > * { min-width: 0; margin-bottom: 18px; }
+.geyou-app.quality-app .main-content .restoration-picker-page .phase-one-intake { grid-template-columns: minmax(0,1fr); }
+.geyou-app.quality-app .main-content .restoration-picker-page .phase-one-intake > * { grid-column: 1; min-width: 0; }
+.geyou-app.quality-app .main-content .restoration-picker-page .restoration-picker-controls { width: 100%; box-sizing: border-box; }
+.geyou-app.quality-app .main-content .restoration-picker-page .restoration-picker-action { justify-content: flex-end; }
+
+@media (max-width: 899px) {
+  .geyou-app .main-content .restoration-list-row { grid-template-columns: 64px minmax(0, 1fr); }
+  .geyou-app .main-content .restoration-list-actions { grid-column: 1/-1; justify-content: flex-start; padding-top: 10px; border-top: 1px solid var(--premium-soft-gold); }
+  .geyou-app .main-content .memorial-detail-page .portrait-detail-card { grid-template-columns: minmax(0, 1fr); grid-template-areas: "title" "photo" "toolbar" "help" "download" "caption" "history" "links"; gap: 12px; }
+  .geyou-app .main-content .memorial-detail-page .portrait-main-photo { min-height: 280px; height: min(52vh, 500px); }
+  .geyou-app .unlinked-preview-photo { min-height: 280px; height: min(54vh, 460px); }
+}
+
+@media (max-width: 600px) {
+  .geyou-app .main-content .restoration-list-page { padding-bottom: 112px; }
+  .geyou-app .main-content .restoration-list-row { padding: 12px; }
+  .geyou-app .main-content .restoration-list-actions { gap: 6px; }
+  .geyou-app .main-content .restoration-list-actions .btn { flex: 1; }
+  .geyou-app .main-content .restoration-list-empty { padding: 32px 16px; }
+  .geyou-app .main-content .restoration-picker-page,
+  .geyou-app .main-content .memorial-detail-page { padding-bottom: 112px; }
+  .geyou-app .main-content .restoration-picker-page .restoration-picker-controls,
+  .geyou-app .main-content .restoration-picker-page .restoration-records,
+  .geyou-app .main-content .memorial-detail-page .portrait-detail-card { padding: 16px; }
+  .geyou-app .main-content .restoration-picker-page .restoration-picker-action { align-items: stretch; flex-direction: column; }
+  .geyou-app .main-content .restoration-picker-page .restoration-upload { width: 100%; }
+  .geyou-app .main-content .memorial-detail-page .memorial-context { grid-template-columns: 1fr; gap: 10px; }
+  .geyou-app .main-content .memorial-detail-page .portrait-toolbar { grid-template-columns: 1fr; }
+  .geyou-app .main-content .memorial-detail-page .portrait-toolbar p { grid-column: auto; }
+  .geyou-app .main-content .memorial-detail-page .portrait-record { grid-template-columns: 78px minmax(0, 1fr); }
+  .geyou-app .main-content .memorial-detail-page .portrait-actions { grid-column: 1/-1; }
+}
+
+.geyou-app .main-content .restoration-list-card-link { text-decoration: none; color: inherit; cursor: pointer; }
+.geyou-app .main-content .restoration-list-card-link:focus-visible { outline: 2px solid var(--restore-green); outline-offset: 3px; }

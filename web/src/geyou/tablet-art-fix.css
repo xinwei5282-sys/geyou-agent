@@ -1,0 +1,33 @@
+/* Pure decoration only; full-page references must never become responsive backgrounds. */
+.geyou-app .main-content :is(.enterprise-page,.members-page):after{
+ left:0;right:0;bottom:0;height:120px;
+ background:url('/reference-art/more-mountains-pure.png') center bottom/cover no-repeat;
+ mask-image:linear-gradient(transparent,#000 30%);pointer-events:none;
+}
+.geyou-app .main-content .enterprise-page:has(.settings-editor-body):after,
+.geyou-app .main-content .members-page.remaining-form:after{content:none}
+.geyou-app .main-content .remaining-form .remaining-brand{
+ background:none;height:52px;display:flex;align-items:center;gap:9px;margin-bottom:12px;
+}
+.geyou-app .main-content .remaining-form .remaining-brand>*{visibility:visible}
+.geyou-app .main-content .remaining-brand .form-brand-mark{width:34px;height:34px;object-fit:contain}
+.geyou-app .main-content .remaining-brand strong{font:600 15px/1.5 var(--ref-serif);color:var(--premium-brand);letter-spacing:0}
+.geyou-app .main-content .remaining-brand small{font:11px/1.5 var(--ui-body);letter-spacing:1px;color:var(--premium-muted)}
+.geyou-app .main-content .remaining-brand em{position:static;margin-left:auto;font:12px/1.5 var(--ref-serif);color:var(--premium-muted);letter-spacing:0}
+.geyou-app .main-content .remaining-form .remaining-heading:after{content:none}
+.geyou-app .main-content .remaining-form .remaining-heading{min-height:72px;padding-top:4px}
+.geyou-app .main-content .remaining-form .remaining-back{top:82px}
+.geyou-app .main-content .remaining-form .remaining-footer{background:none;height:auto;font:12px/1.6 var(--ui-body);letter-spacing:1px;color:var(--premium-muted);margin:24px 0 0;padding:0;text-align:center}
+.geyou-app .main-content .remaining-form .remaining-footer small{font-size:12px}
+.geyou-app.public-layout .main-content.public-main:after{
+ content:'';display:block;position:relative!important;inset:auto!important;margin:28px 0 0;
+ height:130px!important;width:100%;max-width:none;
+ background:url('/reference-art/more-mountains-pure.png') center bottom/cover no-repeat!important;
+ mask-image:linear-gradient(transparent,#000 30%);pointer-events:none;
+}
+@media(max-width:359px){.geyou-app .main-content .remaining-brand em{max-width:95px;text-align:right;font-size:11px}}
+/* The source mark includes a sliver of adjacent lettering; crop to the lotus bounds. */
+.geyou-app .main-content .remaining-brand .form-brand-mark{width:32px;height:40px;object-fit:cover;object-position:left center}
+.geyou-app .public-header .public-brand-mark{width:28px;height:36px;object-fit:cover;object-position:left center}
+
+.geyou-app .main-content :is(.memorial-detail-page,.conversation-setup):after{left:0;right:0;background:url('/reference-art/more-mountains-pure.png') center bottom/cover no-repeat;mask-image:linear-gradient(transparent,#000 30%)}

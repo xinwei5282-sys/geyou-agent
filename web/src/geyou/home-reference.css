@@ -1,0 +1,112 @@
+/* 01-工作台.png: dimensions measured at 390 × 844, scoped to this page. */
+.geyou-app:has(.home-reference) {
+  --home-paper: var(--premium-page);
+  --home-ink: #103d33;
+  background: var(--home-paper);
+}
+.geyou-app:has(.home-reference) .main-content {
+  max-width: 430px;
+  width: 100%;
+  padding: 0 16px 102px;
+  background: var(--home-paper);
+  overflow: visible;
+}
+.geyou-app:has(.home-reference) .prototype-strip {
+  max-width: 430px;
+  margin: auto;
+  padding: 0 16px;
+  height: 28px;
+  min-height: 28px;
+  background: transparent;
+  border: 0;
+  font-size: 9px;
+}
+.geyou-app:has(.home-reference) .prototype-strip .prd-open { min-height: 22px; padding: 2px 6px; font-size: 10px; }
+.geyou-app .home-reference { padding-top: 16px; }
+.geyou-app .home-reference .compact-home-title {
+  padding: 0 5px;
+  height: 173px;
+  min-height: 0;
+  margin: 0;
+  background: none;
+}
+.geyou-app .home-reference .compact-home-title::after {
+  content: '';
+  position: absolute;
+  right: -16px;
+  bottom: -48px;
+  width: 177px;
+  height: 205px;
+  pointer-events: none;
+  background: url('./assets/workbench-flower.png') right center / auto 205px no-repeat;
+  mix-blend-mode: multiply;
+  mask-image: linear-gradient(to bottom, transparent 0, #000 18%, #000 82%, transparent 100%), linear-gradient(to right, transparent, #000 36%);
+  mask-composite: intersect;
+  -webkit-mask-composite: source-in;
+  opacity: .65;
+}
+.geyou-app .home-reference .home-identity { width: 100%; min-width: 0; gap: 16px; margin: 0 0 35px; height: 30px; }
+.geyou-app .home-reference .home-identity strong { font-family: 'Songti SC', STSong, serif; font-size: 29px; font-weight: 700; letter-spacing: 0; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.geyou-app .home-reference .home-identity .home-brand-logo { display: block; width: auto; height: 32px; max-width: 140px; object-fit: contain; object-position: left center; flex-shrink: 0; }
+.geyou-app .home-reference .home-identity i { height: 21px; flex-shrink: 0; }
+.geyou-app .home-reference .home-identity span { flex-shrink: 0; font-family: 'PingFang SC', sans-serif; font-size: 15px; letter-spacing: 0; }
+.geyou-app .home-reference .home-motto { display: block; top: 1px; right: 8px; padding-left: 13px; font-size: 12px; line-height: 1.5; letter-spacing: 1.5px; }
+.geyou-app .home-reference .home-heading-copy h1 { font-family: 'Songti SC', STSong, serif; font-size: 54px; font-weight: 700; line-height: 1.15; letter-spacing: 1px; margin: 0 0 6px; }
+.geyou-app .home-reference .home-heading-copy p { font-size: 20px; line-height: 1.5; letter-spacing: 0; color: #636665; }
+.geyou-app .home-reference .compact-start { min-height: 100px; height: 100px; padding: 18px 21px 18px 29px; margin: 0 0 16px; gap: 18px; border-radius: 13px; background: var(--premium-brand); box-shadow: none; }
+.geyou-app .home-reference .compact-start-icon { border: 0; border-right: 1px solid #749183; border-radius: 0; background: transparent; flex: 0 0 60px; width: 60px; height: 46px; padding-right: 19px; }
+.geyou-app .home-reference .compact-start-icon svg { width: 31px; height: 34px; stroke-width: 1.8; }
+.geyou-app .home-reference .compact-start>span:nth-child(2) { min-width: 0; }
+.geyou-app .home-reference .compact-start strong { font-family: 'Songti SC', STSong, serif; font-size: 30px; font-weight: 700; line-height: 1.2; letter-spacing: 1px; margin: 0 0 5px; }
+.geyou-app .home-reference .compact-start small { display: block; width: auto; transform: none; font-family: 'PingFang SC', sans-serif; font-size: 13px; letter-spacing: 0; color: #dce6dd; white-space: nowrap; }
+.geyou-app .home-reference .compact-start>svg { width: 21px; height: 24px; flex-shrink: 0; margin-left: -8px; }
+.geyou-app .home-reference .compact-stats { height: 91px; padding: 17px 0 8px; margin: 0 0 14px; border-top: 1px solid #e0ded8; border-bottom: 0; }
+.geyou-app .home-reference .compact-stats button { min-height: 0; gap: 5px; justify-content: center; }
+.geyou-app .home-reference .compact-stats strong { font-family: 'Songti SC', STSong, serif; font-size: 39px; line-height: 1; font-weight: 700; color: var(--home-ink); }
+.geyou-app .home-reference .compact-stats span { font-size: 15px; line-height: 1.5; letter-spacing: 0; display: flex; align-items: center; gap: 5px; }
+.geyou-app .home-reference .compact-stats .compact-board>svg { width: 30px; height: 35px; color: #b49c66; stroke-width: 4; }
+.geyou-app .home-reference .compact-stats .compact-board span svg { width: 15px; height: 18px; color: #919592; }
+.geyou-app .home-reference .followup-unified.panel { margin: 0 -3px; padding: 14px 14px 0 !important; border: 0; border-radius: 13px !important; background: var(--premium-page) !important; box-shadow: none !important; }
+.geyou-app .home-reference .followup-unified>.section-head { display: flex; flex-wrap: nowrap; gap: 8px; min-height: 48px; margin: 0; padding-bottom: 12px; }
+.geyou-app .home-reference .followup-unified h2 { font-family: 'Songti SC', STSong, serif; font-size: 25px; font-weight: 700; letter-spacing: 0; white-space: nowrap; }
+.geyou-app .home-reference .followup-filters { display: flex; width: auto; gap: 2px; margin: 0 0 0 auto; padding: 0; background: #f1f0ee; border-radius: 11px; }
+.geyou-app .home-reference .followup-filters button { flex: none; min-height: 32px; font-size: 12px; padding: 5px 10px; border-radius: 10px; white-space: nowrap; color: #646965; }
+.geyou-app .home-reference .followup-filters button.active { background: #255448; color: white; box-shadow: none; font-weight: 400; }
+.geyou-app .home-reference .due-count { font-weight: 400; margin-left: 2px; }
+.geyou-app .home-reference .followup-rows { border: 0; border-top: 1px solid #eeece8; border-radius: 0; padding: 0; background: none; }
+.geyou-app .home-reference .followup-group-label { display: none; }
+.geyou-app .home-reference .followup-row { min-height: 76px; padding: 16px 0; gap: 15px; border-bottom: 1px solid #eceae7; }
+.geyou-app .home-reference .followup-row:last-child { border-bottom: 0; }
+.geyou-app .home-reference .home-task-icon { display: grid; place-items: center; width: 28px; height: 28px; flex: 0 0 28px; border-radius: 50%; background: #e6ece7; color: #2e5c50; }
+.geyou-app .home-reference .is-overdue .home-task-icon { background: #f5e2de; color: #b95d50; }
+.geyou-app .home-reference .followup-row-main { gap: 4px; }
+.geyou-app .home-reference .followup-row-main strong { display: block; font-size: 16px; line-height: 1.4; font-weight: 600; color: #242c28; }
+.geyou-app .home-reference .followup-row-main small { font-size: 14px; line-height: 1.4; color: #7a7d79; }
+.geyou-app .home-reference .home-task-detail { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+.geyou-app .home-reference .home-task-status { font-size: 12px; padding: 3px 12px; border-radius: 14px; white-space: nowrap; color: #6d7a70; background: #edf1ea; }
+.geyou-app .home-reference .home-task-status.overdue { color: #bd6657; background: #f5e3df; }
+.geyou-app .home-reference .home-task-status.today { color: #ab8c43; background: #f4efe4; }
+.geyou-app .home-reference .followup-row>svg { width: 16px; height: 18px; color: #999f99; margin-left: -8px; }
+.geyou-app:has(.home-reference) .mobile-nav { width: 100%; max-width: 430px; left: 50%; right: auto; transform: translateX(-50%); height: calc(82px + env(safe-area-inset-bottom)); padding: 9px 14px calc(10px + env(safe-area-inset-bottom)); background: var(--premium-page); border-top: 1px solid #eeece9; }
+.geyou-app:has(.home-reference) .mobile-nav button { gap: 5px; font-size: 12px; font-weight: 400; color: #7c827e; }
+.geyou-app:has(.home-reference) .mobile-nav button svg { width: 25px; height: 25px; stroke-width: 1.6; }
+.geyou-app:has(.home-reference) .mobile-nav button.active { color: var(--premium-brand); }
+.geyou-app:has(.home-reference) .mobile-nav button.active svg { fill: var(--premium-brand); stroke: var(--premium-brand); }
+.geyou-app:has(.home-reference) .mobile-nav button.active::before { top: auto; bottom: -3px; width: 15px; height: 2px; }
+@media(max-width:359px) {
+  .geyou-app .home-reference .home-motto { font-size: 10px; padding-left: 8px; right: 0; letter-spacing: 0; }
+  .geyou-app .home-reference .home-identity { gap: 10px; }
+  .geyou-app .home-reference .home-identity strong { font-size: 25px; }
+  .geyou-app .home-reference .home-identity span { font-size: 13px; }
+  .geyou-app .home-reference .compact-start { gap: 12px; padding: 16px; }
+  .geyou-app .home-reference .compact-start-icon { flex-basis: 42px; width: 42px; padding-right: 10px; }
+  .geyou-app .home-reference .compact-start strong { font-size: 25px; }
+  .geyou-app .home-reference .compact-start small { font-size: 11px; }
+  .geyou-app .home-reference .followup-unified>.section-head { gap: 4px; }
+  .geyou-app .home-reference .followup-unified h2 { font-size: 22px; }
+  .geyou-app .home-reference .followup-filters button { padding: 5px 7px; font-size: 11px; }
+  .geyou-app .home-reference .followup-row { gap: 8px; }
+  .geyou-app .home-reference .followup-row-main strong { font-size: 14px; }
+  .geyou-app .home-reference .home-task-status { padding: 3px 8px; }
+}
+.geyou-app .home-reference .followup-filters .due-count{display:inline;font-weight:400;margin:0 0 0 3px;padding:0;background:none;color:inherit;border-radius:0}

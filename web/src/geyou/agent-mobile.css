@@ -1,0 +1,625 @@
+.agent-app{--a-ink:#46372b;--a-muted:#8a7b6a;--a-brand:#9c7649;--a-line:#e9e1d6;background:#f2eee7;min-height:100dvh;color:var(--a-ink);font:400 15px/1.65 -apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif}.agent-app *,.agent-sheet *{box-sizing:border-box}.agent-frame{width:100%;max-width:640px;min-height:100dvh;margin:auto;background:#faf8f4;position:relative}.agent-app button,.agent-sheet button{font:inherit;cursor:pointer;touch-action:manipulation}.agent-app button:disabled,.agent-sheet button:disabled{opacity:.45;cursor:not-allowed}.agent-app :is(button,input,textarea,select):focus-visible,.agent-sheet :is(button,input,textarea,select):focus-visible{outline:2px solid #a47b48;outline-offset:3px}.agent-app h1,.agent-app h2,.agent-app h3,.agent-sheet :is(h2,h3){font-family:'Songti SC',STSong,serif;letter-spacing:0}.agent-top{display:flex;align-items:center;justify-content:space-between;padding:20px 22px 15px;border-bottom:1px solid var(--a-line)}.agent-wordmark{font-size:10px;letter-spacing:.2em;color:var(--a-muted)}.agent-top h1{font-size:24px;line-height:1.3;margin:5px 0 0}.agent-icon{display:inline-flex;align-items:center;justify-content:center;flex:none;min-height:44px;min-width:44px;padding:8px;border:0;border-radius:12px;background:transparent;color:#9c7649}.agent-top>.agent-icon{background:#f1e9dc;border:1px solid #e9dcc7}.agent-page{padding:20px 20px calc(100px + env(safe-area-inset-bottom));min-width:0}.agent-chat-page{padding-bottom:calc(172px + env(safe-area-inset-bottom))}.agent-tabs{position:fixed;z-index:25;left:50%;bottom:0;transform:translateX(-50%);display:grid;grid-template-columns:repeat(3,1fr);width:min(100%,640px);height:calc(76px + env(safe-area-inset-bottom));padding:8px 16px calc(8px + env(safe-area-inset-bottom));background:#fffdf9;border-top:1px solid #e9e1d6}.agent-tabs button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-height:52px;background:none;border:0;color:#968a7c;font-size:12px}.agent-tabs button.is-active{color:#8b6134;font-weight:600}.agent-tabs button.is-active svg{background:#f1e5d4;border-radius:8px;box-shadow:0 0 0 5px #f1e5d4}.agent-primary,.agent-secondary{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:10px 18px;border:1px solid #9c7649;border-radius:11px;background:#9c7649;color:white;font-weight:500}.agent-secondary{background:#fffdf9;color:#8b6134;border-color:#dfd1bd}.agent-wide{width:100%;margin-top:12px}.agent-welcome{padding:24px 0 27px;background:linear-gradient(90deg,#faf8f4 10%,#faf8f4d9 70%,#faf8f480),url('/reference-art/shop-draft/banner.png') right top/auto 100% no-repeat;border-bottom:1px solid var(--a-line)}.agent-welcome-kicker{display:flex;align-items:center;gap:7px;font-size:11px;color:#9b805f}.agent-welcome h2{font-size:29px;line-height:1.6;font-weight:600;margin:20px 0 12px}.agent-welcome p{color:var(--a-muted);font-size:14px;line-height:1.9;margin:0 0 22px}.agent-start-actions{display:grid;gap:10px;margin:22px 0 28px}.agent-start-actions>button{display:flex;align-items:center;gap:14px;padding:15px 16px;text-align:left;background:#fffdf9;border:1px solid var(--a-line);border-radius:13px;min-height:78px;color:#987444}.agent-start-actions>button>span{flex:1;color:var(--a-ink);font-weight:600}.agent-start-actions small{display:block;font-size:12px;color:var(--a-muted);font-weight:400;margin-top:3px}.agent-section-label{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 0 13px}.agent-section-label h2{font-size:18px;margin:0}.agent-section-label>button{display:flex;align-items:center;min-height:44px;font-size:12px;color:#987444}.agent-section-label small{color:var(--a-muted);font-size:12px}.agent-recent-row{display:flex;align-items:center;gap:12px;min-height:80px;width:100%;padding:15px 0;border:0;border-bottom:1px solid var(--a-line);text-align:left;color:var(--a-ink)}.agent-recent-row>span:nth-child(2){flex:1;min-width:0}.agent-recent-row strong{display:block;font-size:15px}.agent-recent-row small{display:block;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;font-size:12px;color:var(--a-muted);margin-top:4px}.agent-avatar{display:grid;place-items:center;flex:none;width:44px;height:44px;border-radius:14px;background:#eee2ce;color:#9c7649;font:20px 'Songti SC',serif}.agent-composer{position:fixed;z-index:26;bottom:calc(76px + env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);width:min(100%,640px);display:flex;align-items:flex-end;gap:8px;padding:12px 16px;background:#faf8f4;border-top:1px solid #ece4d9}.agent-app .agent-composer textarea{flex:1;width:0;min-width:0;min-height:46px;max-height:120px;resize:none;border:1px solid #e6ddcf;border-radius:12px;background:#fffdf9;padding:11px 12px;font-size:15px;line-height:1.5;color:#46372b}.agent-composer>.agent-icon{border:1px solid #dfd1bd;border-radius:50%;margin-bottom:1px}.agent-send{display:grid;place-items:center;flex:none;width:46px;height:46px;background:#9c7649;color:white;border:0;border-radius:12px}.agent-context{display:flex;align-items:center;gap:12px;width:100%;padding:0 0 17px;border:0;border-bottom:1px solid var(--a-line);text-align:left}.agent-context>span:nth-child(2){flex:1;min-width:0}.agent-context strong{display:flex;gap:8px;align-items:center;font-size:16px}.agent-context small{display:block;margin-top:4px;font-size:12px;color:var(--a-muted)}.agent-context em{font-style:normal;font-size:10px;font-weight:400;color:#8b7d69;background:#eee8dc;padding:1px 5px;border-radius:4px}.agent-tools{display:flex;gap:7px;padding:14px 0;flex-wrap:wrap}.agent-tools>button{display:flex;align-items:center;justify-content:center;gap:6px;min-height:40px;padding:8px 10px;border:1px solid var(--a-line);border-radius:9px;background:#fffdf9;color:#8b6942;font-size:12px;flex:1}.agent-history-caption{text-align:center;color:#b1a594;font-size:11px;margin:4px 0 18px}.agent-messages{display:grid;gap:20px;overflow-wrap:anywhere}.agent-message{max-width:94%;min-width:0}.agent-message-author{display:block;font-size:11px;color:var(--a-muted);margin:0 0 6px}.agent-message>div{white-space:pre-wrap;font-size:15px;line-height:1.85}.agent-message-user{justify-self:end;text-align:left}.agent-message-user>.agent-message-author{text-align:right}.agent-message-user>div{padding:12px 15px;background:#eee3d0;border-radius:14px 4px 14px 14px}.agent-message-assistant>div{padding:0 2px}.agent-work-results{margin:24px 0 10px;padding:16px;background:#fffdf9;border:1px solid var(--a-line);border-radius:14px}.agent-result{display:flex;align-items:center;gap:12px;min-height:80px;padding:13px 0;width:100%;border:0;border-top:1px solid #f0eae0;text-align:left}.agent-result>span:nth-child(2){flex:1;min-width:0}.agent-result strong{display:block;font-size:15px}.agent-result small{display:block;font-size:12px;color:var(--a-muted);margin-top:3px}.agent-result-icon{display:grid;place-items:center;width:39px;height:42px;border-radius:10px;background:#f6efe3;color:#ad8653}.agent-page-intro{font-size:13px;color:var(--a-muted);margin:0 0 20px}.agent-search{display:flex;align-items:center;gap:9px;padding:0 12px;min-height:46px;background:#f0ece5;border:1px solid var(--a-line);border-radius:11px;color:var(--a-muted)}.agent-app .agent-search input{flex:1;min-width:0;width:100%;background:transparent;border:0;padding:0;min-height:44px;border-radius:0;font-size:15px}.agent-filter{display:flex;align-items:center;gap:8px;margin:16px 0}.agent-filter>button{border:1px solid transparent;border-radius:9px;padding:8px 13px;min-height:44px;font-size:13px;color:#958674}.agent-filter>button.is-selected{background:#f1e7d7;border-color:#d6bc95;color:#866239;font-weight:600}.agent-filter>span{margin-left:auto;font-size:11px;color:var(--a-muted)}.agent-customer-list{display:grid;gap:12px}.agent-customer-card{border:1px solid var(--a-line);border-radius:14px;background:#fffdf9;text-align:left;width:100%;padding:16px;min-width:0}.agent-customer-card>div{display:flex;align-items:center;gap:12px}.agent-customer-card>div>span:nth-child(2){flex:1;min-width:0}.agent-customer-card strong{display:block;font-size:16px}.agent-customer-card small{display:block;font-size:12px;color:var(--a-muted);margin-top:3px;overflow-wrap:anywhere}.agent-customer-card p{font-size:13px;color:#968572;margin:14px 0;line-height:1.7;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}.agent-customer-card footer{display:flex;justify-content:space-between;gap:10px;border-top:1px solid #eee7dc;padding-top:11px;font-size:11px;color:#9d8a70}.agent-empty{text-align:center;padding:38px 12px;color:#a18d70}.agent-empty :is(h2,h3){font-size:19px;margin:14px 0 8px}.agent-empty p{font-size:14px}.agent-empty button{min-height:44px;color:#9c7649}.agent-account{text-align:center;padding:24px 0 30px}.agent-account>.agent-avatar{width:64px;height:64px;font-size:28px;margin:auto}.agent-account h2{font-size:24px;margin:14px 0 4px}.agent-account p{font-size:13px;color:var(--a-muted);margin:0 0 14px}.agent-label{display:inline-block;padding:4px 9px;border-radius:6px;color:#937249;background:#f1e8d9;font-size:11px}.agent-my-list{border:1px solid var(--a-line);border-radius:14px;background:#fffdf9;overflow:hidden;margin:12px 0 24px}.agent-my-list>div,.agent-my-list>button{display:flex;width:100%;align-items:center;gap:12px;min-height:64px;border:0;border-bottom:1px solid #eee7dc;padding:14px 16px;text-align:left;color:#9c7649}.agent-my-list>:last-child{border-bottom:0}.agent-my-list span{flex:1;color:var(--a-ink);font-size:14px}.agent-my-list strong{font-size:12px;color:var(--a-muted);font-weight:400}.agent-my-list small{display:block;font-size:12px;color:var(--a-muted)}.agent-help{font-size:12px;color:#948572;line-height:1.8;margin:14px 0}.agent-error{padding:12px 14px;margin:12px 0;background:#fff0ea;color:#9c5142;font-size:13px;border-radius:9px;overflow-wrap:anywhere}.agent-error>button{display:block;min-height:44px;text-decoration:underline;color:inherit}.agent-toast{position:fixed;z-index:100;bottom:190px;left:50%;transform:translateX(-50%);max-width:85%;width:max-content;padding:11px 18px;background:#544231;color:#fffdf9;border-radius:11px;font-size:13px}.agent-storage-error{position:fixed;bottom:150px;left:20px;right:20px;z-index:101}.agent-sheet{--a-line:#e9e1d6;--a-muted:#8a7b6a;--a-ink:#46372b;position:fixed;inset:auto 0 0;margin:0 auto;border:0;border-radius:20px 20px 0 0;padding:0;background:#fffdf9;color:#46372b;width:min(100%,640px);max-width:100%;max-height:calc(100dvh - 32px);font:400 15px/1.7 -apple-system,BlinkMacSystemFont,'PingFang SC',sans-serif;overflow:hidden}.agent-sheet[open]{display:flex;flex-direction:column}.agent-sheet::backdrop{background:#3c30275c}.agent-sheet>header{flex:none;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 16px 12px 20px;border-bottom:1px solid var(--a-line)}.agent-sheet>header h2{font-size:20px;margin:0}.agent-sheet-body{padding:20px 20px calc(28px + env(safe-area-inset-bottom));overflow-y:auto;overscroll-behavior:contain;min-height:0}.agent-hint{background:#f5efe4;color:#8b7251;border:1px solid #eee2cf;border-radius:10px;padding:12px 14px;font-size:13px;line-height:1.8;margin:0 0 18px}.agent-field{display:flex;flex-direction:column;gap:7px;min-width:0;margin:0 0 16px}.agent-field>span{font-size:13px;color:#887761}.agent-sheet .agent-field :is(input:not([type=checkbox]),select,textarea){min-width:0;max-width:100%;width:100%;min-height:46px;padding:10px 12px;border:1px solid #e3d9cc;border-radius:9px;background:#fffefa;font:400 16px/1.5 -apple-system,'PingFang SC',sans-serif;color:#46372b}.agent-sheet .agent-field textarea{resize:vertical;min-height:110px}.agent-form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 12px}.agent-check{display:flex;align-items:flex-start;gap:9px;font-size:13px;line-height:1.7;margin:16px 0;cursor:pointer}.agent-sheet .agent-check input{flex:none;width:18px;height:18px;margin:3px 0 0;accent-color:#9c7649}.agent-check>span{flex:1;min-width:0}.agent-check b{display:block;font-size:14px;font-weight:500}.agent-check small{display:block;font-size:12px;color:#968572}.agent-upload{display:flex;align-items:center;justify-content:center;flex-direction:column;gap:9px;border:1px dashed #cdb28d;border-radius:12px;background:#faf6ee;padding:30px 12px;color:#a17b47;cursor:pointer;position:relative;min-height:180px}.agent-upload>span{font-size:11px;color:#a8957c}.agent-upload input{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}.agent-upload:focus-within{outline:2px solid #a47b48;outline-offset:3px}.agent-material{display:flex;align-items:center;gap:10px;padding:12px 0;border-bottom:1px solid var(--a-line);overflow-wrap:anywhere;color:#987444}.agent-material span{min-width:0;font-size:13px}.agent-material small{display:block;font-size:11px;color:#9b8a72}.agent-pillars{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin:18px 0}.agent-pillars>div{background:#f6efe4;border:1px solid #e7d7bf;border-radius:12px;text-align:center;padding:12px 4px}.agent-pillars small{display:block;font-size:11px;color:#a48b68}.agent-pillars strong{display:block;font:600 26px/1.5 'Songti SC',serif;color:#8e6738;margin-top:7px}.agent-elements{display:flex;justify-content:space-around;background:#f8f6f1;padding:12px;border-radius:9px}.agent-elements span{font-size:13px;color:#9a8a72}.agent-elements b{margin-left:8px;color:#69533b}.agent-notice-preview{border:1px solid #e0d1b7;background:#f7f0e2;padding:28px 22px;border-radius:12px;margin:18px 0}.agent-notice-preview h3{text-align:center;font-size:32px;margin:0 0 22px}.agent-notice-preview>p{text-align:center;font-family:'Songti SC',serif;font-size:20px}.agent-notice-preview>div{white-space:pre-wrap;font-family:'Songti SC',serif;line-height:2}.agent-portrait-pair{display:flex;gap:10px;justify-content:center}.agent-portrait-pair figure{flex:1;min-width:0;max-width:280px;margin:0}.agent-portrait-pair img{display:block;width:100%;max-height:420px;object-fit:contain;background:#f1ede5;border-radius:10px}.agent-portrait-pair figcaption{font-size:12px;text-align:center;color:#97856d;margin-top:7px}.agent-package-lead{padding:20px;background:#f4ecdf;border:1px solid #e5d7bf;border-radius:14px}.agent-package-lead>span{font-size:11px;color:#a28b68}.agent-package-lead h3{font-size:25px;margin:10px 0 8px}.agent-package-lead>strong{font-size:28px;color:#9c7649}.agent-package-lead small{font-size:11px;font-weight:400;color:#a18a68}.agent-package-lead p{font-size:11px;color:#9f8e76;margin:8px 0 0}.agent-subheading{font-size:18px;margin:24px 0 12px}.agent-subheading small{font-size:11px;font-weight:400;color:#a18a68}.agent-included{padding:0;list-style:none;margin:0 0 18px;display:grid;gap:10px}.agent-included li{display:flex;align-items:flex-start;gap:9px;font-size:14px}.agent-included svg{color:#8d9b79;margin-top:4px;flex:none}.agent-details{padding:13px 15px;border:1px solid #e9dfd0;border-radius:10px;color:#8e7b61;font-size:13px;margin:18px 0}.agent-details summary{cursor:pointer;min-height:32px;align-content:center}.agent-details h4{font-size:13px;margin:18px 0 8px}.agent-details p{font-size:12px;line-height:1.9;margin-bottom:10px}.agent-extra{border-bottom:1px solid var(--a-line);padding:0 0 4px}.agent-extra>.agent-field{max-width:120px;margin-left:26px}.agent-plan-total{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:16px 0;margin:12px 0;border-block:1px solid #e9e1d6}.agent-plan-total span{font-size:14px}.agent-plan-total strong{font-size:25px;color:#9c7649}.agent-script{background:#f8f4ed;border-radius:12px;padding:16px;margin:18px 0}.agent-script>span{display:flex;align-items:center;gap:7px;color:#9c7649;font-size:13px;font-weight:600}.agent-script>p{font-size:14px;line-height:1.95;margin:12px 0}.agent-script button{display:flex;align-items:center;justify-content:center;gap:8px;min-height:44px;width:100%;border:1px solid #dfccb0;border-radius:9px;background:#fffdf9;color:#9c7649;font-size:13px}.agent-profile-overview{text-align:center;padding:8px 0 16px}.agent-profile-overview>.agent-avatar{margin:auto}.agent-profile-overview h3{font-size:22px;margin:12px 0 4px}.agent-profile-overview p{font-size:13px;color:#9b896f}.agent-app svg,.agent-sheet svg{flex-shrink:0}@media(min-width:700px){.agent-frame{box-shadow:0 0 50px #6953310b}.agent-sheet{inset:30px 0;margin:auto;max-height:calc(100dvh - 60px);height:fit-content;border-radius:18px}.agent-page{padding-inline:28px}.agent-top{padding-inline:28px}.agent-welcome h2{font-size:34px}}@media(max-width:359px){.agent-page{padding-inline:14px}.agent-top{padding-inline:16px}.agent-tools{gap:5px}.agent-tools>button{padding-inline:7px;font-size:11px}.agent-form-grid{gap:0 8px}.agent-sheet-body{padding-inline:16px}.agent-welcome h2{font-size:26px}.agent-pillars strong{font-size:23px}}@media(prefers-reduced-motion:reduce){.agent-app *,.agent-sheet *{scroll-behavior:auto!important;transition:none!important}}
+.agent-home-greeting{padding:8px 0 24px}.agent-home-greeting>span{font-size:11px;letter-spacing:.1em;color:#a58a65}.agent-home-greeting h2{font:600 29px/1.6 'Songti SC',serif;margin:14px 0 8px;color:#58432e}.agent-home-greeting p{font-size:13px;color:#9b896f;margin:0}.agent-home-tools{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:0 0 28px}.agent-home-tools>button{display:block;position:relative;min-width:0;text-align:left;padding:20px 18px;background:#f8f2e8;border:1px solid #e9ddcb;border-radius:15px;color:#a58351}.agent-home-tools>button>strong{display:block;font:600 19px/1.5 'Songti SC',serif;color:#5b432e;margin-top:12px}.agent-home-tools>button>p{font-size:12px;color:#9e8a6c;margin:7px 0 0;line-height:1.8}.agent-home-tools>button>svg:last-child{position:absolute;right:14px;top:22px}.agent-home-tools>.agent-home-ai{grid-column:1/-1;min-height:172px;background:linear-gradient(90deg,#f3e8d6 18%,#f3e8d6cc 62%,#f3e8d622),url('/reference-art/restoration-draft/lily-banner-crop.png') right center/auto 100% no-repeat;padding:22px 22px 20px 78px}.agent-home-ai .agent-home-tool-icon{position:absolute;left:22px;top:25px;display:grid;place-items:center;width:40px;height:40px;border-radius:13px;background:#e6d2b2;color:#98703b}.agent-home-tools>.agent-home-ai>strong{margin:0;font-size:23px}.agent-home-tools>.agent-home-ai>p{color:#8d7350}.agent-home-enter{display:flex;align-items:center;gap:8px;font-size:12px;margin-top:14px;color:#8c602c}.agent-welcome{background:linear-gradient(90deg,#faf8f4 10%,#faf8f4d9 70%,#faf8f480),url('/reference-art/restoration-draft/lily-banner-crop.png') right top/auto 100% no-repeat}
+.agent-detail-back{display:flex;align-items:center;gap:6px;min-height:44px;color:#9c7649;padding:0;margin-bottom:12px}.agent-detail-heading{display:flex;align-items:center;gap:12px;margin:4px 0 20px}.agent-detail-heading h2{font-size:21px;margin:0 0 6px}.agent-detail-heading p{font-size:12px;color:#9a896f;margin:0}.agent-detail-facts{display:grid;grid-template-columns:1fr 1fr;gap:20px 12px;padding:20px 16px;background:#f3ede3;border-radius:12px;margin:18px 0}.agent-detail-facts small{display:block;color:#a18b6a;font-size:11px;margin-bottom:6px}.agent-detail-facts strong{display:block;font-size:14px;font-weight:500}.agent-detail-history{padding:16px;border:1px solid #e9e1d6;border-radius:12px;background:#fffdf9}.agent-detail-history p{font-size:13px;color:#97856c;line-height:1.8;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;margin:0}
+.agent-home-greeting h2{font-size:24px;margin:12px 0 8px}.agent-home-greeting{padding:4px 0 22px}.agent-included .agent-check{margin:0;min-height:32px}.agent-message-script{margin:12px 0 0;padding:10px 12px;border:1px solid #e6dac8;background:#f7f2e9;border-radius:9px;font-size:13px;color:#886c48}.agent-message-script summary{cursor:pointer;min-height:28px;align-content:center}.agent-message-script p{font-size:14px;color:#69533c;line-height:1.9;margin:10px 0 2px}
+.agent-directory-count{font-size:12px;color:#9a896f;margin:16px 0 12px}.agent-detail-heading>div{flex:1;min-width:0}.agent-contact-link{display:flex;align-items:center;justify-content:center;min-height:44px;padding:6px 10px;border:1px solid #dfd0ba;border-radius:9px;font-size:12px;color:#946f42;white-space:nowrap}.agent-detail-phone{color:#94836c;font-size:13px;margin:-14px 0 22px 58px}.agent-detail-person{padding:18px;border:1px solid #e7dccb;border-radius:14px;background:#f4eee3;margin:18px 0 16px}.agent-detail-person h3{font-size:23px;margin:0 0 8px}.agent-detail-person>p{font-size:13px;color:#938067;margin:0}.agent-arrangement{display:flex;flex-direction:column;gap:5px;border-top:1px solid #e4d7c2;margin-top:18px;padding-top:14px}.agent-arrangement small{font-size:11px;color:#a08a68}.agent-arrangement strong{font-size:16px;font-weight:500}.agent-arrangement span{font-size:13px;color:#9b8768}.agent-detail-edit{display:flex;align-items:center;justify-content:space-between;min-height:44px;width:100%;padding:12px 0 0;margin-top:12px;border-top:1px solid #e4d7c2;font-size:12px;color:#9c7649}.agent-deliverables>.agent-section-label h2{font-size:18px}.agent-deliverables .agent-my-list{margin-top:0}.agent-deliverables button:disabled{opacity:1;color:#baad9b;cursor:default}.agent-deliverables button:disabled span{color:#9b8f7d}.agent-deliverables button:disabled small{color:#b0a38f}
+
+.agent-customer-portrait{margin:14px 0 16px;width:110px;text-align:center}.agent-customer-portrait img,.agent-customer-portrait>span{display:flex;align-items:center;justify-content:center;width:110px;height:140px;object-fit:contain;background:#e9e2d6;border-radius:8px;color:#a99a83}.agent-customer-portrait figcaption{font-size:10px;line-height:1.5;color:#97856c;margin-top:5px}.agent-customer-portrait.is-compact{flex:0 0 48px;width:48px;margin:0}.agent-customer-portrait.is-compact img,.agent-customer-portrait.is-compact>span{width:48px;height:60px;border-radius:5px}.agent-customer-portrait.is-compact figcaption{font-size:9px;margin-top:3px}
+
+.agent-person-summary{display:flex;align-items:center;gap:18px;margin-top:16px}.agent-person-summary .agent-customer-portrait{margin:0;flex:0 0 86px;width:86px}.agent-person-summary .agent-customer-portrait img,.agent-person-summary .agent-customer-portrait>span{width:86px;height:108px}.agent-person-information{flex:1;min-width:0}.agent-person-information p{font-size:13px;color:#78674f;line-height:1.7;margin:0}.agent-person-information .agent-field{margin:0}.agent-detail-heading p{line-height:1.7;overflow-wrap:anywhere}.agent-detail-action{margin:0 0 26px}.agent-detail-action .agent-primary{margin:0;min-height:48px}.agent-deliverables .agent-section-label{margin-bottom:6px}.agent-detail-history{margin-top:20px}.agent-detail-person .agent-section-label{margin:0}.agent-detail-history .agent-section-label small{font-size:11px}
+
+.agent-recognition{padding:14px;background:#f4eee3;border-radius:12px;margin-bottom:18px}.agent-recognition h3{font-size:16px;margin:0 0 8px}.agent-recognition>p{font-size:12px;line-height:1.7;color:#78674f}.agent-recognition-row{display:flex;align-items:center;justify-content:space-between;gap:12px;border-top:1px solid #e3d7c5;padding:12px 0}.agent-recognition-row>div{min-width:0;overflow-wrap:anywhere}.agent-recognition-row small,.agent-recognition-row strong,.agent-recognition-row em{display:block}.agent-recognition-row small{font-size:11px;color:#8d7b62}.agent-recognition-row strong{font-size:15px;margin:5px 0}.agent-recognition-row em{font-size:11px;color:#9a5a3c;font-style:normal}.agent-recognition-row button{flex-shrink:0;min-height:44px}
+
+
+
+.agent-shared-banner{position:relative;z-index:20;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:8px;padding:8px 12px;background:#efe6d6;color:#6f5737;font-size:11px}.agent-shared-banner button{border:0;background:transparent;color:inherit;min-height:36px;text-decoration:underline}.agent-shared-error{padding:12px 20px;background:#fff1e7;color:#8c4828;font-size:12px;line-height:1.7}.agent-shared-error button{display:block;min-height:44px;border:0;background:transparent;color:inherit;text-decoration:underline}.agent-shared-login{max-width:440px;margin:auto;padding-top:40px}
+
+
+
+/* Approved GPT UI boards, 2026-10-22. Home intentionally retains its current design. */
+.agent-refined{--a-ink:#392b21;--a-muted:#82796e;--a-brand:#b38a50;--a-line:#ebe4db;--a-surface:#fffefd;--a-soft:#f7f2e9}
+.agent-app.agent-refined{background:#faf8f4;color:var(--a-ink);font-size:15px}
+.agent-refined .agent-frame{background:#faf8f4}
+.agent-app.agent-refined .agent-top{position:relative;height:var(--agent-top-height,70px);min-height:var(--agent-top-height,70px);padding:12px 58px;justify-content:center;border:0;text-align:center}
+.agent-app.agent-refined .agent-wordmark{display:none}
+.agent-app.agent-refined .agent-top h1{font:600 25px/1.5 'Songti SC',STSong,serif;margin:0}
+.agent-refined .agent-top>.agent-icon{position:absolute;right:20px;top:22px;display:flex;gap:5px;min-height:36px;min-width:36px;padding:7px 9px;background:#f4ecdf;border:0;border-radius:20px;color:#936b38}
+.agent-refined .agent-top>.agent-icon span{font-size:11px}
+.agent-refined .agent-page{padding:8px 18px 104px}
+.agent-refined .agent-chat-page{padding-bottom:178px}
+.agent-refined .agent-primary,.agent-refined .agent-send{background:#b38a50;border-color:#b38a50;color:#fff;font-weight:500}
+.agent-refined .agent-primary,.agent-refined .agent-secondary{min-height:48px;border-radius:12px;font-size:15px;padding:12px 16px}
+.agent-refined .agent-secondary{background:#fffefd;border-color:#d7be9a;color:#926b3c}
+.agent-refined .agent-primary:hover{background:#a27b45}
+.agent-refined .agent-primary:disabled{background:#c9b38f;border-color:#c9b38f;opacity:.65}
+.agent-refined .agent-avatar{border-radius:50%;background:#f1e8d9;color:#aa814a}
+.agent-refined .agent-search{background:#fffefd;border:1px solid var(--a-line);min-height:48px;border-radius:12px;padding:0 14px;color:#8f8a81}
+.agent-refined .agent-search input{background:transparent!important;box-shadow:none!important;border:0!important;font-size:14px!important;color:#392b21}
+.agent-refined .agent-context{padding:15px;border:1px solid var(--a-line);border-radius:14px;background:#fffefd;gap:12px}
+.agent-refined .agent-context strong{font:600 18px/1.5 'Songti SC',serif;gap:6px}
+.agent-refined .agent-context small{font-size:12px;color:var(--a-muted);margin:0 0 3px}
+.agent-refined .agent-context small:last-child{margin:3px 0 0}
+.agent-refined .agent-context em{background:#f7efdf;color:#9b753d;font:11px/1.5 'PingFang SC',sans-serif;padding:2px 5px}
+.agent-refined .agent-tools{padding:0;gap:1px;margin:14px 0;background:#f8f5ef;border:7px solid #fffefd;border-radius:14px}
+.agent-refined .agent-tools>button{flex-direction:column;gap:5px;padding:13px 3px;min-height:94px;border:0;background:#faf6ee;border-radius:8px;color:#a47a43;min-width:0}
+.agent-refined .agent-tools strong{font-size:14px;font-weight:500;color:#3d3025}
+.agent-refined .agent-tools small{font-size:11px;color:#8e8579;line-height:1.5}
+.agent-refined .agent-history-caption{font-size:11px;color:#999086;margin:14px 0}
+.agent-refined .agent-messages{gap:18px}
+.agent-refined .agent-message{max-width:95%;width:fit-content}
+.agent-refined .agent-message-author{font-size:11px;margin:0 0 5px;color:#9d8b73}
+.agent-refined .agent-message>div{font-size:15px;line-height:1.85;padding:13px 15px;border-radius:13px;background:#fffefd;border:1px solid #f1ebe2;box-shadow:0 3px 10px #55422e04}
+.agent-refined .agent-message-user>div{background:#f1e8d8;border-color:#eee1cc;border-top-right-radius:4px}
+.agent-refined .agent-message-script{padding:12px 14px;background:#fffefd;border:1px solid var(--a-line);border-radius:12px}
+.agent-refined .agent-message-script summary{min-height:34px;font-size:14px;color:#926b3c}
+.agent-refined .agent-work-results{padding:15px;margin-top:20px;background:#fffefd;border:1px solid var(--a-line)}
+.agent-refined .agent-result{min-height:68px;padding:12px 0;gap:10px}
+.agent-refined .agent-result-icon{width:32px;height:40px;background:transparent;color:#aa8049}
+.agent-refined .agent-result strong{font-size:15px;font-weight:500}
+.agent-refined .agent-result small{font-size:12px;color:#8b8378}
+.agent-refined .agent-composer{padding:12px 16px;background:#fffdf9;border-top:1px solid var(--a-line)}
+.agent-refined .agent-composer textarea{background:#fffefd;font-size:14px;border-color:#e5dbce;border-radius:24px;padding-inline:15px}
+.agent-refined .agent-send{border-radius:50%}
+.agent-refined .agent-tabs{background:#fffefd;border-top:1px solid var(--a-line);height:calc(70px + env(safe-area-inset-bottom));padding:5px 16px calc(5px + env(safe-area-inset-bottom))}
+.agent-refined .agent-tabs button{color:#898983;font-size:12px;gap:3px}
+.agent-refined .agent-tabs button.is-active{color:#ad8147}
+.agent-refined .agent-tabs button.is-active svg{box-shadow:none;background:none;border-radius:0;stroke-width:2.1}
+.agent-refined .agent-page-intro{font-size:13px;color:#908579;text-align:center;margin-bottom:20px}
+.agent-refined .agent-customer-card{padding:16px;background:#fffefd;border:1px solid var(--a-line);box-shadow:0 4px 16px #6b503008}
+.agent-refined .agent-customer-card strong{font:600 18px/1.6 'Songti SC',serif}
+.agent-refined .agent-customer-card small{font-size:13px;color:#7f7c75}
+.agent-refined .agent-customer-card p{color:#7f7b74;font-size:14px;line-height:1.8;margin:12px 0}
+.agent-refined .agent-customer-card footer{font-size:12px;color:#9b7b4f;border-top:1px solid #f1ebe1;padding-top:10px}
+.agent-refined .agent-customer-portrait.is-compact{width:54px;flex-basis:54px}
+.agent-refined .agent-customer-portrait.is-compact img,.agent-refined .agent-customer-portrait.is-compact>span{width:54px;height:65px}
+.agent-refined .agent-detail-heading{background:#fffefd;padding:16px;border:1px solid var(--a-line);border-radius:13px;margin:0 0 14px}
+.agent-refined .agent-detail-heading h2{font:600 22px/1.5 'Songti SC',serif;margin:0 0 4px}
+.agent-refined .agent-detail-heading p{font-size:13px;color:#8f8374}
+.agent-refined .agent-detail-person{background:#fffefd;padding:16px;border:1px solid var(--a-line);margin:0 0 16px}
+.agent-refined .agent-detail-person .agent-section-label{font-size:14px}
+.agent-refined .agent-detail-person h3{font-size:22px}
+.agent-refined .agent-arrangement{background:#f8f3eb;padding:14px;border:0;border-radius:10px;margin-top:16px}
+.agent-refined .agent-detail-edit{border-color:var(--a-line);font-size:13px;padding-top:12px}
+.agent-refined .agent-deliverables .agent-my-list{margin-bottom:16px}
+.agent-refined .agent-my-list{border:1px solid var(--a-line);background:#fffefd;border-radius:13px;margin:16px 0}
+.agent-refined .agent-my-list>button,.agent-refined .agent-my-list>div{min-height:68px;padding:15px;gap:12px;border-color:#f0e9df}
+.agent-refined .agent-my-list svg{width:23px;height:23px;color:#a77e46}
+.agent-refined .agent-my-list span{font-size:15px}
+.agent-refined .agent-my-list small{font-size:12px;color:#888176;margin-top:3px}
+.agent-refined .agent-detail-history{background:#fffefd;border:1px solid var(--a-line);padding:16px}
+.agent-refined .agent-detail-history p{font-size:14px;color:#847c71}
+.agent-refined .agent-account{display:grid;grid-template-columns:62px minmax(0,1fr);column-gap:15px;align-items:center;text-align:left;padding:20px;border:1px solid var(--a-line);border-radius:14px;background:#fffefd;margin:4px 0 24px}
+.agent-refined .agent-account>.agent-avatar{grid-row:1/4;width:62px;height:62px;margin:0;font-size:30px;background:#c6a46b;color:#fff}
+.agent-refined .agent-account h2{font:600 24px/1.5 'Songti SC',serif;margin:0}
+.agent-refined .agent-account p{font-size:14px;margin:4px 0 6px}
+.agent-refined .agent-label{width:fit-content;font-size:12px;background:#faf0dc;color:#9b743c;padding:3px 8px}
+.agent-refined .agent-help{color:#8b8173;font-size:12px;line-height:1.85}
+/* Task sheets follow the form-page references, with independent scrolling. */
+.agent-sheet.agent-refined{background:#faf8f4;border-radius:16px 16px 0 0;max-height:calc(100dvh - 12px);color:#392b21}
+.agent-sheet.agent-refined>header{min-height:72px;padding:14px 18px;border:0;background:#faf8f4;position:relative;justify-content:center;text-align:center}
+.agent-sheet.agent-refined>header h2{font:600 23px/1.5 'Songti SC',serif}
+.agent-sheet.agent-refined>header>.agent-icon{position:absolute;right:12px;top:14px;background:none;color:#947548}
+.agent-sheet.agent-refined .agent-sheet-body{padding:6px 16px calc(22px + env(safe-area-inset-bottom))}
+.agent-refined .agent-form-section{background:#fffefd;border:1px solid var(--a-line);border-radius:13px;padding:17px 15px;margin:0 0 16px}
+.agent-refined .agent-form-section>h3{display:flex;gap:9px;align-items:center;font:600 19px/1.5 'Songti SC',serif;margin:0 0 17px;color:#4b3422}
+.agent-refined .agent-form-section>h3 svg{color:#aa814b}
+.agent-refined .agent-hint{background:#f7f1e6;border:0;color:#8b7352;font-size:12px;line-height:1.8;margin-bottom:16px;padding:12px 14px;border-radius:10px}
+.agent-refined .agent-field{margin-bottom:14px;gap:6px}
+.agent-refined .agent-field>span{font-size:13px;color:#817a70}
+.agent-sheet.agent-refined .agent-field :is(input:not([type=checkbox]),select,textarea){min-height:46px;background:#fffefd;border:1px solid #e6e0d7;border-radius:8px;font-size:15px;color:#392b21;padding:9px 11px}
+.agent-refined .agent-form-grid{gap:0 12px}
+.agent-refined .agent-form-footer{background:#faf8f4;padding:0 2px 4px}
+.agent-refined .agent-form-footer .agent-check{padding:12px;background:#f7f1e6;border-radius:9px;font-size:13px;margin:0 0 10px}
+.agent-refined .agent-form-footer .agent-wide{margin:0}
+.agent-refined .agent-pillars{margin:0 0 17px;gap:6px}
+.agent-refined .agent-pillars>div{border:0;border-radius:8px;background:#f8f3ea;padding:12px 3px}
+.agent-refined .agent-pillars small{color:#8e8578;font-size:12px}
+.agent-refined .agent-pillars strong{font:600 27px/1.6 'Songti SC',serif;color:#6a4729;margin-top:8px}
+.agent-refined .agent-elements{padding:12px 7px;background:#faf8f3;gap:5px}
+.agent-refined .agent-elements span{font-size:13px;color:#7d7468;white-space:nowrap}
+.agent-refined .agent-elements b{margin-left:5px}
+.agent-refined .agent-filter{padding:5px;gap:5px;background:#fffefd;border:1px solid var(--a-line);border-radius:12px;margin:0 0 18px}
+.agent-refined .agent-filter>button{flex:1;border:0;border-radius:8px;font-size:14px;color:#392b21;background:transparent}
+.agent-refined .agent-filter>button.is-selected{background:#b38a50;color:#fff}
+.agent-refined .agent-upload{background:#fffefd;border:1px dashed #d5bd9a;border-radius:12px;min-height:240px;padding:28px 16px}
+.agent-refined .agent-upload strong{font-size:18px;color:#65492f}
+.agent-refined .agent-upload>svg{width:42px;height:42px}
+.agent-refined .agent-upload>span{font-size:12px;color:#928a7d}
+.agent-refined .agent-upload-actions{display:flex;gap:10px;margin:12px 0 16px}
+.agent-refined .agent-upload-actions>button{flex:1;font-size:14px;padding-inline:8px}
+.agent-refined .agent-material{background:#fffefd;border:1px solid var(--a-line);border-radius:11px;margin:12px 0;padding:15px;gap:12px}
+.agent-refined .agent-material>svg{width:30px;height:36px}
+.agent-refined .agent-material span{font-size:15px;font-weight:500;color:#392b21}
+.agent-refined .agent-material small{font-size:12px;color:#968671;font-weight:400;margin-top:5px}
+.agent-refined .agent-profile-overview{display:flex;align-items:center;gap:15px;text-align:left;padding:17px;background:#fffefd;border:1px solid var(--a-line);border-radius:13px;margin-bottom:16px}
+.agent-refined .agent-profile-overview>.agent-avatar{margin:0;width:48px;height:48px}
+.agent-refined .agent-profile-overview h3{font:600 21px/1.5 'Songti SC',serif;margin:3px 0}
+.agent-refined .agent-profile-overview :is(p,small){font-size:13px;color:#91836f;margin:0}
+.agent-refined .agent-task-subject{display:flex;align-items:center;gap:12px;background:#fffefd;border:1px solid var(--a-line);border-radius:12px;padding:14px 16px;margin:0 0 16px;color:#9d7845}
+.agent-refined .agent-task-subject span{font-size:15px;color:#392b21}
+.agent-refined .agent-task-subject small{display:block;font-size:12px;color:#93816a;margin-top:4px}
+.agent-refined .agent-recent-row{padding:17px 12px;border-bottom:1px solid #efe7dc;background:#fffefd}
+.agent-refined .agent-recent-row strong{font:600 18px/1.5 'Songti SC',serif}
+.agent-refined .agent-recent-row small{font-size:13px;color:#888176;margin-top:6px}
+.agent-refined .agent-sheet-body>.agent-search{margin-bottom:14px}
+.agent-refined .agent-sheet-body>.agent-recent-row:first-of-type{border-radius:12px 12px 0 0}
+/* One model, three local views. */
+.agent-refined .agent-step-tabs{display:flex;align-items:center;gap:4px;margin:0 0 18px;padding:5px;background:#f2eadc;border-radius:10px}
+.agent-refined .agent-step-tabs>button{display:flex;align-items:center;justify-content:center;gap:5px;flex:1;min-height:44px;border:0;border-radius:7px;background:transparent;color:#94836c;font-size:12px;white-space:nowrap}
+.agent-refined .agent-step-tabs>button>span{display:grid;place-items:center;width:20px;height:20px;border:1px solid #d9c5a5;border-radius:50%;font-size:11px}
+.agent-refined .agent-step-tabs>button.is-active{background:#fffefd;color:#8f652f;font-weight:600}
+.agent-refined .agent-package-stage[hidden]{display:none!important}
+.agent-refined .agent-package-lead{padding:20px;background:#fffefd;border-color:var(--a-line)}
+.agent-refined .agent-package-lead h3{font:600 26px/1.5 'Songti SC',serif}
+.agent-refined .agent-package-lead>strong{color:#9f702f;font-size:30px}
+.agent-refined .agent-subheading{font:600 19px/1.5 'Songti SC',serif;margin:20px 0 12px}
+.agent-refined .agent-included{background:#fffefd;border:1px solid var(--a-line);border-radius:12px;padding:4px 14px;gap:0}
+.agent-refined .agent-included li{border-bottom:1px solid #f1ece4;padding:12px 0}
+.agent-refined .agent-included li:last-child{border:0}
+.agent-refined .agent-included .agent-check{font-size:14px;min-height:30px;align-items:center;gap:12px}
+.agent-refined .agent-extra{background:#fffefd;padding:14px;margin:0;border:1px solid var(--a-line);border-bottom:0}
+.agent-refined .agent-extra:nth-of-type(1){border-radius:12px 12px 0 0}
+.agent-refined .agent-extra .agent-check{align-items:center;margin:0;min-height:48px}
+.agent-refined .agent-extra .agent-check b{font-size:15px;font-weight:500}
+.agent-refined .agent-extra .agent-check small{font-size:13px;color:#9b733c;margin-top:5px}
+.agent-refined .agent-extra>.agent-field{margin:8px 0 0 28px;max-width:150px}
+.agent-refined .agent-extra:last-of-type{border-bottom:1px solid var(--a-line);border-radius:0 0 12px 12px;margin-bottom:18px}
+.agent-refined .agent-plan-total{border:1px solid var(--a-line);background:#fffefd;border-radius:12px;padding:18px 14px}
+.agent-refined .agent-plan-total strong{color:#956321;font-size:28px}
+.agent-refined .agent-confirm-summary{background:#fffefd;border:1px solid var(--a-line);padding:17px;border-radius:13px}
+.agent-refined .agent-confirm-summary>div{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.agent-refined .agent-confirm-summary h3{font:600 21px/1.5 'Songti SC',serif;margin:0 0 10px}
+.agent-refined .agent-confirm-summary p{display:flex;justify-content:space-between;gap:12px;padding:14px 0;margin:0;border-bottom:1px solid #f0e8dc;font-size:15px}
+.agent-refined .agent-confirm-summary p strong{white-space:nowrap;color:#9b6b2e;font-size:18px}
+.agent-refined .agent-confirm-summary>small{display:block;margin:14px 0 0;font-size:12px;color:#92794f}
+.agent-refined .agent-script{background:#fffefd;border:1px solid var(--a-line);padding:17px}
+.agent-refined .agent-script>span{font:600 18px/1.5 'Songti SC',serif;color:#493322}
+.agent-refined .agent-script>p{padding:14px;background:#faf5ec;font-size:14px;line-height:1.85;border-radius:9px}
+.agent-refined .agent-script button{font-size:14px;min-height:46px}
+.agent-refined .agent-package-navigation{position:sticky;bottom:-22px;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:14px 0 calc(12px + env(safe-area-inset-bottom));margin-top:16px;background:#faf8f4;border-top:1px solid #eee5d7}
+.agent-refined .agent-package-navigation>span{font-size:11px;color:#86745c;display:flex;flex-direction:column}
+.agent-refined .agent-package-navigation>span strong{font-size:20px;color:#94652a;line-height:1.5}
+.agent-refined .agent-package-navigation button{font-size:13px;padding:10px 12px;min-height:44px}
+@media(min-width:700px){.agent-sheet.agent-refined{inset:20px 0;max-height:calc(100dvh - 40px);border-radius:16px}.agent-app.agent-refined .agent-page{padding-inline:24px}}
+@media(max-width:359px){.agent-refined .agent-page{padding-inline:12px}.agent-refined .agent-tools small{font-size:10px}.agent-refined .agent-top>.agent-icon span{display:none}.agent-refined .agent-form-grid{grid-template-columns:minmax(0,1fr)}.agent-refined .agent-form-section{padding:14px 12px}.agent-refined .agent-step-tabs>button{font-size:11px}.agent-refined .agent-step-tabs>button>span{display:none}}
+/* Service modules reuse the business components inside the agent design system. */
+.geyou-app.quality-app.agent-service-shell.agent-refined{display:block;min-height:100dvh;background:#faf8f4;color:#392b21;font:15px/1.7 -apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;--ink:#392b21;--muted:#82796e;--green:#b38a50;--line:#ebe4db;--paper:#fffefd}
+.agent-service-shell .agent-service-frame{width:100%;max-width:640px;margin:auto}
+.geyou-app.quality-app.agent-service-shell.agent-refined>.agent-service-frame>.main-content{margin:0!important;padding:18px 18px 36px!important;width:100%!important;max-width:none!important;min-width:0!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined.agent-service-list>.agent-service-frame>.main-content{padding-bottom:100px!important}
+.agent-service-shell.agent-refined .agent-detail-back{display:inline-flex;align-items:center;gap:6px;min-height:44px;margin:0 0 8px;padding:0;border:0;background:transparent;color:#8d7352;font-size:13px}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content :is(.ct-page,.memorial-panel.restoration-list-page,.restoration-picker-page,.restoration-ref-detail){padding:0!important;max-width:100%!important;background:transparent!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .app-page-header{position:relative;top:auto;display:flex;align-items:center;gap:10px;min-height:64px;margin:0 0 20px!important;padding:0!important;background:none!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .app-page-header h1{font:600 25px/1.4 'Songti SC','STSong',serif!important;letter-spacing:0!important;color:#392b21!important;margin:0!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .app-page-header p{font:13px/1.65 'PingFang SC',sans-serif!important;color:#8d8376!important;margin:6px 0 0!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .app-back{width:36px;min-width:36px;height:44px;min-height:44px;margin:0!important;border:0;background:none;display:flex;align-items:center;justify-content:center;color:#866d4c}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:46px;height:auto;border-radius:10px!important;font-size:14px!important;line-height:1.5!important;padding:10px 14px!important;box-shadow:none!important;white-space:normal}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .btn-primary{background:#b38a50!important;border:1px solid #b38a50!important;color:#fff!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .btn-outline{background:#fffefd!important;border:1px solid #d6bc94!important;color:#9b713c!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content :is(.notice-ref-banner,.restoration-list-banner,.restoration-create-hero){display:none!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .ct-list{display:block!important;margin:0!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .content-list-tools{margin:0 0 18px!important;padding:0!important;display:block!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content :is(.search,.restoration-list-search){display:flex!important;align-items:center;gap:9px;min-height:48px;width:100%;padding:0 13px!important;border:1px solid #e7dfd4!important;border-radius:12px!important;background:#fffefd!important;box-shadow:none!important;margin:0!important;color:#8d8b83}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content :is(.search,.restoration-list-search) input{width:100%;min-width:0;min-height:46px;border:0!important;border-radius:0!important;padding:0!important;background:transparent!important;box-shadow:none!important;font:14px/1.6 'PingFang SC',sans-serif!important;color:#392b21}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content :is(.search,.restoration-list-search) svg{flex:none;width:20px;height:20px}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content :is(.content-filters,.restoration-list-filters){display:flex!important;gap:6px!important;margin:14px 0 18px!important;padding:0!important;background:none!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content :is(.content-filters,.restoration-list-filters) button{flex:1;min-width:0;min-height:44px;padding:8px 4px!important;border:0!important;border-radius:9px!important;background:#f4efe7!important;color:#806f57!important;font:14px/1.5 'PingFang SC',sans-serif!important;box-shadow:none!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content :is(.content-filters,.restoration-list-filters) button.active{background:#b38a50!important;color:#fff!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content :is(.notice-record-list,.restoration-list){display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:14px!important;margin:0!important;align-content:start}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content :is(.notice-record-link,.restoration-list-card-link){display:flex!important;flex-direction:row!important;align-items:center!important;gap:14px!important;min-height:138px!important;height:auto!important;width:100%!important;min-width:0!important;margin:0!important;padding:15px!important;border:1px solid #ebe4db!important;border-radius:13px!important;background:#fffefd!important;box-shadow:0 3px 14px #6b503005!important;text-decoration:none}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content :is(.notice-record-link>.notice-cover,.restoration-list-card-link>.waterfall-preview-link){display:flex!important;align-items:center!important;justify-content:center!important;position:relative!important;flex:0 0 77px!important;width:77px!important;min-width:77px!important;max-width:77px!important;height:103px!important;min-height:103px!important;max-height:103px!important;grid-area:auto!important;grid-row:auto!important;margin:0!important;padding:0!important;border:0!important;overflow:hidden!important;border-radius:7px!important;background:#f4eee3!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content :is(.notice-record-link>.notice-cover,.restoration-list-card-link>.waterfall-preview-link):after{display:none!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content :is(.notice-record-link>.notice-cover,.restoration-list-card-link>.waterfall-preview-link)>img{display:block!important;width:100%!important;height:100%!important;min-height:0!important;margin:0!important;position:static!important;object-fit:contain!important;max-height:none!important;border-radius:5px!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content :is(.notice-card-copy,.restoration-list-copy){display:block!important;flex:1 1 0!important;min-width:0!important;padding:0!important;margin:0!important;width:auto!important;grid-area:auto!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content :is(.notice-card-copy h2,.restoration-list-copy strong,.waterfall-title-link){font:600 18px/1.55 'Songti SC',STSong,serif!important;color:#392b21!important;margin:0!important;overflow-wrap:anywhere;white-space:normal!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content :is(.record-heading,.restoration-list-heading){display:flex!important;flex-wrap:wrap;align-items:center!important;gap:7px!important;margin:0 0 8px!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content :is(.notice-card-copy p,.restoration-list-copy>span,.restoration-list-copy time){display:flex!important;align-items:flex-start!important;gap:5px!important;font:13px/1.75 'PingFang SC',sans-serif!important;color:#888073!important;margin:5px 0 0!important;overflow-wrap:anywhere}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-card-copy p>svg{flex:none;margin-top:3px}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .restoration-list-card-link>.restoration-status{display:none!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content :is(.tag,.restoration-status-inline,.portrait-page-status){display:inline-flex;align-items:center;gap:4px;min-height:24px;padding:3px 7px!important;background:#fcf1dd;color:#a57435;border:0!important;border-radius:6px!important;font:11px/1.5 'PingFang SC',sans-serif!important;white-space:nowrap;box-shadow:none!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content :is(.tag-green,.restoration-status-inline.complete,.portrait-page-status[data-adopted=true]){background:#edf3e6!important;color:#587445!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .restoration-status-inline.failed{background:#fff0e8!important;color:#a65836!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .restoration-status-inline.processing{background:#edf3f6!important;color:#537994!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .restoration-status-inline svg{width:13px;height:13px}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .restoration-list-note{font-size:12px!important;grid-area:auto!important;margin:5px 0 0;flex-basis:100%}
+/* Internal document detail: document hero followed by operational facts. */
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-detail-body{display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:16px!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-detail-body>section{margin:0!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content :is(.notice-ref-hero,.notice-ref-info-card,.portrait-detail-card,.service-business-panel,.restoration-create-upload,.restoration-create-link,.restoration-create-notes,.restoration-create-explain){border:1px solid #ebe4db!important;border-radius:13px!important;background:#fffefd!important;box-shadow:none!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-hero{display:flex!important;flex-direction:column!important;align-items:center;gap:12px!important;min-height:0!important;padding:30px 22px!important;background:#fbf7ed url('/reference-art/notice-draft/lily-corner.png') right top/160px auto no-repeat!important;isolation:isolate}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content :is(.notice-ref-hero:before,.notice-ref-hero:after,.notice-ref-hero-art,.notice-ref-title-block p){display:none!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-title-block>strong{font:600 33px/1.5 'Songti SC',serif!important;color:#59391d!important;letter-spacing:.2em!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-title-block>i{width:46px;background:#bca079;margin:8px auto}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-title-block>i:after{display:none}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-name h2{font:600 25px/1.5 'Songti SC',serif!important;color:#392b21!important;margin:0 0 4px!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-name span{font-size:13px;color:#85735c}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-copy{font:15px/2 'Songti SC',serif!important;text-align:left!important;color:#5a4430!important;margin:8px 0 0!important;width:100%}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-portrait{width:98px!important;height:124px!important;object-fit:contain!important;background:#fff;border:3px solid #fff;border-radius:5px;box-shadow:none!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-info-card{padding:18px 15px!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-info-card>h2{font:600 20px/1.5 'Songti SC',serif!important;margin:0 0 12px!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-info-row{grid-template-columns:18px 68px minmax(0,1fr)!important;gap:8px!important;padding:12px 0!important;border-color:#f1e9dc!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-info-row :is(span,strong){font:14px/1.7 'PingFang SC',sans-serif!important;overflow-wrap:anywhere}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-info-row>svg{width:18px;height:22px;color:#a17a43}
+/* Notice editor overrides older compressed desktop styles at their source boundary. */
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-editor.notice-ref-editor{padding:0 0 100px!important;color:#392b21!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-editor.notice-ref-editor .ct-editor.ct-editor{padding:0!important;margin:0!important;border:0!important;background:none!important;gap:16px!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-editor.notice-ref-editor .notice-ref-editor-heading{height:auto!important;min-height:72px!important;margin:0 0 8px!important;padding:8px 0!important;grid-template-columns:32px minmax(0,1fr) 82px!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-editor.notice-ref-editor .notice-ref-editor-heading:before{display:none!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-editor.notice-ref-editor .notice-ref-editor-heading>.btn{font-size:12px!important;min-height:40px!important;padding:6px 9px!important;background:#b38a50!important;border:1px solid #b38a50!important;color:#fff!important;border-radius:20px!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-editor.notice-ref-editor .notice-ref-editor-title h1{font-size:22px!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-editor.notice-ref-editor .notice-ref-editor-title p{font-size:11px!important;letter-spacing:0!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-editor.notice-ref-editor .notice-ref-editor-card{padding:18px 15px!important;margin:0 0 16px!important;border:1px solid #ebe4db!important;border-radius:13px!important;background:#fffefd!important;box-shadow:none!important;gap:14px!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-editor.notice-ref-editor .notice-ref-section-title{font:600 20px/1.5 'Songti SC',serif!important;padding:0!important;margin:0 0 2px!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-editor.notice-ref-editor .notice-ref-section-title:before{display:none!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-editor.notice-ref-editor .field{gap:6px!important;font-size:14px!important;margin:0!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-editor.notice-ref-editor .field>span{font-size:13px!important;color:#817a70!important;line-height:1.5!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-editor.notice-ref-editor .field :is(input:not([type=checkbox]),select){min-height:44px!important;height:44px!important;padding:8px 10px!important;background:#fffefd!important;border:1px solid #e5ded3!important;border-radius:8px!important;font-size:14px!important;line-height:1.5!important;color:#392b21!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-editor.notice-ref-editor .notice-ref-subject-card{grid-template-columns:90px minmax(0,1fr)!important;gap:14px 12px!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-editor.notice-ref-editor .notice-ref-subject-card>.form-grid{grid-column:2!important;grid-row:2!important;gap:12px 10px!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-editor.notice-ref-editor .notice-ref-subject-card>.form-grid>.field{grid-column:1/-1!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-editor.notice-ref-editor .notice-ref-portrait-empty{min-height:135px!important;height:135px!important;width:90px!important;padding:10px 5px!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-editor.notice-ref-editor .notice-portrait-compact{width:90px!important;grid-row:2!important;align-self:start}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-editor.notice-ref-editor .notice-photo-target{min-height:120px!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-editor.notice-ref-editor .notice-photo-target>img{height:120px!important;object-fit:contain!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-editor.notice-ref-editor .date-format-hint{font-size:11px!important;line-height:1.6!important;color:#968570!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-editor.notice-ref-editor .notice-body-field>textarea{font:14px/1.9 'PingFang SC',sans-serif!important;height:180px!important;min-height:180px!important;padding:13px!important;border:1px solid #e6ded3!important;border-radius:9px!important;background:#fffefd!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-editor.notice-ref-editor .notice-body-label-row>span{border:0!important;padding:0!important;font:600 20px/1.5 'Songti SC',serif!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-editor.notice-ref-editor .notice-ai-generate{min-height:36px!important;height:auto!important;padding:6px 9px!important;font-size:12px!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-editor.notice-ref-editor .notice-template-picker{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:14px!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-editor.notice-ref-editor .notice-template-picker .template-preview{width:100%!important;height:auto!important;aspect-ratio:3/4!important;background-size:cover!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-editor.notice-ref-editor .notice-template-picker small{font-size:14px!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-editor.notice-ref-editor .notice-phone{padding:13px!important;gap:8px!important;font-size:13px!important;margin-top:12px!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-editor.notice-ref-editor .notice-phone :is(strong,p){font-size:13px!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-editor.notice-ref-editor .notice-family-confirm{display:flex!important;align-items:flex-start!important;padding:14px!important;background:#f8f1e5!important;border-radius:10px!important;font:13px/1.7 'PingFang SC',sans-serif!important;margin:8px 0 16px!important;gap:8px!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-editor.notice-ref-editor .notice-family-confirm>span{margin:0!important;font-size:12px!important;color:#9a8262!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-editor.notice-ref-editor .notice-family-confirm input{width:18px!important;height:18px!important;flex:none;margin-top:3px;accent-color:#b38a50}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .app-action-bar{position:fixed;left:50%!important;right:auto!important;transform:translateX(-50%);width:min(100%,640px)!important;max-width:640px!important;margin:0!important;bottom:0!important;padding:12px 18px calc(12px + env(safe-area-inset-bottom))!important;background:#fffdf9!important;border-top:1px solid #e8dece!important;box-sizing:border-box!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .app-action-bar .ct-actions{display:grid!important;grid-template-columns:1fr 1fr!important;gap:10px!important;margin:0!important;width:100%!important}
+/* Portrait upload, original/result and manual adoption. */
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .portrait-detail-card{display:grid!important;grid-template-columns:minmax(0,1fr)!important;grid-template-areas:'heading' 'switch' 'photo' 'timeline'!important;gap:14px!important;padding:15px!important;margin-bottom:16px!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .portrait-result-heading h3{font:600 20px/1.5 'Songti SC',serif!important;color:#493322!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .portrait-result-heading>span{display:none!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .portrait-preview-switch{display:flex!important;grid-area:switch;gap:6px!important;padding:4px;background:#f8f4ed;border-radius:10px;width:100%!important;margin:0!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .portrait-preview-switch button{flex:1 1 0!important;width:auto!important;max-width:none!important;min-height:44px!important;padding:8px!important;border:0!important;border-radius:7px!important;background:#fffefd!important;color:#8f805f!important;font-size:14px!important;white-space:nowrap}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .portrait-preview-switch button.active{background:#b38a50!important;color:#fff!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .portrait-main-photo{height:380px!important;min-height:240px!important;max-height:49svh!important;border:0!important;border-radius:9px!important;background:#f0ece3!important;margin:0!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .portrait-main-photo img{width:100%!important;height:100%!important;object-fit:contain!important;max-height:none!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .portrait-task-timeline{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:8px!important;padding:0!important;margin-top:3px!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .portrait-timeline-step strong{font-size:12px!important;font-weight:500!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .portrait-timeline-step small{font-size:11px!important;color:#94826b!important;line-height:1.65!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .service-business-panel{padding:16px!important;margin:0 0 16px!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .service-business-links{display:flex!important;flex-wrap:wrap;gap:10px;margin:16px 0 0!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .service-business-links .btn{flex:1;min-width:140px;margin:0!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .portrait-change-photo summary{font-size:13px;min-height:44px;align-content:center;color:#9d7641;cursor:pointer}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .portrait-change-photo .portrait-toolbar{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding-top:8px}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .portrait-clothing-control{margin:0 0 10px}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .portrait-clothing-control p{font-size:12px;line-height:1.8;color:#9a8566}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .restoration-detail-reminder{font-size:12px;line-height:1.8;background:#f7f0e4;border-radius:10px;padding:12px 14px;margin:16px 0;color:#97794f}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .portrait-detail-reference:after{display:none!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content :is(.restoration-create-upload,.restoration-create-link,.restoration-create-explain){padding:18px 15px!important;margin:0 0 16px!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content :is(.restoration-create-upload h3,.restoration-create-section-title h3){font:600 20px/1.5 'Songti SC',serif!important;margin:0 0 14px!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .restoration-upload-drop{display:flex!important;flex-direction:column;align-items:center;justify-content:center;gap:10px;min-height:230px;padding:20px;border:1px dashed #d5bd9a!important;border-radius:12px;background:#fffefd!important;cursor:pointer;color:#b38a50}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .restoration-upload-drop strong{font-size:17px;color:#5e4930}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .restoration-upload-drop span{font-size:12px;color:#938778;text-align:center}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .restoration-create-explain:after{display:none!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content :is(.restoration-list-empty,.empty){padding:28px 18px!important;background:#fffefd!important;border:1px dashed #dbc9ae!important;border-radius:13px!important;font-size:14px!important;color:#927d60!important}
+.agent-service-shell.agent-refined .agent-tabs{display:grid!important;grid-template-columns:repeat(3,1fr);max-width:640px;left:50%;transform:translateX(-50%)}
+.geyou-app.quality-app.agent-service-shell.agent-refined:has(.notice-preview-fit)>.agent-service-frame>.main-content{padding:0!important}
+@media(max-width:380px){.geyou-app.quality-app.agent-service-shell.agent-refined>.agent-service-frame>.main-content{padding-inline:12px!important}.geyou-app.quality-app.agent-service-shell.agent-refined .main-content :is(.notice-record-link,.restoration-list-card-link){padding:12px!important;gap:10px!important}.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-editor.notice-ref-editor .notice-ref-subject-card{grid-template-columns:minmax(0,1fr)!important}.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-editor.notice-ref-editor .notice-ref-subject-card>.form-grid{grid-column:1!important;grid-row:3!important}}
+
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-editor.notice-ref-editor .notice-ref-subject-card>.form-grid{display:contents!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-editor.notice-ref-editor .notice-ref-subject-card>.form-grid>.field{grid-row:auto!important;grid-column:1/-1!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-editor.notice-ref-editor .notice-ref-subject-card>.form-grid>.field[data-notice-field=name]{grid-column:2!important;grid-row:2!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-editor.notice-ref-editor .notice-ref-subject-card>.form-grid>.field[data-notice-field=age]{grid-column:2!important;grid-row:3!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-editor.notice-ref-editor .notice-ref-subject-card>:is(.notice-portrait-compact,.notice-ref-portrait-empty){grid-row:2 / span 2!important;grid-column:1!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .agent-notice-review>div{display:grid;grid-template-columns:76px minmax(0,1fr);gap:10px;padding:11px 0;border-bottom:1px solid #f0e8dc;font-size:14px}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .agent-notice-review>div:last-child{border:0}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .agent-notice-review>div>span{color:#8c8171}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .agent-notice-review>div>strong{font-weight:500;overflow-wrap:anywhere}
+
+.agent-sheet.agent-refined .agent-sheet-footer{flex:none;border-top:1px solid #ebe4db;padding:10px 18px calc(12px + env(safe-area-inset-bottom));background:#fffdf9}
+.agent-sheet.agent-refined .agent-sheet-footer .agent-check{padding:0;margin:0 0 9px;font-size:12px;line-height:1.7;align-items:center}
+.agent-sheet.agent-refined .agent-sheet-footer .agent-wide{margin:0;min-height:46px}
+.agent-sheet-profile.agent-refined .agent-form-section:first-child{padding:0;background:none;border:0;margin-bottom:14px}
+.agent-sheet-profile.agent-refined .agent-form-section:first-child>h3{display:none}
+.agent-sheet-profile.agent-refined .agent-form-section:first-child>.agent-hint{padding:10px 13px;margin:0}
+
+.agent-refined .agent-quantity{display:flex;align-items:center;gap:0;margin:8px 0 0 28px;width:150px;border:1px solid #e8e0d3;border-radius:8px;overflow:hidden}
+.agent-refined .agent-quantity button{display:grid;place-items:center;width:44px;height:40px;flex:none;background:#faf6ee;color:#a3783d;border:0}
+.agent-refined .agent-quantity input{width:60px;min-width:0;height:40px;text-align:center;border:0!important;border-inline:1px solid #e8e0d3!important;border-radius:0!important;background:#fffefd;color:#392b21;font-size:14px;appearance:textfield}
+.agent-refined .agent-quantity input::-webkit-inner-spin-button{appearance:none}
+.agent-sheet.agent-refined .agent-sheet-footer .agent-package-navigation{position:static;padding:0;margin:0;border:0;flex-wrap:wrap}
+/* Source comparison fixes: avoid stacked spacing and artwork crossing document text. */
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-hero{background:#fbf7ed url('./assets/notice-magnolia-gpt-v1.png') center/100% 100% no-repeat!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-editor.notice-ref-editor .ct-editor.ct-editor{gap:0!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-editor.notice-ref-editor .notice-customer-binding{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;padding:13px!important;gap:10px!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-editor.notice-ref-editor .notice-customer-binding>.notice-ref-section-title{display:none!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-editor.notice-ref-editor .notice-customer-binding:not(:has(.notice-subject-summary))>.field{grid-column:1/-1!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-editor.notice-ref-editor .notice-subject-summary{padding:6px 10px!important;background:#faf6ee!important;align-content:center;min-width:0}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-editor.notice-ref-editor .notice-subject-summary>small{display:none!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-editor.notice-ref-editor .notice-subject-summary>strong{font-size:13px!important;overflow-wrap:anywhere}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-editor.notice-ref-editor .date-format-hint{display:none!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-editor.notice-ref-editor .notice-family-confirm{display:grid!important;grid-template-columns:18px minmax(0,1fr)!important;gap:6px 9px!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-editor.notice-ref-editor .notice-family-confirm>span{grid-column:2!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content{position:relative}
+.geyou-app.quality-app.agent-service-shell.agent-refined.agent-service-list .agent-detail-back{position:absolute;top:23px;left:18px;width:28px;margin:0;overflow:hidden;white-space:nowrap;font-size:0;z-index:2}
+.geyou-app.quality-app.agent-service-shell.agent-refined.agent-service-list .main-content .app-page-header{padding-left:38px!important;min-height:60px;margin-bottom:18px!important}
+@media(max-width:380px){.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-editor.notice-ref-editor .notice-ref-subject-card{grid-template-columns:80px minmax(0,1fr)!important}}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .restoration-list-card-link:has(.restoration-list-note){flex-wrap:wrap}
+.agent-refined .agent-product-image{position:relative;display:block;flex:none;width:64px;height:64px;overflow:hidden;border-radius:8px;background:#f8f4ed}
+.agent-refined .agent-product-image svg{display:block;width:100%;height:100%}
+.agent-refined .agent-product-image>small{position:absolute;bottom:0;right:0;font-size:9px;line-height:1.4;padding:1px 4px;color:#846b49;background:#fff9e8df;border-radius:4px 0 0}
+.agent-refined .agent-package-lead>.agent-product-image{float:left;width:112px;height:112px;margin:0 16px 8px 0}
+.agent-refined .agent-package-lead:after{content:'';display:block;clear:both}
+.agent-refined .agent-included .agent-check{display:grid;grid-template-columns:18px 58px minmax(0,1fr);align-items:center;gap:12px}
+.agent-refined .agent-included .agent-product-image{width:58px;height:58px}
+.agent-refined .agent-extra .agent-check{align-items:center}
+.agent-refined .agent-extra .agent-check>.agent-product-image+span{min-width:0}
+.agent-refined .agent-quantity{margin-left:104px}
+.agent-refined .agent-confirm-summary .agent-confirm-product{display:grid;grid-template-columns:64px minmax(0,1fr) auto;align-items:center;gap:12px}
+.agent-refined .agent-confirm-product>strong{white-space:nowrap}
+@media(max-width:380px){.agent-refined .agent-package-lead>.agent-product-image{width:88px;height:88px;margin-right:12px}.agent-refined .agent-package-lead>strong{font-size:25px}.agent-refined .agent-confirm-summary .agent-confirm-product{grid-template-columns:54px minmax(0,1fr) auto;gap:8px}.agent-refined .agent-confirm-product .agent-product-image{width:54px;height:54px}}
+/* Approved reference: full task pages with independent URLs and a compact mobile rhythm. */
+.agent-sheet.agent-task-page.agent-refined{inset:0;margin:0 auto;width:100%;max-width:640px;height:100dvh;max-height:100dvh;border:0;border-radius:0;box-shadow:none;background:#fcfaf6}
+.agent-sheet.agent-task-page::backdrop{background:#fcfaf6}
+.agent-sheet.agent-task-page.agent-refined>header{min-height:70px;padding:14px 52px 12px;background:transparent}
+.agent-sheet.agent-task-page.agent-refined>header h2{font-size:23px}
+.agent-sheet.agent-task-page.agent-refined>header>.agent-task-back{left:10px;right:auto;top:12px}
+.agent-task-subtitle{text-align:center;color:#938b80;font-size:13px;margin:0 0 20px}
+.agent-refined .agent-top{min-height:74px;padding:18px 20px 12px}
+.agent-refined .agent-page-intro{margin:0 0 16px}
+.agent-refined .agent-sheet-body{scrollbar-width:thin}
+.agent-refined .agent-primary,.agent-refined .agent-send,.agent-refined .agent-filter>button.is-selected{background:linear-gradient(115deg,#c8a66e,#aa7f44);border-color:#bf985e;box-shadow:inset 0 1px 0 #ffffff30}
+.agent-refined .agent-primary:disabled{background:#d7c6a8;box-shadow:none}
+.agent-refined .agent-tools{margin:10px 0 18px}
+.agent-refined .agent-message-author{display:none}
+.agent-refined .agent-messages{gap:12px}
+.agent-refined .agent-message>div{padding:10px 14px;line-height:1.7}
+.agent-refined .agent-work-results{margin-top:14px}
+.agent-refined .agent-recent-row{padding:20px 12px;min-height:96px;background:transparent}
+.agent-sheet-history .agent-sheet-body>.agent-wide{display:none}
+.agent-refined .agent-history-note{font-size:11px;margin:8px 0}
+.agent-sheet-upload .agent-sheet-body>.agent-hint:first-child{font-size:11px;padding:8px 12px}
+.agent-sheet-upload .agent-upload{min-height:270px}
+.agent-refined .agent-form-section{padding:14px;margin-bottom:13px}
+.agent-refined .agent-form-section>h3{margin-bottom:12px}
+.agent-refined .agent-field{margin-bottom:11px}
+.agent-sheet.agent-refined .agent-field :is(input:not([type=checkbox]),select,textarea){min-height:42px;padding:7px 10px}
+.agent-sheet-profile .agent-sheet-body>.agent-task-subject{margin-bottom:12px}
+.agent-refined .agent-sheet-footer .agent-check{background:#f7f0e3;border-radius:8px;padding:8px 11px;margin-bottom:8px}
+.agent-refined .agent-pillars>div{padding:10px 2px}
+.agent-refined .agent-elements{display:flex;justify-content:space-between;padding:0;background:transparent;margin-bottom:12px}
+.agent-refined .agent-elements span{flex:1;text-align:center;border-radius:8px;padding:10px 3px;margin:0 3px;background:#f2ede5}
+.agent-refined .agent-elements span:nth-child(1){background:#edf5e9;color:#557459}.agent-refined .agent-elements span:nth-child(2){background:#fff0eb;color:#bd6751}.agent-refined .agent-elements span:nth-child(5){background:#edf3fc;color:#5b80b3}
+.agent-sheet-bazi .agent-form-section:nth-child(2)>.agent-help{font-size:11px;margin:6px 0}
+.agent-sheet-bazi .agent-form-section:nth-child(2)>.agent-hint{margin:8px 0 0;font-size:11px;padding:8px 10px}
+.agent-refined .agent-step-tabs{padding:3px;margin-bottom:12px;background:transparent;border-bottom:1px solid #e9dfce;border-radius:0}
+.agent-refined .agent-step-tabs>button{min-height:32px;font-size:11px}
+.agent-refined .agent-step-tabs>button.is-active{background:#f4e9d6}
+.agent-refined .agent-step-tabs>button>span{width:16px;height:16px;font-size:10px}
+.agent-refined .agent-package-lead{padding:14px}
+.agent-refined .agent-package-lead>p{font-size:12px;margin:6px 0 0}
+.agent-refined .agent-included li{padding:8px 0}
+.agent-refined .agent-included .agent-check{grid-template-columns:18px 54px minmax(0,1fr);gap:10px}
+.agent-refined .agent-included .agent-product-image{width:54px;height:48px}
+.agent-refined .agent-extra{padding:12px 14px}
+.agent-refined .agent-extra .agent-product-image{width:58px;height:58px}
+.agent-refined .agent-extra .agent-check b{font-size:14px}
+.agent-refined .agent-quantity{margin:5px 0 0 auto;width:128px}
+.agent-refined .agent-quantity :is(button,input){height:32px}.agent-refined .agent-quantity button{width:36px}.agent-refined .agent-quantity input{width:54px}
+.agent-refined .agent-customer-card{padding:15px;margin-bottom:12px}
+.agent-refined .agent-customer-card p{margin:8px 0;font-size:13px;line-height:1.7}
+.agent-refined .agent-detail-back{margin:0 0 12px}
+.agent-refined:has(.agent-detail-heading) .agent-top{display:none}
+.agent-refined:has(.agent-detail-heading) .agent-page{padding-top:20px}
+.agent-refined .agent-detail-person{padding:14px;margin-bottom:12px}
+.agent-refined .agent-detail-person .agent-section-label{display:none}
+.agent-refined .agent-person-summary{gap:14px}
+.agent-refined .agent-detail-person h3{font-size:21px}
+.agent-refined .agent-detail-person .agent-customer-portrait{width:80px;flex-basis:80px}
+.agent-refined .agent-detail-person .agent-customer-portrait :is(img,span){width:80px;height:90px}
+.agent-refined .agent-arrangement{margin-top:12px;padding:12px}
+.agent-refined .agent-my-list>button,.agent-refined .agent-my-list>div{min-height:62px;padding:13px 15px}
+.agent-refined .agent-detail-action{margin:12px 0}
+.agent-refined .agent-account{grid-template-columns:64px minmax(0,1fr) auto;margin-bottom:20px;padding:20px 16px}
+.agent-refined .agent-account>.agent-label{grid-column:3;grid-row:1/4}
+.agent-refined .agent-account h2{font-size:23px}.agent-refined .agent-account p{font-size:13px}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .agent-notice-entry[hidden],.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .agent-notice-review-stage[hidden]{display:none!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .agent-notice-entry:not([hidden]),.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .agent-notice-review-stage:not([hidden]){display:contents}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .agent-review-edit{justify-self:end;justify-content:flex-end;gap:6px;padding:0 3px 12px;font-size:13px;color:#9c7846;min-height:36px}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .agent-notice-copy-review p{background:#f8f2e7;padding:12px;font-size:14px;line-height:1.9;white-space:pre-wrap;border-radius:8px}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .agent-notice-detail-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .btn-primary{background:linear-gradient(115deg,#c8a66e,#aa7f44)!important;border-color:#bf985e!important;color:#fff!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .btn-primary:disabled{background:#d7c6a8!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .app-page-header p{display:none!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .app-page-header{min-height:52px!important;margin-bottom:14px!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined.agent-service-list .main-content .app-page-header{min-height:52px!important;margin-bottom:14px!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined.agent-service-list .agent-detail-back{top:22px}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-info-card{padding:14px!important;margin:12px 0!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-info-card h2{font-size:19px!important;margin-bottom:10px!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-info-row{padding:10px 0!important;min-height:38px!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-template-card{padding:14px!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-template-picker .template-preview{height:180px!important;min-height:180px!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .agent-notice-review>div{padding:10px 0}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-record-link{padding:14px!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-cover{width:92px!important;height:118px!important;flex-basis:92px!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content :is(.content-filters,.restoration-status-filters) button.active{background:linear-gradient(115deg,#c8a66e,#aa7f44)!important;color:#fff!important;border-color:#bf985e!important}
+/* User override: communication history opens as a right-hand drawer. */
+.agent-sheet.agent-task-page.agent-sheet-history{inset:0 0 0 auto;margin:0;width:min(90vw,420px);max-width:420px;border-radius:16px 0 0 16px;box-shadow:-12px 0 48px #392b2120;animation:agent-history-in .2s ease-out}
+.agent-sheet.agent-task-page.agent-sheet-history::backdrop{background:#392b2166}
+.agent-sheet-history .agent-task-subtitle{font-size:12px}
+@keyframes agent-history-in{from{transform:translateX(100%)}to{transform:translateX(0)}}
+@media(prefers-reduced-motion:reduce){.agent-sheet.agent-task-page.agent-sheet-history{animation:none}}
+/* Shared mobile shell: persistent top bar, content region and bottom tab bar. */
+.agent-app.agent-refined{--agent-top-height:70px;--agent-tab-height:70px}
+.agent-refined .agent-top{position:sticky;top:0;z-index:35;height:var(--agent-top-height);min-height:var(--agent-top-height);padding:12px 58px;display:flex;align-items:center;justify-content:center;background:#fcfaf6ef;backdrop-filter:blur(12px)}
+.agent-refined .agent-top>div{min-width:0}.agent-refined .agent-top h1{font-size:24px;text-align:center;white-space:nowrap}.agent-refined .agent-top>.agent-icon{top:13px;right:14px}
+.agent-refined .agent-tabs{z-index:40;height:calc(var(--agent-tab-height,70px) + env(safe-area-inset-bottom));padding:4px 16px calc(4px + env(safe-area-inset-bottom))}
+.agent-refined .agent-tabs button{min-height:52px}
+.agent-refined .agent-page{padding-bottom:calc(90px + env(safe-area-inset-bottom))}
+.agent-refined .agent-chat-page{padding-bottom:calc(166px + env(safe-area-inset-bottom))}
+.agent-refined .agent-composer{bottom:calc(70px + env(safe-area-inset-bottom))}
+.agent-refined .agent-subpage-top{position:sticky;top:0;z-index:35;display:flex;align-items:center;gap:6px;height:56px;margin:-20px -18px 16px;padding:0 18px;background:#fcfaf6ef;backdrop-filter:blur(12px);font-size:14px;color:#6e573b}
+.agent-refined .agent-subpage-top .agent-detail-back{margin:0;min-width:36px;padding:8px 0}
+.geyou-app.quality-app.agent-service-shell.agent-refined{--agent-tab-height:70px}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .app-page-header{position:sticky!important;top:0!important;z-index:35!important;display:grid!important;grid-template-columns:44px minmax(0,1fr) auto;align-items:center;gap:4px!important;height:70px!important;min-height:70px!important;margin:-18px -18px 16px!important;padding:12px 18px!important;background:#fcfaf6ef!important;backdrop-filter:blur(12px)}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .app-page-title{display:contents!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .app-page-title>div{grid-column:2;grid-row:1;min-width:0}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .app-page-header h1{font:600 24px/1.4 'Songti SC',STSong,serif!important;text-align:center;white-space:nowrap;margin:0!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .app-page-header .app-back{grid-column:1;grid-row:1}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .app-page-action{grid-column:3;grid-row:1}
+.geyou-app.quality-app.agent-service-shell.agent-refined.agent-service-list .agent-detail-back{position:fixed;top:15px;left:max(calc((100vw - 640px)/2 + 18px),18px);z-index:36}
+.geyou-app.quality-app.agent-service-shell.agent-refined.agent-service-list .main-content .app-page-header{padding-left:62px!important;grid-template-columns:minmax(0,1fr) auto}
+.geyou-app.quality-app.agent-service-shell.agent-refined.agent-service-list .main-content .app-page-title>div{grid-column:1}
+.geyou-app.quality-app.agent-service-shell.agent-refined.agent-service-list .main-content .app-page-action{grid-column:2}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-detail-title,.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-editor-title{grid-column:2;grid-row:1;min-width:0}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-detail-heading>.notice-ref-edit-link,.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-editor-heading>.btn{grid-column:3;grid-row:1}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-detail-title>div{display:flex;justify-content:center;gap:6px;align-items:center}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-header-status{font-size:10px;padding:3px 5px}
+@media(max-width:380px){.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .app-page-header{margin-inline:-12px!important;padding-inline:12px!important;grid-template-columns:32px minmax(0,1fr) auto}.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .app-page-header h1{font-size:21px!important}.agent-refined .agent-account{grid-template-columns:54px minmax(0,1fr)}.agent-refined .agent-account>.agent-label{grid-column:2;grid-row:auto}.agent-refined .agent-account>.agent-avatar{width:54px;height:54px}}
+.agent-app:not(.agent-refined) .agent-top{position:sticky;top:0;z-index:35;min-height:70px;background:#faf8f4ef;backdrop-filter:blur(12px);padding-block:10px}
+.agent-app:not(.agent-refined) .agent-tabs{height:calc(70px + env(safe-area-inset-bottom));padding:4px 16px calc(4px + env(safe-area-inset-bottom))}
+.agent-sheet.agent-task-page.agent-refined>header{padding-top:calc(14px + env(safe-area-inset-top));min-height:calc(70px + env(safe-area-inset-top))}
+.agent-sheet.agent-task-page.agent-refined>header>.agent-icon{top:calc(12px + env(safe-area-inset-top))}
+.agent-sheet-profile.agent-refined .agent-profile-notes{padding:0;border:0;background:none;margin-bottom:12px}
+.agent-sheet-profile.agent-refined .agent-profile-notes>h3{display:none}
+.agent-sheet-profile.agent-refined .agent-profile-notes>.agent-hint{margin:0;padding:8px 12px;font-size:11px}
+.agent-refined .agent-task-subject>svg:last-child:not(:first-child){margin-left:auto}
+.agent-refined article.agent-customer-card{display:block;padding:0;overflow:hidden}
+.agent-refined .agent-customer-open{display:block;width:100%;border:0;background:transparent;color:inherit;font:inherit;text-align:left;padding:15px;cursor:pointer}
+.agent-refined .agent-customer-open>div{display:flex;align-items:center;gap:12px}
+.agent-refined .agent-customer-open>div>span{flex:1;min-width:0}.agent-refined .agent-customer-open>div>span small{display:block}
+.agent-refined .agent-customer-open>div>svg{flex:none;color:#a5855b}
+.agent-refined .agent-customer-continue{display:flex;align-items:center;justify-content:flex-end;gap:7px;width:100%;padding:11px 15px;min-height:44px;border:0;border-top:1px solid #eee5d9;background:#faf5ec;color:#9b7139;font:500 13px/1.5 'PingFang SC',sans-serif;cursor:pointer}
+.agent-refined .agent-customer-continue:focus-visible,.agent-refined .agent-customer-open:focus-visible{outline:2px solid #a47b48;outline-offset:-3px}
+/* Keep titles centered regardless of the width of each page's right action. */
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .app-page-header h1{position:absolute!important;left:50%!important;top:50%!important;transform:translate(-50%,-50%)!important;text-align:center!important;width:max-content!important;max-width:calc(100% - 150px)!important;overflow:hidden;text-overflow:ellipsis;line-height:1.5!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .app-page-header .app-back{position:absolute;left:18px;top:13px;margin:0!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .app-page-action{position:absolute;right:18px;top:12px}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-detail-heading>.notice-ref-edit-link{position:absolute;right:18px;top:13px}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-header-status{position:absolute;left:calc(50% + 54px);top:25px}
+/* The page scroll container varies by host; anchor navigation to the viewport. */
+.agent-app .agent-top{position:fixed!important;top:0;left:50%;transform:translateX(-50%);width:min(100%,640px);z-index:35}
+.agent-app .agent-frame{padding-top:var(--agent-top-height,70px)}
+.agent-app:has(.agent-detail-heading) .agent-frame{padding-top:0}
+.agent-refined .agent-subpage-top{position:fixed;top:0;left:50%;transform:translateX(-50%);width:min(100%,640px);margin:0;padding:0 18px}
+.agent-refined:has(.agent-detail-heading) .agent-page{padding-top:76px}
+.geyou-app.quality-app.agent-service-shell.agent-refined .agent-service-frame>.main-content{padding-top:88px!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .app-page-header,.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-editor.notice-ref-editor .notice-ref-editor-heading{position:fixed!important;top:0!important;left:50%!important;transform:translateX(-50%)!important;width:min(100%,640px)!important;height:70px!important;min-height:70px!important;margin:0!important;padding:12px 18px!important;z-index:35!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .agent-service-frame>.main-content:has(.notice-preview-fit){padding:0!important}
+@media(max-width:380px){.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .app-page-header,.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-editor.notice-ref-editor .notice-ref-editor-heading{margin:0!important;padding-inline:12px!important}}
+.agent-sheet.agent-task-page>.agent-sheet-body{flex:1;min-height:0;overflow:auto}
+/* Visual audit fixes: keep prerequisites and final actions in reach. */
+.agent-sheet.agent-refined .agent-confirm-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;align-items:center}
+.agent-sheet.agent-refined .agent-confirm-actions>.agent-check,.agent-sheet.agent-refined .agent-confirm-actions>.agent-primary,.agent-sheet.agent-refined .agent-confirm-actions>.agent-hint,.agent-sheet.agent-refined .agent-confirm-actions>.agent-price-reminder{grid-column:1/-1}
+.agent-sheet.agent-refined .agent-confirm-actions>.agent-wide{margin:0;font-size:13px;min-height:42px;padding:9px 10px}
+.agent-sheet.agent-refined .agent-confirm-actions>.agent-check{font-size:13px;color:#63533f;line-height:1.6;margin:0;padding:7px 9px}
+.agent-sheet.agent-refined .agent-confirm-actions>.agent-hint{font-size:12px;margin:0;padding:7px 9px}
+.agent-sheet.agent-refined .agent-confirm-actions>.agent-price-reminder{border:0;background:#f6eddf;color:#88612e;text-align:center;border-radius:7px;font-size:13px;min-height:36px;padding:7px}
+.agent-sheet.agent-refined .agent-sheet-footer .agent-price-confirm{font-size:13px;color:#63533f}
+.agent-refined details.agent-script{margin-top:16px;border-radius:12px}
+.agent-refined details.agent-script>summary{display:flex;align-items:center;gap:8px;min-height:38px;cursor:pointer;color:#80613d;font-size:15px}
+.agent-refined details.agent-script .agent-script-chevron{margin-left:auto;transform:rotate(90deg)}.agent-refined details.agent-script[open] .agent-script-chevron{transform:rotate(-90deg)}
+.agent-app.agent-refined .agent-help,.agent-sheet.agent-refined .agent-help,.agent-sheet.agent-refined .agent-hint,.agent-sheet.agent-refined .agent-task-subtitle{font-size:13px;color:#746654;line-height:1.8}
+.agent-sheet-profile.agent-refined .agent-profile-notes>.agent-hint,.agent-sheet-bazi .agent-form-section:nth-child(2)>.agent-hint,.agent-sheet-bazi .agent-form-section:nth-child(2)>.agent-help{font-size:13px;color:#746654}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .agent-notice-review-stage:not([hidden]){display:flex!important;flex-direction:column;gap:0}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .agent-review-edit{order:0;align-self:flex-end}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .agent-notice-review{order:1}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-template-card{order:2}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .agent-notice-copy-review{order:3}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-family-confirm{order:4}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-editor.notice-ref-editor .notice-template-picker>button{display:flex!important;align-items:center;gap:10px;min-height:108px!important;padding:8px!important;text-align:left}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-editor.notice-ref-editor .notice-template-picker .template-preview{flex:0 0 62px!important;width:62px!important;height:90px!important;min-height:90px!important;aspect-ratio:auto!important;background-size:cover!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-editor.notice-ref-editor .notice-template-picker small{font-size:14px!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-editor.notice-ref-editor :is(.notice-ref-portrait-empty,.notice-photo-target) small{display:none!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .agent-notice-photo-hint{grid-column:1/-1!important;margin:0!important;font:13px/1.8 'PingFang SC',sans-serif!important;color:#746654!important}
+.agent-service-shell.agent-refined .agent-tabs button.is-active{color:#a7783d;font-weight:600}
+.agent-service-shell.agent-refined .agent-tabs button.is-active svg{stroke-width:2.1}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content :is(.restoration-create-tip,.restoration-create-flow-note,.restoration-create-link>p){font-size:13px!important;color:#746654!important;line-height:1.8!important}
+@media(max-width:380px){.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-editor.notice-ref-editor .notice-template-picker>button{gap:7px;padding:7px!important}.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-editor.notice-ref-editor .notice-template-picker .template-preview{flex-basis:48px!important;width:48px!important;height:72px!important;min-height:72px!important}.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-editor.notice-ref-editor .notice-template-picker small{font-size:13px!important}}
+/* Homepage: use the user-supplied character, backgrounds and transparent icons. */
+.agent-app.agent-home-view{background:#f7f5ef;color:#17392e}
+.agent-app.agent-home-view .agent-top{display:none!important}
+.agent-app.agent-home-view .agent-frame{padding-top:0;background:#f7f5ef}
+.agent-app.agent-home-view .agent-page{padding:0 18px calc(92px + env(safe-area-inset-bottom))}
+.agent-app.agent-home-view .agent-home-hero{position:relative;height:min(98vw,430px);margin:0 -18px;background:#f6f3ec url('/agent-home/hero-assistant.png') center top/cover no-repeat;isolation:isolate}
+.agent-app.agent-home-view .agent-home-hero-copy{padding:clamp(64px,18vw,80px) clamp(28px,7.8vw,34px) 0}
+.agent-app.agent-home-view .agent-home-brand{display:flex;align-items:center;gap:10px;color:#97733e;font-size:clamp(12px,3.2vw,15px);letter-spacing:.08em}
+.agent-app.agent-home-view .agent-home-brand:before{content:'';width:16px;height:1px;background:#ac8a57}
+.agent-app.agent-home-view .agent-home-hero h1{font:600 clamp(40px,11vw,52px)/1.15 'Songti SC',STSong,serif;letter-spacing:.045em;margin:24px 0 8px;color:#123729}
+.agent-app.agent-home-view .agent-home-hero p{font:600 clamp(18px,5vw,24px)/1.7 'Songti SC',STSong,serif;white-space:nowrap;letter-spacing:.02em;margin:0;color:#71624c}
+.agent-app.agent-home-view .agent-home-tools{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1fr);gap:10px;margin:-12px 0 0}
+.agent-app.agent-home-view .agent-home-tools>button{display:grid;grid-template-columns:64px minmax(0,1fr) 38px;align-items:center;gap:clamp(16px,6.3vw,28px);grid-column:auto;min-height:0;height:clamp(116px,31.5vw,142px);padding:18px;border:1px solid #fffdf7;border-radius:20px;background-position:center;background-size:cover;background-repeat:no-repeat;box-shadow:0 8px 24px #65513b09;overflow:hidden}
+.agent-app.agent-home-view .agent-home-tools>.agent-home-ai{background-image:url('/agent-home/bg-ai-reception.png');color:#214f3d}
+.agent-app.agent-home-view .agent-home-tools>.agent-home-notice{background-image:url('/agent-home/bg-obituary.png');color:#97662f}
+.agent-app.agent-home-view .agent-home-tools>.agent-home-portrait{background-image:url('/agent-home/bg-portrait.png');color:#386477}
+.agent-app.agent-home-view .agent-home-tool-icon{position:static;inset:auto;display:grid;place-items:center;width:64px;height:64px;padding:3px;border-radius:50%;background:#244d3612;margin:0}
+.agent-app.agent-home-view .agent-home-notice .agent-home-tool-icon{background:#ad86441a}
+.agent-app.agent-home-view .agent-home-portrait .agent-home-tool-icon{background:#537e991f}
+.agent-app.agent-home-view .agent-home-tool-icon img{display:block;width:58px;height:58px;object-fit:contain}
+.agent-app.agent-home-view .agent-home-tools>button>strong{font:600 clamp(22px,5.85vw,27px)/1.5 'Songti SC',STSong,serif;white-space:nowrap;color:#172d25;margin:0;letter-spacing:.04em}
+.agent-app.agent-home-view .agent-home-portrait>strong{color:#234250}
+.agent-app.agent-home-view .agent-home-arrow{display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:#fffdf2c9;color:inherit}
+.agent-app.agent-home-view .agent-home-tools>button:focus-visible{outline:3px solid #a48651;outline-offset:3px}
+.agent-app.agent-home-view .agent-home-tools>button:disabled{opacity:.5}
+.agent-app.agent-home-view .agent-recent{margin-top:32px;padding-top:4px}
+.agent-app.agent-home-view .agent-recent h2{font:600 18px/1.5 'Songti SC',STSong,serif;color:#4f4739}
+.agent-app.agent-home-view .agent-recent .agent-section-label>button{color:#8b7757}
+.agent-app.agent-home-view .agent-tabs{background:#fffdfaf2;border-top-color:#eee8df}
+.agent-app.agent-home-view .agent-tabs button{color:#999b97}
+.agent-app.agent-home-view .agent-tabs button.is-active{color:#224f3d}
+.agent-app.agent-home-view .agent-tabs button.is-active svg{background:none;box-shadow:none;border-radius:0;fill:#224f3d;stroke:#224f3d}
+@media(min-width:641px){.agent-app.agent-home-view .agent-home-hero{height:440px;background-position:center 34%}.agent-app.agent-home-view .agent-home-hero-copy{padding:85px 34px 0}.agent-app.agent-home-view .agent-home-hero h1{font-size:56px}.agent-app.agent-home-view .agent-home-tools>button{height:150px;grid-template-columns:70px 1fr 42px;padding-inline:24px;gap:22px}}
+@media(max-width:359px){.agent-app.agent-home-view .agent-page{padding-inline:14px}.agent-app.agent-home-view .agent-home-hero{margin-inline:-14px}.agent-app.agent-home-view .agent-home-hero-copy{padding-left:22px;padding-top:54px}.agent-app.agent-home-view .agent-home-hero h1{margin-top:22px;font-size:38px}.agent-app.agent-home-view .agent-home-hero p{font-size:17px}.agent-app.agent-home-view .agent-home-tools>button{grid-template-columns:54px 1fr 32px;gap:12px;padding:14px;height:110px}.agent-app.agent-home-view .agent-home-tool-icon{width:54px;height:54px}.agent-app.agent-home-view .agent-home-tool-icon img{width:50px;height:50px}.agent-app.agent-home-view .agent-home-arrow{width:32px;height:32px}.agent-app.agent-home-view .agent-home-tools>button>strong{font-size:22px}}
+/* Match the approved card artwork exactly while keeping real accessible buttons. */
+.agent-app.agent-home-view .agent-home-tools>button{height:auto;aspect-ratio:775/268;display:block;padding:0;border:0;border-radius:clamp(17px,4.5vw,23px);background-image:url('/agent-home/home-reference.png');background-size:110.064516% auto;background-repeat:no-repeat;box-shadow:0 8px 24px #65513b09}
+.agent-app.agent-home-view .agent-home-tools>.agent-home-ai{background-position:50% 51.395939%}
+.agent-app.agent-home-view .agent-home-tools>.agent-home-notice{background-position:50% 69.543147%}
+.agent-app.agent-home-view .agent-home-tools>.agent-home-portrait{background-position:50% 87.753807%}
+.agent-app.agent-home-view .agent-home-tools>button>.agent-home-tool-icon,.agent-app.agent-home-view .agent-home-tools>button>.agent-home-arrow{display:none}
+.agent-app.agent-home-view .agent-home-tools>button>strong{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
+.agent-app.agent-home-view .agent-home-tools>button:is(.agent-home-ai,.agent-home-notice,.agent-home-portrait){background-image:url('/agent-home/home-reference.png')}
+/* Agent horizontal records must override the old full-bleed poster waterfall. */
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-list.notice-ref-list .notice-record-list .notice-record-link{padding:16px!important;gap:16px!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-list.notice-ref-list .notice-record-list .notice-record-link>.notice-cover{margin:0!important;flex:0 0 77px!important;width:77px!important;min-width:77px!important;max-width:77px!important;height:103px!important;border-radius:7px!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .app-page-header .app-page-action{right:24px!important;margin:0!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .app-page-header .app-back,.geyou-app.quality-app.agent-service-shell.agent-refined.agent-service-list .agent-detail-back{left:max(calc((100vw - 640px)/2 + 24px),24px)}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .app-page-header .app-back{left:24px!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-detail-heading>.notice-ref-edit-link{right:24px!important}
+.agent-app.agent-refined .agent-top{padding-inline:24px}
+.agent-app .agent-conversation-task{margin:18px 0 8px;border:1px solid #e8dfd2;border-radius:12px;padding:0 14px;background:#fffdf8}
+.agent-app .agent-conversation-task .agent-result{border:0}
+@media(max-width:380px){.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .app-page-header .app-page-action,.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-detail-heading>.notice-ref-edit-link{right:20px!important}.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .app-page-header .app-back{left:20px!important}.geyou-app.quality-app.agent-service-shell.agent-refined.agent-service-list .agent-detail-back{left:20px}.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-list.notice-ref-list .notice-record-list .notice-record-link{padding:14px!important;gap:12px!important}}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .app-page-header{box-sizing:border-box!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .app-page-header>.app-page-action{position:absolute!important;inset:12px 24px auto auto!important;transform:none!important;width:max-content!important;max-width:120px!important;justify-content:flex-end!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .restoration-ref-list .restoration-list-page.restoration-list-page .app-page-header{margin:0!important;padding:12px 24px!important;width:min(100%,640px)!important;box-sizing:border-box!important}
+@media(max-width:380px){.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .app-page-header>.app-page-action{right:20px!important}}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .app-page-header>.app-page-action{grid-area:auto!important}
+.agent-app.agent-refined .agent-top>.agent-icon{right:24px}
+@media(max-width:380px){.agent-app.agent-refined .agent-top>.agent-icon{right:20px}}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .app-page-header .app-back{grid-area:auto!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-editor.notice-ref-editor .notice-ref-editor-heading>.btn{position:absolute!important;inset:12px 24px auto auto!important;grid-area:auto!important}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-editor.notice-ref-editor .notice-ref-editor-heading{box-sizing:border-box!important}
+@media(max-width:380px){.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-editor.notice-ref-editor .notice-ref-editor-heading>.btn{right:20px!important}}
+
+/* In-person package explanation */
+.agent-explain-back{display:flex;align-items:center;gap:6px;background:none;border:0;color:#426252;padding:8px 0;margin-bottom:12px;min-height:44px}
+.agent-explain-heading{padding:22px;background:#f0f3ed;border-radius:18px;margin-bottom:24px}
+.agent-explain-heading>span{font-size:12px;letter-spacing:2px;color:#617065}.agent-explain-heading h3{font-size:24px;margin:9px 0}.agent-explain-heading>strong{font-size:28px;color:#244d3a}.agent-explain-heading p{font-size:13px;line-height:1.7;margin:8px 0 0;color:#58655b}
+.agent-explain-items{border-top:1px solid #e5e7e1}.agent-explain-row{display:flex;align-items:center;gap:12px;padding:14px 0;border-bottom:1px solid #e5e7e1}.agent-explain-row>span:not(.agent-product-image){flex:1;min-width:0}.agent-explain-row b{display:block;font-size:15px;line-height:1.5}.agent-explain-row small{display:block;font-size:12px;color:#687266;margin-top:4px}.agent-explain-row>button{display:flex;align-items:center;gap:2px;flex-shrink:0;padding:10px 0 10px 10px;min-height:44px;border:0;background:none;color:#315b44;font-size:14px}
+.agent-explain-adjust{margin-top:24px;border-top:1px solid #dce2d8;padding-top:18px}.agent-explain-adjust .agent-section-label h3{font-size:17px}.agent-explain-adjust .agent-section-label button{font-size:13px;min-height:44px;background:none;border:0;color:#49624d}.agent-explain-adjust textarea{min-height:90px;resize:vertical}.agent-explain-product{padding:16px;background:#f6f5f0;border-radius:12px;margin:16px 0}.agent-explain-product p{font-size:14px;line-height:1.7}.agent-explain-product small{font-size:12px;line-height:1.7;color:#62695f}.agent-explain-total{display:flex;justify-content:space-between;align-items:center;padding:18px 0}.agent-explain-total strong{font-size:24px;color:#254b36}.agent-explain .agent-wide{margin:12px 0}.agent-explain .agent-check{line-height:1.7;margin-top:12px;font-size:14px;align-items:flex-start}
+.agent-explain-script{margin-top:24px;padding:18px;background:#f2f4ee;border-radius:14px}.agent-explain-script summary{font-weight:600;cursor:pointer;min-height:30px}.agent-explain-script p{font-size:15px;line-height:1.9;white-space:pre-wrap;overflow-wrap:anywhere}.agent-explain-script>details{border-top:1px solid #dce2d8;padding-top:12px;margin-top:16px}.agent-explain-script>details summary,.agent-explain-script>details p{font-size:13px;color:#5e6b5c}.agent-explain-script>small{display:block;font-size:12px;line-height:1.7;color:#63715f;margin-top:12px}
+.agent-quotation-meta{margin:0 0 26px}.agent-quotation-meta>div{display:flex;justify-content:space-between;gap:20px;padding:8px 0;font-size:13px;line-height:1.7}.agent-quotation-meta dt{color:#6c7569;flex-shrink:0}.agent-quotation-meta dd{margin:0;text-align:right;overflow-wrap:anywhere}
+.agent-quotation-line{display:flex;align-items:center;gap:12px;padding:18px 0;border-top:1px solid #e4e6de}.agent-quotation-line>div{flex:1;min-width:0}.agent-quotation-line h4{font-size:15px;line-height:1.6;margin:0 0 5px}.agent-quotation-line p{font-size:13px;line-height:1.7;color:#657060;margin:4px 0}.agent-quotation-line small{font-size:12px;color:#657060}.agent-quotation-line>strong{font-size:15px;white-space:nowrap;color:#31553d}.agent-quotation-notes{border-top:1px solid #e4e6de;padding-top:20px;margin-top:6px}.agent-quotation-notes h3{font-size:15px}.agent-quotation-notes p{font-size:13px;line-height:1.9;color:#626c5c;overflow-wrap:anywhere}
+.agent-photo-picker{position:fixed;inset:auto 0 20px;margin:0 auto;width:calc(100% - 32px);max-width:408px;box-sizing:border-box;border:1px solid #e2e5db;border-radius:20px;background:#fffef9;color:#263c2e;padding:20px;box-shadow:0 16px 60px #172d2626}.agent-photo-picker::backdrop{background:#10231b66}.agent-photo-picker h3{font-size:16px;margin:0 0 12px;text-align:center}.agent-photo-picker button{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;min-height:54px;border:0;border-top:1px solid #e6e8df;background:none;font-size:16px;color:#31583f}.agent-photo-picker .agent-photo-picker-cancel{margin-top:10px;background:#f2f3ed;border:0;border-radius:12px;color:#68705f}.agent-sheet-upload button.agent-upload{width:100%;font-family:inherit;cursor:pointer;color:inherit;background:#f4f5ee}
+.agent-explain-item-button{width:100%;background:none;border-left:0;border-right:0;border-top:0;color:inherit;text-align:left;font:inherit;cursor:pointer}.agent-explain-item-button>svg{flex-shrink:0;color:#53715c}.agent-explain-current{padding:22px 0;border-bottom:1px solid #e0e4da}.agent-explain-current>.agent-product-image{display:block;width:108px;height:84px;margin:20px 0}.agent-explain-current h3{font-size:22px;line-height:1.6}.agent-explain-current p{font-size:14px;line-height:1.9;color:#576451}.agent-explain-current>small{font-size:13px;color:#506449}.agent-recommend-reasons{margin:18px 0 24px}.agent-recommend-reasons h4{font-size:15px;margin:0 0 10px}.agent-recommend-reasons p{font-size:14px;line-height:1.9;margin:8px 0}.agent-recommend-reasons small{display:block;color:#67715f;font-size:12px;line-height:1.8;margin-top:6px}.agent-explain-sku{display:block;width:100%;max-height:200px;object-fit:contain;margin-bottom:16px}
+.agent-sheet-package .agent-package-navigation{display:flex;align-items:center;justify-content:space-between;gap:10px}.agent-sheet-package .agent-package-navigation>span{flex:1;min-width:0;text-align:left;display:flex;flex-direction:column;gap:4px;font-size:12px}.agent-sheet-package .agent-package-navigation>span strong{display:block;font-size:21px}.agent-package-step-actions{display:flex;align-items:center;gap:8px;flex-shrink:0}.agent-sheet-package .agent-package-step-actions button{min-height:44px;padding:10px 12px;font-size:13px;white-space:nowrap}.agent-sheet-package .agent-package-step-actions .agent-secondary{padding-inline:10px}
+.agent-refined .agent-included .agent-included-product{display:flex;align-items:center;gap:12px}.agent-included-product>input{flex:none;width:18px;height:18px;accent-color:#997442}.agent-included-detail{display:flex;align-items:center;gap:12px;width:100%;min-width:0;min-height:60px;background:none;border:0;padding:0;text-align:left;color:inherit}.agent-included-detail>span:not(.agent-product-image){flex:1;min-width:0;line-height:1.7;font-size:14px}.agent-included-detail>svg{flex:none;color:#8e7e66}
+.agent-product-detail{margin:-4px -2px 0}.agent-product-hero{width:100%;aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;background:#f5f3ed;overflow:hidden;border-radius:14px}.agent-product-hero>img{width:100%;height:100%;object-fit:contain}.agent-product-hero>.agent-product-image{width:100%;height:100%;max-width:none}.agent-product-hero>.agent-product-image svg{width:100%;height:100%}.agent-product-no-image{display:grid;justify-items:center;gap:12px;color:#928a7c;font-size:13px}.agent-product-intro{padding:22px 0 24px;border-bottom:1px solid #e5dfd4}.agent-product-included{display:inline-block;font-size:16px;color:#93652e;font-weight:600;margin-bottom:6px}.agent-product-intro h2{font-size:25px;line-height:1.5;margin:8px 0 12px}.agent-product-intro>p{font-size:13px;color:#7a715f;line-height:1.8;margin:6px 0}.agent-product-spec{font-size:14px!important;line-height:1.8;color:#655b4e!important}.agent-product-description{padding:24px 0;border-bottom:1px solid #e5dfd4}.agent-product-description h3,.agent-product-reason h3{font-size:18px;margin:0 0 14px}.agent-product-description p{font-size:14px;line-height:1.9;color:#6e6352;margin:0}.agent-product-description dl{margin:20px 0 0}.agent-product-description dl>div{display:flex;gap:20px;padding:10px 0;border-top:1px solid #ece6dc;font-size:13px;line-height:1.8}.agent-product-description dt{width:70px;flex:none;color:#8b7c68}.agent-product-description dd{margin:0;flex:1;min-width:0}.agent-product-upgrade{padding-top:28px}.agent-product-upgrade>header h3{font-size:21px;margin:0 0 6px}.agent-product-upgrade>header p{font-size:13px;color:#837562;margin:0 0 20px}.agent-product-upgrade-info{padding:20px 0}.agent-product-upgrade-info>strong{display:block;font-size:27px;color:#93652e}.agent-product-upgrade-info>strong small{font-size:12px;font-weight:400;color:#8a7b67}.agent-product-upgrade-info h3{font-size:21px;line-height:1.6;margin:12px 0}.agent-product-upgrade-info p{font-size:14px;line-height:1.9;color:#6b6152}.agent-product-reason{border-top:1px solid #e4ddcf;padding:22px 0 10px}.agent-product-reason p{font-size:15px;line-height:2;white-space:pre-wrap;overflow-wrap:anywhere;color:#625541;margin:0}
+.agent-upgrade-product-row{display:grid;grid-template-columns:104px minmax(0,1fr);gap:18px;align-items:center;padding:16px;background:#f5f2eb;border-radius:14px;margin-bottom:20px}.agent-upgrade-product-row>.agent-product-hero{width:104px;height:104px;aspect-ratio:1;border-radius:9px;background:#fffdf8}.agent-upgrade-product-row .agent-product-upgrade-info{padding:0;min-width:0}.agent-upgrade-product-row .agent-product-upgrade-info h3{font-size:17px;line-height:1.6;margin:0 0 10px;overflow-wrap:anywhere}.agent-upgrade-product-row .agent-product-upgrade-info>strong{font-size:23px;line-height:1.5}.agent-upgrade-product-row .agent-product-upgrade-info>span{display:block;font-size:12px;color:#8a7b67;margin-top:3px}.agent-upgrade-product-row .agent-product-no-image{font-size:11px;gap:6px}.agent-upgrade-product-row .agent-product-no-image svg{width:26px;height:26px}.agent-product-upgrade .agent-product-reason{padding-top:0;border:0}
+@media(max-width:390px){.agent-upgrade-product-row{grid-template-columns:88px minmax(0,1fr);gap:14px;padding:14px}.agent-upgrade-product-row>.agent-product-hero{width:88px;height:88px}.agent-upgrade-product-row .agent-product-upgrade-info h3{font-size:16px}}
+.agent-product-upgrade>header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px}.agent-product-upgrade>header h3{margin:0;font-size:18px}.agent-product-upgrade>header>span{font-size:12px;color:#9b7547;background:#f3ebdc;padding:3px 9px;border-radius:5px}.agent-product-upgrade{padding:24px 0;border-bottom:1px solid #e5dfd4}
+.agent-included-product.is-omitted .agent-included-detail>.agent-product-image{opacity:.45}.agent-included-product.is-omitted .agent-included-detail>span:not(.agent-product-image){color:#9c9384}.agent-included-detail>span>small{display:block;font-size:11px;line-height:1.8;color:#a29177;margin-top:3px}
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content button.restoration-upload-drop{width:100%;font:inherit;touch-action:manipulation}.geyou-app.quality-app.agent-service-shell.agent-refined .main-content button.restoration-upload-drop:focus-visible{outline:2px solid #a47b48;outline-offset:3px}
+
+.agent-service-reminder{margin:12px 0 20px;padding:16px;border-radius:20px;background:#fffdf8;border:1px solid #e8e3d8}.agent-service-reminder>p{margin:0 0 12px;font-size:14px;line-height:1.7;color:#565e56}.agent-service-reminder .agent-result{width:100%;margin-bottom:10px}.agent-service-reminder>.agent-secondary{margin-top:2px}

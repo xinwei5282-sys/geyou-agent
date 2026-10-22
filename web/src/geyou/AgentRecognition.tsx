@@ -1,0 +1,6 @@
+import type {AgentMaterial,AgentProfile} from './agentTypes';
+import {DOCUMENT_FIELDS,recognitionCandidates} from './documentOcr';
+export function AgentRecognition({materials,profile,onChange}:{materials:AgentMaterial[];profile:AgentProfile;onChange:(p:AgentProfile)=>void}){
+ const candidates=recognitionCandidates(materials);if(!materials.some(m=>m.recognition))return null;
+ return <section className="agent-recognition" aria-label="资料识别待核对"><h3>资料识别 · 待核对</h3><p>识别结果仅供填写参考。多份资料不一致时，请对照原件逐项选择；不会覆盖已保存档案。</p>{candidates.map(c=><div className="agent-recognition-row" key={c.id+c.key}><div><small>{DOCUMENT_FIELDS[c.key]} · {c.source}</small><strong>{c.value}</strong>{profile[c.key]&&profile[c.key]!==c.value&&<em>与当前填写的“{profile[c.key]}”不同</em>}</div><button type="button" className="agent-secondary" aria-label={'采用'+DOCUMENT_FIELDS[c.key]+c.value} disabled={profile[c.key]===c.value&&(c.key!=='birthDate'||profile.calendar==='solar')} onClick={()=>onChange({...profile,[c.key]:c.value,...(c.key==='birthDate'?{calendar:'solar' as const,leap:false}:{})})}>{profile[c.key]===c.value&&(c.key!=='birthDate'||profile.calendar==='solar')?'已填入':'采用'}</button></div>)}{materials.flatMap(m=>(m.recognition?.warnings||[]).map((w,i)=><p className="agent-help" key={m.id+i}>{w}</p>))}</section>;
+}

@@ -1,0 +1,8 @@
+.agent-empty-state{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;grid-column:1/-1;min-height:290px;width:100%;padding:38px 24px 44px;box-sizing:border-box;text-align:center;background:transparent;border:0;box-shadow:none}
+.agent-empty-state .agent-empty-illustration{display:grid;place-items:center;width:82px;height:82px;flex:none;border-radius:50%;background:#f1ebe0;color:#af936b;margin-bottom:20px}
+.agent-empty-state .agent-empty-illustration>svg{display:block;width:34px;height:34px;stroke-width:1.4;margin:0;flex:none}
+.agent-empty-state .agent-empty-title{margin:0;font:500 17px/1.6 -apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;letter-spacing:.02em;color:#665640}
+.agent-empty-state .agent-empty-description{max-width:260px;margin:8px 0 0;font:400 13px/1.9 -apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;color:#968772;white-space:normal;overflow-wrap:anywhere}
+.agent-empty-state .agent-empty-action{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:8px 20px;margin:20px 0 0;border:1px solid #d9cbb6;border-radius:10px;color:#8f6d3e;background:#fffdf8;font-size:13px;cursor:pointer}
+.agent-empty-state .agent-empty-action:focus-visible{outline:2px solid #a47b48;outline-offset:3px}
+@media(max-width:390px){.agent-empty-state{min-height:260px;padding:30px 20px 36px}}

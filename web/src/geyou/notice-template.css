@@ -1,0 +1,109 @@
+/* Shared preview and public notice: restrained warm paper typography. */
+.geyou-app .notice-design{--notice-ink:#343734;--notice-gold:#aa9064;position:relative;isolation:isolate;width:100%;max-width:660px;margin:0 auto;padding:42px 32px 30px;background:#fbf9f4;color:var(--notice-ink);border:1px solid #e5ddce;border-radius:2px;text-align:center;font-family:'Songti SC','STSong','Noto Serif SC',serif;overflow-wrap:anywhere}
+.geyou-app .notice-design:before{content:'';position:absolute;inset:10px;border:1px solid #e9e1d3;pointer-events:none;z-index:-1}
+.geyou-app .notice-design-heading>span{font:12px/1.5 'PingFang SC',sans-serif;letter-spacing:.22em;color:#736952}
+.geyou-app .notice-design-heading h1{font:500 42px/1.5 'Songti SC','STSong',serif!important;letter-spacing:.3em!important;text-indent:.3em;color:var(--notice-ink)!important;margin:10px 0 14px!important}
+.geyou-app .notice-design-heading i{display:block;width:46px;height:1px;margin:0 auto 28px;background:var(--notice-gold)}
+.geyou-app .notice-design-portrait{margin:0 auto 22px;width:132px;padding:5px;background:#fff;border:1px solid #dfd6c7}
+.geyou-app .notice-design-portrait img{display:block!important;width:100%!important;max-width:none!important;height:auto!important;max-height:none!important;aspect-ratio:3/4;object-fit:contain;background:#f0eeea}
+.geyou-app .notice-design-person h2{font:600 26px/1.5 'Songti SC','STSong',serif!important;letter-spacing:.12em;color:var(--notice-ink)!important;margin:0 0 7px!important}
+.geyou-app .notice-design-person p{font:14px/1.7 'PingFang SC',sans-serif!important;color:#706b61;margin:0!important}
+.geyou-app .notice-design-copy{margin:30px 0;text-align:left;font-size:17px;line-height:2.05}
+.geyou-app .notice-design-copy p{font:inherit!important;color:var(--notice-ink)!important;margin:0 0 16px!important;white-space:pre-wrap}
+.geyou-app .notice-design-copy p:last-child{margin-bottom:0!important}
+.geyou-app .notice-design-arrangements{margin:0;padding:20px 0;border-top:1px solid #dfd6c7;border-bottom:1px solid #dfd6c7;text-align:left;font-family:'PingFang SC','Microsoft YaHei',sans-serif}
+.geyou-app .notice-design-arrangements>div{display:grid;grid-template-columns:72px minmax(0,1fr);gap:8px 12px;margin:0 0 16px;align-items:baseline}
+.geyou-app .notice-design-arrangements>div:last-child{margin-bottom:0}
+.geyou-app .notice-design-arrangements dt{font-size:13px;color:#746a58;letter-spacing:.04em}
+.geyou-app .notice-design-arrangements dd{font-size:16px;line-height:1.7;margin:0;color:var(--notice-ink)}
+.geyou-app .notice-design-arrangements .notice-navigation-link:focus-visible{outline:3px solid rgb(198 167 125 / 45%);outline-offset:2px}
+.geyou-app .notice-design-footer{margin-top:26px;font-family:'PingFang SC',sans-serif}
+.geyou-app .notice-design-footer>span{font-size:12px;letter-spacing:.14em;color:#756b59}
+.geyou-app .notice-design-footer>div{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:10px;margin-top:20px}
+.geyou-app .notice-design-footer small{font-size:12px;color:#756b59}
+.geyou-app .notice-design-footer strong,.geyou-app .notice-design-footer button{font-size:16px;font-weight:500;color:var(--notice-ink)}
+.geyou-app .notice-design-footer button{min-height:44px;text-decoration:underline;text-underline-offset:4px}
+.geyou-app .notice-design-flower{background:#fbf9f4 url('./assets/notice-flower.png') right top/160px auto no-repeat}
+.geyou-app .notice-local-preview:has(.notice-design){padding:0;background:none!important}
+.geyou-app .ct-public:has(.notice-design)>.section-head{position:static!important;justify-content:flex-end!important;padding:12px 0;margin:0!important}
+.geyou-app .ct-public:has(.notice-design)>.section-head .text-btn{font-size:14px;color:#595e55;min-height:44px}
+.geyou-app.public-layout .public-main:has(.notice-design):before{display:none}
+.geyou-app .notice-template-picker .template-preview.simple{position:relative;background:#fbf9f4!important;border:1px solid #e5ddce}
+.geyou-app .notice-template-picker .template-preview.simple:before{content:'讣告';position:absolute;inset:12px 8px;border:1px solid #e9e1d3;padding-top:12px;color:#47493f;font:18px 'Songti SC',serif;letter-spacing:5px;text-align:center}
+@media(max-width:480px){.geyou-app .notice-design{padding:34px 25px 26px}.geyou-app .notice-design-copy{font-size:16px;margin:26px 0}.geyou-app .notice-design-heading h1{font-size:38px!important}.geyou-app .notice-design-arrangements>div{grid-template-columns:64px minmax(0,1fr);gap:8px 10px}}
+
+.geyou-app .notice-design-simple{background:#fbf9f4 url('./assets/notice-magnolia-gpt-v1.png') center/100% 100% no-repeat;border:0;padding-top:54px;padding-bottom:54px}
+.geyou-app .notice-design-simple:before{display:none}
+.geyou-app .notice-design-simple .notice-design-copy,.geyou-app .notice-design-simple .notice-design-arrangements{position:relative;background:rgb(251 249 244 / 78%)}
+.geyou-app .notice-design-simple .notice-design-heading{position:relative}
+.geyou-app .notice-design-simple .notice-design-footer{background:rgb(251 249 244 / 72%);padding:12px 0}
+.geyou-app .notice-template-picker .template-preview.simple{background:#fbf9f4 url('./assets/notice-magnolia-gpt-v1.png') center/cover!important}
+.geyou-app .notice-preview-page{width:100%;max-width:660px;margin:0 auto;padding:16px 0 36px}
+.geyou-app .notice-preview-label{text-align:center;font:13px/1.6 'PingFang SC',sans-serif;color:#706b61;margin-bottom:16px}
+.geyou-app.public-layout .public-main:has(.notice-preview-page){padding:20px 16px!important}
+.geyou-app.public-layout .public-main:has(.notice-preview-page):before{display:none}
+@media(max-width:480px){.geyou-app .notice-design-simple{padding:42px 28px}.geyou-app.public-layout .public-main:has(.notice-preview-page){padding:12px 10px!important}}
+.geyou-app.public-layout .public-main:has(.notice-preview-page):after,.geyou-app.public-layout .public-main:has(.notice-design):after{display:none}
+
+.geyou-app .notice-preview-fit{padding:0!important;max-width:440px}
+.geyou-app .notice-preview-fit .notice-preview-label{margin:0 0 12px}
+.geyou-app .notice-preview-stage{position:relative;width:100%;display:flex;justify-content:center}
+.geyou-app .notice-preview-sheet{width:100%;transform-origin:top center;flex-shrink:0}
+.geyou-app .notice-preview-sheet .notice-design{box-sizing:border-box}
+/* Address and plain navigation link share one row. */
+.geyou-app .notice-location-inline,.geyou-app .notice-ref-info-row strong.notice-location-inline{display:flex!important;flex-direction:row!important;align-items:baseline!important;gap:8px;min-width:0}
+.geyou-app .notice-location-inline>span{min-width:0;overflow-wrap:anywhere}
+.geyou-app .notice-location-inline .notice-navigation-link{display:inline!important;flex:none;white-space:nowrap;min-height:0!important;margin:0!important;padding:0!important;border:0!important;border-radius:0!important;background:none!important;box-shadow:none!important;color:#8b6942;font:500 13px/1.5 'PingFang SC',sans-serif;text-decoration:none}
+/* The customer-facing sheet fills the viewport even when the copy is short. */
+.geyou-app.public-layout .public-main:has(.ct-public .notice-design){padding:0!important;min-height:100svh}
+.geyou-app .ct-public:has(.notice-design){width:100%;max-width:660px;margin:0 auto;padding:0!important;background:#fbf9f4}
+.geyou-app .ct-public:has(.notice-design)>.section-head{height:44px!important;box-sizing:border-box;padding:0 16px!important}
+.geyou-app .ct-public .notice-design{min-height:calc(100svh - 44px);box-sizing:border-box;display:flex;flex-direction:column}
+.geyou-app .ct-public .notice-design .notice-design-copy{flex:1}
+.geyou-app .ct-public .notice-design .notice-design-footer{margin-top:auto;padding-top:24px}
+
+.geyou-app.public-layout:has(.ct-public .notice-design) .public-header{display:none!important}
+.geyou-app .ct-public:has(.notice-design){border:0!important;border-radius:0!important;box-shadow:none!important;min-height:100svh}
+.geyou-app .ct-public:has(.notice-design):before,.geyou-app .ct-public:has(.notice-design):after{display:none!important}
+.geyou-app.public-layout .main-content.public-main:has(.ct-public .notice-design){margin:0!important;padding:0!important;background:#fbf9f4!important}
+
+.geyou-app .notice-screen{height:calc(100svh - 44px);width:100%;position:relative;display:flex;justify-content:center;overflow:hidden;background:#fbf9f4}
+.geyou-app .notice-screen-sheet{width:100%;flex:none;transform-origin:top center}
+.geyou-app .notice-screen-sheet .notice-design{width:100%;max-width:none;margin:0;box-sizing:border-box}
+
+.geyou-app.quality-app.public-layout .app-body>.main-content.public-main:has(.notice-design)::before,.geyou-app.quality-app.public-layout .app-body>.main-content.public-main:has(.notice-design)::after{display:none!important;content:none!important;height:0!important;margin:0!important}
+.geyou-app.quality-app.public-layout .app-body>.main-content.public-main:has(.ct-public .notice-design){padding:0!important;margin:0!important;min-height:100svh!important}
+
+.geyou-app.public-layout .public-main:has(.notice-preview-fit){padding:0!important;margin:0!important;min-height:100svh}
+.geyou-app .notice-preview-fit{max-width:660px!important;margin:0 auto!important;padding:0!important}
+.geyou-app .notice-preview-fit .notice-preview-label{display:flex;align-items:center;justify-content:center;height:44px;margin:0!important;box-sizing:border-box}
+.geyou-app .notice-screen{background:#fbf9f4 url('./assets/notice-magnolia-gpt-v1.png') center/100% 100% no-repeat}
+.geyou-app .notice-screen .notice-design-simple{background:transparent!important}
+
+.notice-design-footer .notice-wreath-entry{display:inline-flex;align-items:center;justify-content:center;margin:12px auto 0;padding:8px 22px;min-height:40px;border:1px solid #b59565;border-radius:20px;background:#fffaf2;color:#795a32;font:inherit;font-size:14px;letter-spacing:.08em}
+.notice-wreath-contact{text-align:center;padding:4px 8px 20px}.notice-wreath-contact>p{font-size:15px;line-height:1.8;color:#6f6253;margin:12px 0 20px}.notice-wreath-contact>img{display:block;width:220px;max-width:80%;height:220px;object-fit:contain;margin:0 auto 12px;background:white;border-radius:10px}.notice-wreath-contact>small{display:block;color:#8c7e6e;font-size:13px}.notice-wreath-phone{display:flex;align-items:center;justify-content:center;gap:8px;padding:14px;margin:20px 0 0;border-radius:12px;background:#f4ebdc;color:#795a32;font-size:20px;text-decoration:none}.notice-wreath-contact>.notice-wreath-note{font-size:13px;margin:16px 0 0}
+
+.notice-wreath-products{padding:28px 20px 36px;background:#fbf9f4;text-align:left}.notice-wreath-products header h2{margin:0;color:#4e3926;font-size:21px}.notice-wreath-products header p{font-size:14px;color:#8c7e6e;line-height:1.7;margin:8px 0 20px}.notice-wreath-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.notice-wreath-grid article{min-width:0;background:#fffdfa;border:1px solid #eee5d9;border-radius:12px;overflow:hidden}.notice-wreath-product-image{height:170px;background:#f6f2eb;overflow:hidden}.notice-wreath-product-image img{width:100%;height:100%;object-fit:contain}.notice-wreath-product-body{padding:12px}.notice-wreath-product-body h3{font-size:16px;line-height:1.5;margin:0;color:#493523}.notice-wreath-product-body>p{font-size:13px;line-height:1.6;color:#8c7e6e;margin:6px 0 12px}.notice-wreath-product-body>div{display:flex;align-items:center;justify-content:space-between;gap:6px;flex-wrap:wrap}.notice-wreath-product-body strong{font-size:17px;color:#9b7547}.notice-wreath-product-body strong small{font-size:11px;font-weight:400}.notice-wreath-product-body button{min-height:40px;padding:6px 14px;border:0;border-radius:8px;background:#b59565;color:white;font-size:14px}.notice-wreath-empty{padding:24px;text-align:center;color:#8c7e6e}.notice-wreath-contact h3{font-size:19px;color:#493523;margin:4px 0 16px}
+@media(max-width:359px){.notice-wreath-products{padding-left:14px;padding-right:14px}.notice-wreath-grid{grid-template-columns:1fr}}
+
+.notice-wreath-products .notice-wreath-product-image .showroom-image{width:100%;height:100%;min-height:0;aspect-ratio:auto;margin:0;padding:0;border-radius:0;background:#f6f2eb}
+.notice-wreath-products .notice-wreath-product-image .showroom-image img{position:static;width:100%;height:100%;max-width:100%;transform:none;object-fit:contain}
+
+
+/* Keep the original notice composition above a compact flower shelf. */
+.geyou-app .notice-screen-with-products{height:calc(100svh - 44px);display:flex;flex-direction:column;overflow:hidden}
+.geyou-app .notice-screen-with-products>.notice-screen{flex:1;min-height:0;height:auto}
+.geyou-app .notice-screen-with-products .notice-design{min-height:calc(100svh - 214px)}
+.geyou-app .notice-screen-with-products>.notice-wreath-products{flex:none;padding:12px 18px 14px;background:#fbf9f4;border-top:1px solid #e9dfd0}
+.geyou-app .notice-screen-with-products .notice-wreath-products header h2{font-size:16px;margin:0 0 10px}
+.geyou-app .notice-screen-with-products .notice-wreath-products header p,.geyou-app .notice-screen-with-products .notice-wreath-product-body>p{display:none}
+.geyou-app .notice-screen-with-products .notice-wreath-grid{display:grid;grid-auto-flow:column;grid-template-columns:none;grid-auto-columns:calc((100% - 12px)/2);gap:12px;overflow-x:auto;scroll-snap-type:x proximity}
+.geyou-app .notice-screen-with-products .notice-wreath-grid article{display:grid;grid-template-columns:62px minmax(0,1fr);align-items:center;scroll-snap-align:start;min-height:110px;border:0;background:#f4efe6;border-radius:10px}
+.geyou-app .notice-screen-with-products .notice-wreath-product-image{height:100%;min-height:100px;background:transparent}
+.geyou-app .notice-screen-with-products .notice-wreath-product-body{padding:9px}
+.geyou-app .notice-screen-with-products .notice-wreath-product-body h3{font-size:13px;line-height:1.4;margin-bottom:6px}
+.geyou-app .notice-screen-with-products .notice-wreath-product-body strong{font-size:14px}
+.geyou-app .notice-screen-with-products .notice-wreath-product-body strong small{display:none}
+.geyou-app .notice-screen-with-products .notice-wreath-product-body button{width:100%;min-height:34px;padding:4px 10px;margin-top:2px;font-size:13px;border-radius:6px}
+.notice-wreath-products header{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}.notice-wreath-products header h2 small{font-size:12px;font-weight:400;color:#8c7e6e;margin-left:8px}.notice-wreath-more{font-size:11px;color:#8c7e6e;margin-bottom:10px}
+@media(max-width:390px){.geyou-app .notice-screen-with-products .notice-wreath-grid article{grid-template-columns:48px minmax(0,1fr)}}

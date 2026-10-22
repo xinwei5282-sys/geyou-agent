@@ -1,0 +1,97 @@
+/* Shared record rhythm. Keep these tokens common to every H5 list. */
+.geyou-app{--record-x:16px;--record-y:16px;--record-gap:8px;--record-line:var(--premium-line)}
+@media(min-width:768px){.geyou-app{--record-x:24px;--record-y:20px}}
+.geyou-app .main-content :is(.talk-history-row,.customer-mobile-row,.member-compact-row,.ct-notice-row,.journey-row,.customer-quote-link){padding:var(--record-y) var(--record-x);gap:12px;min-width:0}
+.geyou-app .main-content :is(.talk-history-row,.customer-quote-link){border-bottom:1px solid var(--record-line);border-radius:0;min-height:120px;align-items:center;text-align:left}
+.geyou-app .main-content :is(.talk-history-list,.member-compact-list){overflow:visible}
+.geyou-app .main-content :is(.talk-history-row,.customer-quote-link,.member-compact-row,.journey-row)>svg:last-child{flex:none;color:var(--premium-muted)}
+.geyou-app .main-content .record-heading{display:flex;justify-content:space-between;align-items:baseline;gap:12px;min-width:0;flex-wrap:wrap}
+.geyou-app .main-content .record-heading :is(strong,b,h2){margin:0;min-width:0;overflow-wrap:anywhere;font:600 18px/1.5 var(--ref-serif);color:var(--premium-ink)}
+.geyou-app .main-content :is(.record-status,.member-status){flex:none;font:12px/1.6 var(--ui-body);white-space:nowrap;border-radius:4px;padding:2px 8px;background:var(--premium-soft-gold);color:var(--premium-brand)}
+.geyou-app .main-content :is(.record-status.complete,.member-status.disabled){background:#f2f2ed;color:#62695f}
+.geyou-app .main-content :is(.record-subject,.member-phone,.member-permissions){display:block;font:13px/1.7 var(--ui-body);color:var(--premium-muted);overflow-wrap:anywhere}
+.geyou-app .main-content :is(.talk-history-main,.quote-record-main){display:grid;gap:var(--record-gap);min-width:0;flex:1}
+.geyou-app .main-content .talk-history-main>.record-subject{display:block}
+.geyou-app .main-content :is(.talk-record-meta,.quote-record-meta){display:flex;justify-content:space-between;align-items:center;gap:8px 16px;flex-wrap:wrap}
+.geyou-app .main-content .record-details{display:flex;align-items:center;flex-wrap:wrap;gap:8px 14px;min-width:0}
+.geyou-app .main-content .talk-record-meta em{background:none;padding:0;border-radius:0;color:var(--premium-muted);font:12px/1.6 var(--ui-body)}
+.geyou-app .main-content :is(.talk-record-meta b,.quote-record-meta strong){font:600 15px/1.6 var(--ui-body);color:#916b29;font-variant-numeric:tabular-nums}
+.geyou-app .main-content :is(.talk-record-meta time,.quote-record-meta time){display:block;margin-left:auto;white-space:nowrap;font:12px/1.6 var(--ui-body);color:var(--premium-muted);font-variant-numeric:tabular-nums}
+.geyou-app .main-content .talk-filter-tabs{margin:0;border-bottom:1px solid var(--record-line)}
+.geyou-app .main-content .talk-search{padding:0 var(--record-x);border-radius:8px;background:#fff}
+.geyou-app .main-content .talk-history-list{margin-top:12px;background:#fff;border-radius:8px}
+.geyou-app .main-content .talk-history-row:last-child{border-bottom:0}
+.geyou-app .main-content .talk-history-row:focus-visible{outline:2px solid var(--premium-brand);outline-offset:-2px}
+/* Customer, follow-up and service records share the same text hierarchy. */
+.geyou-app .main-content .customer-row-text>span{display:flex;align-items:baseline;flex-wrap:wrap;gap:6px 10px}
+.geyou-app .main-content .customer-row-text strong{white-space:normal;overflow-wrap:anywhere;font-size:18px;line-height:1.5}
+.geyou-app .main-content .customer-row-text em{margin-left:0}
+.geyou-app .main-content .customer-card-progress{gap:12px;margin-top:6px}
+.geyou-app .main-content .customer-card-progress b{white-space:normal;line-height:1.6;overflow-wrap:anywhere}
+.geyou-app .main-content .customer-record-body{padding:var(--record-y) var(--record-x)}
+.geyou-app .main-content .customer-record-body p{overflow-wrap:anywhere}
+.geyou-app .main-content .customer-quote-link{display:flex;background:#fff;margin-bottom:0}
+.geyou-app .main-content .quote-record-main>.record-heading>b{font:500 14px/1.6 var(--ui-body)}
+.geyou-app .main-content .followup-rows{padding:0 var(--record-x)}
+.geyou-app .main-content .followup-row{height:auto;min-height:100px;padding:var(--record-y) 0;gap:12px}
+.geyou-app .main-content .followup-row-main{min-width:0;display:grid;gap:6px}
+.geyou-app .main-content .followup-row-main strong{font-size:16px;line-height:1.5;white-space:normal;overflow-wrap:anywhere}
+.geyou-app .main-content .followup-row-main>small{white-space:normal;overflow-wrap:anywhere}
+.geyou-app .main-content .home-task-detail{position:static;width:auto;height:auto;overflow:visible;clip-path:none;display:flex;flex-wrap:wrap;gap:6px 12px;color:var(--premium-muted);font:12px/1.6 var(--ui-body)}
+.geyou-app .main-content .home-task-status{flex:none;margin:0}
+.geyou-app .main-content .journey-row{align-items:start}
+.geyou-app .main-content .journey-row-copy{gap:6px}
+.geyou-app .main-content .journey-row-copy strong{font-size:16px;line-height:1.5;overflow-wrap:anywhere}
+.geyou-app .main-content .journey-row-copy>small{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;line-height:1.6}
+.geyou-app .main-content .journey-row-meta time{display:flex;align-items:center;gap:5px;font:12px/1.6 var(--ui-body)}
+.geyou-app .main-content .journey-task-status{margin:0;padding:2px 8px;white-space:nowrap}
+/* Member and content rows retain their own identity and action controls. */
+.geyou-app .main-content .member-row-content{display:grid;grid-template-columns:minmax(0,1fr);gap:5px;min-width:0;flex:1}
+.geyou-app .main-content .member-name{font:600 18px/1.5 var(--ref-serif);overflow-wrap:anywhere}
+.geyou-app .main-content .member-identity{color:var(--premium-muted);font:12px/1.6 var(--ui-body)}
+.geyou-app .main-content .member-permissions{font-size:12px}
+.geyou-app .main-content .member-credential{color:#916b29;font:12px/1.6 var(--ui-body)}
+.geyou-app .main-content .content-list-page .ct-notice-row{grid-template-columns:56px minmax(0,1fr);gap:12px;min-height:156px;align-items:start;padding:var(--record-y) var(--record-x)!important}
+.geyou-app .main-content .notice-card-copy{display:grid;gap:8px;min-width:0;padding:0}
+.geyou-app .main-content .notice-card-copy .record-heading{gap:6px 10px}
+.geyou-app .main-content .notice-card-copy h2{font-size:18px;line-height:1.5}
+.geyou-app .main-content .notice-card-copy p{font:13px/1.7 var(--ui-body);margin:0;overflow-wrap:anywhere}
+.geyou-app .main-content .notice-card-copy time{display:inline-block;font-variant-numeric:tabular-nums}
+.geyou-app .main-content .notice-card-actions{grid-column:1/-1;display:flex;flex-direction:row;justify-content:flex-end;gap:8px;align-self:center;border-top:1px solid var(--record-line);padding-top:8px}
+.geyou-app .main-content .notice-cover{width:56px;height:80px}
+/* Tabular prices remain aligned; padding belongs to the row, not nested buttons. */
+.geyou-app .main-content :is(.catalog-mobile-row,.catalog-table-head){padding:var(--record-y) var(--record-x)}
+.geyou-app .main-content .catalog-item-main{padding:0;gap:10px;min-width:0}
+.geyou-app .main-content .catalog-item-main strong{font-size:14px;line-height:1.6;white-space:normal;overflow-wrap:anywhere}
+.geyou-app .main-content .restoration-records{padding:var(--record-y) var(--record-x)}
+.geyou-app .main-content .restoration-record{padding:var(--record-y) 0;gap:12px}
+.geyou-app .main-content .restoration-record>span{min-width:0}
+.geyou-app .main-content .restoration-record strong{font-size:16px;line-height:1.5}
+.geyou-app .main-content .restoration-record small{line-height:1.7;overflow-wrap:anywhere}
+.geyou-app .main-content .memorial-card-compact{padding:var(--record-y) var(--record-x)}
+@media(max-width:359px){
+ .geyou-app .main-content .catalog-mobile-row,.geyou-app .main-content .catalog-table-head{padding-left:10px;padding-right:10px}
+ .geyou-app .main-content .content-list-page .ct-notice-row{grid-template-columns:minmax(0,1fr)}
+ .geyou-app .main-content .ct-notice-row .notice-cover{display:none!important}
+ .geyou-app .main-content .member-compact-row{gap:8px}
+ .geyou-app .main-content .member-compact-row .avatar{width:32px;height:32px}
+}
+
+.geyou-app .main-content .member-heading{display:flex;align-items:baseline;flex-wrap:wrap;gap:6px 10px}
+.geyou-app .main-content .ct-notice-row .tag:after{content:none!important}
+
+/* The wrapper owns the search surface and focus ring; the input has no second panel. */
+.geyou-app .main-content :is(.search,.talk-search,.showroom-search){display:flex;align-items:center;gap:10px;min-height:44px;padding:0 16px!important;background:#fff!important;border:1px solid var(--premium-line);border-radius:999px!important;box-shadow:none!important}
+.geyou-app .main-content :is(.search,.talk-search,.showroom-search)>svg{flex:none;color:var(--premium-muted);background:transparent}
+.geyou-app .main-content :is(.search,.talk-search,.showroom-search)>input{flex:1;min-width:0;width:0;min-height:42px;margin:0;padding:0;border:0;border-radius:0;background:transparent!important;background-image:none!important;box-shadow:none!important;outline:none;color:var(--premium-ink);font:14px/1.6 var(--ui-body);appearance:none}
+.geyou-app .main-content :is(.search,.talk-search,.showroom-search):focus-within{border-color:var(--premium-brand);outline:2px solid var(--premium-brand);outline-offset:2px}
+.geyou-app .main-content .content-list-tools>.search{width:100%;margin:0}
+/* Workbench tasks grow with their content and use the page's normal scroll. */
+.geyou-app .main-content .home-reference .followup-rows{max-height:none;height:auto;overflow:visible;margin-top:12px}
+.geyou-app .main-content .home-reference .followup-row{height:auto;min-height:112px;padding:20px 0;align-items:flex-start}
+.geyou-app .main-content .home-reference .followup-row-main{gap:8px}
+.geyou-app .main-content .home-reference .followup-row-main>small{line-height:1.7}
+.geyou-app .main-content .home-reference .home-task-detail{line-height:1.7;gap:6px 12px}
+.geyou-app .main-content .home-reference .followup-row :is(.home-task-icon,.home-task-status){margin-top:2px}
+.geyou-app .main-content .home-reference .followup-row>svg{margin-top:5px;margin-left:0;flex:none}
+.geyou-app .main-content .home-reference .followup-unified>.section-head{gap:12px;flex-wrap:wrap}

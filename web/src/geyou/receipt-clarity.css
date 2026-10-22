@@ -1,0 +1,13 @@
+.app-sheet,.app-sheet.reference-sheet{--ui-body:'PingFang SC','Microsoft YaHei',sans-serif;--sheet-serif:var(--ui-body);font-family:var(--ui-body)}
+.app-sheet .app-sheet-surface :is(h2,h3,button,strong,b,output){font-family:var(--ui-body)}
+.app-sheet .app-sheet-surface header h2{font-size:22px;line-height:1.4}
+.app-sheet .receipt-form-reference{font-size:14px;line-height:1.6}
+.app-sheet .receipt-form-status{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:14px 0;padding:10px 12px;border-radius:10px;background:#f2f5ef;color:#557365}
+.app-sheet .receipt-form-status span{font-size:13px}.app-sheet .receipt-form-status strong{font-size:13px;color:#275d4d}
+.app-sheet .receipt-readonly-row{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.app-sheet .receipt-readonly-row output{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;color:#183e34;font-weight:600;text-align:left}
+.app-sheet .receipt-readonly-row output small{font-size:12px;font-weight:400;color:var(--premium-muted)}
+.app-sheet .receipt-form-reference .sheet-form-row{gap:8px;margin:12px 0}
+.app-sheet .receipt-form-reference .sheet-form-row>span{font-size:14px;color:#465b51}
+.app-sheet .receipt-form-reference .receipt-verification{font-size:13px;line-height:1.55}
+.app-sheet .receipt-form-reference .receipt-actions{gap:10px;margin-top:16px}

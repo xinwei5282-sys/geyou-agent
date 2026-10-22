@@ -1,0 +1,9 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {seedState} from './model';
+import {confirmSaleAndQuote,recordSalePayment} from './saleSettlementModel';
+import {summarizeSaleRecords} from './saleRecordSummary';
+function fixture(){const seed=seedState(),staff=seed.staff[0];const sold=confirmSaleAndQuote(seed,seed.proposals[0].id,staff,true);const state=recordSalePayment(sold.state,staff,sold.quote.id,{amount:10000,date:'2026-10-19',method:'微信',kind:'订金',note:'测试',confirmed:true});return {state,staff,quote:sold.quote};}
+test('restricted sales permissions return empty records without throwing or exposing money',()=>{const {state,staff}=fixture();state.agencies.find(a=>a.id===staff.agencyId)!.access!.modules=['customers'];const result=summarizeSaleRecords(state,staff,state.quotes);assert.deepEqual(result,{quotes:[],summaries:[],paid:0,paymentCount:0});});
+test('payment count includes deposits and legacy receipts once per order despite repeated versions',()=>{const {state,staff,quote}=fixture();const receipt={amount:20000,recordedAt:'2026-10-19',recordedBy:staff.id,payeeName:'本店'};state.quotes=state.quotes.map(q=>q.id===quote.id?{...q,receipt}:q);state.quotes.push({...quote,id:'older',version:0,receipt});const result=summarizeSaleRecords(state,staff,state.quotes);assert.equal(result.paymentCount,2);assert.equal(result.paid,30000);assert.equal(result.summaries.length,1);});
+test('selected subject excludes another subject and another agency payments',()=>{const {state,staff,quote}=fixture();state.quotes.push({...quote,id:'another-person',deceasedId:'other-person'});const result=summarizeSaleRecords(state,staff,state.quotes.filter(q=>q.deceasedId==='other-person'));assert.equal(result.paid,0);assert.equal(result.paymentCount,0);const outsider=state.staff.find(s=>s.agencyId!==staff.agencyId)!;assert.equal(summarizeSaleRecords(state,outsider,[quote]).paymentCount,0);});

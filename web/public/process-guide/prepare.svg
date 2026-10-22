@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 240" role="img" aria-labelledby="title desc">
+  <title id="title">服务准备流程</title><desc id="desc">确认地点、准备照片、核对时间三个步骤</desc>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M1 1 7 4 1 7" fill="none" stroke="#9caf9f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+  <g fill="none" stroke="#225849" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M143 82h160M337 82h160" stroke="#9caf9f" stroke-width="2" marker-end="url(#arrow)"/>
+    <path d="M57 99h61M64 99V62l24-17 24 17v37M78 99V76h20v23M57 62h61" fill="#edf3ee"/><path d="M85 60h6" stroke="#b69b62"/>
+    <rect x="286" y="47" width="65" height="49" rx="6" fill="#edf3ee"/><path d="M294 87 311 70l11 10 9-8 14 15"/><circle cx="333" cy="61" r="5" fill="#b69b62"/><path d="M279 103h79"/>
+    <rect x="489" y="48" width="52" height="52" rx="6" fill="#edf3ee"/><path d="M489 63h52M501 43v11M529 43v11M501 75h10m8 0h10m-28 11h10"/><path d="m515 87 5 5 10-12" stroke="#b69b62"/>
+  </g>
+  <g fill="#34594d" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="19" text-anchor="middle"><text x="88" y="177">确认地点</text><text x="318" y="177">准备用照</text><text x="515" y="177">核对时间</text></g>
+</svg>

@@ -1,0 +1,310 @@
+/* Geyou Warm Premium system: shared tokens and primitives used by every route. */
+:root {
+  --premium-page: #faf9f6;
+  --premium-paper: #fffdf9;
+  --premium-soft: #f3f0ea;
+  --premium-soft-gold: #f5efe5;
+  --premium-gold: #c6a77d;
+  --premium-gold-light: #e6c89c;
+  --premium-ink: #3d2e23;
+  --premium-brand: #9b7546;
+  --premium-brand-hover: #755735;
+  --premium-muted: #82796f;
+  --premium-silver: #a8adb4;
+  --premium-line: #e8e1d8;
+  --premium-bluegray: #334155;
+  --premium-blue: #4f7df3;
+  --premium-success: #47745b;
+  --premium-warning: #a36f25;
+  --premium-error: #a64d43;
+  --ui-ink: var(--premium-ink);
+  --ui-muted: var(--premium-muted);
+  --ui-brand: var(--premium-brand);
+  --ui-line: var(--premium-line);
+  --ui-page: var(--premium-page);
+  --ui-surface: var(--premium-paper);
+  --ui-soft: var(--premium-soft);
+  --green: var(--premium-brand);
+  --paper: var(--premium-paper);
+  --muted: var(--premium-muted);
+  --line: var(--premium-line);
+  --gold: var(--premium-gold);
+  --workbench-ink: var(--premium-ink);
+  --workbench-green: var(--premium-brand);
+  --ref-paper: var(--premium-page);
+  --ref-surface: var(--premium-paper);
+  --ref-ink: var(--premium-ink);
+  --ref-green: var(--premium-brand);
+  --ref-muted: var(--premium-muted);
+  --ref-line: var(--premium-line);
+  --ref-gold: #8b6942;
+  --q-ink: var(--premium-ink);
+  --q-green: var(--premium-brand);
+  --q-paper: var(--premium-page);
+  --q-line: var(--premium-line);
+  --q-muted: var(--premium-muted);
+  --app-bg: var(--premium-page);
+  --app-surface: var(--premium-paper);
+  --app-ink: var(--premium-ink);
+  --app-muted: var(--premium-muted);
+  --app-line: var(--premium-line);
+  --app-accent: var(--premium-brand);
+}
+
+body,
+.geyou-app.quality-app {
+  color: var(--premium-ink);
+  background: var(--premium-page);
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-synthesis: none;
+}
+
+.geyou-app.quality-app { --sample-ink: var(--premium-ink); --sample-muted: var(--premium-muted); --sample-green: var(--premium-brand); --sample-line: var(--premium-line); }
+.geyou-app.quality-app .sample-home { --sample-ink: var(--premium-ink); --sample-muted: var(--premium-muted); --sample-green: var(--premium-brand); --sample-line: var(--premium-line); }
+.geyou-app.quality-app { background: var(--premium-page); }
+.geyou-app.quality-app:has(.sample-home) { background: var(--premium-page); }
+.geyou-app.quality-app :is([class*="frame"], [class*="dialog"], [class*="startForm"]) { --f-ink: var(--premium-ink); --f-muted: var(--premium-muted); --f-green: var(--premium-brand); --f-line: var(--premium-line); --f-soft: var(--premium-soft-gold); }
+.geyou-app.quality-app .prototype-strip { display: none; }
+.geyou-app.quality-app :is(h1, h2, h3, h4, .page-title) { font-family: inherit; color: var(--premium-ink); letter-spacing: -.025em; }
+.geyou-app.quality-app .sample-home > .app-page-header h1 { color: var(--premium-ink) !important; }
+.geyou-app.quality-app :is(.muted, .micro, .breadcrumb) { color: var(--premium-muted); }
+.geyou-app.quality-app :is(button, a, input, select, textarea):focus-visible { outline-color: var(--premium-brand); }
+
+/* App frame and navigation */
+.geyou-app.quality-app > .sidebar {
+  background: var(--premium-soft);
+  border-color: var(--premium-line);
+}
+.geyou-app.quality-app .topbar,
+.geyou-app.quality-app .mobile-nav,
+.geyou-app.quality-app .public-header {
+  color: var(--premium-ink);
+  background: var(--premium-page);
+  border-color: var(--premium-line);
+}
+.geyou-app.quality-app .brand strong,
+.geyou-app.quality-app .mobile-brand strong { color: var(--premium-ink); font-family: inherit; font-weight: 650; letter-spacing: -.02em; }
+.geyou-app.quality-app > .sidebar .brand-seal { border-color: var(--premium-gold); color: #96754e; }
+.geyou-app.quality-app .agency-card strong,
+.geyou-app.quality-app .breadcrumb strong,
+.geyou-app.quality-app .account-summary { color: var(--premium-ink); }
+.geyou-app.quality-app > .sidebar nav button { color: #626970; border-radius: 8px; }
+.geyou-app.quality-app > .sidebar nav button.active { background: var(--premium-soft-gold); color: var(--premium-brand); box-shadow: inset 2px 0 var(--premium-gold); }
+.geyou-app.quality-app > .sidebar nav button:hover { background: #ece7dd; }
+.geyou-app.quality-app .sidebar-toggle { color: var(--premium-ink); border-color: var(--premium-line); }
+.geyou-app.quality-app .sidebar-toggle:hover { background: var(--premium-soft-gold); }
+.geyou-app.quality-app .avatar { color: #775d3f; background: #eee4d5; }
+
+/* Surfaces, controls and focus */
+.geyou-app.quality-app :is(.panel, .daily-panel, .quote-paper, .proposal-panel, .conversation-start, .conversation-summary, .metric-card, .settings-overview, .compact-pending.panel, .followup-rows, .sample-records, .cc-customer-list, .agenda-list) {
+  color: var(--premium-ink);
+  background-color: var(--premium-paper);
+  border-color: var(--premium-line);
+  border-radius: 12px;
+  box-shadow: 0 1px 2px rgb(37 40 44 / 3%);
+}
+.geyou-app.quality-app :is(input:not([type=checkbox]):not([type=file]), select, textarea) {
+  color: var(--premium-ink);
+  background-color: var(--premium-paper);
+  border-color: #d8d5ce;
+  border-radius: 8px;
+}
+.geyou-app.quality-app :is(.field > span, .field label, .startForm label, [class*="field"] > span, [class*="field"] > label) { color: var(--premium-ink); }
+.geyou-app.quality-app .startForm [class*="scenario"] { color: var(--premium-ink); }
+.geyou-app.quality-app :is(input, textarea)::placeholder { color: #858b91; }
+.geyou-app.quality-app :is(.btn, .btn-primary, .btn-outline) { border-radius: 8px; }
+.geyou-app.quality-app .btn-primary,
+.geyou-app.quality-app .conversation-composer button[type=submit],
+.geyou-app.quality-app button[class*="primary"]:not(.workbench-action-primary),
+.geyou-app.quality-app button[class*="Primary"] {
+  color: #fffefa;
+  background: var(--premium-brand) !important;
+  border-color: var(--premium-brand);
+}
+.geyou-app.quality-app .btn-primary:hover,
+.geyou-app.quality-app .conversation-composer button[type=submit]:hover,
+.geyou-app.quality-app button[class*="primary"]:not(.workbench-action-primary):hover,
+.geyou-app.quality-app button[class*="Primary"]:hover { background: var(--premium-brand-hover) !important; }
+.geyou-app.quality-app .btn-outline { color: var(--premium-ink); background: var(--premium-paper); border-color: #cfcbc2; }
+.geyou-app.quality-app .btn-outline:hover { background: var(--premium-soft); border-color: var(--premium-gold); }
+.geyou-app.quality-app .text-btn,
+.geyou-app.quality-app .icon-btn { color: #796143; }
+.geyou-app.quality-app .icon-btn:hover { background: var(--premium-soft-gold); }
+.geyou-app.quality-app .segmented { background: var(--premium-soft); border-color: var(--premium-line); }
+.geyou-app.quality-app .segmented button.active { color: var(--premium-ink); border: 1px solid #e5d6bf; background: var(--premium-paper); box-shadow: 0 1px 2px rgb(37 40 44 / 6%); }
+.geyou-app.quality-app :is(.tag, .status, .preference-tags button) { border-radius: 5px; }
+.geyou-app.quality-app .toast { color: var(--premium-paper); background: var(--premium-ink); }
+
+/* Selected and high-value states use a quiet champagne signal. Status colors stay semantic. */
+.geyou-app.quality-app :is(.metric-card.selected, .conversation-mode button.active, .sheet-option.selected, .cc-product-card.selected) {
+  color: var(--premium-ink);
+  background: var(--premium-soft-gold);
+  border-color: var(--premium-gold);
+}
+.geyou-app.quality-app :is(.metric-card strong, .quote-total, .quote-sum strong, .cc-product-card > strong, .showroom-price) { color: #8b6942; }
+.geyou-app.quality-app .sample-home .sample-start,
+.geyou-app.quality-app .compact-start,
+.geyou-app.quality-app .start-card {
+  color: var(--premium-paper);
+  background: var(--premium-brand) !important;
+  border-color: var(--premium-brand);
+  border-radius: 12px;
+  box-shadow: 0 8px 22px rgb(37 40 44 / 10%);
+}
+.geyou-app.quality-app :is(.sample-start, .compact-start, .start-card) :is(strong, h2, small, p) { color: inherit; }
+.geyou-app.quality-app .sample-start:hover,
+.geyou-app.quality-app .compact-start:hover { background: var(--premium-brand-hover) !important; }
+.geyou-app.quality-app .workbench-banner { border-radius: 12px; }
+.geyou-app.quality-app .workbench-banner.has-premium-banner { color: var(--premium-ink); background: var(--premium-page); border-color: var(--premium-line); }
+.geyou-app.quality-app .workbench-banner.has-premium-banner::after { content: ""; position: absolute; z-index: 0; inset: 0; background: linear-gradient(90deg, rgb(250 249 246 / 98%) 0%, rgb(250 249 246 / 93%) 38%, rgb(250 249 246 / 42%) 66%, transparent 100%); pointer-events: none; }
+.geyou-app.quality-app .workbench-banner.has-premium-banner .workbench-banner-art { inset: 0; right: auto; bottom: auto; z-index: -1; width: 100%; height: 100%; object-fit: cover; clip-path: none; opacity: 1; mix-blend-mode: normal; }
+.geyou-app.quality-app .workbench-banner.has-premium-banner > :not(.workbench-banner-art) { position: relative; z-index: 1; color: var(--premium-ink); }
+.geyou-app.quality-app .workbench-banner.has-premium-banner > span { color: #80664a; }
+.geyou-app.quality-app .workbench-banner.has-premium-banner > p { color: var(--premium-muted); }
+.geyou-app.quality-app .workbench-banner:not(.has-generated-banner):not(.has-premium-banner) { color: var(--premium-ink); background: linear-gradient(110deg, var(--premium-paper), var(--premium-soft)); border-color: var(--premium-line); }
+.geyou-app.quality-app .workbench-banner:not(.has-generated-banner):not(.has-premium-banner) > span { color: #80664a; }
+.geyou-app.quality-app .workbench-banner:not(.has-generated-banner):not(.has-premium-banner) h2 { color: var(--premium-ink); }
+.geyou-app.quality-app .workbench-banner:not(.has-generated-banner):not(.has-premium-banner) p { color: var(--premium-muted); }
+.geyou-app.quality-app .workbench-actions .workbench-action-primary { color: var(--premium-paper); background: var(--premium-brand); border-color: var(--premium-brand); border-radius: 12px; }
+.geyou-app.quality-app .workbench-actions .workbench-action-primary:hover { background: var(--premium-brand-hover) !important; }
+.geyou-app.quality-app .workbench-actions .workbench-action-primary :is(strong, small, svg, .workbench-action-icon) { color: var(--premium-paper); }
+.geyou-app.quality-app .workbench-actions .workbench-action:not(.workbench-action-primary) { color: var(--premium-ink); background: var(--premium-paper); border-color: var(--premium-line); border-radius: 12px; }
+.geyou-app.quality-app .workbench-actions .workbench-action:not(.workbench-action-primary) .workbench-action-icon { color: #8b6942; background: var(--premium-soft-gold); border-radius: 8px; }
+.geyou-app.quality-app .workbench-todo-entry { color: var(--premium-ink); background: var(--premium-paper); border-color: var(--premium-line); border-radius: 12px; }
+.geyou-app.quality-app .workbench-todo-icon { color: #80664a; background: var(--premium-soft-gold); border-radius: 8px; }
+.geyou-app.quality-app .workbench-todo-entry > b { color: #80664a; background: var(--premium-soft-gold); }
+.geyou-app.quality-app .more-group-list button > svg:first-child,
+.geyou-app.quality-app .more-grid button > svg:first-child { color: #8b6942; }
+.geyou-app.quality-app .more-group-list button,
+.geyou-app.quality-app .more-account { color: var(--premium-ink); }
+.geyou-app.quality-app [class*="scenarioActive"] { color: var(--premium-ink); background: var(--premium-soft-gold); border-color: var(--premium-gold); box-shadow: inset 0 0 0 1px var(--premium-gold); }
+.geyou-app.quality-app .home-flower { color: var(--premium-gold); stroke: var(--premium-gold); }
+
+@media (max-width: 640px) {
+  .geyou-app.quality-app .mobile-nav { padding-bottom: calc(9px + env(safe-area-inset-bottom)); }
+  .geyou-app.quality-app .mobile-nav button.active { color: var(--premium-brand); }
+}
+
+/* Mobile home, aligned to the warm service-workbench reference. */
+/* Shared home artwork and phone-first composition; wider layouts refine below. */
+@media screen {
+  .geyou-app.quality-app:has(.workbench-home) { --premium-page: #fbf8f2; --ui-page: #fbf8f2; --app-bg: #fbf8f2; background-color: #fbf8f2; }
+  .geyou-app.quality-app .main-content:has(.workbench-home) { padding: 0 15px calc(86px + env(safe-area-inset-bottom)); }
+  .geyou-app.quality-app .workbench-home { gap: 11px; padding-top: 0; }
+  .geyou-app.quality-app .main-content .workbench-home > .app-page-header { display: none !important; }
+  .geyou-app.quality-app .workbench-banner { min-height: 0; height: clamp(210px, 53vw, 240px); margin-inline: -15px; padding: 30px 25px; border: 0; border-radius: 0; }
+  .geyou-app.quality-app .workbench-banner.has-reference-banner { padding: 0; background: transparent; }
+  .geyou-app.quality-app .workbench-banner.has-reference-banner::after { display: none; }
+  .geyou-app.quality-app .workbench-banner.has-reference-banner .workbench-banner-art { inset: 0; right: auto; bottom: auto; z-index: 0; width: 100%; height: 100%; object-fit: cover; clip-path: none; opacity: 1; mix-blend-mode: normal; }
+  .geyou-app.quality-app .workbench-banner.has-premium-banner::after { background: linear-gradient(90deg, rgb(250 249 246 / 96%) 0%, rgb(250 249 246 / 82%) 46%, rgb(250 249 246 / 12%) 83%, transparent 100%); }
+  .geyou-app.quality-app .workbench-banner > span { margin: 0 0 20px; max-width: 62%; padding: 5px 10px; border-radius: 8px; background: rgb(255 254 250 / 74%); font-size: 13px; letter-spacing: .08em; }
+  .geyou-app.quality-app .workbench-banner h2 { max-width: 78%; font: 600 clamp(25px, 7vw, 32px)/1.35 "Songti SC", STSong, serif; letter-spacing: .025em; }
+  .geyou-app.quality-app .workbench-banner p { max-width: 66%; margin-top: 10px; font-size: 15px; line-height: 1.55; }
+  .geyou-app.quality-app .workbench-banner-dots { position: absolute; z-index: 2; left: 24px; bottom: 18px; display: flex; gap: 8px; }
+  .geyou-app.quality-app .workbench-banner-dots i { width: 8px; height: 8px; border-radius: 50%; background: #d3cfc7; }
+  .geyou-app.quality-app .workbench-banner-dots i:first-child { background: #b07a13; }
+  .geyou-app.quality-app .workbench-actions { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+  .geyou-app.quality-app .workbench-actions > button,
+  .geyou-app.quality-app .workbench-actions .workbench-action-primary { position: relative; isolation: isolate; display: flex; grid-column: auto; align-items: center; gap: 17px; min-height: 80px; padding: 12px 20px; overflow: hidden; border-radius: 14px; text-align: left; }
+  .geyou-app.quality-app .workbench-actions .workbench-action-primary { min-height: 86px; color: var(--premium-ink); background: #f5e6ce; border-color: #ead6b8; }
+  .geyou-app.quality-app .workbench-actions .workbench-action-primary :is(strong, small, svg) { color: var(--premium-ink) !important; }
+  .geyou-app.quality-app .workbench-action-art { position: absolute; z-index: -1; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .9; }
+  .geyou-app.quality-app .workbench-action-icon-art { position: relative; z-index: 1; display: block; flex: 0 0 70px; width: 70px; height: 70px; margin: 0; object-fit: contain; }
+  .geyou-app.quality-app .workbench-action-icon,
+  .geyou-app.quality-app .workbench-todo-icon { display: grid; place-items: center; flex: 0 0 56px; width: 56px; height: 56px; margin: 0 7px 0 0; color: #9c6a27; background: rgb(255 254 250 / 58%); border: 1px solid rgb(255 255 255 / 65%); border-radius: 13px; }
+  .geyou-app.quality-app .workbench-action-copy,
+  .geyou-app.quality-app .workbench-actions button > span:nth-last-of-type(1) { display: grid; gap: 3px; min-width: 0; flex: 1; }
+  .geyou-app.quality-app .workbench-actions button strong,
+  .geyou-app.quality-app .workbench-todo-entry strong { color: var(--premium-ink); font-size: 18px; line-height: 1.4; font-weight: 650; }
+  .geyou-app.quality-app .workbench-actions button small,
+  .geyou-app.quality-app .workbench-todo-entry small { color: #5f6367; font-size: 14px; line-height: 1.45; }
+  .geyou-app.quality-app .workbench-actions button > svg:last-child { display: none; }
+  .geyou-app.quality-app .workbench-action-reception .workbench-action-icon { color: #60765e; background: rgb(244 247 240 / 72%); }
+  .geyou-app.quality-app .workbench-action-restoration .workbench-action-icon { color: #9b714f; background: rgb(255 249 244 / 72%); }
+  .geyou-app.quality-app .workbench-action-notice .workbench-action-icon { color: #697b90; background: rgb(246 249 253 / 76%); }
+  .geyou-app.quality-app .workbench-todo-entry { position: relative; isolation: isolate; display: flex; align-items: center; gap: 16px; min-height: 82px; padding: 12px 20px; overflow: hidden; border-radius: 14px; text-align: left; }
+  .geyou-app.quality-app .workbench-todo-entry > span:nth-of-type(2) { display: grid; gap: 3px; min-width: 0; flex: 1; }
+  .geyou-app.quality-app .workbench-todo-entry > b { position: relative; z-index: 1; }
+}
+
+/* Warm Tab palette: shared action and selection colors across service tools. */
+.geyou-app.quality-app {
+ --f-green:var(--premium-brand); --f-soft:var(--premium-soft-gold);
+ --restore-green:var(--premium-brand); --restore-ink:var(--premium-ink);
+ --qr-green:var(--premium-brand); --qr-green-soft:var(--premium-soft-gold);
+ --q-green-soft:var(--premium-soft-gold);
+}
+.geyou-app.quality-app :is(.mobile-nav button.active,.app-back,.sidebar-toggle,.text-btn:not(.danger),.icon-btn,.btn-outline) {color:var(--premium-brand)}
+.geyou-app.quality-app :is(.settings-save-button,.btn-primary,button[class*="primary"]:not(.workbench-action-primary),button[class*="Primary"]) {background:var(--premium-brand)!important;border-color:var(--premium-brand);color:var(--premium-paper)!important}
+.geyou-app.quality-app :is(.settings-save-button,.btn-primary,button[class*="primary"]:not(.workbench-action-primary),button[class*="Primary"]):hover:not(:disabled) {background:var(--premium-brand-hover)!important}
+.geyou-app.quality-app :is(.segmented button.active,.content-filters button.active,.restoration-list-filters button.active,[role="tab"][aria-selected="true"]) {background:var(--premium-soft-gold);color:var(--premium-brand);border-color:var(--premium-gold)}
+.geyou-app.quality-app :is([class*="frame"],[class*="dialog"],[class*="startForm"]) {--f-green:var(--premium-brand);--f-soft:var(--premium-soft-gold)}
+.app-sheet {--f-green:var(--premium-brand);--f-ink:var(--premium-ink);--f-line:var(--premium-line);--f-soft:var(--premium-soft-gold)}
+.app-sheet .app-sheet-surface {background:var(--premium-paper);color:var(--premium-ink)}
+.app-sheet :is(.btn-primary,button[class*="primary"]:not(.workbench-action-primary),button[class*="Primary"]) {background:var(--premium-brand)!important;border-color:var(--premium-brand);color:var(--premium-paper)!important}
+.app-sheet :is(.app-back,.btn-outline) {color:var(--premium-brand);border-color:var(--premium-line)}
+
+.geyou-app.quality-app .main-content :is(h1,h2,h3,h4,.customer-row-text strong) {color:var(--premium-ink)!important}
+.geyou-app.quality-app .main-content :is(.customer-filter-tabs,.member-filter-tabs,.content-filters) {background:var(--premium-soft)}
+.geyou-app.quality-app .main-content :is(.customer-filter-tabs,.member-filter-tabs,.content-filters) button.active {background:var(--premium-soft-gold)!important;color:var(--premium-brand)!important;border-color:var(--premium-gold)}
+.geyou-app.quality-app .main-content :is(.customer-initial,.customer-card-progress b,.customer-row-text em) {background:var(--premium-soft-gold);color:var(--premium-brand)}
+.geyou-app.quality-app .main-content :is(.customer-mobile-row,.customer-mobile-row>svg) {color:var(--premium-brand)}
+
+.customer-pane-service .sj-subject {display:grid;gap:8px}
+.customer-pane-service .sj-subject select {width:100%;min-height:44px}
+.customer-pane-service .sj-section-head {gap:8px;flex-wrap:wrap}
+.customer-pane-service .sj-section-head button {white-space:nowrap;min-height:44px}
+@media (max-width:767px) {
+  .customer-pane-service .sj-section-head h3 {flex:1 1 100%;margin:0}
+}
+
+/* Customer-facing showroom joins the five primary destinations. */
+.geyou-app.quality-app .mobile-nav { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.geyou-app.quality-app .mobile-nav button { min-width: 0; }
+
+.geyou-app .workbench-banner.has-complete-banner { aspect-ratio: 1.83; height: auto; min-height: 0; border-radius: 0; padding: 0; }
+.geyou-app .workbench-banner.has-complete-banner .workbench-banner-art { width: 100%; height: 100%; object-fit: contain; }
+
+/* Finished brand artwork must retain its own light, text and full composition. */
+.geyou-app.quality-app .workbench-banner.has-complete-banner { background: transparent; border: 0; aspect-ratio: auto; height: auto; min-height: 0; padding: 0; }
+.geyou-app.quality-app .workbench-banner.has-complete-banner::before,
+.geyou-app.quality-app .workbench-banner.has-complete-banner::after { display: none; }
+.geyou-app.quality-app .workbench-banner.has-complete-banner .workbench-banner-art { position: static; display: block; width: 100%; height: auto; inset: auto; z-index: auto; object-fit: contain; opacity: 1; filter: none; mix-blend-mode: normal; clip-path: none; transform: none; }
+
+/* Shared navigation and backgrounds follow the approved six-page drafts. */
+.geyou-app.quality-app .mobile-nav{background:rgba(255,253,249,.98);border-top:1px solid #e7dfd3;box-shadow:0 -4px 18px #785d3c06}.geyou-app.quality-app .mobile-nav button{font-size:13px;color:#8c8278;gap:6px}.geyou-app.quality-app .mobile-nav button.active{color:#ad824c}.geyou-app.quality-app .mobile-nav button.active svg{fill:#c6a77d22;stroke:#ad824c}.geyou-app.quality-app .global-ai-reception{background:linear-gradient(140deg,#c6a77d,#987044)!important;border:1px solid #dac5a8!important;color:white!important}
+.geyou-app.quality-app .main-content:is(.route-shop,.route-customers,.route-talk,.route-talk-ai){background:radial-gradient(ellipse at 90% 0,#e6d5b929,transparent 45%),#faf9f6}
+@media(max-width:839px){.geyou-app.quality-app:has(.ai-draft-page) .mobile-nav{display:grid!important}.geyou-app.quality-app .main-content:is(.route-shop,.route-customers) .app-page-header h1{font-family:"Songti SC",STSong,serif!important}.geyou-app.quality-app:has(.service-history) .mobile-nav{display:grid!important}}
+
+/* Five-tab navigation from the selected mobile design. */
+.geyou-app.quality-app .mobile-nav{--app-nav-height:82px;background:#faf9f7;border-top:1px solid #e5dfd7;box-shadow:none;padding:10px 0 calc(15px + env(safe-area-inset-bottom));height:calc(82px + env(safe-area-inset-bottom))}
+.geyou-app.quality-app .mobile-nav button{min-height:48px;gap:6px;padding:0;color:#85817c;font:400 13px/1.4 'PingFang SC',sans-serif;letter-spacing:0}
+.geyou-app.quality-app .mobile-nav button svg{width:26px;height:26px;stroke-width:1.5;fill:none;stroke:currentColor;background:none;border-radius:0;box-shadow:none}
+.geyou-app.quality-app .mobile-nav button.active{color:#a87e48;font-weight:400}
+.geyou-app.quality-app .mobile-nav button.active svg{fill:none;stroke:currentColor}
+.geyou-app.quality-app .mobile-nav button[data-tab="shop"].active svg{fill:#b68d56;stroke:#b68d56}
+.geyou-app.quality-app .mobile-nav button.active::before,.geyou-app.quality-app .mobile-nav button.active::after{content:none!important}
+
+.geyou-app.quality-app .mobile-nav button[data-tab="shop"].active svg path:last-child{fill:none;stroke:#a87e48}
+
+/* Storefront rhythm is the common language for internal workspace controls. */
+.geyou-app.quality-app:not(.public-layout){--ui-space:8px;--ui-card-radius:12px;--ui-control-radius:12px;--ui-title-font:'Songti SC',STSong,serif;--ui-body:Inter,-apple-system,'PingFang SC',sans-serif}
+.geyou-app.quality-app:not(.public-layout) .main-content .app-page-header h1{font-family:var(--ui-title-font)!important;font-size:26px;font-weight:600;color:#432e1b;letter-spacing:.02em}
+.geyou-app.quality-app:not(.public-layout) .main-content :is(.panel,.settings-overview,.proposal-panel,.conversation-start,.conversation-summary){border-radius:var(--ui-card-radius);border-color:var(--premium-line);box-shadow:0 3px 16px #71573408}
+.geyou-app.quality-app:not(.public-layout) .main-content :is(.btn,.app-back){border-radius:var(--ui-control-radius)!important}
+.geyou-app.quality-app:not(.public-layout) .main-content :is(input:not([type=checkbox]):not([type=radio]):not([type=file]),select,textarea){border-radius:var(--ui-control-radius);border-color:var(--premium-line);font-size:16px}
+.geyou-app.quality-app:not(.public-layout) .main-content :is(.search,.talk-search,.showroom-search,.restoration-list-search){border-radius:24px!important;background:#eeece8!important;border:0!important;box-shadow:none!important}
+.geyou-app.quality-app:not(.public-layout) .main-content :is(.segmented,.member-filter-tabs,.cc-filter-tabs,.customer-filter-tabs,.content-filters,.restoration-list-filters,.showroom-categories){background:transparent;border:0;gap:8px;padding:0;overflow-x:auto}
+.geyou-app.quality-app:not(.public-layout) .main-content :is(.segmented,.member-filter-tabs,.cc-filter-tabs,.customer-filter-tabs,.content-filters,.restoration-list-filters,.showroom-categories)>button{border-radius:24px!important;background:#f1eeea!important;min-height:44px!important;color:#65584a}
+.geyou-app.quality-app:not(.public-layout) .main-content :is(.segmented,.member-filter-tabs,.cc-filter-tabs,.customer-filter-tabs,.content-filters,.restoration-list-filters,.showroom-categories)>button:is(.active,[aria-selected=true],[aria-pressed=true]){background:#bb935d!important;color:#fff!important}
+.geyou-app.quality-app:not(.public-layout) .main-content :is(.tag-green,.member-status:not(.disabled)){background:#f1eadf;color:#8e6c43}
+@media(max-width:839px){.geyou-app.quality-app:not(.public-layout) .main-content :is(.panel,.proposal-panel,.conversation-start,.conversation-summary){padding:20px;margin-bottom:16px}.geyou-app.quality-app:not(.public-layout) .main-content .app-page-header{min-height:64px;margin-bottom:16px!important}}
+
+/* Solid champagne selections from the approved navigation references. */
+.geyou-app.quality-app .mobile-nav button[data-tab="customers"].active svg :is(path,circle),
+.geyou-app.quality-app .mobile-nav button[data-tab="talk"].active svg path:first-child,
+.geyou-app.quality-app .mobile-nav button[data-tab="more"].active svg rect{fill:#b68d56;stroke:#b68d56}
+.geyou-app.quality-app .mobile-nav button[data-tab="customers"].active svg path:last-child{fill:#d5b88f;stroke:#d5b88f}
+.geyou-app.quality-app .mobile-nav button[data-tab="talk"].active svg path:not(:first-child){stroke:#fffdf9;stroke-width:2.5}
+.geyou-app.quality-app .mobile-nav button[data-tab="home"].active svg path:last-child{fill:#c6a77d40;stroke:#b68d56;stroke-width:2}
+.geyou-app.quality-app .mobile-nav button:focus-visible{outline:2px solid #b68d56;outline-offset:-3px;border-radius:8px}

@@ -1,0 +1,111 @@
+.geyou-app .remaining-form{--rf-ink:#123d35;--rf-muted:#8790a5;--rf-line:#dce2e8;max-width:390px;margin:0 auto;min-height:100dvh;padding:12px 16px 24px;position:relative;background:linear-gradient(180deg,#fffefa,#fbfcf9);font-family:var(--ref-serif,serif);color:var(--rf-ink)}
+.geyou-app .remaining-brand{height:44px;position:relative;display:flex;align-items:flex-start;gap:8px}.geyou-app .remaining-brand:before{display:none}.geyou-app .remaining-brand strong{display:block;font-size:18px;letter-spacing:1px}.geyou-app .remaining-brand small{display:block;color:#6d7483;font:9px/1.5 var(--ref-sans,Arial);letter-spacing:2px}.geyou-app .remaining-brand em{position:absolute;right:0;top:3px;color:#71948e;font:9px var(--ref-serif);font-style:normal;letter-spacing:2px}.geyou-app .remaining-heading{text-align:center;margin:10px 0 12px}.geyou-app .remaining-heading h1{margin:0;font-size:25px;line-height:1.25;color:var(--rf-ink)}.geyou-app .remaining-heading p{margin:4px 0 0;font-size:13px;color:#7c8496}.geyou-app .remaining-back{position:absolute;top:76px;left:14px;border:0;background:transparent;color:#0d5c4d;padding:0;z-index:2}.geyou-app .remaining-card{margin:0 0 9px;padding:12px 12px;border:0;border-radius:12px;background:rgba(255,255,255,.88);box-shadow:0 4px 18px rgba(35,67,55,.06)}.geyou-app .remaining-card h2{margin:0 0 16px;padding-left:9px;border-left:3px solid #0c6a59;font-size:17px;line-height:1.1}.geyou-app .remaining-card label{display:grid;grid-template-columns:76px 1fr;align-items:center;gap:8px;margin:0 0 7px;font-size:13px}.geyou-app .remaining-card label>span{white-space:nowrap}.geyou-app .remaining-card input,.geyou-app .remaining-card select,.geyou-app .remaining-card textarea{box-sizing:border-box;width:100%;min-height:33px;border:1px solid var(--rf-line);border-radius:7px;background:#fff;padding:6px 9px;color:#16463c;font:12px var(--ref-sans,Arial);outline:none}.geyou-app .remaining-card input::placeholder,.geyou-app .remaining-card textarea::placeholder{color:#a0a8ba}.geyou-app .remaining-card textarea{resize:vertical;line-height:1.6}.geyou-app .remaining-card .field-password{margin:0}.geyou-app .remaining-card .field-password input{padding-right:38px}.geyou-app .remaining-card .field-password label{display:block}.geyou-app .remaining-card .field-password label>span{display:none}.geyou-app .permissions>p{margin:-8px 0 14px 15px;color:#929aaa;font-size:13px}.geyou-app .remaining-form .member-permissions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:0}.geyou-app .remaining-form .member-permissions label{display:flex;align-items:flex-start;gap:8px;min-height:70px;margin:0;padding:11px 8px;background:#f7faf7;border:0;border-radius:8px;font-size:13px}.geyou-app .remaining-form .member-permissions label input{width:18px;min-height:18px;margin:1px 0 0;accent-color:var(--premium-brand)}.geyou-app .remaining-form .member-permissions label span{display:block}.geyou-app .remaining-form .member-permissions label b{display:block;font-size:14px}.geyou-app .remaining-form .member-permissions label small{display:block;margin-top:4px;color:#8c94a4;line-height:1.3;font-size:11px}.geyou-app .remaining-form .member-permissions .unavailable{opacity:.55}.geyou-app .remaining-tip{margin:14px 0 0;padding:10px;background:#f1f8f3;border-radius:8px;color:#18705d!important;line-height:1.6;font-size:12px!important}.geyou-app .remaining-card.settings label{display:flex;justify-content:space-between;align-items:center;grid-template-columns:none;padding:5px 0;margin:0}.geyou-app .remaining-card.settings label span{flex:1}.geyou-app .remaining-card.settings b{display:block;font-size:15px;font-weight:500}.geyou-app .remaining-card.settings small{display:block;margin-top:4px;color:#9aa1b0;font-size:12px}.geyou-app .remaining-card.settings input[type=checkbox]{appearance:none;width:48px;min-height:27px;border:0;border-radius:20px;background:#c9cdd3;padding:0;position:relative}.geyou-app .remaining-card.settings input[type=checkbox]:after{content:'';position:absolute;left:3px;top:3px;width:21px;height:21px;border-radius:50%;background:#fff;transition:.15s}.geyou-app .remaining-card.settings input[type=checkbox]:checked{background:var(--premium-brand)}.geyou-app .remaining-card.settings input[type=checkbox]:checked:after{left:24px}.geyou-app .remaining-save{display:block;width:100%;min-height:48px;margin:18px 0 0;border:0;border-radius:26px;background:var(--premium-brand);color:#fff;font:18px var(--ref-serif);box-shadow:0 4px 12px rgba(8,112,93,.18)}
+.geyou-app .product-form .remaining-heading{margin-top:20px}.geyou-app .product-form .remaining-back{top:100px}.geyou-app .product-image-card{min-height:195px}.geyou-app .product-image-card .cc-image-editor{display:flex;align-items:center;gap:16px;flex-wrap:wrap}.geyou-app .product-image-card .cc-image-editor>span{align-self:flex-start;font-size:21px;font-weight:600}.geyou-app .product-image-card .cc-image-actions{margin:auto;display:grid;justify-items:center;gap:8px}.geyou-app .product-image-card .cc-image-actions>img,.geyou-app .product-image-card .cc-image-placeholder{width:98px;height:98px;object-fit:cover;border:1px dashed #b7bfce;border-radius:8px;display:grid;place-items:center;color:#8992a7;background:#fff}.geyou-app .product-image-card .cc-image-placeholder:before{content:'＋';display:block;font:38px/1 Arial}.geyou-app .product-image-card .cc-image-pick{display:block;color:#8790a5;font-size:12px}.geyou-app .product-image-card .cc-image-editor>small{width:100%;text-align:center;color:#8790a5}.geyou-app .product-basics label{grid-template-columns:92px 1fr}.geyou-app .product-kind{display:flex;align-items:center;gap:14px}.geyou-app .product-kind h2{margin:0;min-width:92px}.geyou-app .kind-switch{display:grid;grid-template-columns:1fr 1fr;flex:1;background:#f4f5f7;border-radius:8px;overflow:hidden}.geyou-app .kind-switch button{border:0;background:transparent;min-height:42px;color:#727b8d;font:16px var(--ref-serif)}.geyou-app .kind-switch button.active{background:var(--premium-brand);color:#fff;border-radius:8px}.geyou-app .product-description{position:relative}.geyou-app .product-description textarea{width:100%;min-height:120px;padding:14px 12px}.geyou-app .product-description>small{position:absolute;right:28px;bottom:26px;color:#8790a5}.geyou-app .remaining-footer{text-align:center;margin-top:30px;color:#1b5448;letter-spacing:5px;font-size:16px}.geyou-app .remaining-footer small{display:block;color:#8a92a5;letter-spacing:2px;font-size:11px;margin-top:7px}
+@media(max-width:400px){.geyou-app .remaining-form{padding-left:14px;padding-right:14px}.geyou-app .remaining-heading h1{font-size:28px}.geyou-app .remaining-brand em{font-size:10px}.geyou-app .remaining-form .member-permissions label{padding:9px 6px}}
+
+.geyou-app .spec-unit>span:last-child{display:grid;grid-template-columns:1fr 70px;gap:6px}
+.geyou-app .remaining-field-row .field-password{margin:0}
+.geyou-app .main-content:has(.remaining-form){padding:0}
+.geyou-app:has(.remaining-form) .mobile-nav{display:none}
+.geyou-app .remaining-form{width:100%;max-width:680px;padding:12px 14px 24px;background:#fcfdfb}
+.geyou-app .remaining-form:after{display:none}
+.geyou-app .remaining-heading h1{font-size:25px}
+.geyou-app .remaining-field-row{display:grid;grid-template-columns:76px 1fr;align-items:center;gap:8px;margin:0 0 7px;font-size:13px}
+.geyou-app .remaining-form .remaining-card input:not([type=checkbox]):not([type=file]),.geyou-app .remaining-form .remaining-card select{height:33px;min-height:33px;padding:6px 9px;font-size:12px}
+.geyou-app .remaining-form .member-permissions label{min-height:62px;padding:9px 8px}
+.geyou-app .remaining-form .member-permissions input[type=checkbox]{height:17px;width:17px;min-height:17px;flex:none}
+.geyou-app .remaining-tip{display:flex;gap:7px;margin-top:10px;font-size:10px!important}.remaining-tip svg{flex:none}
+.geyou-app .product-form .remaining-heading{margin-top:10px}
+.geyou-app .product-form .remaining-back{top:74px}
+.geyou-app .product-image-card{min-height:125px;height:auto;padding:12px}
+.geyou-app .product-image-card h2{margin-bottom:10px}
+.geyou-app .product-image-card .cc-image-editor{display:block;position:relative;min-height:84px;padding-left:96px}
+.geyou-app .product-image-card .cc-image-editor>span{display:none}
+.geyou-app .product-image-card .cc-image-actions{display:block;margin:0}
+.geyou-app .product-image-card .cc-image-placeholder,.geyou-app .product-image-card .cc-image-actions>img{position:absolute;left:0;top:0;width:82px;height:82px;font-size:10px;display:flex;flex-direction:column;justify-content:center;gap:8px}
+.geyou-app .product-image-card .cc-image-placeholder:before{display:none}
+.geyou-app .product-image-card .cc-image-editor>small{text-align:left;font-size:10px;display:block;margin-top:8px;line-height:1.6}
+.geyou-app .product-image-card .cc-image-pick{padding:7px 0;font-size:12px}
+.geyou-app .product-description textarea{height:77px;min-height:77px;padding:10px 12px;display:block}
+.geyou-app .product-description h2{margin-bottom:10px}
+.geyou-app .product-description>small{right:22px;bottom:18px;font-size:10px}
+.geyou-app .product-form .bazi-fields{margin:6px 4px;font:11px/1.6 sans-serif;color:#8a9592}
+.geyou-app .remaining-form .remaining-save{margin-top:12px}
+.geyou-app .remaining-form .remaining-card :is(input:not([type=checkbox]):not([type=radio]):not([type=file]),select){height:33px;min-height:33px;padding:6px 9px;font:12px var(--ref-sans,Arial)}
+.geyou-app .remaining-form .remaining-card{padding:12px;margin-bottom:8px;border-radius:2px;box-shadow:0 1px 5px #23433708}
+.geyou-app .remaining-form .remaining-card h2{font-size:14px;margin-bottom:12px}
+.geyou-app .remaining-form .remaining-card label{margin-bottom:10px;font-size:12px}
+.geyou-app .remaining-form .remaining-field-row .field-password{display:block;width:100%;padding:0;margin:0}
+.geyou-app .remaining-form .remaining-field-row .field-password label{display:block}
+.geyou-app .remaining-form .remaining-field-row .field-password>span{display:none}
+.geyou-app .remaining-form .remaining-field-row .password-control{width:100%}
+.geyou-app .remaining-form .remaining-field-row{margin-bottom:10px}
+.geyou-app .remaining-form .member-permissions label{min-height:48px;height:48px;padding:7px 9px;margin:0;gap:8px}
+.geyou-app .remaining-form .member-permissions label b{font-size:12px}
+.geyou-app .remaining-form .member-permissions label small{font-size:9px;margin-top:3px;white-space:normal}
+.geyou-app .remaining-form .permissions>p:not(.remaining-tip){font-size:10px;margin:-6px 0 10px 10px}
+.geyou-app .remaining-form .remaining-tip{margin:10px 0 0;padding:8px;line-height:1.5}
+.geyou-app .remaining-form .remaining-card.settings label{padding:3px 0;margin:0 0 8px}
+.geyou-app .remaining-form .remaining-card.settings b{font-size:12px}.geyou-app .remaining-form .remaining-card.settings small{font-size:10px}
+.geyou-app .remaining-form .remaining-card.settings input[type=checkbox]{width:44px;height:24px;min-height:24px}
+.geyou-app .remaining-form .remaining-card.settings input[type=checkbox]:after{width:18px;height:18px}
+.geyou-app .remaining-form .remaining-card.settings input[type=checkbox]:checked:after{left:23px}
+.geyou-app .remaining-form .remaining-save{min-height:42px;font-size:15px}
+.geyou-app .remaining-form .remaining-brand{height:66px;margin:-12px -14px 0;padding:12px 14px;background:none}
+.geyou-app .remaining-form .remaining-brand>span{min-width:0}.geyou-app .remaining-form .remaining-brand strong{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.geyou-app .remaining-form .remaining-heading{position:relative;min-height:56px;margin:0 0 8px;padding-top:2px}
+.geyou-app .remaining-form .remaining-heading:after{content:'';position:absolute;right:-14px;top:-10px;width:89px;height:82px;background:url('/reference-art/product-form-source.png') right -57px/390px 844px no-repeat;pointer-events:none;opacity:.8}
+.geyou-app .remaining-form .remaining-heading h1{font-size:24px;line-height:1.3}
+.geyou-app .remaining-form .remaining-heading p{font:12px/1.5 var(--ref-sans);margin-top:4px}
+.geyou-app .members-page.remaining-form .remaining-heading{text-align:left;padding-left:10px}.geyou-app .members-page.remaining-form .remaining-back{top:17px;left:4px;opacity:0}.geyou-app .members-page.remaining-form .remaining-back:focus{opacity:1}
+.geyou-app .product-form .remaining-heading h1{font-size:21px}
+.geyou-app .product-form .remaining-back{top:70px}
+.geyou-app .product-image-card .cc-image-editor{margin-top:-25px;margin-left:96px;padding-left:0;min-height:100px;padding-top:84px}
+.geyou-app .product-image-card .cc-image-actions{position:absolute;top:0;left:0;width:82px;height:82px}
+.geyou-app .product-image-card .cc-image-actions>div{position:absolute;inset:0}
+.geyou-app .product-image-card .cc-image-pick{opacity:0;width:100%;height:100%;display:block}
+.geyou-app .product-image-card .cc-image-pick input{position:absolute;inset:0;width:100%;height:100%}
+.geyou-app .product-image-card .cc-image-editor>small{margin-top:0;white-space:nowrap;font-size:9px}
+.geyou-app .product-form .product-basics label{grid-template-columns:77px 1fr;margin-bottom:10px}
+.geyou-app .product-form .product-kind{height:47px;padding-top:7px;padding-bottom:7px}
+.geyou-app .product-form .product-kind h2{min-width:76px;margin:0}
+.geyou-app .product-form .kind-switch button{height:31px;min-height:31px;font-size:13px}
+.geyou-app .product-form .product-description textarea{font:11px/1.6 var(--ref-sans);padding:9px 10px}
+.geyou-app .product-form .bazi-fields{padding:0;border:0}
+.geyou-app .product-form .bazi-fields summary{min-height:0;padding:0;font-size:10px}
+.geyou-app .remaining-form .remaining-footer{height:63px;padding-top:26px;margin:12px -14px -24px;background:none;font-size:10px;letter-spacing:3px}
+.geyou-app .remaining-form .remaining-footer small{font-size:9px;margin-top:5px}
+.geyou-app .members-page.remaining-form{padding:12px 14px 24px;background:#fcfdfb;min-height:100dvh}
+.geyou-app .remaining-form .remaining-field-row>label.field{display:block;min-width:0;margin:0}
+.geyou-app .remaining-form .remaining-field-row>label.field>span{display:none}
+.geyou-app .remaining-form .password-input{width:100%}
+.geyou-app .remaining-form .password-input input{padding-right:35px!important}
+.geyou-app .remaining-form .remaining-card label:last-child{margin-bottom:0}
+.geyou-app .remaining-form .remaining-card.permissions{padding-top:12px;padding-bottom:9px}
+.geyou-app .remaining-form .remaining-card.settings{padding-top:12px;padding-bottom:9px}
+.geyou-app .members-page.remaining-form .remaining-back{opacity:1;top:72px;left:0}.geyou-app .members-page.remaining-form .remaining-back svg{width:16px}
+.geyou-app .product-form .product-image-card{padding-bottom:6px}
+.geyou-app .product-form .product-image-card .cc-image-editor{min-height:90px}
+.geyou-app .product-form .product-basics{padding-top:10px;padding-bottom:10px}
+.geyou-app .product-form .product-basics label{margin-bottom:8px}
+.geyou-app .product-form .product-description{padding-top:10px;padding-bottom:10px}
+.geyou-app .members-page.remaining-form .remaining-card.permissions h2{margin-bottom:10px}
+.geyou-app .members-page.remaining-form .member-permissions{gap:6px}
+.geyou-app .members-page.remaining-form .remaining-card.permissions{padding-bottom:7px}
+.geyou-app .members-page.remaining-form .remaining-card.settings label{margin-bottom:4px}
+.geyou-app .members-page.remaining-form .remaining-card.settings{padding-bottom:4px}
+.geyou-app .members-page.remaining-form .remaining-heading{min-height:56px;padding-top:0}
+.geyou-app .members-page.remaining-form .remaining-card.settings small{margin-top:2px}
+.geyou-app .members-page.remaining-form .remaining-save{margin:8px 9px 0;width:calc(100% - 18px)}
+.geyou-app .product-form .product-image-card .cc-image-editor{min-height:82px}
+.geyou-app .product-form .product-basics label{margin-bottom:7px}
+.geyou-app .product-form .remaining-footer{font-size:0}.geyou-app .product-form .remaining-footer small{font-size:0}
+@media(max-width:359px){.geyou-app .remaining-form .remaining-brand{background-size:100% auto}.geyou-app .members-page.remaining-form .member-permissions label{height:auto;min-height:59px}.geyou-app .members-page.remaining-form .member-permissions label b{font-size:11px}.geyou-app .members-page.remaining-form .member-permissions label small{font-size:9px}.geyou-app .members-page.remaining-form .remaining-heading p{max-width:245px;font-size:11px}}
+@media(max-width:359px){.geyou-app .remaining-form .remaining-brand{height:53px}}
+
+/* Form actions share one reachable footer instead of participating in the field grid. */
+.geyou-app.quality-app .main-content .remaining-form>.app-action-bar{grid-column:1/-1}
+.geyou-app.quality-app .main-content .remaining-form .app-action-bar .remaining-save{margin:0;width:100%;min-height:48px;border-radius:8px;font:600 16px/1.5 var(--ref-sans,sans-serif)}
+.geyou-app.quality-app .main-content .remaining-form{padding-bottom:120px}
+.geyou-app.quality-app .main-content .remaining-form .remaining-heading:after{display:none}
+.geyou-app.quality-app .main-content .remaining-form .remaining-back{opacity:1;min-height:48px;min-width:48px}

@@ -1,0 +1,240 @@
+/* Final shared scale. Public notices and login artwork retain their own typography. */
+.geyou-app.quality-app{
+ --ds-space-1:4px;--ds-space-2:8px;--ds-space-3:12px;--ds-space-4:16px;--ds-space-5:24px;--ds-space-6:32px;
+ --ds-page-gutter:18px;--ds-card-pad:16px;--ds-section-gap:24px;--ds-list-gap:12px;
+ --ds-type-title:22px;--ds-type-section:18px;--ds-type-body:16px;--ds-type-label:14px;--ds-type-caption:12px;
+ --ds-radius-control:10px;--ds-radius-card:14px;--ds-control-height:46px;--ds-touch-height:44px;
+ --ds-body-font:Inter,-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;
+ --ds-title-font:'Songti SC',STSong,'Noto Serif CJK SC',serif;
+ --record-x:var(--ds-card-pad);--record-y:var(--ds-card-pad);--record-gap:var(--ds-space-2);
+ font-family:var(--ds-body-font);font-size:var(--ds-type-body);line-height:1.6;
+}
+@media(min-width:768px){.geyou-app.quality-app{--ds-page-gutter:28px;--ds-card-pad:20px}}
+@media(max-width:359px){.geyou-app.quality-app{--ds-page-gutter:12px;--ds-card-pad:12px}}
+/* Standard page heading; display artwork headings are intentionally separate. */
+.geyou-app.quality-app:not(.public-layout) .main-content .app-page-header{gap:var(--ds-space-3);min-height:58px}
+.geyou-app.quality-app:not(.public-layout) .main-content :is(.app-page-header,.communication-list-header,.archive-directory-heading) h1{font-family:var(--ds-title-font)!important;font-size:var(--ds-type-title)!important;line-height:1.4!important;letter-spacing:0}
+.geyou-app.quality-app:not(.public-layout) .main-content :is(.app-page-header,.communication-list-header,.archive-directory-heading) p{font-size:var(--ds-type-label)!important;line-height:1.7!important}
+.geyou-app.quality-app:not(.public-layout) .main-content :is(.panel>.section-head h2,.settings-card>h2,.settings-banner-summary h2,.remaining-form h2,.customer-data-section>h2,.more-group>h2){font-family:var(--ds-title-font)!important;font-size:var(--ds-type-section)!important;line-height:1.5!important}
+/* Shared forms: label, content and helper copy have distinct roles. */
+.geyou-app.quality-app:not(.public-layout) .main-content :is(.field,.settings-field,.remaining-form label){gap:var(--ds-space-2)}
+.geyou-app.quality-app:not(.public-layout) .main-content :is(.field>span,.settings-field>span,.remaining-form label>span,.settings-label){font-size:var(--ds-type-label)!important;line-height:1.5!important;font-weight:500}
+.geyou-app.quality-app:not(.public-layout) .main-content :is(.field,.settings-field,.remaining-form,.settings-editor-body) :is(input:not([type=checkbox]):not([type=radio]):not([type=file]):not([type=range]),select,textarea){min-height:var(--ds-control-height)!important;font-size:var(--ds-type-body)!important;line-height:1.5!important;padding:10px 12px!important;border-radius:var(--ds-radius-control)!important;box-sizing:border-box}
+.geyou-app.quality-app:not(.public-layout) .main-content :is(.field,.settings-field,.remaining-form) textarea{height:auto!important;min-height:112px!important;resize:vertical}
+.geyou-app.quality-app:not(.public-layout) .main-content :is(.field,.settings-field,.remaining-form) :is(small,.field-help,.helper){font-size:var(--ds-type-label)!important;line-height:1.7!important}
+.geyou-app.quality-app:not(.public-layout) .main-content .form-grid{gap:var(--ds-space-4)}
+/* Standard controls, excluding navigation icons and custom artwork. */
+.geyou-app.quality-app:not(.public-layout) .main-content .btn{min-height:var(--ds-control-height)!important;padding:10px 16px;font-size:15px!important;line-height:1.5!important;border-radius:var(--ds-radius-control)!important;gap:var(--ds-space-2)}
+.geyou-app.quality-app:not(.public-layout) .main-content .btn-small{min-height:var(--ds-touch-height)!important;padding:8px 12px}
+.geyou-app.quality-app:not(.public-layout) .main-content .app-page-action .btn{padding:8px 12px}
+.geyou-app.quality-app:not(.public-layout) .main-content :is(.search,.talk-search,.showroom-search){min-height:var(--ds-control-height)!important;border-radius:12px!important;padding:0 var(--ds-space-3)!important;gap:var(--ds-space-2)}
+.geyou-app.quality-app:not(.public-layout) .main-content :is(.search,.talk-search,.showroom-search)>input{min-height:44px!important;font-size:var(--ds-type-body)!important;padding:0!important;border:0!important;border-radius:0!important;background:transparent!important}
+.geyou-app.quality-app:not(.public-layout) .main-content :is(.segmented,.member-filter-tabs,.talk-filter-tabs) button{min-height:var(--ds-touch-height)!important;font-size:var(--ds-type-label)!important;line-height:1.5}
+/* Settings and secondary lists use the same inner rhythm as the approved archive. */
+.geyou-app.quality-app:not(.public-layout) .main-content:has(.settings-editor-body){padding-left:var(--ds-page-gutter)!important;padding-right:var(--ds-page-gutter)!important}
+.geyou-app.quality-app:not(.public-layout) .enterprise-page:has(.settings-editor-body){width:100%;max-width:850px;margin:auto;padding-left:0;padding-right:0}
+.geyou-app.quality-app:not(.public-layout) .settings-editor-body{gap:var(--ds-space-4)}
+.geyou-app.quality-app:not(.public-layout) .settings-editor-body>.settings-card{padding:var(--ds-card-pad)!important;border:1px solid var(--premium-line)!important;border-radius:var(--ds-radius-card)!important;background:var(--premium-paper)!important;margin-bottom:var(--ds-space-4)}
+.geyou-app.quality-app:not(.public-layout) .main-content :is(.member-compact-row,.settings-summary-row,.more-group-list button){padding:var(--ds-card-pad)!important;gap:var(--ds-space-3);min-height:88px!important}
+.geyou-app.quality-app:not(.public-layout) .main-content :is(.member-name,.settings-summary-row strong,.more-group-list strong){font:600 var(--ds-type-section)/1.5 var(--ds-title-font)!important}
+.geyou-app.quality-app:not(.public-layout) .main-content :is(.member-phone,.member-permissions,.settings-summary-row small,.more-group-list small){font-size:var(--ds-type-label)!important;line-height:1.7!important}
+.geyou-app.quality-app:not(.public-layout) .main-content :is(.more-group,.settings-summary-list){margin-bottom:var(--ds-section-gap)}
+.geyou-app.quality-app:not(.public-layout) .main-content :is(.more-group-list,.settings-summary-row,.member-compact-list,.talk-history-list){border-radius:var(--ds-radius-card)!important}
+/* Match the shared page gutter while preserving each reference's grid and crops. */
+.geyou-app.quality-app:not(.public-layout) .main-content :is(.archive-list-replica,.archive-detail-page,.workbench-todo-page){padding-left:var(--ds-page-gutter)!important;padding-right:var(--ds-page-gutter)!important}
+.geyou-app.quality-app:not(.public-layout) .main-content .archive-list-replica{--archive-gutter:var(--ds-page-gutter)}
+.geyou-app.quality-app:not(.public-layout) .main-content :is(.archive-record-list,.restoration-ref-list,.notice-ref-list){gap:var(--ds-space-4)}
+.geyou-app.quality-app:not(.public-layout) .main-content :is(.archive-detail-content>.archive-pane,.archive-phase-card){padding:var(--ds-card-pad)!important;border-radius:var(--ds-radius-card)!important}
+.geyou-app.quality-app:not(.public-layout) .main-content .archive-tabs button{font-size:var(--ds-type-section)!important;min-height:var(--ds-touch-height)}
+.geyou-app.quality-app:not(.public-layout) .main-content .record-heading :is(strong,b,h2){font-size:var(--ds-type-section)!important}
+.geyou-app.quality-app:not(.public-layout) .main-content :is(.record-subject,.notice-card-copy p,.followup-row-main small,.customer-info-card p){font-size:var(--ds-type-label)!important;line-height:1.7!important}
+.geyou-app.quality-app:not(.public-layout) .main-content .app-action-bar{gap:var(--ds-space-3);padding:var(--ds-space-3) var(--ds-page-gutter)}
+
+.geyou-app.quality-app:not(.public-layout) .main-content :is(.notice-ref-page,.restoration-ref-page){padding-left:var(--ds-page-gutter)!important;padding-right:var(--ds-page-gutter)!important}
+.geyou-app.quality-app:not(.public-layout) .main-content :is(.notice-ref-page .ct-list,.restoration-ref-page .restoration-records){gap:var(--ds-space-4)}
+.geyou-app.quality-app:not(.public-layout) .main-content :is(.notice-ref-page .content-filters,.restoration-ref-page .restoration-filter-tabs) button{font-size:var(--ds-type-label)!important;min-height:var(--ds-touch-height)!important}
+.geyou-app.quality-app:not(.public-layout) .main-content [data-flow-page]>header h1{font-size:var(--ds-type-title)!important;font-family:var(--ds-title-font)!important}
+.geyou-app.quality-app:not(.public-layout) .main-content [data-flow-page] button[class*="button"]{min-height:var(--ds-control-height);font-size:15px;border-radius:var(--ds-radius-control)}
+.geyou-app.quality-app:not(.public-layout) .main-content [data-flow-page] [class*="search"]>input{font-size:var(--ds-type-body)!important}
+.geyou-app.quality-app:not(.public-layout) .main-content [data-flow-page] [class*="serviceStageHeading"] h3{font-size:var(--ds-type-title)!important}
+.geyou-app.quality-app:not(.public-layout) .main-content [data-flow-page] [class*="processKeyPoints"] dt{font-size:var(--ds-type-section)!important}
+.geyou-app.quality-app:not(.public-layout) .main-content [data-flow-page] [class*="processKeyPoints"] dd{font-size:var(--ds-type-body)!important;line-height:1.8}
+
+.geyou-app.quality-app:not(.public-layout) .settings-editor-body{display:grid;gap:var(--ds-space-4)!important}
+.geyou-app.quality-app:not(.public-layout) .settings-editor-body>.settings-card{margin:0!important;height:auto!important;min-height:0}
+.geyou-app.quality-app:not(.public-layout) .settings-editor-body :is(.settings-contact-fields,.settings-payment-fields){display:grid;gap:var(--ds-space-4)}
+.geyou-app.quality-app:not(.public-layout) .settings-editor-body :is(.settings-contact-fields,.settings-payment-fields) .settings-field{margin:0!important;height:auto!important}
+.geyou-app.quality-app:not(.public-layout) .settings-editor-body .settings-field>span{margin-bottom:var(--ds-space-2)!important}
+
+.geyou-app.quality-app:not(.public-layout) .main-content .shop-replica{padding-left:var(--ds-page-gutter)!important;padding-right:var(--ds-page-gutter)!important}
+.geyou-app.quality-app:not(.public-layout) .main-content .shop-replica .showroom-categories>button{min-height:var(--ds-touch-height)!important;height:auto!important;font-size:var(--ds-type-label)!important}
+.geyou-app.quality-app:not(.public-layout) .main-content .shop-replica .showroom-card-link{min-height:var(--ds-touch-height)!important;font-size:var(--ds-type-label)!important;padding:8px 12px}
+.geyou-app.quality-app:not(.public-layout) .main-content .shop-replica .showroom-card-spec{font-size:var(--ds-type-label)!important;line-height:1.6}
+.geyou-app.quality-app:not(.public-layout) .main-content .shop-detail-replica .showroom-detail-body{padding:var(--ds-card-pad)!important;border-radius:var(--ds-radius-card)!important}
+.geyou-app.quality-app:not(.public-layout) .main-content:has(.notice-ref-page,.restoration-ref-page){padding-left:0!important;padding-right:0!important}
+
+.geyou-app.quality-app:not(.public-layout) .main-content :is(.search,.talk-search,.showroom-search){height:var(--ds-control-height)!important}
+.geyou-app.quality-app:not(.public-layout) .main-content [data-flow-page] [class*="field"]>span{font-size:var(--ds-type-label)!important;line-height:1.5}
+.geyou-app.quality-app:not(.public-layout) .main-content [data-flow-page] [class*="field"] :is(input:not([type=checkbox]):not([type=radio]):not([type=file]),select,textarea){min-height:var(--ds-control-height);font-size:var(--ds-type-body)!important;border-radius:var(--ds-radius-control)}
+
+.geyou-app.quality-app:not(.public-layout) .main-content :is(.search,.talk-search,.showroom-search)>svg{position:static!important;inset:auto!important;transform:none!important;flex:0 0 20px;width:20px;height:20px}
+
+.geyou-app.quality-app:not(.public-layout) .main-content :is(.notice-ref-page,.restoration-ref-page,.more-page,.enterprise-page,.members-page,.showroom-detail)>.app-page-header h1{font-size:var(--ds-type-title)!important;line-height:1.4!important}
+.geyou-app.quality-app:not(.public-layout) .main-content .notice-ref-page .notice-card-actions .btn{min-height:var(--ds-touch-height)!important;font-size:var(--ds-type-label)!important}
+
+.geyou-app.quality-app:not(.public-layout) .main-content .restoration-ref-list .restoration-list-actions .btn{font-size:var(--ds-type-label)!important}
+
+/* Final device layout policy. Width chooses density; short viewports stay touch-first. */
+.workbench-tablet-banner-copy,.workbench-task-heading,.workbench-task-preview,.workbench-tablet-label,.workbench-task-icon { display:none; }
+.workbench-tool-section,.workbench-tools { display:contents; }
+.workbench-tool-section>h2 { display:none; }
+/* Wrapped tools retain the approved phone composition. */
+.geyou-app.quality-app .workbench-tools>button { position:relative; isolation:isolate; display:flex; align-items:center; gap:17px; min-width:0; min-height:80px; padding:12px 20px; overflow:hidden; border:1px solid var(--premium-line); border-radius:14px; background:var(--premium-paper); text-align:left; }
+@media screen {
+  .geyou-app.quality-app:has([data-flow-dock],.app-action-bar)>.prd-developer-trigger { display:none; }
+}
+@media screen and (min-width:641px) and (min-height:600px) and (orientation:landscape) {
+  .geyou-app.quality-app .main-content:has(.workbench-home) {
+    padding:24px var(--ds-page-gutter) 110px;
+  }
+  .geyou-app.quality-app .workbench-home { gap:24px; max-width:1080px; margin-inline:auto; }
+  .geyou-app.quality-app .workbench-home>.workbench-todo-entry { display:none; }
+  .geyou-app.quality-app .workbench-home>.workbench-banner { display:block; grid-column:1/-1; height:120px; min-height:0; margin:0; padding:0; border:0; border-radius:var(--ds-radius-card); background:var(--premium-soft-gold); }
+  .geyou-app.quality-app .workbench-banner.has-reference-banner .workbench-banner-art { inset:0 0 0 auto; width:240px; height:120px; object-fit:cover; object-position:right; clip-path:inset(0 0 0 65%); mask-image:linear-gradient(to right,transparent 60%,#000 82%); }
+  .geyou-app.quality-app .workbench-tablet-banner-copy { display:flex; height:100%; flex-direction:column; justify-content:center; padding:20px 24px; position:relative; z-index:1; }
+  .geyou-app.quality-app .workbench-tablet-banner-copy h2 { max-width:calc(100% - 120px); font:600 24px/1.4 var(--ds-title-font); font-family:var(--ds-title-font)!important; }
+  .geyou-app.quality-app .workbench-tablet-banner-copy p { margin:8px 0 0; max-width:calc(100% - 120px); color:var(--premium-muted); font-size:14px; }
+  .geyou-app.quality-app .workbench-task-heading { display:none; align-items:center; justify-content:space-between; gap:16px; padding-bottom:20px; border-bottom:1px solid var(--premium-line); }
+  .geyou-app.quality-app .workbench-task-heading h1 { margin:0; font:600 26px/1.4 var(--ds-title-font); }
+  .geyou-app.quality-app .workbench-task-heading p { margin:8px 0 0; color:var(--premium-muted); font-size:14px; }
+  .geyou-app.quality-app .workbench-task-heading>span { color:var(--premium-muted); font-size:13px; }
+  .geyou-app.quality-app .workbench-actions { display:grid; grid-template-columns:minmax(0,1fr); gap:24px; }
+  .geyou-app.quality-app .workbench-actions .workbench-action-primary { grid-column:auto; flex-direction:row; min-height:86px; border:1px solid #ead6b8; box-shadow:none; }
+  .geyou-app.quality-app .workbench-tablet-label { display:block; }
+  .geyou-app.quality-app .workbench-phone-label { display:none; }
+  .geyou-app.quality-app .workbench-tool-section { display:block; min-width:0; }
+  .geyou-app.quality-app .workbench-tool-section>h2 { display:block; margin:0 0 12px; font:600 16px/1.5 var(--ds-body-font); }
+  .geyou-app.quality-app .workbench-tools { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr)); gap:12px; }
+  .geyou-app.quality-app .workbench-tools>button { min-height:80px; padding:12px 20px; gap:17px; }
+  .geyou-app.quality-app .workbench-task-preview { display:block; min-width:0; }
+  .geyou-app.quality-app .workbench-task-preview .followup-unified.panel { padding:20px!important; margin:0!important; background:var(--premium-paper)!important; border:1px solid var(--premium-line)!important; border-radius:var(--ds-radius-card)!important; }
+  .geyou-app.quality-app .workbench-task-preview .section-head { flex-wrap:wrap; gap:12px; margin-bottom:16px; }
+  .geyou-app.quality-app .workbench-task-preview .section-head h2 { font:600 18px/1.5 var(--ds-body-font); }
+  .geyou-app.quality-app .workbench-task-preview .followup-rows { padding:0; }
+  .geyou-app.quality-app .workbench-task-preview .followup-quick-row { border-bottom:1px solid var(--premium-line); }
+  .geyou-app.quality-app .workbench-task-preview .followup-row { min-height:88px; padding:12px 0; }
+  .geyou-app.quality-app .workbench-task-preview .followup-row-main { min-width:0; }
+  .geyou-app.quality-app .workbench-task-preview .followup-row-main small { overflow:hidden; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; }
+  .geyou-app.quality-app .workbench-task-preview .sample-expand { min-height:44px; margin-top:12px; color:var(--premium-brand); }
+  .geyou-app.quality-app:has(.workbench-home)>.prd-developer-trigger { display:none; }
+  .geyou-app.quality-app:has(.workbench-home)>.global-ai-reception.is-default-position { top:auto!important; bottom:110px; transform:none!important; }
+
+}
+@media screen and (min-width:641px) {
+  /* The new archive replaced the old customer grid; don't inherit its row assignments. */
+  .geyou-app.quality-app .main-content .archive-detail-page {
+    display:flex; flex-direction:column; gap:0; max-width:1080px;
+  }
+  .geyou-app.quality-app .archive-detail-content { width:100%; min-width:0; }
+  .geyou-app.quality-app .archive-tabs { width:100%; }
+  .geyou-app.quality-app .archive-phase-card .archive-phase-track li { flex:1 0 76px!important; }
+  .geyou-app.quality-app .main-content .archive-subject-card,
+  .geyou-app.quality-app .main-content .archive-summary-strip { width:100%; }
+}
+
+/* Portrait iPads reuse the phone page composition with a readable content width. */
+@media screen and (min-width:641px) and (orientation:portrait) {
+  .geyou-app.quality-app .main-content:has(.workbench-home) { max-width:600px; margin-inline:auto; }
+  .geyou-app.quality-app .workbench-banner.has-reference-banner { height:auto; aspect-ratio:1697/927; }
+  .geyou-app.quality-app:has(.workbench-home)>.global-ai-reception.is-default-position { top:auto!important; bottom:110px; transform:none!important; }
+}
+
+/* Landscape tablets have room for context alongside the current task. */
+@media screen and (min-width:1000px) and (min-height:600px) and (orientation:landscape) {
+  .geyou-app.quality-app .workbench-home { grid-template-columns:minmax(0,.95fr) minmax(0,1.2fr); align-items:start; }
+  .geyou-app.quality-app .workbench-task-heading { grid-column:1/-1; }
+  .geyou-app.quality-app .workbench-actions { grid-column:1; }
+  .geyou-app.quality-app .workbench-task-preview { grid-column:2; }
+  .geyou-app.quality-app:has(.workbench-home)>.global-ai-reception.is-default-position { bottom:24px; }
+  .geyou-app.quality-app .main-content .archive-detail-page {
+    display:grid; grid-template-columns:minmax(240px,.85fr) minmax(0,1.4fr); gap:16px 24px; align-items:start;
+  }
+  .geyou-app.quality-app .main-content .archive-detail-page>.app-page-header { grid-column:1/-1; }
+  .geyou-app.quality-app .archive-detail-page>.archive-subject-card { grid-column:1; grid-row:2; }
+  .geyou-app.quality-app .archive-detail-page>.archive-phase-card { grid-column:1; grid-row:3; min-width:0; }
+  .geyou-app.quality-app .archive-detail-page>.archive-summary-strip { grid-column:1; grid-row:4; min-width:0; }
+  .geyou-app.quality-app .main-content .archive-detail-page>.archive-summary-strip { display:grid; grid-template-columns:1fr; gap:12px; }
+  .geyou-app.quality-app .main-content .archive-summary-strip>div { grid-template-columns:25px minmax(0,1fr) auto; grid-template-rows:auto; border:0; }
+  .geyou-app.quality-app .main-content .archive-summary-strip svg { grid-row:1; }
+  .geyou-app.quality-app .main-content .archive-summary-strip small { white-space:nowrap; }
+  .geyou-app.quality-app .archive-detail-page>.archive-tabs { grid-column:2; grid-row:2; position:static; margin:0; }
+  .geyou-app.quality-app .archive-detail-page>.archive-detail-content { grid-column:2; grid-row:3/6; padding:0; }
+  .geyou-app.quality-app .archive-card-heading { flex-wrap:wrap; gap:8px; }
+}
+
+/* Wide phones still have little vertical room: no desktop rail, scrolling stays available. */
+@media screen and (max-height:599px) and (orientation:landscape) {
+  .geyou-app.quality-app:not(.public-layout)>.sidebar { display:none!important; }
+  .geyou-app.quality-app:not(.public-layout)>.app-body { margin-left:0!important; width:100%!important; }
+  .geyou-app.quality-app .main-content { padding-top:12px; }
+  .geyou-app.quality-app .topbar { position:static; height:48px; min-height:48px; }
+  .geyou-app.quality-app .mobile-nav { height:calc(56px + env(safe-area-inset-bottom)); min-height:56px; padding-block:4px; padding-bottom:calc(4px + env(safe-area-inset-bottom)); }
+  .geyou-app.quality-app .mobile-nav button { flex-direction:row; gap:8px; min-height:44px; }
+  .geyou-app.quality-app .mobile-nav button svg { width:20px; height:20px; }
+  .geyou-app.quality-app .main-content:has(.workbench-home) { padding-top:12px; }
+  .geyou-app.quality-app .workbench-banner { height:160px; min-height:0; }
+  .geyou-app.quality-app .workbench-banner.has-reference-banner { height:auto; max-width:540px; margin-inline:auto; width:100%; }
+  .geyou-app.quality-app .workbench-home { gap:12px; }
+  .geyou-app.quality-app .app-page-header { position:static; }
+  .geyou-app.quality-app .archive-tabs { position:static; }
+  .geyou-app.quality-app .app-action-bar { left:0; bottom:var(--keyboard-inset,0px); }
+  .geyou-app.quality-app>.prd-developer-trigger { bottom:calc(72px + env(safe-area-inset-bottom)); }
+  .geyou-app.quality-app .planned-talk-replica>header+p,
+  .geyou-app.quality-app .planned-talk-replica .planned-talk-context { display:none; }
+  .geyou-app.quality-app .planned-talk-replica [class*="servicePlanLayout"] { grid-template-columns:120px minmax(0,1fr); gap:12px; }
+  .geyou-app.quality-app .planned-talk-replica [class*="serviceStageCard"] { padding:16px; }
+  .geyou-app.quality-app .planned-talk-replica [class*="serviceStagePanel"]>h3 { padding:10px 6px; }
+}
+
+/* Native sheets use available visual height and keep their header/footer outside the scroller. */
+@media screen and (min-width:600px) {
+  dialog.app-sheet:not(.sc-sheet):not(.sc-viewer) {
+    inset:0; margin:auto; width:min(680px,calc(100vw - 32px)); height:fit-content;
+    max-height:calc(var(--visible-height,100dvh) - 32px); overflow:hidden; border-radius:16px;
+  }
+  dialog.app-sheet:not(.sc-sheet):not(.sc-viewer) .app-sheet-surface {
+    min-height:0; max-height:calc(var(--visible-height,100dvh) - 32px); border-radius:16px;
+  }
+  .app-sheet .app-sheet-content { min-height:0; }
+}
+@media screen and (max-height:599px) {
+  .app-sheet .app-sheet-surface>header { min-height:56px; padding:8px 16px; }
+  .app-sheet .app-sheet-content { padding:16px; }
+}
+
+/* Workbench consistency pass, 2026-10-21. Keep layout rules in their owning pages. */
+.geyou-app.quality-app:not(.public-layout) .main-content :is(.communication-list-header,.archive-directory-heading){margin:0 0 var(--ds-section-gap);min-height:58px}
+.geyou-app.quality-app:not(.public-layout) .main-content :is(.communication-list-header,.archive-directory-heading) h1{margin:0 0 var(--ds-space-2)}
+.geyou-app.quality-app:not(.public-layout) .main-content :is(.communication-list-search,.archive-directory-search>label){display:flex;height:var(--ds-control-height);min-height:var(--ds-control-height);gap:var(--ds-space-2);padding:0 var(--ds-space-3);background:var(--premium-soft);border:1px solid var(--premium-line);border-radius:var(--ds-radius-control);color:var(--premium-muted)}
+.geyou-app.quality-app:not(.public-layout) .main-content :is(.communication-list-search,.archive-directory-search>label)>input{flex:1;min-width:0;width:100%;min-height:44px;height:44px;padding:0;border:0;border-radius:0;background:transparent;font-size:var(--ds-type-body);box-shadow:none}
+.geyou-app.quality-app:not(.public-layout) .main-content :is(.communication-list-search,.archive-directory-search>label):focus-within{border-color:var(--premium-brand);outline:2px solid var(--premium-soft-gold);outline-offset:2px}
+.geyou-app.quality-app:not(.public-layout) .main-content :is(.communication-list-toolbar,.archive-directory-toolbar){margin:var(--ds-space-4) 0 var(--ds-space-3)}
+.geyou-app.quality-app:not(.public-layout) .main-content :is(.communication-list-toolbar,.archive-directory-toolbar) button{min-height:var(--ds-touch-height);font-size:var(--ds-type-label);border-radius:var(--ds-radius-control)}
+.geyou-app.quality-app:not(.public-layout) .main-content :is(.communication-customer-list,.archive-directory-grid){gap:var(--ds-list-gap)}
+.geyou-app.quality-app:not(.public-layout) .main-content :is(.communication-customer-card,.archive-directory-card,.member-compact-row,.catalog-mobile-row){border:1px solid var(--premium-line);border-radius:var(--ds-radius-card);background:var(--premium-paper)}
+.geyou-app.quality-app:not(.public-layout) .main-content :is(.communication-customer-heading strong,.archive-directory-contact strong){font-size:var(--ds-type-section);font-weight:600;line-height:1.5}
+.geyou-app.quality-app:not(.public-layout) .main-content :is(.communication-customer-footer button,.archive-directory-search>button){min-height:var(--ds-touch-height)}
+.geyou-app.quality-app:not(.public-layout) .main-content :is(.communication-list-toolbar,.archive-directory-toolbar,.member-filter-tabs,.talk-filter-tabs,.content-filters,.restoration-filter-tabs,.cc-tabs,.showroom-categories,.segmented) button{border-radius:var(--ds-radius-control)!important;box-shadow:none}
+.geyou-app.quality-app:not(.public-layout) .main-content :is(.communication-list-toolbar,.archive-directory-toolbar,.member-filter-tabs,.talk-filter-tabs,.content-filters,.restoration-filter-tabs,.cc-tabs,.showroom-categories,.segmented) :is(button.active,button[aria-selected=true]){background:var(--premium-soft-gold)!important;color:var(--premium-brand-hover)!important;box-shadow:inset 0 0 0 1px var(--premium-gold);font-weight:600}
+.geyou-app.quality-app:not(.public-layout) .main-content .btn{box-shadow:none}
+.geyou-app.quality-app:not(.public-layout) .main-content :is(.btn-outline,.btn-secondary){border-color:var(--premium-line);background:var(--premium-paper);color:var(--premium-brand-hover)}
+.geyou-app.quality-app .mobile-nav button:not(.active){color:var(--premium-muted)}
+.geyou-app.quality-app:not(.public-layout) .main-content :is(.tag-green,.member-status:not(.disabled),.communication-confirmed){color:var(--premium-success);background:#edf3ed}
+.geyou-app.quality-app:not(.public-layout) .main-content :is(.communication-customer-meta,.communication-customer-heading time,.communication-customer-footer>span,.archive-directory-contact small,.archive-directory-subject small,.archive-directory-task small,.archive-directory-footer small){color:var(--premium-muted)}
+.geyou-app.quality-app:not(.public-layout) .main-content :is(.communication-customer-footer,.archive-directory-footer){background:var(--premium-soft);border-color:var(--premium-line)}
+@media(prefers-reduced-motion:reduce){.geyou-app.quality-app :is(.communication-customer-card,.archive-directory-card){transition:none}}
+/* Navigation selection follows the active route, independent of page content styles. */
+.geyou-app.quality-app:not(.public-layout) .mobile-nav button.active{color:var(--premium-brand-hover)!important}
+.geyou-app.quality-app:not(.public-layout) .mobile-nav button:not(.active){color:var(--premium-muted)!important}
+.geyou-app.quality-app:not(.public-layout) .sidebar nav button.active{color:var(--premium-brand-hover);background:var(--premium-soft-gold)}
+.geyou-app.quality-app:not(.public-layout) .sidebar nav button:not(.active){color:var(--premium-muted);background:transparent}

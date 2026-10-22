@@ -1,0 +1,308 @@
+/* Task detail surfaces modeled on the supplied portrait restoration references. */
+.geyou-app.quality-app .main-content .portrait-detail-reference {
+  --pd-ink: #4b3022;
+  --pd-muted: #92847a;
+  --pd-gold: #ae8048;
+  --pd-line: #eee6de;
+}
+.geyou-app.quality-app .main-content .restoration-ref-detail.portrait-detail-reference {
+  width: min(100%, 820px);
+  max-width: 820px;
+  padding: 4px 0 120px;
+  color: var(--pd-ink);
+}
+.geyou-app.quality-app .main-content .portrait-detail-reference > .app-page-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+  margin: 0 0 12px;
+}
+.geyou-app.quality-app .main-content .portrait-detail-reference .app-page-title {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  min-width: 0;
+}
+.geyou-app.quality-app .main-content .portrait-detail-reference .app-back {
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+  margin: 0;
+  color: var(--pd-gold);
+}
+.geyou-app.quality-app .main-content .portrait-detail-reference .app-page-header h1 {
+  margin: 0;
+  color: var(--pd-ink);
+  font-size: 27px;
+  font-weight: 650;
+  letter-spacing: .035em;
+}
+.geyou-app.quality-app .main-content .portrait-detail-reference .app-page-header p { margin: 4px 0 0; color: var(--pd-muted); font-size: 13px; }
+.geyou-app.quality-app .main-content .portrait-page-status {
+  display: inline-flex;
+  min-height: 40px;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  flex: 0 0 auto;
+  margin-top: 2px;
+  padding: 0 14px;
+  border-radius: 24px;
+  background: #f8f1e6;
+  color: var(--pd-gold);
+  font-size: 13px;
+  font-weight: 600;
+}
+.geyou-app.quality-app .main-content .portrait-page-status.status-已完成 { background: #f8f1e6; color: #9c703e; }
+.geyou-app.quality-app .main-content .portrait-page-status.status-处理中 { background: #faf4e9; color: #9b713b; }
+.geyou-app.quality-app .main-content .portrait-page-status.status-失败 { background: #fbefed; color: #a5534c; }
+.geyou-app.quality-app .main-content .portrait-detail-reference .memorial-context {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 5px;
+  margin: 0 0 12px;
+  padding: 11px 15px;
+  border: 1px solid var(--pd-line);
+  border-radius: 12px;
+  background: #fffefa;
+}
+.geyou-app.quality-app .main-content .portrait-detail-reference .memorial-context span { display: flex; align-items: baseline; gap: 10px; color: var(--pd-muted); font-size: 12px; }
+.geyou-app.quality-app .main-content .portrait-detail-reference .memorial-context strong { color: var(--pd-ink); font-size: 14px; font-weight: 600; }
+.geyou-app.quality-app .main-content .portrait-detail-reference .portrait-detail-card {
+  display: grid;
+  grid-template-columns: minmax(0,1fr);
+  grid-template-areas: "heading" "photo" "timeline";
+  gap: 12px;
+  margin: 0 0 12px;
+  padding: 15px;
+  border: 1px solid var(--pd-line);
+  border-radius: 15px;
+  background: #fffefa;
+  box-shadow: 0 4px 16px #765a3c08;
+}
+.geyou-app.quality-app .main-content .portrait-result-heading { grid-area: heading; display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+.geyou-app.quality-app .main-content .portrait-result-heading h3 { margin: 0; color: var(--pd-ink); font-size: 18px; font-weight: 650; }
+.geyou-app.quality-app .main-content .portrait-result-heading > span { color: var(--pd-muted); font-size: 12px; text-align: right; }
+.geyou-app.quality-app .main-content .portrait-detail-reference .portrait-main-photo {
+  grid-area: photo;
+  height: min(54vh, 550px);
+  min-height: 300px;
+  margin: 0;
+  border: 1px solid #ece6df;
+  border-radius: 11px;
+  background: #f2f0ed;
+}
+.geyou-app.quality-app .main-content .portrait-detail-reference .portrait-main-photo img { width: 100%; height: 100%; max-width: 100%; max-height: 100%; object-fit: contain; }
+.geyou-app.quality-app .main-content .portrait-task-timeline { grid-area: timeline; display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 8px; padding: 6px 2px 0; }
+.geyou-app.quality-app .main-content .portrait-timeline-step { position: relative; display: grid; justify-items: center; align-content: start; gap: 5px; min-width: 0; text-align: center; }
+.geyou-app.quality-app .main-content .portrait-timeline-step:not(:last-child)::after { content: ""; position: absolute; top: 15px; left: calc(50% + 24px); width: calc(100% - 40px); height: 2px; background: #d6c4a9; }
+.geyou-app.quality-app .main-content .portrait-timeline-step i { position: relative; z-index: 1; display: grid; width: 30px; height: 30px; place-items: center; border-radius: 50%; background: #eee7dc; color: #9b8872; font-style: normal; font-size: 13px; }
+.geyou-app.quality-app .main-content .portrait-timeline-step.done i { background: linear-gradient(140deg,#cba66d,#a77a44); color: #fff; }
+.geyou-app.quality-app .main-content .portrait-timeline-step.current i { border: 1px solid #c39a61; background: #fbf5ea; color: #a4773f; }
+.geyou-app.quality-app .main-content .portrait-timeline-step.failed i { background: #f9e9e7; color: #a34d47; }
+.geyou-app.quality-app .main-content .portrait-timeline-step strong { color: #503a2c; font-size: 13px; font-weight: 600; }
+.geyou-app.quality-app .main-content .portrait-timeline-step small { max-width: 100%; color: var(--pd-muted); font-size: 11px; line-height: 1.4; }
+.geyou-app.quality-app .main-content .restoration-original-panel { grid-area: original; display: grid; grid-template-columns: 100px minmax(0,1fr) auto; align-items: center; gap: 10px 14px; padding: 12px; border: 1px solid var(--pd-line); border-radius: 12px; background: #fff; }
+.geyou-app.quality-app .main-content .restoration-original-heading { grid-column: 1/-1; display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
+.geyou-app.quality-app .main-content .restoration-original-heading strong { color: var(--pd-ink); font-size: 16px; }
+.geyou-app.quality-app .main-content .restoration-original-heading span { color: var(--pd-muted); font-size: 12px; }
+.geyou-app.quality-app .main-content .restoration-original-panel > img { grid-column: 1; grid-row: 2; width: 100px; height: 104px; border-radius: 8px; background: #f0ece6; object-fit: cover; }
+.geyou-app.quality-app .main-content .restoration-original-panel > .btn { grid-column: 2/-1; grid-row: 2; justify-self: center; min-height: 42px; padding: 8px 15px; border: 1px solid #bd925a; border-radius: 22px; background: #fff; color: #936b3e; }
+.geyou-app.quality-app .main-content .portrait-detail-reference .portrait-toolbar { grid-area: toolbar; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 0; padding: 0; border: 0; }
+.geyou-app.quality-app .main-content .portrait-detail-reference .portrait-toolbar .btn { display: inline-flex; min-height: 42px; align-items: center; justify-content: center; gap: 6px; padding: 8px 12px; border: 1px solid #bd925a; border-radius: 9px; background: #fff; color: #936b3e; font-size: 13px; text-decoration: none; }
+.geyou-app.quality-app .main-content .portrait-detail-reference .portrait-toolbar .btn-primary { background: linear-gradient(140deg,#c9a373,#a77b49); color: #fff; }
+.geyou-app.quality-app .main-content .portrait-detail-reference .portrait-toolbar .unlinked-status { color: var(--pd-muted); font-size: 12px; }
+.geyou-app.quality-app .main-content .portrait-detail-reference .portrait-toolbar p { flex-basis: 100%; margin: 0; }
+.geyou-app.quality-app .main-content .portrait-detail-reference .portrait-upload-more { grid-area: toolbar; }
+.geyou-app.quality-app .main-content .portrait-detail-reference .portrait-upload-more summary { width: fit-content; color: #936b3e; font-size: 13px; cursor: pointer; }
+.geyou-app.quality-app .main-content .portrait-detail-reference .portrait-upload-more[open] .portrait-toolbar { margin-top: 9px; }
+.geyou-app.quality-app .main-content .portrait-detail-reference .portrait-detail-help { grid-area: help; display: flex; gap: 8px; align-items: center; margin: 0; padding: 11px 13px; border-radius: 10px; background: #faf4e9; color: #906633; font-size: 13px; }
+.geyou-app.quality-app .main-content .portrait-detail-reference .portrait-detail-help svg { flex: 0 0 auto; }
+.geyou-app.quality-app .main-content .portrait-detail-reference .portrait-history-fold { grid-area: history; margin: 0; border: 1px solid var(--pd-line); border-radius: 11px; overflow: hidden; }
+.geyou-app.quality-app .main-content .portrait-detail-reference .portrait-history-fold summary { min-height: 44px; padding: 12px; background: #faf6f0; color: var(--pd-ink); font-size: 14px; font-weight: 600; }
+.geyou-app.quality-app .main-content .portrait-detail-reference .portrait-detail-links { grid-area: links; }
+.geyou-app.quality-app .main-content .portrait-detail-reference .portrait-detail-links button { color: #936b3e; }
+.geyou-app.quality-app .main-content .restoration-association-panel { margin: 0 0 12px; padding: 15px; border: 1px solid var(--pd-line); border-radius: 14px; background: #fffefa; }
+.geyou-app.quality-app .main-content .restoration-association-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.geyou-app.quality-app .main-content .restoration-association-heading h3 { margin: 0 0 4px; color: var(--pd-ink); font-size: 17px; }
+.geyou-app.quality-app .main-content .restoration-association-heading p,
+.geyou-app.quality-app .main-content .restoration-association-note { margin: 0; color: var(--pd-muted); font-size: 12px; }
+.geyou-app.quality-app .main-content .restoration-association-heading .text-btn { display: inline-flex; align-items: center; gap: 5px; color: #936b3e; font-size: 13px; }
+.geyou-app.quality-app .main-content .restoration-association-form { display: grid; grid-template-columns: 1fr 1fr auto; align-items: end; gap: 9px; margin: 13px 0 10px; }
+.geyou-app.quality-app .main-content .restoration-association-form label { display: grid; gap: 5px; color: #624b3b; font-size: 12px; }
+.geyou-app.quality-app .main-content .restoration-association-form select { min-width: 0; min-height: 42px; padding: 0 10px; border: 1px solid #e7e2dc; border-radius: 8px; background: #fff; color: #66564b; font: inherit; }
+.geyou-app.quality-app .main-content .restoration-association-form .btn { min-height: 42px; padding: 8px 12px; border-radius: 8px; background: linear-gradient(140deg,#c9a373,#a77b49); color: #fff; }
+.geyou-app.quality-app .main-content .restoration-detail-reminder { display: flex; align-items: center; justify-content: center; gap: 8px; margin: 0 0 12px; padding: 12px; border-radius: 10px; background: #faf4e9; color: #8a602b; font-size: 13px; text-align: center; }
+.geyou-app.quality-app .main-content .restoration-detail-reminder svg { flex: 0 0 auto; }
+.geyou-app.quality-app .main-content .portrait-detail-reference .app-action-bar { margin-top: 0; }
+.geyou-app.quality-app .main-content .portrait-detail-reference .portrait-detail-action-row { display: grid; grid-template-columns: 1fr 1fr 1.25fr; gap: 9px; }
+.geyou-app.quality-app .main-content .portrait-detail-reference .portrait-detail-action-row > * { display: inline-flex; min-height: 48px; align-items: center; justify-content: center; gap: 7px; padding: 8px 12px; border: 1px solid #bd925a; border-radius: 9px; background: #fff; color: #936b3e; font: inherit; font-size: 13px; text-decoration: none; }
+.geyou-app.quality-app .main-content .portrait-detail-reference .portrait-detail-action-row .btn-primary { border-color: #b88b55; background: linear-gradient(140deg,#c9a373,#a77b49); color: #fff; }
+.geyou-app.quality-app:has(.portrait-detail-reference) .global-ai-reception { display: none; }
+
+@media (max-width: 600px) {
+  .geyou-app.quality-app .main-content .restoration-ref-detail.portrait-detail-reference { width: 100%; padding-top: 0; padding-bottom: 115px; }
+  .geyou-app.quality-app .main-content .portrait-detail-reference > .app-page-header { align-items: flex-start; gap: 7px; margin-bottom: 10px; }
+  .geyou-app.quality-app .main-content .portrait-detail-reference .app-page-title { gap: 4px; }
+  .geyou-app.quality-app .main-content .portrait-detail-reference .app-back { width: 38px; height: 38px; flex-basis: 38px; }
+  .geyou-app.quality-app .main-content .portrait-detail-reference .app-page-header h1 { font-size: 23px; }
+  .geyou-app.quality-app .main-content .portrait-detail-reference .app-page-header p { font-size: 11px; line-height: 1.45; }
+  .geyou-app.quality-app .main-content .portrait-page-status { min-height: 35px; padding: 0 10px; font-size: 11px; }
+  .geyou-app.quality-app .main-content .portrait-detail-reference .memorial-context { padding: 10px 12px; }
+  .geyou-app.quality-app .main-content .portrait-detail-reference .memorial-context span { gap: 7px; }
+  .geyou-app.quality-app .main-content .portrait-detail-reference .portrait-detail-card { padding: 12px; gap: 10px; }
+  .geyou-app.quality-app .main-content .portrait-result-heading { align-items: flex-start; flex-direction: column; gap: 3px; }
+  .geyou-app.quality-app .main-content .portrait-result-heading h3 { font-size: 17px; }
+  .geyou-app.quality-app .main-content .portrait-result-heading > span { text-align: left; line-height: 1.45; }
+  .geyou-app.quality-app .main-content .portrait-detail-reference .portrait-main-photo { min-height: 270px; height: min(47vh,430px); }
+  .geyou-app.quality-app .main-content .portrait-task-timeline { gap: 3px; padding-top: 2px; }
+  .geyou-app.quality-app .main-content .portrait-timeline-step:not(:last-child)::after { left: calc(50% + 19px); width: calc(100% - 30px); }
+  .geyou-app.quality-app .main-content .portrait-timeline-step i { width: 26px; height: 26px; }
+  .geyou-app.quality-app .main-content .portrait-timeline-step:not(:last-child)::after { top: 12px; }
+  .geyou-app.quality-app .main-content .portrait-timeline-step strong { font-size: 11px; }
+  .geyou-app.quality-app .main-content .portrait-timeline-step small { font-size: 10px; }
+  .geyou-app.quality-app .main-content .restoration-original-panel { grid-template-columns: 78px minmax(0,1fr); gap: 8px 10px; padding: 10px; }
+  .geyou-app.quality-app .main-content .restoration-original-heading { grid-column: 1/-1; }
+  .geyou-app.quality-app .main-content .restoration-original-heading strong { font-size: 15px; }
+  .geyou-app.quality-app .main-content .restoration-original-heading span { font-size: 10px; }
+  .geyou-app.quality-app .main-content .restoration-original-panel > img { width: 78px; height: 80px; }
+  .geyou-app.quality-app .main-content .restoration-original-panel > .btn { grid-column: 2; grid-row: 2; justify-self: center; padding: 8px 11px; }
+  .geyou-app.quality-app .main-content .portrait-detail-reference .portrait-toolbar { gap: 6px; }
+  .geyou-app.quality-app .main-content .portrait-detail-reference .portrait-toolbar .btn { flex: 1 1 42%; min-height: 42px; padding: 7px 8px; font-size: 12px; }
+  .geyou-app.quality-app .main-content .restoration-association-panel { padding: 13px; }
+  .geyou-app.quality-app .main-content .restoration-association-form { grid-template-columns: 1fr; }
+  .geyou-app.quality-app .main-content .restoration-association-form .btn { width: 100%; }
+  .geyou-app.quality-app .main-content .portrait-detail-reference .portrait-detail-action-row { grid-template-columns: 1fr 1fr; gap: 6px; }
+  .geyou-app.quality-app .main-content .portrait-detail-reference .portrait-detail-action-row .restoration-confirm-button { grid-column: 1/-1; }
+}
+
+/* Reassert the reference hierarchy against broad mobile and premium page rules. */
+.geyou-app.quality-app:has(.portrait-detail-reference) .main-content .portrait-detail-reference > .app-page-header {
+  min-height: 0 !important;
+  height: auto !important;
+  margin: 0 0 9px !important;
+  padding: 0 !important;
+  gap: 10px !important;
+}
+.geyou-app.quality-app:has(.portrait-detail-reference) .main-content .portrait-detail-reference > .app-page-header .app-page-title {
+  display: flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.geyou-app.quality-app:has(.portrait-detail-reference) .main-content .portrait-detail-reference > .app-page-header .app-page-title h1 {
+  margin: 0 !important;
+  padding: 0 !important;
+  font-size: 25px !important;
+  line-height: 1.25 !important;
+}
+.geyou-app.quality-app:has(.portrait-detail-reference) .main-content .portrait-detail-reference > .app-page-header .app-page-title p {
+  margin: 3px 0 0 !important;
+  padding: 0 !important;
+  line-height: 1.4 !important;
+}
+.geyou-app.quality-app:has(.portrait-detail-reference) .main-content .portrait-detail-reference > .app-page-header .app-back {
+  width: 38px !important;
+  height: 34px !important;
+  min-height: 34px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  position:static!important;inset:auto!important;transform:none!important;align-self:center!important;
+}
+.geyou-app.quality-app:has(.portrait-detail-reference) .main-content .portrait-detail-reference .app-action-bar {
+  width: 100% !important;
+  left: 0 !important;
+  right: 0 !important;
+  box-sizing: border-box !important;
+  padding-left: max(14px, env(safe-area-inset-left)) !important;
+  padding-right: max(14px, env(safe-area-inset-right)) !important;
+}
+.geyou-app.quality-app:has(.portrait-detail-reference) .main-content .portrait-detail-reference .app-action-bar > div {
+  display: block !important;
+  width: min(100%, 820px) !important;
+  max-width: 820px !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+}
+.geyou-app.quality-app:has(.portrait-detail-reference) .main-content .portrait-detail-reference .portrait-detail-action-row {
+  display: grid !important;
+  width: 100% !important;
+  max-width: none !important;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+  gap: 7px !important;
+}
+.geyou-app.quality-app:has(.portrait-detail-reference) .main-content .portrait-detail-reference .portrait-detail-action-row .restoration-confirm-button {
+  grid-column: 1 / -1 !important;
+  width: 100% !important;
+}
+.geyou-app.quality-app:has(.restoration-create-page) .main-content { padding-top: 0 !important; }
+.geyou-app.quality-app:has(.restoration-create-page) .main-content .restoration-create-page > .app-page-header {
+  min-height: 52px !important;
+  height: auto !important;
+  margin: 0 0 8px !important;
+  padding: 6px 0 !important;
+  gap: 4px !important;
+}
+.geyou-app.quality-app:has(.restoration-create-page) .main-content .restoration-create-page > .app-page-header .app-page-title { align-items: center !important; gap: 5px !important; }
+.geyou-app.quality-app:has(.restoration-create-page) .main-content .restoration-create-page > .app-page-header .app-page-title h1 { margin: 0 !important; font-size: 23px !important; line-height: 1.25 !important; }
+.geyou-app.quality-app:has(.restoration-create-page) .main-content .restoration-create-page > .app-page-header .app-back { width: 30px !important; height: 30px !important; min-height: 30px !important; padding: 0 !important; border-radius: 0 !important; }
+.geyou-app.quality-app .main-content .restoration-create-hero {
+  min-height: 140px !important;
+  height: 140px !important;
+  margin: 0 0 10px !important;
+  padding: 20px 18px !important;
+  border-radius: 13px !important;
+}
+.geyou-app.quality-app .main-content .restoration-create-hero::after {
+  top: 0 !important;
+  right: 18px !important;
+  width: 145px !important;
+  height: 140px !important;
+  background-position: center !important;
+  background-size: cover !important;
+  mix-blend-mode: multiply !important;
+  opacity: .55 !important;
+  -webkit-mask-image: radial-gradient(ellipse at 52% 50%, #000 34%, transparent 82%) !important;
+  mask-image: radial-gradient(ellipse at 52% 50%, #000 34%, transparent 82%) !important;
+}
+.geyou-app.quality-app .main-content .restoration-create-hero h2 { position: relative; z-index: 2; margin: 0 0 4px !important; font-size: 24px !important; line-height: 1.25 !important; }
+.geyou-app.quality-app .main-content .restoration-create-hero p { position: relative; z-index: 2; max-width: 240px; margin: 0 !important; font-size: 13px !important; line-height: 1.4 !important; }
+.geyou-app.quality-app .main-content .restoration-create-hero > span { display: none !important; }
+@media (max-width: 600px) {
+  .geyou-app.quality-app:has(.portrait-detail-reference) .main-content .portrait-detail-reference > .app-page-header .app-page-title h1 { font-size: 22px !important; }
+}
+/* Detail cards use normal document flow in every task state. */
+.geyou-app.quality-app .main-content .portrait-detail-reference .portrait-detail-card.portrait-detail-card{display:flex!important;flex-direction:column!important;gap:12px!important;padding:13px!important;min-width:0}
+.geyou-app.quality-app .main-content .portrait-detail-reference .portrait-main-photo.portrait-main-photo{width:100%;aspect-ratio:6/5;height:auto!important;min-height:0!important;max-height:none!important;overflow:hidden;flex:none;box-sizing:border-box}
+.geyou-app.quality-app .main-content .portrait-detail-reference .portrait-result-heading{flex-direction:row!important;align-items:baseline!important;gap:8px}
+.geyou-app.quality-app .main-content .portrait-detail-reference .portrait-result-heading>span{font-size:11px;text-align:right!important;max-width:60%}
+.geyou-app.quality-app .main-content .portrait-detail-reference .portrait-task-timeline{padding-bottom:0!important}
+.geyou-app.quality-app .main-content .portrait-detail-reference>.app-page-header .app-page-title{align-items:center!important}
+.geyou-app.quality-app .main-content .portrait-detail-reference .restoration-original-panel>.btn{border-radius:24px!important}
+.geyou-app.quality-app:has(.portrait-detail-reference) .main-content .portrait-detail-reference .portrait-detail-action-row{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+.geyou-app.quality-app:has(.portrait-detail-reference) .main-content .portrait-detail-reference .portrait-detail-action-row .restoration-confirm-button{grid-column:auto!important}
+.geyou-app.quality-app .main-content .portrait-detail-reference .portrait-detail-action-row .btn{font-size:13px!important;padding:8px 5px!important;min-width:0}
+.geyou-app.quality-app .main-content .unlinked-portrait-page .portrait-detail-action-row{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+.geyou-app.quality-app .main-content .restoration-create-page .restoration-create-link.restoration-create-link select{height:38px!important;min-height:38px!important;font-size:14px!important}
+.geyou-app.quality-app .main-content .restoration-create-page .restoration-create-guidance.restoration-create-guidance>div{padding:5px 4px!important}
+.geyou-app.quality-app .main-content .restoration-create-page .restoration-create-guidance h3{font:600 20px/1.4 'Songti SC',STSong,serif!important}
+
+.geyou-app.quality-app .main-content .portrait-detail-reference .restoration-associated-person{display:flex;align-items:center;gap:12px;margin-top:12px}
+.geyou-app.quality-app .main-content .portrait-detail-reference .restoration-associated-person>svg{flex:none;color:#ae8048}
+.geyou-app.quality-app .main-content .portrait-detail-reference .restoration-associated-person>div{display:flex;flex-direction:column;gap:4px;min-width:0}
+.geyou-app.quality-app .main-content .portrait-detail-reference .restoration-associated-person strong{font-size:16px}
+.geyou-app.quality-app .main-content .portrait-detail-reference .restoration-associated-person span{font-size:13px;color:#92847a}
+
+.geyou-app.quality-app .main-content .portrait-detail-reference .restoration-original-panel{width:100%!important;box-sizing:border-box;align-self:stretch!important}
+
+.geyou-app.quality-app:has(.portrait-detail-reference) .main-content .portrait-detail-reference>.app-page-header .app-page-title>div{padding:0!important;min-width:0}
+.geyou-app.quality-app .main-content .portrait-detail-reference .portrait-result-heading>span{font:11px/1.5 'PingFang SC',sans-serif!important}
+
+.portrait-clothing-control{margin:0 0 18px}.portrait-clothing-control label{display:flex;flex-direction:column;gap:8px;font-size:14px;color:#665740}.portrait-clothing-control select{min-height:44px;border:1px solid #dfd4c3;border-radius:9px;padding:9px 12px;background:#fffdf9;color:#514331;width:100%}.portrait-clothing-control p{font-size:12px;line-height:1.8;color:#82735f;margin:10px 0}
+
+.portrait-preview-switch{display:flex;gap:8px;margin:12px 0 16px}.portrait-preview-switch button{flex:1;min-height:44px;border:1px solid #ded2c0;border-radius:8px;font-size:13px;color:#887458}.portrait-preview-switch button.active{background:#eee4d2;border-color:#b29770;color:#6b4f2b}.portrait-preview-switch button:disabled{opacity:.45}

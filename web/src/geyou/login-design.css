@@ -1,0 +1,55 @@
+.geyou-login{box-sizing:border-box;position:relative;display:block;width:100%;min-height:100vh;min-height:100dvh;overflow-x:hidden;padding:24.55vh 7.35vw 6vh;color:#20201e;font-family:var(--ui-font,-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif);background:#f7f2e9 url('/reference-art/login-business-assistant.png') center center/cover no-repeat}
+.geyou-app.quality-app .geyou-login{background-image:url('/reference-art/login-business-assistant.png');background-position:center center;background-size:cover;background-repeat:no-repeat}
+.geyou-login:before{display:none!important}
+.geyou-login .login-card{box-sizing:border-box;position:relative;width:min(85.3vw,812px);max-width:812px;margin:0 auto;padding:clamp(30px,5.8vw,56px);border:1px solid rgba(255,255,255,.88);border-radius:30px;background:rgba(255,255,255,.78);box-shadow:0 14px 46px rgba(83,65,39,.09);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.geyou-login .login-card-head{margin:0 0 clamp(30px,4vw,42px)}
+.geyou-login .login-card-head h1{margin:0;color:#191817;font:600 clamp(36px,5.2vw,52px)/1.3 "Songti SC",STSong,SimSun,serif;letter-spacing:.02em}
+.geyou-login .login-card-head>p{margin:6px 0 0;color:#6d6c69;font-size:clamp(16px,2.1vw,21px);line-height:1.6}
+.geyou-login .login-card form{display:block}
+.geyou-login .login-card .field{display:grid;gap:10px;margin:0 0 clamp(20px,3vw,28px)}
+.geyou-login .login-card .field>span{color:#262523;font-size:clamp(16px,2.1vw,20px);font-weight:550;line-height:1.45}
+.geyou-login .login-input-wrap,.geyou-login .password-input{position:relative;display:flex;align-items:center;width:100%;height:clamp(64px,9.4vw,90px);min-height:0;padding:0 18px;border:1px solid rgba(120,117,109,.2);border-radius:16px;background:rgba(248,247,245,.7);box-shadow:inset 0 1px 2px rgba(57,48,34,.04)}
+.geyou-login .login-input-wrap>svg{position:static;flex:none;width:23px;height:23px;color:#6d6c68}
+.geyou-login .password-leading-icon{display:grid;place-items:center;flex:none;width:25px;height:30px;color:#6d6c68}
+.geyou-login .login-card input{box-sizing:border-box;width:100%;height:100%;min-height:0;padding:0 0 0 20px;border:0;border-radius:0;background:transparent;color:#252422;font:400 clamp(16px,2.2vw,21px)/1.5 var(--ui-font);outline:none}
+.geyou-login .login-card .password-input input{padding-right:46px}
+.geyou-login .login-card input::placeholder{color:#999792}
+.geyou-login .login-card input:focus-visible{outline:none}
+.geyou-login .login-input-wrap:focus-within,.geyou-login .password-input:focus-within{border-color:#b79566;box-shadow:0 0 0 3px rgba(190,157,108,.16)}
+.geyou-login .password-input>button{position:absolute;right:10px;top:0;bottom:0;display:grid;place-items:center;width:44px;min-height:44px;border:0;background:transparent;color:#6d6c68}
+.geyou-login .login-error{min-height:18px;margin:-4px 0 10px;color:#a5483d;font-size:14px;line-height:1.5}
+.geyou-login .login-card .login-submit{position:relative;display:flex;align-items:center;justify-content:center;width:100%;height:clamp(66px,10vw,98px);min-height:0;margin:0;border:1px solid #c6a77d;border-radius:18px;background:linear-gradient(112deg,#c5a47b 0%,#a98555 52%,#876844 100%);box-shadow:0 8px 18px rgba(130,96,51,.18),inset 0 1px 0 rgba(255,255,255,.46);color:#fff;font-size:clamp(20px,2.8vw,27px);font-weight:600;letter-spacing:.08em}
+.geyou-login .login-submit>span{transform:translateX(-10px)}
+.geyou-login .login-submit>i{position:absolute;right:clamp(14px,2.6vw,26px);top:50%;display:grid;place-items:center;width:clamp(44px,6.5vw,64px);height:clamp(44px,6.5vw,64px);transform:translateY(-50%);border:1px solid rgba(255,255,255,.36);border-radius:50%;background:rgba(245,218,171,.62);color:#fff;font-style:normal}
+.geyou-login .login-help{display:flex;align-items:center;justify-content:center;gap:clamp(10px,2vw,18px);margin:clamp(24px,3.2vw,32px) 0 0;padding:clamp(20px,2.6vw,26px) 0 0;border-top:1px solid rgba(106,96,80,.17);color:#77746e;font-size:clamp(13px,1.8vw,17px);line-height:1.7;text-align:center;white-space:normal}
+@media(max-width:599px){.geyou-login{padding:24.55vh 7.35vw 4vh}.geyou-login .login-card{width:100%;padding:24px 22px;border-radius:24px}.geyou-login .login-card-head{margin-bottom:26px}.geyou-login .login-card-head h1{font-size:34px}.geyou-login .login-card-head>p{font-size:15px}.geyou-login .login-card .field{gap:8px;margin-bottom:18px}.geyou-login .login-card .field>span{font-size:16px}.geyou-login .login-input-wrap,.geyou-login .password-input{height:62px;padding:0 14px;border-radius:13px}.geyou-login .login-input-wrap>svg{width:21px;height:21px}.geyou-login .password-leading-icon{width:23px}.geyou-login .login-card input{padding-left:14px;font-size:16px}.geyou-login .login-card .password-input input{padding-right:42px}.geyou-login .password-input>button{right:4px;width:42px}.geyou-login .login-error{min-height:16px;margin-bottom:8px}.geyou-login .login-card .login-submit{height:62px;border-radius:15px;font-size:19px}.geyou-login .login-submit>i{right:10px;width:42px;height:42px}.geyou-login .login-help{gap:8px;margin-top:20px;padding-top:16px;font-size:12px}}
+@media(max-width:599px){.geyou-app.quality-app .geyou-login{background-size:100% 100%;background-position:center top}}
+@media(max-width:359px){.geyou-login .login-card{padding:21px 18px}.geyou-login .login-card-head h1{font-size:31px}.geyou-login .login-help{font-size:11px}}
+@media(prefers-reduced-motion:reduce){.geyou-login *{scroll-behavior:auto}}
+
+/* Override the legacy solid login background and preserve the supplied artwork. */
+.geyou-login { background: #f7f2e9 url('/reference-art/login-business-assistant.png') center top / cover no-repeat !important; }
+@media(max-width:599px){
+ .geyou-login { min-height:max(100dvh,172.85vw); background-size:100% auto !important; padding-top:42.3vw; }
+ .geyou-login .login-card { padding:24px 22px; }
+}
+
+/* Fill the login viewport with the supplied artwork without stretching it. */
+.geyou-login { background-size:cover !important; background-position:center top !important; }
+@media(max-width:599px){.geyou-login{min-height:100dvh;background-size:cover !important;}}
+
+/* Match the reference form proportions while keeping controls usable. */
+.geyou-login .login-card{background:rgba(255,255,255,.90);border-radius:24px;border:1px solid #fff;box-shadow:0 14px 38px rgba(83,65,39,.10)}
+.geyou-login .login-card .login-submit{background:linear-gradient(112deg,#c5a47b,#a98555 52%,#876844)!important;border:1px solid #c6a77d;box-shadow:inset 0 1px 0 #ffffff80,0 8px 18px #82603329}
+.geyou-login .login-help:before,.geyou-login .login-help:after{display:none}
+@media(max-width:599px){
+ .geyou-login{padding:24.55dvh 7.35vw 6vh}
+ .geyou-login .login-card{padding:26px 24px;border-radius:16px}
+ .geyou-login .login-card-head{margin-bottom:28px}
+ .geyou-login .login-card-head h1{font-size:34px}
+ .geyou-login .login-card .field{gap:8px;margin-bottom:18px}
+ .geyou-login .login-input-wrap,.geyou-login .password-input{height:50px;padding:0 14px;border-radius:10px;background:rgba(245,245,246,.92)}
+ .geyou-login .login-card .login-submit{height:56px;border-radius:12px;font-size:22px}
+ .geyou-login .login-submit>i{width:36px;height:36px;right:10px}
+ .geyou-login .login-help{font-size:12px;margin-top:22px;padding-top:18px;line-height:1.7}
+}

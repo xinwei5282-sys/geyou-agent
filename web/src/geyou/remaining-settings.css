@@ -1,0 +1,59 @@
+.geyou-app .enterprise-page.settings-profile,.geyou-app .enterprise-page.settings-contact,.geyou-app .enterprise-page.settings-payment{max-width:390px;min-height:844px;margin:auto;padding:0 16px 92px;background:var(--premium-page);color:var(--premium-ink);position:relative}
+.geyou-app .enterprise-page.settings-profile:after,.geyou-app .enterprise-page.settings-contact:after,.geyou-app .enterprise-page.settings-payment:after{content:'';position:absolute;left:-16px;right:-16px;bottom:0;height:100px;background:url('/reference-art/settings-source.png') center bottom/390px 844px no-repeat;opacity:.55;pointer-events:none;mask-image:linear-gradient(transparent,#000 35%)}
+.geyou-app .enterprise-page.settings-profile>.app-page-header,.geyou-app .enterprise-page.settings-contact>.app-page-header,.geyou-app .enterprise-page.settings-payment>.app-page-header{height:67px;min-height:67px;margin:0;padding:14px 0;position:relative;z-index:2}
+.geyou-app .enterprise-page.settings-profile>.app-page-header h1,.geyou-app .enterprise-page.settings-contact>.app-page-header h1,.geyou-app .enterprise-page.settings-payment>.app-page-header h1{margin:0;text-align:center;color:var(--premium-brand);font:600 26px/1.4 var(--ref-serif)}
+.geyou-app .enterprise-page.settings-profile>.app-page-header p,.geyou-app .enterprise-page.settings-contact>.app-page-header p,.geyou-app .enterprise-page.settings-payment>.app-page-header p{display:none}
+.geyou-app .enterprise-page.settings-profile>.app-page-header button,.geyou-app .enterprise-page.settings-contact>.app-page-header button,.geyou-app .enterprise-page.settings-payment>.app-page-header button{position:absolute;left:0;top:18px;font-size:0;color:var(--premium-brand)}.geyou-app .enterprise-page.settings-profile>.app-page-header button svg,.geyou-app .enterprise-page.settings-contact>.app-page-header button svg,.geyou-app .enterprise-page.settings-payment>.app-page-header button svg{width:28px;height:28px}
+.geyou-app .settings-editor-body{position:relative;z-index:1}.geyou-app .settings-card,.geyou-app .settings-contact-fields .settings-field,.geyou-app .settings-payment-fields .settings-field{background:#fffefa;border:1px solid var(--premium-line);border-radius:14px;padding:14px;margin-bottom:10px}.geyou-app .settings-card h2,.geyou-app .settings-qr-card h2,.geyou-app .settings-payment-qr h2{margin:0 0 14px;font:600 20px var(--ref-serif)}
+.geyou-app .settings-field{display:block}.geyou-app .settings-field>span{display:block;margin-bottom:9px;font:600 20px var(--ref-serif)}.geyou-app .settings-field input,.geyou-app .settings-field textarea{width:100%;height:44px;padding:9px 13px;border:1px solid var(--premium-line);border-radius:10px;background:#fffefa;font:16px var(--ref-serif);box-shadow:none}.geyou-app .settings-field textarea{height:105px;resize:none;line-height:1.7}.geyou-app .settings-card.profile-logo{height:200px}.geyou-app .settings-card.profile-logo .settings-upload{width:118px;height:118px}.geyou-app .settings-card.profile-logo>p{margin:7px 0 0;color:var(--premium-muted);font:14px var(--ref-serif)}.geyou-app .settings-card.intro-card{height:170px}.geyou-app .settings-contact-fields .settings-field{height:91px;padding:11px 14px}.geyou-app .settings-contact-fields .settings-field>span{margin-bottom:7px}.geyou-app .settings-qr-card{margin-top:15px}.geyou-app .settings-qr-card p{margin:7px 0;color:var(--premium-muted);font:14px var(--ref-serif)}
+.geyou-app .settings-upload{display:grid;place-items:center;align-content:center;gap:5px;position:relative;border:1px dashed var(--premium-line);border-radius:12px;background:var(--premium-page);color:var(--premium-brand);text-align:center;font:16px var(--ref-serif);overflow:hidden}.geyou-app .settings-upload input{position:absolute;inset:0;opacity:0;cursor:pointer}.geyou-app .settings-upload img{width:100%;height:100%;object-fit:contain}.geyou-app .settings-upload.wide{width:100%;height:125px}.geyou-app .settings-payment-fields .settings-field{height:95px}.geyou-app .settings-payment-qr{margin:25px 0}.geyou-app .settings-payment-qr .settings-upload{width:140px;height:140px}.geyou-app .settings-payment-note{padding:18px 14px;background:var(--premium-soft-gold);border-radius:14px;color:var(--premium-ink);font:15px/2 var(--ref-serif)}
+.geyou-app .enterprise-page .app-action-bar{position:fixed;left:16px;right:16px;bottom:16px;z-index:5}.geyou-app .settings-save-button{width:100%;height:54px;border:0;border-radius:10px;background:var(--premium-brand);color:#fff;font:600 20px var(--ref-serif)}
+.geyou-app .main-content:has(.settings-editor-body){padding:0 18px}
+.geyou-app .enterprise-page:is(.settings-profile,.settings-contact,.settings-payment){width:100%;max-width:680px;min-height:100dvh;padding:0 0 98px}
+.geyou-app:has(.settings-editor-body) .mobile-nav{display:none}
+.geyou-app .enterprise-page:is(.settings-profile,.settings-contact,.settings-payment):after{left:-18px;right:-18px;bottom:100px;height:100px;background-image:url('/reference-art/settings-edit-source.png');background-position:center -654px;opacity:.7;mask-image:none}
+.geyou-app .settings-contact-fields .settings-field,.geyou-app .settings-payment-fields .settings-field{border:0;border-radius:0;background:transparent;padding:8px 0;margin:0}
+.geyou-app .settings-field>span,.geyou-app .settings-card h2,.geyou-app .settings-qr-card h2,.geyou-app .settings-payment-qr h2{font-size:17px}
+.geyou-app .settings-field input,.geyou-app .settings-field textarea{font-size:14px}
+.geyou-app .settings-state{position:absolute;right:0;top:28px;font:10px sans-serif;color:var(--premium-muted)}
+.geyou-app .settings-upload-wrap>small{display:block;font:11px sans-serif;color:var(--premium-brand);margin-top:5px}
+.geyou-app .enterprise-page:has(.settings-editor-body) .app-action-bar{left:0;right:0;bottom:0;padding:17px 28px 29px;background:var(--premium-page);border:0;max-width:720px;margin:auto}
+.geyou-app .settings-save-button{height:49px;font-size:18px}
+.geyou-app .enterprise-page:has(.settings-editor-body) .app-page-action{position:static;display:contents}
+.geyou-app .settings-state{white-space:nowrap;top:29px}
+.geyou-app .settings-card{border:0;border-radius:8px;padding:14px 12px}
+.geyou-app .settings-card.profile-logo .settings-upload{background:var(--premium-page);border:1px solid var(--premium-line)}
+.geyou-app .settings-field textarea{font:13px/1.7 var(--ref-sans)}
+.geyou-app .enterprise-page:has(.settings-editor-body) .app-action-bar{padding-left:15px;padding-right:15px}
+.geyou-app .settings-save-button{font-weight:400;border-radius:6px}
+.geyou-app .settings-contact .settings-qr-card{margin-top:0}.geyou-app .settings-payment .settings-editor-body{padding-top:15px}
+.geyou-app .settings-payment-note{font:13px/1.8 var(--ref-sans);padding:18px 15px;border-radius:8px}
+.geyou-app .intro-card{position:relative}.geyou-app .settings-count{position:absolute;bottom:20px;right:23px;color:#939ca4;font:10px sans-serif}
+.geyou-app .settings-field textarea{padding-bottom:22px}
+
+/* Phone forms keep field names above controls and leave native toggles compact. */
+@media(max-width:640px){
+ .geyou-app.quality-app .main-content .enterprise-page:after{content:none}
+ .geyou-app .main-content .members-page.remaining-form .remaining-heading{min-height:0;margin:0 0 8px;padding:0}
+ .geyou-app .members-page.remaining-form .remaining-card.basics h2{margin-bottom:10px}
+ .geyou-app .members-page.remaining-form .remaining-card.basics>label{display:grid;grid-template-columns:minmax(0,1fr);align-items:start;gap:8px;margin:0 0 12px;font-size:14px}
+ .geyou-app .members-page.remaining-form .remaining-card.basics>label>span{white-space:normal}
+ .geyou-app .members-page.remaining-form .remaining-field-row{grid-template-columns:minmax(0,1fr);align-items:start;gap:8px;margin:0 0 12px;font-size:14px}
+ .geyou-app .members-page.remaining-form .remaining-field-row>label.field{font-size:14px}
+ .geyou-app .members-page.remaining-form .remaining-card.basics :is(input:not([type=checkbox]):not([type=radio]):not([type=file]),select){box-sizing:border-box;width:100%;height:auto;min-height:48px;padding:10px 12px;font:16px/1.4 var(--ref-sans,Arial)}
+ .geyou-app .product-form .product-basics>label{grid-template-columns:minmax(0,1fr);align-items:start;gap:8px;margin:0 0 12px;font-size:14px}
+ .geyou-app .product-form .product-basics>label>span:first-child{white-space:normal}
+ .geyou-app .product-form .product-basics>label.spec-unit>span:last-child{display:grid;grid-template-columns:minmax(0,1fr) 70px;gap:8px;width:100%}
+ .geyou-app .product-form .product-basics :is(input:not([type=checkbox]):not([type=radio]):not([type=file]),select){box-sizing:border-box;width:100%;height:auto;min-height:48px;padding:10px 12px;font:16px/1.4 var(--ref-sans,Arial)}
+ .geyou-app .product-form .product-basics>label.spec-unit input{min-width:0}
+}
+.geyou-app.quality-app .main-content .enterprise-page:after{content:none!important;display:none!important}
+.settings-banner-summary{margin:16px 0;padding:16px;border:1px solid var(--premium-line);border-radius:12px;background:#fff}
+.settings-banner-summary .section-head{align-items:center}
+.settings-banner-summary .section-head h2{font-size:16px}
+.settings-banner-summary>p,.settings-banner-summary>small{display:block;margin:12px 0 0;color:var(--premium-muted);font-size:13px;line-height:1.6}
+.settings-banner-preview{display:block;width:100%;height:150px;margin-top:12px;object-fit:cover;border-radius:9px}
+
+/* Keep the editor save action clear of the mobile navigation. */
+.geyou-app.quality-app:has(.enterprise-page .settings-editor-body) .mobile-nav{display:none!important}
+.geyou-app.quality-app .enterprise-page:has(.settings-editor-body) .app-action-bar{z-index:40;padding-bottom:calc(16px + env(safe-area-inset-bottom))}

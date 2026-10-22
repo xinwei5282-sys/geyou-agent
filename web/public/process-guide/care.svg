@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 240" role="img" aria-labelledby="title desc">
+  <title id="title">后续关怀流程</title><desc id="desc">保存记录、约定联系、按需协助三个步骤</desc>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M1 1 7 4 1 7" fill="none" stroke="#9caf9f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+  <g fill="none" stroke="#225849" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M143 82h160M337 82h160" stroke="#9caf9f" stroke-width="2" marker-end="url(#arrow)"/>
+    <path d="M67 46h35l15 15v38H67Z" fill="#edf3ee"/><path d="M102 46v16h15M77 74h29M77 84h29M77 94h20"/><path d="m82 53 5 5 9-10" stroke="#b69b62"/>
+    <path d="M303 49a28 28 0 1 0 30 0"/><path d="M318 42v18l12 8"/><path d="M318 41v-8m-21 20-7-4m49 0 7-4" stroke="#b69b62"/>
+    <path d="M510 48c-12-13-31 4-15 19l17 17 17-17c16-15-3-32-15-19Z" fill="#edf3ee"/><path d="M480 94c8-10 16-13 24-8m28 8c-8-10-16-13-24-8"/><path d="M510 55v11m-5-5h10" stroke="#b69b62"/>
+  </g>
+  <g fill="#34594d" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="19" text-anchor="middle"><text x="88" y="177">保存记录</text><text x="318" y="177">约定联系</text><text x="515" y="177">按需协助</text></g>
+</svg>

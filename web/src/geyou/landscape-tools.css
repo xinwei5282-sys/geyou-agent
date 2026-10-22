@@ -1,0 +1,69 @@
+/* Desktop landscape tools. Imported after the existing mobile-first sheets. */
+@media (min-width:900px) and (orientation:landscape) and (min-height:600px) {
+  /* electronic obituary list/editor */
+  .geyou-app .main-content .ct-page { width:100%; max-width:none; }
+  .geyou-app .main-content .ct-page:not(.notice-ref-list):has(.ct-list) .content-list-tools { display:flex; align-items:center; gap:16px; margin:0 0 18px; }
+  .geyou-app .main-content .ct-page:not(.notice-ref-list):has(.ct-list) .content-list-tools .search { flex:1; max-width:520px; min-height:48px; }
+  .geyou-app .main-content .ct-page:not(.notice-ref-list):has(.ct-list) .content-filters { display:flex; flex:0 0 auto; gap:8px; }
+  .geyou-app .main-content .ct-page:not(.notice-ref-list):has(.ct-list) .content-filters button { padding:0 16px; border-radius:8px; }
+  .geyou-app .main-content .ct-page:not(.notice-ref-list):has(.ct-list) .ct-list { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; }
+  .geyou-app .main-content .ct-page:not(.notice-ref-list):has(.ct-list) .content-list-tools,.geyou-app .main-content .ct-page:not(.notice-ref-list):has(.ct-list) > .app-page-header,.geyou-app .main-content .ct-page:not(.notice-ref-list):has(.ct-list) .ct-list > .empty { grid-column:1/-1; }
+  .geyou-app .main-content .ct-page:not(.notice-ref-list):has(.ct-list) .ct-notice-row { min-height:178px; margin:0; padding:18px; display:grid; grid-template-columns:112px minmax(0,1fr) auto; gap:16px; align-items:center; }
+  .geyou-app .main-content .ct-page:not(.notice-ref-list):has(.ct-list) .notice-cover { width:112px; height:140px; }
+  .geyou-app .main-content .ct-page:not(.notice-ref-list):has(.ct-list) .notice-cover img { width:100%; height:100%; object-fit:cover; }
+  .geyou-app .main-content .ct-page:not(.notice-ref-list):has(.ct-list) .notice-card-copy h2 { font-size:21px; }
+  .geyou-app .main-content .ct-page:not(.notice-ref-list):has(.ct-list) .notice-card-actions { display:flex; flex-direction:column; align-items:stretch; gap:6px; min-width:76px; }
+  .geyou-app .main-content .ct-editor { max-width:1180px; margin:0 auto; }
+  .geyou-app .main-content .ct-editor > .app-page-header { display:flex; align-items:center; }
+  .geyou-app .main-content .ct-editor .notice-binding { display:grid; grid-template-columns:300px 1fr; gap:0 28px; padding:20px 22px; }
+  .geyou-app .main-content .ct-editor .notice-binding > summary,.geyou-app .main-content .ct-editor .notice-binding > h2 { grid-column:1/-1; }
+  .geyou-app .main-content .ct-editor .notice-binding > label,.geyou-app .main-content .ct-editor .notice-binding > details,.geyou-app .main-content .ct-editor .notice-binding > p { grid-column:auto; }
+  .geyou-app .main-content .ct-editor .notice-binding + .notice-portrait { margin-top:18px; }
+  .geyou-app .main-content .ct-editor .form-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px 22px; }
+  .geyou-app .main-content .ct-editor .notice-body-field { margin-top:18px; }
+  .geyou-app .main-content .ct-editor .notice-body-field textarea { min-height:180px; }
+  .geyou-app .main-content .ct-editor .notice-template-picker { display:flex; align-items:center; gap:14px; margin-top:18px; }
+
+  /* portrait restoration picker/detail */
+  .geyou-app .main-content .restoration-picker-page { max-width:none; }
+  .geyou-app .main-content .restoration-picker-page { display:grid; grid-template-columns:minmax(280px,360px) minmax(0,1fr); gap:18px 28px; align-items:start; }
+  .geyou-app .main-content .restoration-picker-page > .app-page-header,.geyou-app .main-content .restoration-picker-page > .restoration-tip,.geyou-app .main-content .restoration-picker-page > .restoration-upload,.geyou-app .main-content .restoration-picker-page > .micro { grid-column:1/-1; }
+  .geyou-app .main-content .restoration-picker-page > .restoration-records { grid-column:2; grid-row:2/5; min-height:300px; }
+  .geyou-app .main-content .restoration-picker-page > .restoration-select { grid-column:1; }
+  .geyou-app .main-content .memorial-detail-page { max-width:1180px; margin:0 auto; }
+  .geyou-app .main-content .memorial-detail-page .memorial-card { display:grid; grid-template-columns:minmax(300px,46%) minmax(0,1fr); gap:26px; }
+  .geyou-app .main-content .memorial-detail-page .portrait-main-photo { min-height:420px; }
+  .geyou-app .main-content .memorial-detail-page .portrait-toolbar { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
+  .geyou-app .main-content .memorial-detail-page .portrait-toolbar > * { min-height:52px; }
+
+  /* catalog, shop and product editor */
+  .geyou-app .main-content .showroom-page { max-width:none; }
+  .geyou-app .main-content .showroom-search { max-width:560px; min-height:48px; }
+  .geyou-app .main-content .showroom-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; }
+  .geyou-app .main-content .showroom-card { min-height:360px; display:grid; grid-template-rows:220px 1fr auto; text-align:left; }
+  .geyou-app .main-content .showroom-detail { display:grid; grid-template-columns:minmax(360px,52%) minmax(0,1fr); gap:28px; }
+  .geyou-app .main-content .showroom-detail > .app-page-header,.geyou-app .main-content .showroom-detail > .showroom-agency { grid-column:1/-1; }
+  .geyou-app .main-content .showroom-detail .showroom-image { min-height:480px; }
+  .geyou-app .main-content .showroom-detail-body { padding:26px; }
+  .geyou-app .main-content .remaining-form.product-form,.geyou-app .main-content .members-page.remaining-form { max-width:1180px; margin:0 auto; display:grid; grid-template-columns:minmax(280px,360px) minmax(0,1fr); gap:18px 24px; }
+  .geyou-app .main-content .remaining-form > .remaining-brand,.geyou-app .main-content .remaining-form > .remaining-heading,.geyou-app .main-content .remaining-form > .remaining-back,.geyou-app .main-content .remaining-form > .remaining-save { grid-column:1/-1; }
+  .geyou-app .main-content .product-form .product-image-card { grid-column:1; grid-row:3/6; }
+  .geyou-app .main-content .product-form .product-basics,.geyou-app .main-content .product-form .product-description,.geyou-app .main-content .product-form .product-price { grid-column:2; }
+
+  /* enterprise profile, members and more */
+  .geyou-app .main-content .enterprise-page { width:100%; max-width:1180px!important; min-height:0!important; margin:0 auto!important; padding:0 0 100px!important; }
+  .geyou-app .main-content .enterprise-summary-hero { display:flex; align-items:center; gap:22px; min-height:150px; padding:24px 28px; }
+  .geyou-app .main-content .settings-summary-list { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; }
+  .geyou-app .main-content .settings-summary-row { min-height:132px; padding:22px; text-align:left; }
+  .geyou-app .main-content .settings-editor-body { display:grid; grid-template-columns:minmax(260px,1fr) minmax(0,1fr); gap:18px 24px; }
+  .geyou-app .main-content .settings-editor-body > * { margin:0!important; }
+  .geyou-app .main-content .settings-card.profile-logo { grid-row:span 2; min-height:300px; }
+  .geyou-app .main-content .settings-save-button { max-width:420px; }
+  .geyou-app .main-content .members-page:not(.remaining-form) { max-width:1180px; margin:0 auto; }
+  .geyou-app .main-content .member-search { max-width:520px; min-height:48px; }
+  .geyou-app .main-content .member-compact-list { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
+  .geyou-app .main-content .member-compact-row { min-height:116px; padding:18px; }
+  .geyou-app .main-content .more-page { max-width:1180px; margin:0 auto; }
+  .geyou-app .main-content .more-groups { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; }
+  .geyou-app .main-content .more-group-list button { min-height:76px; padding:14px 18px; }
+}

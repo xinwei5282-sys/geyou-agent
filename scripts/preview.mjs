@@ -1,0 +1,11 @@
+import {execFileSync} from 'node:child_process';
+import {realpathSync} from 'node:fs';
+import path from 'node:path';
+const root=realpathSync(path.resolve(import.meta.dirname,'..'));
+const base=process.env.GEYOU_AGENT_URL||'http://127.0.0.1:5197';
+const identity=await(await fetch(base+'/__project',{signal:AbortSignal.timeout(5000)})).json();
+if(realpathSync(identity.root)!==root||identity.mode!=='local-agent-prototype')throw Error('预览服务来源不匹配');
+const arg=process.argv.indexOf('--route');const route=arg>=0?process.argv[arg+1]:'/agent';
+if(!route?.startsWith('/agent'))throw Error('请选择代理端路由');
+const url=base+'/#'+route;console.log(JSON.stringify({root,branch:identity.branch,url}));
+execFileSync('open',[url]);

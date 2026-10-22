@@ -1,0 +1,107 @@
+.showroom-page{--ink:var(--premium-ink);--green:var(--premium-brand);--muted:var(--premium-muted);--line:var(--premium-line);max-width:880px;margin:0 auto;padding:28px 24px 52px;color:var(--ink);background:var(--premium-page)}.showroom-header{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}.showroom-header h1{font-size:28px;margin:6px 0}.showroom-header p{margin:0;color:var(--muted);font-size:13px}.showroom-tool,.showroom-back{min-height:44px;border:0;background:none;color:var(--green);cursor:pointer}.showroom-store{display:flex;align-items:center;gap:8px;margin:24px 0 14px;padding:13px 15px;background:#fff;border:1px solid var(--line)}.showroom-store svg{color:var(--green)}.showroom-store small{margin-left:auto;color:var(--muted)}.showroom-search{display:flex;align-items:center;gap:8px;height:44px;padding:0 13px;background:#fff;border:1px solid var(--line);color:var(--muted)}.showroom-search input{min-width:0;width:0;flex:1;border:0;outline:0;background:transparent;font-size:14px}.showroom-categories{display:flex;gap:8px;overflow-x:auto;padding:14px 0}.showroom-categories button{min-height:44px;padding:0 14px;border:1px solid var(--line);background:#fff;color:var(--muted);white-space:nowrap}.showroom-categories button.active{background:var(--green);color:#fff;border-color:var(--green)}.showroom-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.showroom-section-title{margin:18px 0 10px;font-size:17px}.showroom-section-title small{color:var(--muted);font-size:12px;font-weight:400}.showroom-card{min-width:0;padding:0;text-align:left;border:1px solid var(--line);background:#fff;color:var(--ink);cursor:pointer}.showroom-image{height:170px;display:grid;place-items:center;overflow:hidden;background:#e8eee8;color:var(--green)}.showroom-image img{width:100%;height:100%;object-fit:cover}.showroom-placeholder{display:grid;place-items:center;gap:6px;color:#81948a}.showroom-placeholder small{font-size:10px}.showroom-card-body{min-width:0;padding:13px}.showroom-card-body span,.showroom-category{color:var(--muted);font-size:12px}.showroom-card-body strong{display:block;margin:6px 0 9px;font-size:15px;line-height:1.5;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.showroom-card-body b,.showroom-price{color:var(--green);font-size:17px}.showroom-card-body small,.showroom-price small{color:var(--muted);font-size:11px;font-weight:400}.showroom-service-list{display:grid;gap:8px}.showroom-service-card{display:flex;align-items:center;min-height:88px}.showroom-service-card .showroom-image{width:78px;height:88px;flex:0 0 78px}.showroom-service-card .showroom-card-body{padding:10px}.showroom-service-card .showroom-card-body strong{margin:3px 0 6px}.showroom-empty{text-align:center;padding:68px 20px;color:var(--muted)}.showroom-empty strong{display:block;margin:10px}.showroom-empty button,.showroom-talk{min-height:44px;border:0;background:var(--green);color:#fff;padding:0 17px}.showroom-detail>.showroom-image{height:320px;max-width:520px;margin:0 auto}.showroom-detail-body{padding:22px 0}.showroom-detail h1{font-size:30px;margin:9px 0 12px}.showroom-spec,.showroom-description{color:var(--muted);line-height:1.8}.showroom-bazi{margin:18px 0;padding:16px;background:#fff;border:1px solid var(--line)}.showroom-bazi div{display:flex;gap:7px;margin-top:9px}.showroom-bazi span{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:#e8efe9;color:var(--green)}.showroom-bazi p{margin:10px 0 0;color:var(--muted);font-size:13px}.showroom-talk{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;font-size:14px}.showroom-contact{text-align:center;color:var(--muted);line-height:1.8}.showroom-contact small{font-size:11px}@media(max-width:640px){.showroom-page{padding:20px 14px}.showroom-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.showroom-image{height:140px}.showroom-detail>.showroom-image{height:250px}.showroom-store small{font-size:11px}}
+
+/* Match consultation cards while retaining the browsing grid. */
+.geyou-app.quality-app .main-content .showroom-card{border:1px solid #e1e5e2;border-radius:8px;overflow:hidden;background:#fff}
+.geyou-app.quality-app .main-content .showroom-card-body strong{font-size:16px;line-height:1.5;white-space:normal;display:block;-webkit-line-clamp:unset;overflow:visible}
+.geyou-app.quality-app .main-content .showroom-card-body>b{color:var(--premium-brand);font-size:22px}
+.geyou-app.quality-app .main-content .showroom-card-spec{font-size:14px;line-height:1.5}
+.showroom-filters{display:flex;flex-wrap:wrap;gap:10px 12px;padding:0 0 16px}
+.showroom-filters label{display:flex;align-items:center;gap:8px;min-width:0;color:var(--muted);font-size:14px}
+.showroom-filters select{height:48px;min-width:132px;padding:0 34px 0 12px;border:1px solid var(--line);border-radius:4px;background:#fff;color:var(--ink);font:inherit}
+.showroom-filter-empty{padding-top:48px}
+@media(max-width:640px){.showroom-filters{gap:8px}.showroom-filters label{flex:1 1 calc(50% - 8px)}.showroom-filters select{flex:1;min-width:0;width:100%}.showroom-filters label:last-child{flex-basis:100%}}
+.geyou-app.quality-app .showroom-image:not(.reference-product-photo)>img{object-fit:contain;background:#f1f3ef}
+
+/* Warm, editorial storefront treatment from the approved mobile reference. */
+.geyou-app.quality-app .main-content .showroom-page{--ink:#34271c;--green:#a8783e;--muted:#81776d;--line:#e9e0d5;max-width:1080px;padding:24px clamp(16px,3vw,36px) 48px;background:#f8f5ef;color:var(--ink)}
+.geyou-app.quality-app .main-content .showroom-page>.app-page-header{min-height:68px;margin-bottom:14px;padding:0;background:transparent}
+.geyou-app.quality-app .main-content .showroom-page>.app-page-header h1{font:600 32px/1.35 STSong,SimSun,serif;color:#49321d;letter-spacing:.04em}
+.geyou-app.quality-app .main-content .showroom-store{margin:4px 0 14px;padding:12px 16px;border:1px solid #eaddca;border-radius:12px;background:#fffdf9;color:#615243}
+.geyou-app.quality-app .main-content .showroom-store svg{color:#ae834d}
+.geyou-app.quality-app .main-content .showroom-hero{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;min-height:142px;margin:0 0 16px;padding:24px clamp(20px,4vw,44px);overflow:hidden;border:1px solid #eee3d4;border-radius:16px;background:radial-gradient(ellipse at 88% 48%,rgba(198,166,119,.28),transparent 37%),linear-gradient(105deg,#f2ece2 0%,#fbf8f2 58%,#eee4d5 100%);color:#6b4b2a}
+.geyou-app.quality-app .main-content .showroom-hero span{font-size:12px;letter-spacing:.1em;color:#9a7b56}
+.geyou-app.quality-app .main-content .showroom-hero h2{margin:8px 0 3px;font:600 clamp(22px,3.2vw,30px)/1.45 STSong,SimSun,serif;color:#563a20}
+.geyou-app.quality-app .main-content .showroom-hero p{margin:0;color:#786754;font-size:14px}
+.geyou-app.quality-app .main-content .showroom-search{height:54px;margin:0 0 12px;border:1px solid #e9e0d5;border-radius:14px;background:#fffdf9;box-shadow:0 3px 12px rgba(83,60,34,.04)}
+.geyou-app.quality-app .main-content .showroom-search input{font-size:16px}
+.geyou-app.quality-app .main-content .showroom-categories{gap:8px;padding:4px 0 14px}
+.geyou-app.quality-app .main-content .showroom-categories button{min-height:42px;padding:0 18px;border:0;border-radius:999px;background:#f0ece5;color:#67584a;font-size:15px}
+.geyou-app.quality-app .main-content .showroom-categories button.active{background:#bd945d;color:#fff}
+.geyou-app.quality-app .main-content .showroom-filters{gap:8px 14px;padding-bottom:16px}
+.geyou-app.quality-app .main-content .showroom-filters select{border-color:#e7ddcf;border-radius:10px;background:#fffdf9}
+.geyou-app.quality-app .main-content .showroom-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.geyou-app.quality-app .main-content .showroom-card{border-color:#eee7de;border-radius:14px;background:#fffdf9;box-shadow:0 4px 14px rgba(74,53,30,.055);transition:transform .16s ease,box-shadow .16s ease}
+.geyou-app.quality-app .main-content .showroom-card:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(74,53,30,.09)}
+.geyou-app.quality-app .main-content .showroom-card>.showroom-image{height:auto;aspect-ratio:1.22;background:#f0ebe3}
+.geyou-app.quality-app .main-content .showroom-card-body{padding:15px 17px 17px}
+.geyou-app.quality-app .main-content .showroom-card-body>span{color:#9a7d59;font-size:12px}
+.geyou-app.quality-app .main-content .showroom-card-body strong{margin:4px 0;font:600 19px/1.5 STSong,SimSun,serif;color:#382b20}
+.geyou-app.quality-app .main-content .showroom-card-spec{min-height:1.6em;margin:0 0 10px;color:#81776d;font-size:14px;line-height:1.55}
+.geyou-app.quality-app .main-content .showroom-card-body>b{color:#a77740;font:600 22px/1.4 STSong,SimSun,serif}
+.geyou-app.quality-app .main-content .showroom-card-body>b small{color:#8a7d6e;font:400 12px/1.4 sans-serif}
+.geyou-app.quality-app .main-content .showroom-detail>.showroom-image{border-radius:16px;background:#f1ebe2}
+.geyou-app.quality-app .main-content .showroom-detail-body{max-width:720px;margin:0 auto;padding:22px 0}
+.geyou-app.quality-app .main-content .showroom-detail h1{font:600 30px/1.45 STSong,SimSun,serif;color:#382b20}
+.geyou-app.quality-app .main-content .showroom-detail .showroom-price{color:#a77740;font-size:24px}
+@media(max-width:640px){.geyou-app.quality-app .main-content .showroom-page{padding:16px 14px 34px}.geyou-app.quality-app .main-content .showroom-page>.app-page-header{min-height:54px}.geyou-app.quality-app .main-content .showroom-page>.app-page-header h1{font-size:27px}.geyou-app.quality-app .main-content .showroom-hero{min-height:124px;margin-bottom:14px;padding:18px;border-radius:14px}.geyou-app.quality-app .main-content .showroom-hero span{font-size:10px}.geyou-app.quality-app .main-content .showroom-hero h2{font-size:22px}.geyou-app.quality-app .main-content .showroom-hero p{font-size:13px}.geyou-app.quality-app .main-content .showroom-grid{gap:10px}.geyou-app.quality-app .main-content .showroom-card>.showroom-image{aspect-ratio:.94}.geyou-app.quality-app .main-content .showroom-card-body{padding:11px 11px 13px}.geyou-app.quality-app .main-content .showroom-card-body strong{font-size:16px}.geyou-app.quality-app .main-content .showroom-card-spec{font-size:12px;min-height:2.6em}.geyou-app.quality-app .main-content .showroom-card-body>b{font-size:19px}}
+
+.geyou-app.quality-app .main-content .showroom-card-body .showroom-card-link{display:flex;align-items:center;justify-content:space-between;min-height:36px;margin-top:10px;padding-top:9px;border-top:1px solid #eee5d8;color:#987344;font-size:13px}
+
+/* Approved storefront: keep banner and product photographs as whole images. */
+.geyou-app.quality-app .main-content .shop-replica{max-width:1000px;padding:0 14px 24px;background:#faf9f7;color:#34281e}
+.geyou-app.quality-app .shop-replica .showroom-draft-header{display:grid;grid-template-columns:40px 1fr 40px;align-items:center;height:70px;margin:0 0 4px}
+.geyou-app.quality-app .shop-replica .showroom-draft-header h1{margin:0;text-align:center;font:600 27px/1.3 'Songti SC',STSong,serif!important;color:#432e1b}
+.geyou-app.quality-app .shop-replica .showroom-draft-header button{display:grid;place-items:center;width:40px;height:44px;border:0;background:transparent;color:#513b26;padding:0;cursor:pointer}
+.geyou-app.quality-app .main-content .shop-replica .showroom-search{height:44px;margin:0 0 13px;padding:0 14px;border:0;border-radius:24px;background:#eeece8;box-shadow:none;color:#695943;gap:10px}
+.geyou-app.quality-app .shop-replica .showroom-search input{font-size:17px!important;padding:0;background:transparent!important;color:#3c322a;min-height:40px;outline-offset:2px}
+.geyou-app.quality-app .shop-replica .showroom-search button{display:grid;place-items:center;flex:none;width:36px;height:40px;padding:0;border:0;background:transparent;color:#5f4930;cursor:pointer}
+.geyou-app.quality-app .main-content .shop-replica .showroom-hero{display:block;height:auto;min-height:0;margin:0 0 12px;padding:0;border:0;border-radius:9px;overflow:hidden;background:none;box-shadow:0 3px 12px #5f463709}
+.geyou-app.quality-app .shop-replica .showroom-hero img{display:block;width:100%;height:auto;object-fit:contain}
+.geyou-app.quality-app .main-content .shop-replica .showroom-categories{display:flex;gap:9px;margin:0;padding:0 0 13px;scrollbar-width:none}
+.geyou-app.quality-app .shop-replica .showroom-categories::-webkit-scrollbar{display:none}
+.geyou-app.quality-app .main-content .shop-replica .showroom-categories button{height:36px;min-height:36px;padding:0 22px;background:#f1eeea;color:#402d20;border:0;border-radius:24px;font-size:16px;flex:none}
+.geyou-app.quality-app .main-content .shop-replica .showroom-categories button.active{background:#bb935d!important;color:#fff!important;font-weight:600}
+.geyou-app.quality-app .shop-replica .showroom-filters[hidden]{display:none!important}
+.geyou-app.quality-app .shop-replica .showroom-filters{padding:12px;margin:0 0 14px;border:1px solid #e7ddcd;border-radius:12px;background:#fffdf9}
+.geyou-app.quality-app .main-content .shop-replica .showroom-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+.geyou-app.quality-app .main-content .shop-replica .showroom-card{display:block;min-height:0;border:0;border-radius:10px;background:#fff;box-shadow:0 4px 16px #6b523808;overflow:hidden;text-align:left}
+.geyou-app.quality-app .main-content .shop-replica .showroom-card>.showroom-image{width:100%;height:auto;aspect-ratio:389/330;border-radius:0;flex:none;background:#eee8df}
+.geyou-app.quality-app .shop-replica .draft-product-image img{position:static;width:100%;height:100%;max-width:100%;object-fit:contain!important;background:#eee8df}
+.geyou-app.quality-app .main-content .shop-replica .showroom-card-body{padding:10px 12px 13px}
+.geyou-app.quality-app .main-content .shop-replica .showroom-card-body>span{display:none}
+.geyou-app.quality-app .main-content .shop-replica .showroom-card-body strong{font:600 16px/1.45 'PingFang SC',sans-serif!important;margin:0 0 4px;white-space:normal;color:#33261d}
+.geyou-app.quality-app .main-content .shop-replica .showroom-card-spec{margin:0 0 11px;font-size:12px!important;line-height:1.6;min-height:0;height:1.6em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#8a857e}
+.geyou-app.quality-app .shop-replica .showroom-card-footer{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:6px}
+.geyou-app.quality-app .shop-replica .showroom-card-footer b{font:600 20px/1.3 Inter,-apple-system,sans-serif!important;color:#a77842}
+.geyou-app.quality-app .main-content .shop-replica .showroom-card-link{display:inline-flex;align-items:center;justify-content:center;min-height:30px;margin:0;padding:5px 13px;border:0;border-radius:20px;background:#bc945e;color:white;font-size:12px;white-space:nowrap}
+.geyou-app.quality-app .main-content .showroom-detail .draft-product-image{height:auto;aspect-ratio:389/330;max-width:520px}
+.geyou-app.quality-app .showroom-detail .draft-product-image img{position:static;width:100%;height:100%;max-width:100%;object-fit:contain}
+@media(min-width:840px){.geyou-app.quality-app .main-content .shop-replica{padding:0 28px 40px}.geyou-app.quality-app .shop-replica .showroom-draft-header{height:88px}.geyou-app.quality-app .main-content .shop-replica .showroom-grid{gap:20px}.geyou-app.quality-app .main-content .shop-replica .showroom-card-body{padding:18px 20px}.geyou-app.quality-app .main-content .shop-replica .showroom-card-body strong{font-size:22px!important}.geyou-app.quality-app .main-content .shop-replica .showroom-card-spec{font-size:16px!important}.geyou-app.quality-app .main-content .shop-replica .showroom-card-link{min-height:40px;padding:6px 20px;font-size:16px}}
+@media(max-width:359px){.geyou-app.quality-app .main-content .shop-replica{padding-inline:10px}.geyou-app.quality-app .main-content .shop-replica .showroom-card-body{padding-inline:10px}.geyou-app.quality-app .shop-replica .showroom-card-footer b{font-size:18px!important}.geyou-app.quality-app .main-content .shop-replica .showroom-card-link{padding-inline:10px}}
+
+.geyou-app.quality-app:not(.public-layout) .main-content .shop-replica .showroom-search{min-height:44px!important;height:44px!important;border:0!important;border-radius:24px!important;background:#eeece8!important;padding:0 14px!important}
+.geyou-app.quality-app:not(.public-layout) .main-content .shop-replica .showroom-search input{font-size:17px!important}
+.geyou-app.quality-app:not(.public-layout) .main-content .shop-replica .showroom-categories{padding:0 0 13px!important;background:transparent!important;border-radius:0!important;gap:9px!important}
+.geyou-app.quality-app:not(.public-layout) .main-content .shop-replica .showroom-categories>button{flex:none!important;min-height:36px!important;height:36px!important;padding:0 22px!important;border-radius:var(--ds-radius-control)!important;background:var(--premium-soft)!important;color:#402d20!important;font-size:16px!important}
+.geyou-app.quality-app:not(.public-layout) .main-content .shop-replica .showroom-categories>button.active{background:var(--premium-soft-gold)!important;color:var(--premium-brand-hover)!important;box-shadow:inset 0 0 0 1px var(--premium-gold)}
+@media(max-width:839px){.geyou-app.quality-app .main-content.route-shop{padding:0 0 100px!important}}
+
+/* Detail uses the same spacing and material as the storefront. */
+.geyou-app.quality-app:not(.public-layout) .main-content .shop-detail-replica{display:block;max-width:1100px;padding:0 14px 100px;background:#faf9f7}
+.geyou-app.quality-app:not(.public-layout) .main-content .shop-detail-replica>.app-page-header{height:70px;min-height:70px;margin:0 0 4px!important;padding:0!important}
+.geyou-app.quality-app .shop-detail-replica>.showroom-image{width:100%;max-width:100%;min-height:0!important;margin:0!important;height:auto!important;aspect-ratio:389/330;border-radius:12px;overflow:hidden}
+.geyou-app.quality-app .shop-detail-replica>.showroom-image img{object-fit:contain}
+.geyou-app.quality-app:not(.public-layout) .main-content .shop-detail-replica .showroom-detail-body{max-width:none;margin:16px 0 0;padding:20px;border:1px solid #eee7de;border-radius:12px;background:#fffdf9}
+.geyou-app.quality-app .shop-detail-replica .showroom-detail-body h1{font:600 23px/1.5 'PingFang SC',sans-serif!important;margin:0 0 8px!important;color:#382b20}
+.geyou-app.quality-app .shop-detail-replica .showroom-price{display:block;font:600 26px/1.4 Inter,sans-serif;color:#a77740;margin:0 0 20px;border-bottom:0;padding-bottom:0}
+.geyou-app.quality-app .shop-detail-replica .showroom-price small{font-size:14px;color:#8a7d6e}
+.geyou-app.quality-app .shop-detail-replica .showroom-spec{display:flex;gap:16px;padding:16px 0;margin:0 0 16px;border-top:1px solid #eee7de;border-bottom:1px solid #eee7de;font-size:15px;line-height:1.6;color:#72685e}
+.geyou-app.quality-app .shop-detail-replica .showroom-spec span{flex:none;color:#8d8173}
+.geyou-app.quality-app .shop-detail-replica .showroom-description-title{font-size:17px;margin:0 0 8px;padding:0;border:0}
+.geyou-app.quality-app .shop-detail-replica .showroom-description{font-size:15px;line-height:1.8;padding:0;margin:0;background:none;color:#81776d}
+.geyou-app.quality-app .shop-detail-replica .showroom-agency{margin:16px 0 0;padding:20px;border:1px solid #eee7de;border-radius:12px;background:#fffdf9}
+.geyou-app.quality-app .shop-detail-replica .showroom-agency h2{font-size:17px;margin:0 0 16px}
+.geyou-app.quality-app .shop-detail-replica .showroom-agency>div{display:grid;grid-template-columns:32px 1fr;gap:8px 12px;padding:0;background:none}
+.geyou-app.quality-app .shop-detail-replica .showroom-agency p,.geyou-app.quality-app .shop-detail-replica .showroom-agency small{grid-column:2;margin:0;color:#81776d;font-size:14px;line-height:1.8}
+.geyou-app.quality-app .shop-detail-replica .app-action-bar{background:#fffdf9;border-color:#e8e1d8;padding:10px 16px}
+@media(min-width:900px) and (orientation:landscape) and (min-height:600px){.geyou-app.quality-app:not(.public-layout) .main-content .shop-detail-replica{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:start;gap:24px;padding:0 24px 40px}.geyou-app.quality-app .shop-detail-replica>.app-page-header{grid-column:1/-1}.geyou-app.quality-app:not(.public-layout) .main-content .shop-detail-replica .showroom-detail-body{margin:0}.geyou-app.quality-app .shop-detail-replica>.showroom-agency{grid-column:1/-1;margin:0}.geyou-app.quality-app .shop-detail-replica .app-action-bar{position:static;padding:20px 0 0;margin-top:20px;border-top:1px solid #e8e1d8;background:none}}

@@ -1,0 +1,30 @@
+{
+  "name": "geyou-agent",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --config web/vite.config.ts",
+    "build": "vite build --config web/vite.config.ts",
+    "preview": "vite preview --config web/vite.config.ts",
+    "typecheck": "tsc --project web/tsconfig.json --noEmit",
+    "test": "node --import tsx --test web/src/geyou/*.test.ts web/geyou-*.test.ts",
+    "verify": "npm test && npm run typecheck && npm run build"
+  },
+  "dependencies": {
+    "lucide-react": "0.546.0",
+    "lunar-javascript": "1.7.7",
+    "react": "19.2.5",
+    "react-dom": "19.2.5"
+  },
+  "devDependencies": {
+    "@types/node": "22.19.17",
+    "@vitejs/plugin-react": "5.2.0",
+    "tsx": "4.21.0",
+    "typescript": "5.8.3",
+    "vite": "6.4.5"
+  },
+  "engines": {
+    "node": ">=22.14.0"
+  }
+}
