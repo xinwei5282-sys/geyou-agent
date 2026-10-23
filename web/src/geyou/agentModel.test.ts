@@ -14,7 +14,7 @@ test('进入套餐直接准备已核对资料的项目，保留草稿和确认�
  const checked=confirmAgentProfile(fresh.state,staff,fresh.session.id,{...emptyAgentProfile(),name:'测试逝者'},'测试家属','');
  const prepared=model.prepareAgentPackage(checked,staff,fresh.session.id);
  const data=agentData(prepared,agentRecord(prepared,staff,fresh.session.id));
- assert.ok(data.packagePreparedAt);assert.equal(data.paperPlan,undefined);
+ assert.ok(data.packagePreparedAt);assert.ok(data.paperPlan);assert.equal(data.paperPlan.confirmedAt,undefined);assert.equal(data.paperPlan.pricesChecked,false);
  assert.equal(model.prepareAgentPackage(prepared,staff,fresh.session.id),prepared);
  for(const confirmedAt of [undefined,'2026-10-22']){
   const paperPlan={basePrice:458000,extras:[{id:'wreath100',quantity:2}],pricesChecked:!!confirmedAt,confirmedAt,updatedAt:'2026-10-22'};
@@ -199,15 +199,19 @@ test('商品推荐按逝者信仰排除冲突宗教款，并把职业信仰喜�
  assert.match(facts,/教师/);assert.match(facts,/逝者本人宗教信仰：佛教/);assert.match(facts,/喜欢素雅/);
 });
 
-test('核对建档后提示可选服务，跳过后再次保存不重复提醒',async()=>{
+test('资料核对生成报价，报价确认后保留制作入口且忽略旧跳过状态',async()=>{
  const {agentServiceReminder,dismissAgentServiceReminder}=await import('./agentModel');const {state,staff}=fixture();
  const opened=startAgentConversation(state,staff);const sid=opened.session.id;
  assert.equal(agentServiceReminder(opened.state,staff,sid),false);
  const profile={...emptyAgentProfile(),name:'提醒测试逝者'};
  const saved=confirmAgentProfile(opened.state,staff,sid,profile,'测试家属','');
- assert.equal(agentServiceReminder(saved,staff,sid),true);
- const dismissed=dismissAgentServiceReminder(saved,staff,sid);
- assert.equal(agentServiceReminder(dismissed,staff,sid),false);
+ assert.equal(agentServiceReminder(saved,staff,sid),false);
+ const d=agentData(saved,agentRecord(saved,staff,sid));assert.ok(d.paperPlan);assert.ok(d.quoteNotes?.length);
+ const {saveAgentPaperPlan}=await import('./agentModel');
+ const confirmed=saveAgentPaperPlan(saved,staff,sid,{...d.paperPlan!,pricesChecked:true,confirmedAt:'2026-10-23'});
+ assert.equal(agentServiceReminder(confirmed,staff,sid),true);
+ const dismissed=dismissAgentServiceReminder(confirmed,staff,sid);
+ assert.equal(agentServiceReminder(dismissed,staff,sid),true);
  const again=confirmAgentProfile(dismissed,staff,sid,profile,'测试家属','');
- assert.equal(agentServiceReminder(again,staff,sid),false);
+ assert.equal(agentServiceReminder(again,staff,sid),true);
 });

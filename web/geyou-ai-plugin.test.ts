@@ -283,7 +283,7 @@ test('business state snapshot is bounded and prompt distinguishes actual busines
 });
 test('代理版使用纸单与状态专用提示词，不引导不存在的商城或自动执行',()=>{
  const prompt=buildSystemPrompt(validateChatRequest({...request,staffContext:{businessFacts:['代理简版：尚未建档'],stage:'consulting',selectedItems:[]}})!);
- assert.match(prompt,/纸单有花圈100元\/200元档/);assert.match(prompt,/不以中午12点补造/);assert.match(prompt,/聊天不会执行页面操作/);assert.match(prompt,/证件可上传后进行本机识别/);
+ assert.doesNotMatch(prompt,/套餐推荐与温和升单：/);assert.match(prompt,/日期与享年统一以个人信息表单/);assert.match(prompt,/聊天不会执行页面操作/);assert.match(prompt,/证件可上传后进行本机识别/);
 });
 
 test('agent archive fields survive the structured response boundary',()=>{

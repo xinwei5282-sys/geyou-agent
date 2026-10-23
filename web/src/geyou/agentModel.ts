@@ -1,3 +1,5 @@
+import {withCalculatedAgentAge,validateAgentDates} from './agentAge';
+import {initialAgentPlan,agentQuoteNotes} from './agentQuoteNotes';
 import {Solar,Lunar} from 'lunar-javascript';
 import type {AppState,Consultation,Staff,Notice} from './types';
 import type {AgentData,AgentProfile} from './agentTypes';
@@ -12,9 +14,9 @@ export const emptyAgentProfile=():AgentProfile=>({name:'',age:'',gender:'',relat
 export function agentRecord(s:AppState,staff:Staff,sid:string){const c=s.consultations?.find(c=>c.id===sid&&canAccessSalesRecord(s,staff,c));if(!c)throw Error('无权访问该客户沟通');return c;}
 export function agentData(s:AppState,c:Consultation):AgentData{
  const person=s.customers.find(x=>x.id===c.customerId)?.deceased?.find(d=>d.id===c.deceasedId);
- return c.agent||{profile:{...emptyAgentProfile(),...person?.agentProfile,name:person?.name||c.guided?.subjectName||'',age:person?.age||'',relationship:person?.relationship||'',budget:person?.agentProfile?.budget||(c.guided?.budget?String(c.guided.budget/100):''),faith:person?.agentProfile?.faith||c.guided?.faith||'待确认'},materials:[]};
+ const result=c.agent||{profile:{...emptyAgentProfile(),...person?.agentProfile,name:person?.name||c.guided?.subjectName||'',age:person?.age||'',relationship:person?.relationship||'',budget:person?.agentProfile?.budget||(c.guided?.budget?String(c.guided.budget/100):''),faith:person?.agentProfile?.faith||c.guided?.faith||'待确认'},materials:[]};const profile=withCalculatedAgentAge(result.profile);return profile===result.profile?result:{...result,profile};
 }
-export function putAgentData(s:AppState,staff:Staff,sid:string,data:AgentData):AppState{agentRecord(s,staff,sid);return {...s,consultations:s.consultations!.map(c=>c.id===sid?{...c,agent:data,updatedAt:now()}:c)};}
+export function putAgentData(s:AppState,staff:Staff,sid:string,data:AgentData):AppState{agentRecord(s,staff,sid);return {...s,consultations:s.consultations!.map(c=>c.id===sid?{...c,agent:{...data,profile:withCalculatedAgentAge(data.profile)},updatedAt:now()}:c)};}
 export function prepareAgentPackage(s:AppState,staff:Staff,sid:string):AppState{
  const data=agentData(s,agentRecord(s,staff,sid));
  if(!data.profile.confirmedAt||data.packagePreparedAt||data.paperPlan)return s;
@@ -24,7 +26,7 @@ export function applyAgentReplyProfile(s:AppState,staff:Staff,sid:string,value:u
  if(!value||typeof value!=='object'||Array.isArray(value))return s;
  const raw=value as Record<string,unknown>,c=agentRecord(s,staff,sid),data=agentData(s,c),profile={...data.profile};
  {
-  const mapping={occupation:'occupation',interests:'interests',subjectName:'name',subjectAge:'age',subjectGender:'gender',faith:'faith',relationship:'relationship',birthDate:'birthDate',deathDate:'deathDate',farewell:'farewell',location:'location'} as const;
+  const mapping={faithDetail:'faithDetail',occupation:'occupation',interests:'interests',subjectName:'name',subjectAge:'age',subjectGender:'gender',faith:'faith',relationship:'relationship',birthDate:'birthDate',deathDate:'deathDate',farewell:'farewell',location:'location'} as const;
   for(const [from,to] of Object.entries(mapping))if(typeof raw[from]==='string'&&(raw[from] as string).trim()){
    if(profile.confirmedAt&&profile[to as keyof AgentProfile])continue;
    let v=(raw[from] as string).trim().slice(0,200);
@@ -112,7 +114,7 @@ export function calculateAgentBazi(p:AgentProfile){
  return {ready:true as const,pillars,solarDate:lunar.getSolar().toYmd(),counts:['木','火','土','金','水'].map(name=>({name,count:elements.split('').filter(e=>e===name).length})),rule:`北京时间（UTC+8），未校正真太阳时；${p.sect===2?'零点':'23点'}换日。`};
 }
 export function confirmAgentProfile(s:AppState,staff:Staff,sid:string,input:AgentProfile,contactName:string,phone:string,target?:{customerId:string;deceasedId?:string}):AppState{
- let record=agentRecord(s,staff,sid);if(!input.name.trim())throw Error('请填写逝者姓名');
+ validateAgentDates(input);let record=agentRecord(s,staff,sid);if(record.agent?.identityReviewPending)throw Error('请先人工核对识别资料');if(!input.name.trim())throw Error('请填写逝者姓名');
  if(input.budget&&(!/^\d+(\.\d{1,2})?$/.test(input.budget)||Number(input.budget)>100000000))throw Error('请填写有效预算');
  if(input.birthDate&&input.birthTime)calculateAgentBazi(input);
  let next=s;if(!record.customerId){next=associateSalesCustomer(next,staff,sid,target?{customerId:target.customerId}:{newCustomer:{name:contactName,phone}});record=agentRecord(next,staff,sid);}
@@ -121,9 +123,9 @@ export function confirmAgentProfile(s:AppState,staff:Staff,sid:string,input:Agen
  const did=record.deceasedId||target?.deceasedId||id('agent-person');
  if(!record.deceasedId&&!target?.deceasedId&&next.customers.find(c=>c.id===cid)?.deceased?.some(d=>d.name===input.name.trim()))throw Error('该客户已有同名服务对象，请先选择已有对象，避免重复建档');
  next=saveDeceased(next,staff,cid,{id:did,name:input.name,age:input.age,relationship:input.relationship});
- const previous=agentData(next,record),profile={...input,name:input.name.trim(),confirmedAt:now()};
+ const previous=agentData(next,record),profile=withCalculatedAgentAge({...input,name:input.name.trim(),confirmedAt:now()});
  // Existing published content and confirmed orders remain snapshots; changes are flagged in the agent view.
- return {...next,consultations:next.consultations!.map(c=>c.id===sid?{...c,deceasedId:did,serviceId:`${cid}:${did}`,agent:{...previous,profile,serviceReminderAt:previous.serviceReminderAt||now()},guided:c.guided?{...c.guided,subjectName:profile.name,subjectAge:profile.age,subjectGender:profile.gender,budget:Math.round(Number(profile.budget||0)*100),faith:profile.faith}:c.guided,updatedAt:now()}:c)};
+ return {...next,consultations:next.consultations!.map(c=>c.id===sid?{...c,deceasedId:did,serviceId:`${cid}:${did}`,agent:{...previous,profile,packagePreparedAt:previous.packagePreparedAt||now(),paperPlan:previous.paperPlan||initialAgentPlan(profile,now()),quoteNotes:previous.paperPlan?.confirmedAt?previous.quoteNotes:agentQuoteNotes(profile,previous.paperPlan||initialAgentPlan(profile,now()))},guided:c.guided?{...c.guided,subjectName:profile.name,subjectAge:profile.age,subjectGender:profile.gender,budget:Math.round(Number(profile.budget||0)*100),faith:profile.faith}:c.guided,updatedAt:now()}:c)};
 }
 export function generateAgentNotice(s:AppState,staff:Staff,sid:string):AppState{
  const c=agentRecord(s,staff,sid),data=agentData(s,c),p=data.profile;
@@ -169,13 +171,13 @@ function storeAgentPaperPlan(s:AppState,staff:Staff,sid:string,input:PaperPlan):
   if(!(a.included.includes('寿衣')&&product.category==='寿衣'||a.included.includes('骨灰盒')&&product.category==='骨灰盒'))throw Error('替换商品类别不匹配');
  }
  const lines=paperPlanLines(input);if(lines.reduce((n,x)=>n+x.price*x.quantity,0)<0)throw Error('清单总价不能小于零');
- return putAgentData(s,staff,sid,{...data,paperPlan:structuredClone(input)});
+ return putAgentData(s,staff,sid,{...data,paperPlan:structuredClone(input),quoteNotes:agentQuoteNotes(data.profile,input),...(input.confirmedAt?{serviceReminderAt:now(),serviceReminderDismissedAt:undefined}:{})});
 }
 
-/** One persisted, optional follow-up after the first human profile confirmation. */
+/** One persisted, optional follow-up after the quotation is explicitly confirmed. */
 export function agentServiceReminder(s:AppState,staff:Staff,sid:string){
  const c=agentRecord(s,staff,sid),data=agentData(s,c);
- return !!(data.profile.confirmedAt&&data.serviceReminderAt&&!data.serviceReminderDismissedAt&&c.customerId&&c.deceasedId);
+ return !!(data.profile.confirmedAt&&data.paperPlan?.confirmedAt&&c.customerId&&c.deceasedId);
 }
 export function dismissAgentServiceReminder(s:AppState,staff:Staff,sid:string){
  const c=agentRecord(s,staff,sid),data=agentData(s,c);

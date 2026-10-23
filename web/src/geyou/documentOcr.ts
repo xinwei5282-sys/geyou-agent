@@ -1,3 +1,4 @@
+import {withCalculatedAgentAge} from './agentAge';
 import type {AgentProfile} from './agentTypes';
 export const DOCUMENT_FIELDS={name:'逝者姓名',gender:'性别',birthDate:'出生日期',deathDate:'逝世日期'} as const;
 export type DocumentField=keyof typeof DOCUMENT_FIELDS;
@@ -21,5 +22,5 @@ export function parseDocumentText(input:string[]):DocumentRecognition{
 }
 export function recognitionCandidates(materials:{id:string;name:string;recognition?:DocumentRecognition}[]){return materials.flatMap(m=>(Object.entries(m.recognition?.fields||{}) as [DocumentField,string][]).map(([key,value])=>({key,value,source:m.name,id:m.id})));}
 export function fillRecognitionBlanks(profile:AgentProfile,recognition:DocumentRecognition):AgentProfile{
- if(profile.confirmedAt)return profile;const next={...profile};for(const [key,value] of Object.entries(recognition.fields) as [DocumentField,string][]){if(!next[key]&&(key!=='birthDate'||next.calendar==='solar'))next[key]=value;}return next;
+ if(profile.confirmedAt)return profile;const next={...profile};for(const [key,value] of Object.entries(recognition.fields) as [DocumentField,string][]){if(!next[key]&&(key!=='birthDate'||next.calendar==='solar'))next[key]=value;}return withCalculatedAgentAge(next);
 }

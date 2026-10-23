@@ -1,3 +1,4 @@
+import {currentFamilyForms,familyFormSettings} from './agentFamilyForms';
 import {agentIntake} from './agentIntake';
 import type {AppState,Consultation,Staff} from './types';
 import {demoMaterialAdvice} from './agentDemoRules';
@@ -5,28 +6,32 @@ import {agentData,calculateAgentBazi,findAgentNotice} from './agentModel';
 import {hasStaffModule,isProductAvailable} from './model';
 import {receptionBusinessFacts} from './receptionBusinessContext';
 import {PAPER_PACKAGE,PAPER_EXTRAS,paperPlanTotal} from './agentPackageSource';
-export function agentChatRequest(state:AppState,staff:Staff,current:Consultation){
+export function agentChatRequest(state:AppState,staff:Staff,current:Consultation,mode:'reception'|'quotation'='reception'){
  const d=agentData(state,current),p=d.profile;
  const person=state.customers.find(c=>c.id===current.customerId)?.deceased?.find(x=>x.id===current.deceasedId);
  const notice=findAgentNotice(state,staff,current);
  const photo=hasStaffModule(state,staff,'restoration')?person?.portraits.at(-1):undefined;
  const catalog=[{id:'paper-simple',name:PAPER_PACKAGE.name,category:'纸单套餐',price:PAPER_PACKAGE.price/100,unit:'套',description:PAPER_PACKAGE.included.join('、'),spec:'用户纸单历史参考价，当前须核价；未注明材质'},...PAPER_EXTRAS.map(x=>({id:'paper-'+x.id,name:x.name,category:x.group,price:x.price/100,unit:x.unit,description:x.note,spec:'用户纸单参考项目，不代表实时库存'}))];
  let bazi='八字资料不全或未核对，不得推断四柱、喜用和商品对应。';
- try{const chart=calculateAgentBazi(p);if(chart.ready)bazi='已计算四柱：'+chart.pillars.join('、')+'；'+chart.rule+'喜用未自动判定；家属确认五行偏好：'+(p.preferredElement||'未确认')+'。';}catch{}
+ try{const chart=mode==='quotation'?calculateAgentBazi(p):undefined;if(chart?.ready)bazi='已计算四柱：'+chart.pillars.join('、')+'；'+chart.rule+'喜用未自动判定；家属确认五行偏好：'+(p.preferredElement||'未确认')+'。';}catch{}
  const intake=agentIntake(d);
- const facts=[...receptionBusinessFacts(state,staff,current).slice(0,4),
- '代理简版：聊天提取到明确姓名后自动建立待核对档案，资料和人像随接待同步；不自动发布、采用、确认套餐或收款。证件可通过本机识别，只有存在识别记录才可称已识别，且仍需人工核对。聊天页面显示个人信息完善入口和推荐选项；先提交身份证、死亡证明或户口本逝者所在页，文件只在本机识别；缺项逐一追问，已有信息不重复询问；不采集客户预算。当前办理入口随本轮讣告、遗照或报价需求出现，不能指引用户寻找“本次服务”固定板块。资料可从底部加号上传后核对；也可从客户列表进入档案。',
- '资料核对状态：'+(p.confirmedAt?'已人工核对':'尚未人工核对，自动归档只表示待核对，不代表确认完成')+'；套餐建议状态：'+(d.packagePreparedAt?'已发起生成':'尚未发起生成')+'；逝者宗教信仰：'+p.faith+'。',
- '个人信息完善状态：'+(intake.complete?'已核对完整资料':intake.missing.length?'待补充'+intake.missing.join('、'):'资料已整理，待人工核对')+'；本轮只追问：'+(intake.question?.question||'请打开个人信息核对当前资料')+'；推荐选项：'+(intake.question?.options.map(x=>x.label).join('、')||'提交身份文件、个人信息完善')+'。',
- bazi,
- '原图套餐：简朴套餐4580元，包含'+PAPER_PACKAGE.included.join('、')+'。原图历史参考价须核实，不混用本店单品价；未注明材质，不编造木种工艺。',
- '代联系念佛、树灯、豆腐饭、水晶棺和防腐针，不代表费用包含；家属自备不收费。原图民俗内容仅在家属认可时采用；已备寿衣或不需要佛经时先移除相应范围并重新人工核价，不按单品随意扣减。',
- d.paperPlan?'当前代理清单'+(d.paperPlan.confirmedAt?'已记录家属确认':'仍待确认')+'，金额'+paperPlanTotal(d.paperPlan)/100+'元；单品更换：'+(d.paperPlan.adjustments?.map(a=>a.included+'更换为'+a.name+'，核实补差'+a.delta/100+'元').join('；')||'无')+'；未自动登记收款。':'尚未保存纸单套餐清单。未沟通客户不得直接给出已定制完成的套餐或话术。',
- '遗照服装可按资料建议或家属选择唐装、西服、素色正装、保留原衣；切换需重新生成。实际记录：'+(person?.selectedPortraitId?'已人工确认采用':photo?'已有照片，状态'+photo.status+'，尚未采用':'未关联可用照片')+'。',
+ const phase=familyFormSettings(state,current).phase;const receptionStage=intake.identity.pending?'identity-review':p.confirmedAt?(d.paperPlan?.confirmedAt?(phase==='preparation'?'content':phase):'quote-review'):intake.question?(intake.question.field==='name'&&!intake.hasRecognition?'identity-upload':'profile-collect'):'profile-review';
+ const nextStep=receptionStage==='identity-review'?'对照原件确认识别结果是否正确':receptionStage==='identity-upload'?'请先提交逝者身份文件':receptionStage==='profile-collect'?intake.question!.question:receptionStage==='profile-review'?'打开个人信息完善，对照核对并确认保存档案':receptionStage==='quote-review'?'查看已生成报价、办理材料核对单与丧家提前准备卡片，核价并确认报价':receptionStage==='content'?'先制作遗照，再制作电子讣告':'查看当前环节已展开的客户内容卡片';
+ const facts=[
+ '当前接待阶段：'+receptionStage+'；本轮只推进该阶段的下一步。',
+ '代理简版：user是代理，接待资料和当前对象隔离；不采集预算。页面操作由人工完成，聊天不能代为确认、付款、发布或采用。',
+ '身份识别核对：'+(intake.identity.pending?'识别结果等待人工确认，点击“识别正确，继续”或“有误，修改资料”。':intake.hasRecognition?'已有识别记录，无待核对结果。':'没有识别结果，不得称已读取证件。'),
+ '个人信息完善状态：'+(p.confirmedAt?'已人工核对':intake.missing.length?'尚未人工核对，待补充'+intake.missing.join('、'):'资料已整理，待整体人工核对')+'；本轮只追问：'+nextStep+'；推荐选项：'+(receptionStage==='profile-collect'?intake.question?.options.map(x=>x.label).join('、')||'个人信息完善':'使用卡片已有按钮，不重复提供选项')+'。',
+ '选品信息已询问但暂不清楚：'+(d.preferenceReviewed?.filter(k=>!p[k as keyof typeof p]||p[k as keyof typeof p]==='待确认').join('、')||'无')+'；未知不代表没有，不重复追问。',
+ '当前可提供客户表单：'+(currentFamilyForms(state,staff,current).map(f=>f.title).join('、')||'暂无')+'；点击卡片查看详情和下载PDF；生成不代表已发送、预约或付款。',
+ d.paperPlan?'当前代理清单'+(d.paperPlan.confirmedAt?'已记录家属确认，原单冻结，可先制作遗照，再制作电子讣告':'仍待核价及家属确认，不提前引导遗照讣告')+'；金额'+paperPlanTotal(d.paperPlan)/100+'元；核价状态：'+(d.paperPlan.pricesChecked?'已核价':'未核价')+'；未自动登记收款。':'尚未保存纸单套餐清单，先完成资料整体人工确认。',
+ '遗照实际记录：'+(person?.selectedPortraitId?'已人工确认采用':photo?'已有照片，状态'+photo.status+'，尚未采用':'未关联可用照片')+'；已有记录查看当前进度，不重复新建。',
  '当前讣告记录：'+(notice?notice.status+'；稿件时间'+(notice.ceremonyDate||'未填')+(notice.scheduleReview?'；待重新核对':''):'尚未生成或无权访问')+'。',
- '已核对资料中的告别时间：'+(p.farewell||'待确认')+'；地点：'+(p.location||'待确认')+'。这不代表外部场地已预约。',
- '当前资料识别：'+(d.materials.some(m=>m.recognition)?'存在本机识别候选，待核对或已人工核对；不能声称所有字段都准确':'没有识别结果，不得宣称已读取证件')+'。',
- ...(d.isDemo?['当前为演示客户，材质规则是模拟资料，不代表真实商品或报价：'+(demoMaterialAdvice(p,true).map(x=>x.name+'，'+x.material).join('；')||'家属尚未确认五行偏好，不匹配样品')]:[]),
- '推荐理由必须能追溯到家属需求或真实商品资料；八字不等于缺什么就补什么，不承诺转运、保佑或影响家运，不用恐惧促单。'];
- return {messages:current.messages.slice(-20).map(m=>({role:m.role,text:m.text.slice(0,2000)})),profile:{...(p.occupation?{occupation:p.occupation}:{}),...(p.interests?{interests:p.interests}:{}),...(p.name?{subjectName:p.name}:{}),...(p.gender?{subjectGender:p.gender}:{}),...(p.age?{subjectAge:p.age}:{}),...(p.relationship?{relationship:p.relationship}:{}),...(p.birthDate?{birthDate:p.birthDate}:{}),...(p.deathDate?{deathDate:p.deathDate}:{}),...(p.farewell?{farewell:p.farewell}:{}),...(p.location?{location:p.location}:{}),...(current.contact?.name?{contactName:current.contact.name}:{}),...(current.contact?.phone?{contactPhone:current.contact.phone}:{}),faith:p.faith,scenario:'home' as const},staffContext:{stage:d.paperPlan?.confirmedAt?'confirmed' as const:'consulting' as const,selectedItems:[],businessFacts:facts.map(x=>x.slice(0,300)).slice(0,16)},catalog};
+ '日期统一读取个人信息表单：出生日期'+(p.birthDate||'待确认')+'；逝世日期'+(p.deathDate||'待确认')+'；系统享年'+(p.age||'待确认')+'。AI不得自行计算或用今天补齐逝世日期。告别时间：'+(p.farewell||'待确认')+'；地点：'+(p.location||'待确认')+'，不代表场地已预约。',
+ '服务进度：'+phase+'；丧事办理'+(familyFormSettings(state,current).funeralCompleted?'已登记完成，可查看五七材料准备清单':'尚未登记完成，不提前推五七')+'。',
+ '单品更换：'+(d.paperPlan?.adjustments?.map(a=>a.included+'更换为'+a.name+'，核实补差'+a.delta/100+'元').join('；')||'无')+'；参考价不是本次核价，已含、自备不重复收费。',
+ ...(mode==='quotation'?['报价清单生成模式：仅整理可选商品匹配与核价建议，不自动加购、不修改金额、不确认报价。缺少可信八字依据则不使用八字推荐。',bazi,...(d.isDemo?['演示客户模拟材质规则：'+demoMaterialAdvice(p,true).map(x=>x.name+'，'+x.material).join('；')]:[])]:[]),
+ ...receptionBusinessFacts(state,staff,current).slice(0,1)
+ ];
+ return {messages:current.messages.slice(-20).map(m=>({role:m.role,text:m.text.slice(0,2000)})),profile:{...(p.occupation?{occupation:p.occupation}:{}),...(p.interests?{interests:p.interests}:{}),...(p.name?{subjectName:p.name}:{}),...(p.gender?{subjectGender:p.gender}:{}),...(p.age?{subjectAge:p.age}:{}),...(p.relationship?{relationship:p.relationship}:{}),...(p.birthDate?{birthDate:p.birthDate}:{}),...(p.deathDate?{deathDate:p.deathDate}:{}),...(p.farewell?{farewell:p.farewell}:{}),...(p.location?{location:p.location}:{}),...(current.contact?.name?{contactName:current.contact.name}:{}),...(current.contact?.phone?{contactPhone:current.contact.phone}:{}),...(p.faithDetail?{faithDetail:p.faithDetail}:{}),faith:p.faith,scenario:'home' as const},staffContext:{stage:d.paperPlan?.confirmedAt?'confirmed' as const:'consulting' as const,selectedItems:[],businessFacts:facts.map(x=>x.slice(0,300)).slice(0,16)},catalog};
 }

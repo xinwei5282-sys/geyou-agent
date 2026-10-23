@@ -1,5 +1,5 @@
 import type {Quote} from './types';
-export type QuotePdfInput={number:string;customer:string;subject:string;agency:string;phone?:string;date:string;status:string;lines:{name:string;quantity:number;unit:string;price:number;adjustment?:boolean;image?:{src:string;x:number;y:number;width:number;height:number};spec?:string}[];notes?:string[]};
+export type QuotePdfInput={agentName?:string;number:string;customer:string;subject:string;agency:string;phone?:string;date:string;status:string;lines:{name:string;quantity:number;unit:string;price:number;adjustment?:boolean;image?:{src:string;x:number;y:number;width:number;height:number};spec?:string}[];notes?:string[]};
 const encoder=new TextEncoder();
 const bytes=(v:string)=>encoder.encode(v);
 function join(parts:Uint8Array[]){const out=new Uint8Array(parts.reduce((n,p)=>n+p.length,0));let i=0;for(const p of parts){out.set(p,i);i+=p.length}return out;}
@@ -12,7 +12,7 @@ export async function quotationPdf(input:QuotePdfInput):Promise<Blob>{
  const wrap=(value:string,max:number,size=15)=>{font(size);const lines:string[]=[];for(const paragraph of value.split('\n')){let line='';for(const ch of Array.from(paragraph)){if(ctx.measureText(line+ch).width>max&&line){lines.push(line);line=ch}else line+=ch}lines.push(line)}return lines;};
  const text=(value:string,x:number,top:number,size=15,color='#46372b',align:CanvasTextAlign='left',weight=400)=>{font(size,weight);ctx.fillStyle=color;ctx.textAlign=align;ctx.fillText(value,x,top)};
  const rule=(top:number)=>{ctx.strokeStyle='#e7dfd2';ctx.beginPath();ctx.moveTo(48,top);ctx.lineTo(746,top);ctx.stroke()};
- const add=()=>{canvas=document.createElement('canvas');canvas.width=1588;canvas.height=2246;ctx=canvas.getContext('2d')!;ctx.scale(2,2);ctx.fillStyle='#ffffff';ctx.fillRect(0,0,794,1123);pages.push(canvas);text('服务报价单',48,78,29,'#493727','left',600);text(input.agency||'服务机构',746,74,15,'#8b7659','right');rule(100);text('报价编号：'+input.number,48,131,13);text('日期：'+input.date,746,131,13,'#8b7659','right');text('客户：'+input.customer,48,164,15);text('服务对象：'+input.subject,48,193,15);text(input.status,48,225,13,'#9c7649');ctx.fillStyle='#f5f0e8';ctx.fillRect(48,247,698,40);text('商品 / 服务项目',60,273,13);text('数量',501,273,13,'#46372b','right');text('单价（元）',615,273,13,'#46372b','right');text('金额（元）',734,273,13,'#46372b','right');y=307};
+ const add=()=>{canvas=document.createElement('canvas');canvas.width=1588;canvas.height=2246;ctx=canvas.getContext('2d')!;ctx.scale(2,2);ctx.fillStyle='#ffffff';ctx.fillRect(0,0,794,1123);pages.push(canvas);text('服务报价单',48,78,29,'#493727','left',600);text(input.agency||'服务机构',746,74,15,'#8b7659','right');rule(100);text('报价编号：'+input.number,48,131,13);text('日期：'+input.date,746,131,13,'#8b7659','right');text('客户：'+input.customer,48,164,15);text('服务对象：'+input.subject,48,193,15);if(input.agentName)text('代理：'+input.agentName,746,193,13,'#8b7659','right');text(input.status,48,225,13,'#9c7649');ctx.fillStyle='#f5f0e8';ctx.fillRect(48,247,698,40);text('商品 / 服务项目',60,273,13);text('数量',501,273,13,'#46372b','right');text('单价（元）',615,273,13,'#46372b','right');text('金额（元）',734,273,13,'#46372b','right');y=307};
  const thumbnails=new Map<string,HTMLImageElement>();
  await Promise.all([...new Set(input.lines.flatMap(line=>line.image?[line.image.src]:[]))].map(async src=>{try{const image=new Image();image.src=src;await image.decode();thumbnails.set(src,image)}catch{/* Keep the quote readable if a thumbnail is unavailable. */}}));
  add();
@@ -22,6 +22,9 @@ export async function quotationPdf(input:QuotePdfInput):Promise<Blob>{
  const notes=[...(input.notes||[]),...(input.phone?['服务联系电话：'+input.phone]:[])];
  for(const note of notes){for(const line of wrap(note,698,12)){if(y>1010)add();text(line,48,y,12,'#8d7d69');y+=21}y+=7;}
  for(let i=0;i<pages.length;i++){ctx=pages[i].getContext('2d')!;text((i+1)+' / '+pages.length,746,1085,11,'#9f927f','right');text('服务清单与费用说明 · 请核对后留存',48,1085,11,'#9f927f');}
+ return canvasPdf(pages);
+}
+export function canvasPdf(pages:HTMLCanvasElement[]):Blob{
  const images=pages.map(p=>Uint8Array.from(atob(p.toDataURL('image/jpeg',.94).split(',')[1]),c=>c.charCodeAt(0))),objects:Uint8Array[]=[];
  const count=2+images.length*3,pageIds=images.map((_,i)=>3+i*3);
  objects.push(bytes('<< /Type /Catalog /Pages 2 0 R >>'),bytes('<< /Type /Pages /Kids ['+pageIds.map(n=>n+' 0 R').join(' ')+'] /Count '+images.length+' >>'));

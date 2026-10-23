@@ -27,6 +27,7 @@ type Profile = {
   budgetYuan?: number;
   region?: string;
   faith?: string;
+  faithDetail?:string;
   scenario?: Scenario;
   category?: Category;
 };
@@ -73,7 +74,7 @@ const isRecord = (value: unknown): value is Record<string, unknown> =>
 
 function validateProfile(value: unknown): Profile | null {
   if (!isRecord(value)) return null;
-  if (Object.keys(value).some(key => !['budgetYuan', 'region', 'faith', 'scenario', 'category', 'occupation', 'interests', 'subjectName', 'subjectGender', 'subjectAge', 'customs', 'contactName', 'contactPhone', 'relationship', 'birthDate', 'deathDate', 'farewell', 'location'].includes(key))) return null;
+  if (Object.keys(value).some(key => !['faithDetail', 'budgetYuan', 'region', 'faith', 'scenario', 'category', 'occupation', 'interests', 'subjectName', 'subjectGender', 'subjectAge', 'customs', 'contactName', 'contactPhone', 'relationship', 'birthDate', 'deathDate', 'farewell', 'location'].includes(key))) return null;
   const result: Profile = {};
   if ('budgetYuan' in value) {
     if (typeof value.budgetYuan !== 'number' || !Number.isFinite(value.budgetYuan) || value.budgetYuan < 0 || value.budgetYuan > MAX_BUDGET_YUAN) return null;
@@ -86,7 +87,7 @@ function validateProfile(value: unknown): Profile | null {
       result[key] = value[key];
     }
   }
-  for (const [key,max] of [['occupation',100],['interests',300],['subjectName',100],['subjectGender',20],['subjectAge',30],['customs',300],['contactName',100],['contactPhone',30],['relationship',30],['birthDate',10],['deathDate',10],['farewell',30],['location',200]] as const) {
+  for (const [key,max] of [['faithDetail',100],['occupation',100],['interests',300],['subjectName',100],['subjectGender',20],['subjectAge',30],['customs',300],['contactName',100],['contactPhone',30],['relationship',30],['birthDate',10],['deathDate',10],['farewell',30],['location',200]] as const) {
     if (key in value) { if (typeof value[key] !== 'string' || value[key].length > max) return null; result[key]=value[key]; }
   }
   if ('scenario' in value) {
