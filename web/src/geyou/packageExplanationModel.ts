@@ -1,3 +1,5 @@
+import {calculateAgentBazi,emptyAgentProfile} from './agentModel';
+import type {AgentProfile} from './agentTypes';
 import type {AppState,Product,Staff} from './types';
 import {isProductAvailable} from './model';
 import {PAPER_PACKAGE,paperPlanTotal,type PaperPlan,type PaperAdjustment} from './agentPackageSource';
@@ -24,7 +26,7 @@ export function packageExplanationRequest(plan:PaperPlan,budget:string,item?:{in
  ]},catalog:item?[{id:item.product.id,name:item.product.name,category:item.product.category,price:item.product.price/100,unit:item.product.unit,description:item.product.description.slice(0,300),spec:item.product.spec?.slice(0,200)}]:[],messages:[{role:'user',text:item?'根据明确需求提供该单品的可选替换讲解。reply写内部依据、价格核对和预算提醒；staffScript只写给家属的一段简短话术，保留原方案，不强推、不编造材质功效。价格未核实必须说待核价。只比较不代表已更换。':'请生成当前套餐的现场讲解要点和一段对客话术，只介绍实际包含项目；没有单品调整需求，不主动升单。不生成新套餐，不声称完成操作。'}]};
 }
 
-export type PackagePreference={occupation?:string;faith?:string;interests?:string;preferredElement?:string;confirmedAt?:string};
+export type PackagePreference=Partial<Pick<AgentProfile,'birthDate'|'birthTime'|'calendar'|'leap'|'sect'|'birthplace'>>&{isDemo?:boolean;occupation?:string;faith?:string;interests?:string;preferredElement?:string;confirmedAt?:string;customs?:string};
 export function recommendPackageProduct(state:AppState,staff:Staff,plan:PaperPlan,included:string,preference:PackagePreference){
  const selected=plan.adjustments?.find(a=>a.included===included),current=state.products.find(p=>p.id===selected?.productId&&p.agencyId===staff.agencyId);
  const available=replacementProducts(state,staff,included).filter(p=>(!p.religion||['通用','不限','无特定信仰'].includes(p.religion)||p.religion===preference.faith)&&p.id!==current?.id&&(!current||p.price>current.price));
@@ -44,16 +46,22 @@ export function recommendPackageProduct(state:AppState,staff:Staff,plan:PaperPla
  return ranked[0];
 }
 
-export function packageProductRecommendationRequest(plan:PaperPlan,included:string,product:Product,preference:PackagePreference){
+export function packageProductRecommendationRequest(plan:PaperPlan,included:string,product:Product,preference:PackagePreference,currentProduct?:Product){
+ let bazi='出生资料不全或尚未核对，不能生成八字匹配结论。';
+ if(preference.confirmedAt){try{const chart=calculateAgentBazi({...emptyAgentProfile(),...preference,birthplace:preference.birthplace||'北京时间口径'});if(chart.ready)bazi='已核对出生资料排盘：'+chart.pillars.join('、')+'；表层五行统计：'+chart.counts.map(x=>x.name+x.count).join('、')+'；'+chart.rule+'表层数量不等于喜用神，不能据缺某五行推断必须购买。';}catch{bazi='出生资料校验未通过，不生成八字匹配结论。';}}
  return {profile:{},staffContext:{businessFacts:[
  '代理简版：商品详情推荐说明模式。只输出一段可对客展示的推荐理由，不修改清单或客户档案。',
- '当前套餐商品：'+included+'；原款详细材质规格未核定，不作虚构比较。',
- '商品真实资料：'+JSON.stringify({name:product.name,category:product.category,description:product.description,spec:product.spec||'',religion:product.religion||'未标注',recommendationNote:product.recommendationNote||''}).slice(0,280),
+ ...(preference.isDemo?['当前为明确标注的虚构演示对比：商品规格、人工五行标注及木方向均为测试假设，不是真实顾问结论；reply以“演示对比：”开头，不把测试假设说成真实八字喜用。']:[]),
+ '两款对比中的当前商品：'+JSON.stringify(currentProduct?{name:currentProduct.name,description:currentProduct.description,spec:currentProduct.spec||'',elements:currentProduct.elements||[],price:currentProduct.price/100}:{name:included,description:'套餐原款，具体材质规格未核定',spec:'未知',elements:[]}).slice(0,600)+'；未知项不能推断比候选更差。',
+ '八字排盘依据：'+bazi,
+ '家属已确认五行方向：'+(preference.confirmedAt&&preference.preferredElement?preference.preferredElement:'未确认，不得自动判定喜用')+'；候选商品五行标注：'+(product.elements?.join('、')||'未标注，不得按名称材质自行推导')+'。',
+ '两款对比中的候选商品真实资料：'+JSON.stringify({name:product.name,category:product.category,description:product.description,spec:product.spec||'',religion:product.religion||'未标注',recommendationNote:product.recommendationNote||''}).slice(0,600),
  '候选商品目录价：'+product.price/100+'元/'+product.unit+'，不是替换补差；实际补差未核定。',
+ ...(preference.customs?['家属已明确的习俗与禁忌：'+preference.customs.slice(0,180)+'；只用于排除冲突，不推断必须购买。']:[]),
  ...(preference.interests?['客户已记录的明确喜好：'+preference.interests.slice(0,200)]:[]),
  ...(preference.faith?['逝者本人宗教信仰：'+preference.faith.slice(0,80)+'；与仪式需求分开。候选商品宗教适用标注：'+(product.religion||'未标注，不得宣称宗教适配')]:[]),
  ...(preference.occupation?['老人已记录职业：'+preference.occupation.slice(0,100)+'。职业本身不能证明款式或材质偏好。']:[]),
  ...(preference.confirmedAt&&preference.preferredElement&&product.elements?.includes(preference.preferredElement)&&product.recommendationNote?['家属已确认五行方向偏好：'+preference.preferredElement+'；商品资料标注：'+product.elements.join('、')+'；资料说明：'+product.recommendationNote.slice(0,160)+'。仅是偏好，不等于八字喜用。']:[]),
  plan.confirmedAt?'清单已确认，仅展示备选，不修改订单。':'清单待确认，仅展示备选，不自动升级。'
- ]},catalog:[{id:product.id,name:product.name,category:product.category,price:product.price/100,unit:product.unit,description:product.description.slice(0,300),spec:product.spec?.slice(0,200)}],messages:[{role:'user',text:'请为当前商品详情里的这一件可选商品写推荐理由。结合逝者已知职业、本人宗教信仰、生前习惯和明确喜好，具体说清有事实支持的商品适配；职业不等于喜好，信仰不等于仪式需求，不虚构宗教适配或功效；资料不足时只讲真实商品特点和可供比较之处。不要复述完整商品介绍，不要套话或罗列资料缺口，不要说“因为您是某职业所以一定喜欢”。80至140字，平实自然、有温度、不煽情，结尾保留选择权。只在reply返回这段对客推荐说明，profile={}，staffScript=[]，todos=[]，productIds=[]，recommendations=[]，upsellTips=[]，receptionSummary=null，不输出标题或提问。'}]};
+ ]},catalog:[{id:product.id,name:product.name,category:product.category,price:product.price/100,unit:product.unit,description:product.description.slice(0,300),spec:product.spec?.slice(0,200)}],messages:[{role:'user',text:'请为当前商品详情里的这一件可选商品写推荐理由。结合逝者已知职业、本人宗教信仰、生前习惯和明确喜好，具体说清有事实支持的商品适配；职业不等于喜好，信仰不等于仪式需求，不虚构宗教适配或功效；资料不足时只讲真实商品特点和可供比较之处。不要复述完整商品介绍，不要套话或罗列资料缺口，不要说“因为您是某职业所以一定喜欢”。60至100字、最多3句：第一句对比当前款和候选款有据可查的实际差异；原款未知时明确无法比较，不编造优势。第二句结合提供的四柱、家属已确认五行方向和两款商品明确的五行标注说明关联；四柱不等于喜用神，不根据五行数量或缺项自动判断补益。缺出生资料、确认方向或商品标注时，简短说明八字匹配暂不能确认，再以实际喜好和习俗作为选择依据，不强凑匹配。最后保留原方案与选择权。不因价格高声称更好，不罗列档案、不重复价格和补差状态，平实简短，结尾保留原套餐和选择权。只在reply返回这段对客推荐说明，profile={}，staffScript=[]，todos=[]，productIds=[]，recommendations=[]，upsellTips=[]，receptionSummary=null，不输出标题或提问。'}]};
 }

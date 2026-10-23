@@ -5,6 +5,7 @@ export type BurialCandidate={date:string;start:string;end:string;day:string;hour
 const branches='子丑寅卯辰巳午未申酉戌亥';
 export const branchClash=(a:string,b:string)=>branches.includes(a)&&branches.includes(b)&&Math.abs(branches.indexOf(a)-branches.indexOf(b))===6;
 function validDate(value:string){const d=new Date(value+'T00:00:00Z');if(!/^\d{4}-\d{2}-\d{2}$/.test(value)||!Number.isFinite(d.valueOf())||d.toISOString().slice(0,10)!==value)throw Error('请填写有效日期');return d;}
+export function maximumBurialEnd(from:string){try{return new Date(validDate(from).valueOf()+92*86400000).toISOString().slice(0,10)}catch{return undefined}}
 export function defaultBurialRange(deathDate:string){const from=validDate(deathDate);return {from:deathDate,to:new Date(from.valueOf()+6*86400000).toISOString().slice(0,10)}}
 export function burialCandidates(profile:AgentProfile,from:string,to:string):BurialCandidate[]{
  const chart=calculateAgentBazi({...profile,birthplace:'北京时间（UTC+8）'});if(!chart.ready)throw Error(chart.reason);

@@ -62,22 +62,23 @@ test('selection follow-ups persist explicit choices and skip unknown without inv
  s=intake.chooseIntakeOption(s,f.staff,f.session.id,'occupation','教师');
  s=intake.chooseIntakeOption(s,f.staff,f.session.id,'faith','__unknown__');
  let d=agentData(s,agentRecord(s,f.staff,f.session.id));assert.equal(d.profile.faith,'待确认');assert.equal(d.profile.occupation,'教师');assert.equal(intake.agentIntake(d).question?.field,'interests');
- s=intake.chooseIntakeOption(s,f.staff,f.session.id,'interests','书画');d=agentData(s,agentRecord(s,f.staff,f.session.id));assert.equal(intake.agentIntake(d).question,undefined);assert.equal(d.profile.confirmedAt,undefined);
+ s=intake.chooseIntakeOption(s,f.staff,f.session.id,'interests','书画');s=intake.chooseIntakeOption(s,f.staff,f.session.id,'customs','__unknown__');d=agentData(s,agentRecord(s,f.staff,f.session.id));assert.equal(intake.agentIntake(d).question,undefined);assert.equal(d.profile.confirmedAt,undefined);
  assert.deepEqual(intake.agentIntake(JSON.parse(JSON.stringify(d))).missing,[]);
 });
-test('OCR review precedes follow-ups, persists on refresh and never confirms the full profile or quote',()=>{
+test('OCR review generates base quote before optional personalization and persists on refresh',()=>{
  const f=fixture(),profile={...emptyAgentProfile(),name:'测试逝者',gender:'男',birthDate:'1940-01-01',deathDate:'2026-10-20'};
  const materials=[{id:'ocr-test',name:'死亡证明',kind:'证件资料' as const,at:'2026-10-23',recognition:{documentType:'死亡证明' as const,fields:{name:'测试逝者',gender:'男',birthDate:'1940-01-01',deathDate:'2026-10-20'},warnings:[]}}];
  let s=putAgentData(f.state,f.staff,f.session.id,{profile,materials,identityReviewPending:true});let d=agentData(s,agentRecord(s,f.staff,f.session.id));
  assert.equal(intake.agentIntake(JSON.parse(JSON.stringify(d))).identity.pending,true);assert.equal(intake.agentIntake(d).question,undefined);
  assert.throws(()=>intake.chooseIntakeOption(s,f.staff,f.session.id,'relationship','父亲'));
- s=intake.reviewAgentIdentity(s,f.staff,f.session.id);d=agentData(s,agentRecord(s,f.staff,f.session.id));assert.equal(intake.agentIntake(d).identity.pending,false);assert.ok(d.materials[0].recognition?.reviewedAt);assert.equal(intake.agentIntake(d).question?.field,'relationship');assert.equal(d.profile.confirmedAt,undefined);assert.equal(d.paperPlan,undefined);
- s=putAgentData(s,f.staff,f.session.id,{...d,identityReviewPending:true});s=intake.reviewAgentIdentity(s,f.staff,f.session.id,{...profile,name:'人工更正姓名'});d=agentData(s,agentRecord(s,f.staff,f.session.id));assert.equal(d.profile.name,'人工更正姓名');assert.equal(d.paperPlan,undefined);
+ s=intake.reviewAgentIdentity(s,f.staff,f.session.id);d=agentData(s,agentRecord(s,f.staff,f.session.id));assert.equal(intake.agentIntake(d).identity.pending,false);assert.ok(d.materials[0].recognition?.reviewedAt);assert.equal(intake.agentIntake(d).question,undefined);assert.ok(d.profile.confirmedAt);assert.ok(d.paperPlan);assert.equal(d.paperPlan.confirmedAt,undefined);
+ s=intake.chooseAgentPersonalization(s,f.staff,f.session.id,'yes');d=agentData(s,agentRecord(s,f.staff,f.session.id));assert.equal(intake.agentIntake(d).question?.field,'relationship');assert.ok(d.paperPlan);assert.equal(intake.agentIntake(JSON.parse(JSON.stringify(d))).complete,true);
+ s=putAgentData(s,f.staff,f.session.id,{...d,identityReviewPending:true});s=intake.reviewAgentIdentity(s,f.staff,f.session.id,{...profile,name:'人工更正姓名'});d=agentData(s,agentRecord(s,f.staff,f.session.id));assert.equal(d.profile.name,'人工更正姓名');assert.ok(d.paperPlan);
 });
 test('custom choices retain actual occupation, interests and faith details through the gateway',async()=>{
  const f=fixture(),profile={...emptyAgentProfile(),name:'测试',gender:'男',birthDate:'1940-01-01',deathDate:'2026-10-20',relationship:'父亲'};
  let s=putAgentData(f.state,f.staff,f.session.id,{profile,materials:[]});assert.throws(()=>intake.chooseIntakeOption(s,f.staff,f.session.id,'occupation','__custom__'));assert.throws(()=>intake.chooseIntakeOption(s,f.staff,f.session.id,'occupation','',true));
- s=intake.chooseIntakeOption(s,f.staff,f.session.id,'occupation','木工',true);s=intake.chooseIntakeOption(s,f.staff,f.session.id,'faith','民间信仰',true);s=intake.chooseIntakeOption(s,f.staff,f.session.id,'interests','钓鱼',true);
+ s=intake.chooseIntakeOption(s,f.staff,f.session.id,'occupation','木工',true);s=intake.chooseIntakeOption(s,f.staff,f.session.id,'faith','民间信仰',true);s=intake.chooseIntakeOption(s,f.staff,f.session.id,'interests','钓鱼',true);s=intake.chooseIntakeOption(s,f.staff,f.session.id,'customs','从简办理');
  const d=agentData(s,agentRecord(s,f.staff,f.session.id));assert.equal(d.profile.occupation,'木工');assert.equal(d.profile.faith,'其他宗教');assert.equal(d.profile.faithDetail,'民间信仰');assert.equal(d.profile.interests,'钓鱼');assert.equal(intake.agentIntake(d).question,undefined);
  const {validateChatRequest,validateChatResponse}=await import('../../geyou-ai-plugin');const req=agentChatRequest(s,f.staff,agentRecord(s,f.staff,f.session.id));assert.equal(validateChatRequest(req)?.profile.faithDetail,'民间信仰');assert.equal(validateChatResponse({reply:'请核对资料',profile:{faith:'其他宗教',faithDetail:'民间信仰'},productIds:[]},[])?.profile.faithDetail,'民间信仰');
 });

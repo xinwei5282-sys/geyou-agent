@@ -1,7 +1,7 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {Solar} from 'lunar-javascript';
-import {burialCandidates,branchClash,defaultBurialRange} from './auspiciousModel';
+import {burialCandidates,branchClash,defaultBurialRange,maximumBurialEnd} from './auspiciousModel';
 import {calculateAgentBazi,emptyAgentProfile} from './agentModel';
 const profile={...emptyAgentProfile(),birthDate:'1940-01-01',birthTime:'08:00'};
 test('multiple burial candidates satisfy actual day/time almanac and natal branch filters without birthplace',()=>{
@@ -20,3 +20,5 @@ test('birth time, invalid ranges and burial before death are rejected; empty res
 });
 
 test('default range includes death day and covers exactly seven calendar days across month/year boundaries',()=>{assert.deepEqual(defaultBurialRange('2026-10-20'),{from:'2026-10-20',to:'2026-10-26'});assert.deepEqual(defaultBurialRange('2026-12-29'),{from:'2026-12-29',to:'2027-01-04'});assert.throws(()=>defaultBurialRange('2026-02-30'));});
+
+test('date picker upper bound allows exactly 93 inclusive days and rejects invalid dates',()=>{assert.equal(maximumBurialEnd('2026-10-23'),'2027-01-23');assert.equal(maximumBurialEnd('2026-02-30'),undefined)});

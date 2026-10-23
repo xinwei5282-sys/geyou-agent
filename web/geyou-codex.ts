@@ -26,10 +26,10 @@ export function codexReplySchema(productIds:string[]){
 export async function codexAvailable(binary:string){
  try{const {stdout,stderr}=await execFileAsync(binary,['login','status'],{timeout:8000,maxBuffer:8192});return /Logged in/i.test(stdout+stderr)}catch{return false}
 }
-export async function runCodexReply(binary:string,prompt:string,productIds:string[],signal:AbortSignal){
+export async function runCodexReply(binary:string,prompt:string,productIds:string[],signal:AbortSignal,schemaOverride?:Record<string,unknown>){
  const directory=await mkdtemp(path.join(tmpdir(),'geyou-ai-'));
  const schemaFile=path.join(directory,'schema.json'),outputFile=path.join(directory,'reply.json');
- await writeFile(schemaFile,JSON.stringify(codexReplySchema(productIds)));
+ await writeFile(schemaFile,JSON.stringify(schemaOverride||codexReplySchema(productIds)));
  // Model/provider/effort inherit the user's Codex configuration; this invocation only restricts tools and writes.
  const args=['exec','--ephemeral','--sandbox','read-only','--skip-git-repo-check','--cd',directory,'--color','never','--json','--output-schema',schemaFile,'-o',outputFile,'-c','mcp_servers.figma.enabled=false','-c','mcp_servers.pencil.enabled=false','-c','mcp_servers.node_repl.enabled=false','-c','features.memories=false','-c','features.chronicle=false','-c','features.js_repl=false','-'];
  try{

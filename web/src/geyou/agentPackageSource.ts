@@ -9,7 +9,7 @@ export const PAPER_EXTRAS=[
  {id:'bus52return',name:'35–52座大客车 · 殡仪馆来回',price:80000,unit:'项',group:'车辆',note:'按实际人数、路线及承办方报价确认'},
  {id:'bus52hill',name:'35–52座大客车 · 上山',price:100000,unit:'项',group:'车辆',note:'与其他车辆方案择需选择'},
 ] as const;
-export type PaperAdjustment={included:string;productId:string;name:string;need:string;delta:number;priceChecked:boolean};
+export type PaperAdjustment={productSpec?:string;productImage?:string;included:string;productId:string;name:string;need:string;delta:number;priceChecked:boolean};
 export type PaperPlan={adjustments?:PaperAdjustment[];omitted?:string[];basePrice:number;extras:{id:string;quantity:number}[];pricesChecked:boolean;confirmedAt?:string;updatedAt:string};
 export function paperPlanLines(plan:PaperPlan){return [{name:PAPER_PACKAGE.name,quantity:1,unit:'套',price:plan.basePrice},...plan.extras.map(item=>{const extra=PAPER_EXTRAS.find(x=>x.id===item.id);if(!extra||!Number.isInteger(item.quantity)||item.quantity<1||item.quantity>100)throw Error('请核对增项数量');return {name:extra.name,quantity:item.quantity,unit:extra.unit,price:extra.price};}),...(plan.adjustments||[]).map(x=>{if(!Number.isSafeInteger(x.delta))throw Error('请核对更换补差');return {name:x.included+' → '+x.name+'（更换补差）',quantity:1,unit:'项',price:x.delta};})];}
 export function paperPlanTotal(plan:PaperPlan){return paperPlanLines(plan).reduce((n,x)=>n+x.price*x.quantity,0);}

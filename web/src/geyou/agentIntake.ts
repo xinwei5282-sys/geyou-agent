@@ -1,12 +1,12 @@
 import type {AgentData,AgentProfile} from './agentTypes';
 import type {AppState,Staff} from './types';
 import {DOCUMENT_FIELDS} from './documentOcr';
-import {agentData,agentRecord,putAgentData,syncAgentArchive,agentMessage} from './agentModel';
+import {agentData,agentRecord,putAgentData,syncAgentArchive,agentMessage,confirmAgentProfile} from './agentModel';
 
 export const INTAKE_GREETING='请上传逝者的身份证、死亡证明或户口本逝者所在页，我来整理信息。';
 export const RELATIONSHIP_OPTIONS=['父亲','母亲','配偶','祖父母','兄弟姐妹','其他亲属'];
-export type IntakeField='name'|'gender'|'birthDate'|'relationship'|'deathDate'|'occupation'|'faith'|'interests';
-const preferenceFields=['occupation','faith','interests'];
+export type IntakeField='name'|'gender'|'birthDate'|'relationship'|'deathDate'|'occupation'|'faith'|'interests'|'customs';
+const preferenceFields=['occupation','faith','interests','customs'];
 const choices=(values:string[])=>[...values.map(value=>({label:value,value})),{label:'都不是，自己填写',value:'__custom__'},{label:'暂不清楚',value:'__unknown__'}];
 const fields:{field:IntakeField;label:string;question:string;options:{label:string;value:string}[]}[]=[
  {field:'name',label:'逝者姓名',question:'请先上传逝者的身份证、死亡证明或户口本，获取姓名等信息。',options:[]},
@@ -17,6 +17,7 @@ const fields:{field:IntakeField;label:string;question:string;options:{label:stri
  {field:'occupation',label:'生前职业',question:'逝者生前主要从事什么职业？',options:choices(['教师','军人','工人','务农','经商','公务人员'])},
  {field:'faith',label:'逝者信仰',question:'逝者本人有宗教信仰吗？',options:choices(['无特定信仰','佛教','道教','基督教','天主教','伊斯兰教'])},
  {field:'interests',label:'生前喜好',question:'逝者生前有什么喜好？可选一项，也可以直接补充。',options:choices(['园艺','书画','音乐','阅读','运动'])},
+ {field:'customs',label:'家属习俗',question:'家属希望遵循哪些习俗？',options:choices(['按当地习俗','从简办理','不安排宗教仪式'])},
 ];
 export function agentIdentityReview(data:Pick<AgentData,'profile'|'materials'|'identityReviewPending'>){
  const material=data.materials.filter(m=>m.kind==='证件资料'&&m.recognition).at(-1);
@@ -30,22 +31,28 @@ export function reviewAgentIdentity(s:AppState,staff:Staff,sid:string,edited?:Ag
  const profile=edited?{...edited,confirmedAt:undefined}:data.profile;if(!profile.name.trim())throw Error('请先对照原件填写逝者姓名');
  const at=new Date().toISOString(),materials=data.materials.map(m=>m.id===review.material!.id?{...m,recognition:{...m.recognition!,reviewedAt:at}}:m);
  const next=syncAgentArchive(putAgentData(s,staff,sid,{...data,profile,materials,identityReviewPending:false,identityReviewedAt:at}),staff,sid);
- return agentMessage(next,staff,sid,'识别资料已人工核对，请继续补充信息。');
+ const ready=confirmAgentProfile(next,staff,sid,profile,c.contact?.name||profile.name+'家属（待补充）',c.contact?.phone||'');
+ return agentMessage(ready,staff,sid,'识别资料已核对，基础报价单已生成，请核对项目和价格。');
 }
-export function agentIntake(data:Pick<AgentData,'profile'|'materials'|'preferenceReviewed'|'identityReviewPending'>){
+export function agentIntake(data:Pick<AgentData,'profile'|'materials'|'preferenceReviewed'|'identityReviewPending'|'personalization'>){
  const missing=fields.filter(x=>{const value=data.profile[x.field]?.trim();return (!value||value==='待确认')&&!(preferenceFields.includes(x.field)&&data.preferenceReviewed?.includes(x.field))});
  const identity=agentIdentityReview(data);
- return {identity,complete:!identity.pending&&!missing.some(x=>!preferenceFields.includes(x.field))&&!!data.profile.confirmedAt,missing:missing.map(x=>x.label),question:identity.pending?undefined:missing[0],hasDocuments:data.materials.some(m=>m.kind==='证件资料'),hasRecognition:data.materials.some(m=>!!m.recognition),recognitionFailed:data.materials.some(m=>m.recognitionFailed)};
+ return {identity,complete:!identity.pending&&!!data.profile.confirmedAt,missing:missing.map(x=>x.label),question:identity.pending||data.profile.confirmedAt&&data.personalization!=='yes'?undefined:missing[0],hasDocuments:data.materials.some(m=>m.kind==='证件资料'),hasRecognition:data.materials.some(m=>!!m.recognition),recognitionFailed:data.materials.some(m=>m.recognitionFailed)};
 }
 /** A button records only its explicit choice, never an inferred or family-confirmed fact. */
 export function chooseIntakeOption(s:AppState,staff:Staff,sid:string,field:IntakeField,value:string,custom=false):AppState{
  const data=agentData(s,agentRecord(s,staff,sid)),question=agentIntake(data).question;
  if(!question||question.field!==field||!(custom?['relationship',...preferenceFields].includes(field)&&value.trim().length>0&&value.trim().length<=100&&!value.startsWith('__'):question.options.some(x=>x.value===value)&&value!=='__custom__')||(data.profile[field]&&data.profile[field]!=='待确认'))throw Error('当前资料已变化，请按最新提示选择');
  value=value.trim();const selected=field==='faith'&&custom?'其他宗教':value;
- const next=syncAgentArchive(putAgentData(s,staff,sid,{...data,preferenceReviewed:preferenceFields.includes(field)?[...new Set([...(data.preferenceReviewed||[]),field])]:data.preferenceReviewed,profile:value==='__unknown__'?data.profile:{...data.profile,[field]:selected,...(field==='faith'?{faithDetail:custom?value:undefined}:{}),...(preferenceFields.includes(field)?{confirmedAt:undefined}:{})}}),staff,sid);
+ const next=syncAgentArchive(putAgentData(s,staff,sid,{...data,preferenceReviewed:preferenceFields.includes(field)?[...new Set([...(data.preferenceReviewed||[]),field])]:data.preferenceReviewed,profile:value==='__unknown__'?data.profile:{...data.profile,[field]:selected,...(field==='faith'?{faithDetail:custom?value:undefined}:{}),}}),staff,sid);
  return agentMessage(agentMessage(next,staff,sid,`${question.label}：${value==='__unknown__'?'暂不清楚':value}`,'user'),staff,sid,value==='__unknown__'?`这项先留待确认，继续下一项。`:`已记录${question.label}为“${value}”。`);
 }
 export function receptionQuickReplies(value:unknown):string[]{
  if(!Array.isArray(value))return [];
  return [...new Set(value.filter((x):x is string=>typeof x==='string').map(x=>x.trim()).filter(x=>x.length>0&&x.length<=60&&!/预算|价位|资料已[经]?核对|已确认|已付款|已发布|已采用/.test(x)))].slice(0,3);
+}
+
+export function chooseAgentPersonalization(s:AppState,staff:Staff,sid:string,value:'yes'|'no'){
+ const d=agentData(s,agentRecord(s,staff,sid));if(!d.paperPlan||d.identityReviewPending)throw Error('请先核对身份资料并生成报价单');
+ return agentMessage(putAgentData(s,staff,sid,{...d,personalization:value}),staff,sid,value==='yes'?'请完善逝者喜好、职业、信仰及习俗信息，用于调整报价建议。':'按基础报价继续，后续也可补充喜好和习俗。');
 }

@@ -15,9 +15,10 @@ export function agentChatRequest(state:AppState,staff:Staff,current:Consultation
  let bazi='八字资料不全或未核对，不得推断四柱、喜用和商品对应。';
  try{const chart=mode==='quotation'?calculateAgentBazi(p):undefined;if(chart?.ready)bazi='已计算四柱：'+chart.pillars.join('、')+'；'+chart.rule+'喜用未自动判定；家属确认五行偏好：'+(p.preferredElement||'未确认')+'。';}catch{}
  const intake=agentIntake(d);
- const phase=familyFormSettings(state,current).phase;const receptionStage=intake.identity.pending?'identity-review':p.confirmedAt?(d.paperPlan?.confirmedAt?(phase==='preparation'?'content':phase):'quote-review'):intake.question?(intake.question.field==='name'&&!intake.hasRecognition?'identity-upload':'profile-collect'):'profile-review';
+ const phase=familyFormSettings(state,current).phase;const receptionStage=intake.identity.pending?'identity-review':d.personalization==='yes'?'profile-review':p.confirmedAt?(d.paperPlan?.confirmedAt?(phase==='preparation'?'content':phase):'quote-review'):intake.question?(intake.question.field==='name'&&!intake.hasRecognition?'identity-upload':'profile-collect'):'profile-review';
  const nextStep=receptionStage==='identity-review'?'对照原件确认识别结果是否正确':receptionStage==='identity-upload'?'请先提交逝者身份文件':receptionStage==='profile-collect'?intake.question!.question:receptionStage==='profile-review'?'打开个人信息完善，对照核对并确认保存档案':receptionStage==='quote-review'?'查看已生成报价、办理材料核对单与丧家提前准备卡片，核价并确认报价':receptionStage==='content'?'先制作遗照，再制作电子讣告':'查看当前环节已展开的客户内容卡片';
  const facts=[
+ '当前个性化选择：'+(d.personalization==='yes'?'已选择完善喜好与习俗，点击个人信息卡片进入表单填写并保存；卡片不提供逐项选项按钮':d.personalization==='done'?'已保存个性化资料，查看报价调整建议':d.personalization==='no'?'按基础报价继续，不追问选品资料':'身份核对后直接提供基础报价，再询问是否根据逝者喜好、习俗调整；点击是才推送完善信息卡片')+'；家属习俗：'+(p.customs||'未提供')+'。',
  '当前接待阶段：'+receptionStage+'；本轮只推进该阶段的下一步。',
  '代理简版：user是代理，接待资料和当前对象隔离；不采集预算。页面操作由人工完成，聊天不能代为确认、付款、发布或采用。',
  '身份识别核对：'+(intake.identity.pending?'识别结果等待人工确认，点击“识别正确，继续”或“有误，修改资料”。':intake.hasRecognition?'已有识别记录，无待核对结果。':'没有识别结果，不得称已读取证件。'),

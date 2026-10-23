@@ -699,3 +699,168 @@
 .agent-app.agent-home-view .agent-home-tools>button.agent-home-auspicious{background-image:url('/agent-home/bg-auspicious.png');background-size:cover;background-position:center}
 
 .agent-app.agent-home-view .agent-home-tools>button>strong{font-family:'Songti SC',STSong,serif;font-size:clamp(20px,2.6dvh,25px);font-weight:600;line-height:1.4;letter-spacing:.04em;color:#263e30;text-align:left}
+
+/* Personal information opens above the reception as a bottom sheet. */
+.agent-sheet.agent-bottom-sheet.agent-refined{position:fixed;inset:auto 0 0;margin:0 auto;width:100%;max-width:640px;height:86dvh;max-height:calc(100dvh - 24px);border:0;border-radius:22px 22px 0 0;box-shadow:0 -12px 50px #30271920;padding:0;background:#fcfaf6}
+.agent-sheet.agent-bottom-sheet::backdrop{background:#201c1766}
+.agent-sheet.agent-bottom-sheet.agent-refined>header{flex:none;padding:18px 56px 12px;min-height:72px}
+.agent-sheet.agent-bottom-sheet.agent-refined>header:before{content:"";position:absolute;top:7px;left:calc(50% - 18px);width:36px;height:4px;border-radius:4px;background:#d7cfc3}
+.agent-sheet.agent-bottom-sheet.agent-refined>header>.agent-task-back{left:10px;right:auto;top:18px}
+.agent-sheet-profile.agent-bottom-sheet.agent-refined .agent-form-section:first-child>h3{display:flex}
+
+.agent-sheet.agent-bottom-sheet[open]{display:flex;flex-direction:column;overflow:hidden}
+.agent-sheet.agent-bottom-sheet .agent-sheet-body{flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain}
+.agent-sheet.agent-bottom-sheet .agent-sheet-footer{flex-shrink:0}
+.agent-sheet-familyform.agent-bottom-sheet .agent-sheet-footer .agent-intake-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0}
+.agent-sheet-familyform.agent-bottom-sheet .agent-sheet-footer button{min-height:46px;border:1px solid #dfd1bd;border-radius:10px;background:#fffdf9;color:#8b6134}
+
+.agent-sheet-familyform.agent-bottom-sheet .agent-sheet-footer .agent-wide{margin:0}
+.agent-sheet-familyform.agent-bottom-sheet .agent-sheet-footer a{display:flex;align-items:center;justify-content:center;min-height:44px;color:#8b6134;font-size:14px}
+
+/* A calm, grouped form with a persistent save area. */
+.agent-sheet-profile.agent-bottom-sheet.agent-refined{background:#f6f3ed}
+.agent-sheet-profile.agent-bottom-sheet.agent-refined>header{background:#f6f3ed;border-bottom:1px solid #eae4da}
+.agent-sheet-profile.agent-bottom-sheet.agent-refined>header h2{font-size:21px;letter-spacing:.02em}
+.agent-sheet-profile.agent-bottom-sheet.agent-refined>header>.agent-sheet-close{position:absolute;right:14px;left:auto;top:18px;width:36px;min-width:36px;height:36px;min-height:36px;border-radius:50%;background:#ece6dc;color:#837460}
+.agent-sheet-profile.agent-bottom-sheet.agent-refined .agent-sheet-body{padding:16px 18px 24px}
+.agent-sheet-profile.agent-bottom-sheet.agent-refined .agent-form-section{padding:18px;margin:0 0 14px;border:1px solid #e9e3da;border-radius:16px;background:#fffdf9}
+.agent-sheet-profile.agent-bottom-sheet.agent-refined .agent-form-section>h3{display:flex;align-items:center;gap:8px;font:600 16px/1.5 -apple-system,BlinkMacSystemFont,'PingFang SC',sans-serif;margin:0 0 18px;color:#4e4335}
+.agent-sheet-profile.agent-bottom-sheet.agent-refined .agent-form-section>h3 svg{width:18px;height:18px;color:#ab8755}
+.agent-sheet-profile.agent-bottom-sheet .agent-form-grid{gap:0 12px}
+.agent-sheet-profile.agent-bottom-sheet .agent-field{margin:0 0 16px;min-width:0}
+.agent-sheet-profile.agent-bottom-sheet .agent-field>span{font-size:13px;color:#827969;margin-bottom:7px}
+.agent-sheet-profile.agent-bottom-sheet.agent-refined .agent-field :is(input:not([type=checkbox]),select){min-height:48px;border:1px solid #e5ded2;border-radius:10px;background:#fcfaf6;font-size:15px;padding:10px 12px;width:100%;min-width:0}
+.agent-sheet-profile.agent-bottom-sheet .agent-field input[readonly]{color:#8d8372;background:#f2eee7}
+.agent-sheet-profile.agent-bottom-sheet .agent-sheet-footer{padding:12px 18px calc(16px + env(safe-area-inset-bottom));box-shadow:0 -5px 18px #453b2e06}
+.agent-sheet-profile.agent-bottom-sheet .agent-sheet-footer .agent-check{padding:0 2px;background:transparent;color:#837765;font-size:12px;margin:0 0 10px;min-height:26px}
+.agent-sheet-profile.agent-bottom-sheet .agent-sheet-footer .agent-primary{min-height:50px;border-radius:12px;font-size:16px}
+@media(max-width:380px){.agent-sheet-profile.agent-bottom-sheet.agent-refined .agent-form-section{padding:14px}.agent-sheet-profile.agent-bottom-sheet.agent-refined .agent-sheet-body{padding-inline:14px}}
+
+.agent-sheet-familyform.agent-bottom-sheet.agent-refined>header>.agent-sheet-close{position:absolute;right:14px;left:auto;top:18px;width:36px;min-width:36px;height:36px;min-height:36px;border-radius:50%;background:#ece6dc;color:#837460}
+.agent-sheet-familyform.agent-bottom-sheet .agent-sheet-footer .agent-intake-actions>button:first-child{background:#ac8550;color:#fff;border-color:#ac8550}
+.auspicious-mode{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:0 0 20px}
+.auspicious-mode button{min-height:82px;padding:12px 5px;border:1px solid #e5dbce;border-radius:12px;background:#fffefd;color:#675a49;font-size:15px;font-weight:500}
+.auspicious-mode button[aria-pressed=true]{border-color:#b38a50;background:#f5ecd9;color:#85602d}
+.cemetery-needs{margin:16px 0;border:1px solid #ebe4db;border-radius:14px;background:#fffefd;padding:16px}
+.cemetery-needs h2,.cemetery-results h2,.auspicious-finish h2{font-size:21px;margin:0 0 14px}
+.cemetery-results{margin-top:28px}.cemetery-results .auspicious-results-heading{align-items:center}
+.cemetery-card{display:block;width:100%;text-align:left;padding:16px;margin:12px 0;border:1px solid #ebe4db;border-radius:14px;background:#fffefd;color:#392b21}
+.cemetery-card-heading{display:flex;gap:12px;align-items:center}.cemetery-card-heading>span:nth-child(2){flex:1;min-width:0}.cemetery-card-heading strong{display:block;font:600 20px/1.5 'Songti SC',serif}.cemetery-card-heading small{display:block;font-size:12px;color:#82796e;margin-top:3px}.cemetery-card-heading>svg{flex-shrink:0;color:#a47b48}
+.cemetery-reason,.cemetery-pending,.cemetery-card-footer{display:block;font-size:12px;line-height:1.85;margin-top:12px}.cemetery-reason{color:#78664c}.cemetery-pending{color:#82796e}.cemetery-card-footer{border-top:1px solid #eee7db;padding-top:10px;color:#936b38}
+.cemetery-card.is-selected{border-color:#b38a50;background:#fcf8ef}.cemetery-detail-section{padding:14px 0;border-top:1px solid #ebe4db}.cemetery-detail-section h3{font-size:17px;margin:0 0 9px}.cemetery-detail-section p{font-size:13px;line-height:1.9;color:#82796e;margin:5px 0}.cemetery-detail-section a{display:inline-flex;align-items:center;gap:6px;color:#936b38;font-size:13px;text-decoration:underline}.cemetery-location{display:flex;gap:8px;align-items:center;font-size:14px}.cemetery-dialog>header h2{font-size:22px}
+.auspicious-finish{padding:18px;border:1px solid #e7dac5;border-radius:14px;background:#f8f1e5;margin:24px 0}.auspicious-finish p{font-size:14px;overflow-wrap:anywhere;margin:10px 0}.auspicious-finish small{display:block;font-size:11px;color:#82796e;line-height:1.8;margin-top:10px}
+
+/* Shared arrow inset for all agent pages, service editors and portal dialogs. */
+:is(.agent-app,.agent-sheet,.agent-service-shell,.auspicious-profile-dialog,.agent-family-forms) select:not([multiple]):not([size]),
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-editor.notice-ref-editor .field select:not([multiple]):not([size]){
+ -webkit-appearance:none!important;appearance:none!important;
+ padding-right:42px!important;
+ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2382796e' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E")!important;
+ background-repeat:no-repeat!important;background-position:right 14px center!important;background-size:16px 16px!important;
+ text-overflow:ellipsis;
+}
+@media(forced-colors:active){:is(.agent-app,.agent-sheet,.agent-service-shell,.auspicious-profile-dialog,.agent-family-forms) select:not([multiple]):not([size]),
+.geyou-app.quality-app.agent-service-shell.agent-refined .main-content .notice-ref-editor.notice-ref-editor .field select:not([multiple]):not([size]){-webkit-appearance:auto!important;appearance:auto!important;background-image:none!important}}
+
+/* One viewport: only the work area scrolls; actions remain visible. */
+.agent-app.agent-auspicious-shell{height:100dvh;min-height:0;overflow:hidden}
+.agent-auspicious-shell .agent-frame{height:100dvh;min-height:0;display:flex;flex-direction:column;overflow:hidden}
+.agent-auspicious-shell .agent-subpage-top{flex:0 0 62px;min-height:62px;padding-block:12px}
+.agent-auspicious-shell .agent-auspicious{flex:1;min-height:0;overflow:auto;overscroll-behavior:contain;padding:0 18px 16px}
+.agent-auspicious-shell .auspicious-intro{padding:4px 0 12px}.agent-auspicious-shell .auspicious-intro>span{display:none}.agent-auspicious-shell .auspicious-intro h2{font-size:20px;margin:0}
+.agent-auspicious-shell .auspicious-mode{margin-bottom:12px}.agent-auspicious-shell .auspicious-mode button{min-height:48px;padding:10px;font-size:16px}
+.agent-auspicious-shell .auspicious-customer-card{padding:12px;margin-bottom:12px;min-height:64px}
+.agent-auspicious-shell .auspicious-range-panel>summary{padding:12px 14px}
+.agent-auspicious-shell .auspicious-range-panel .agent-form-section{padding:12px 14px;margin:0}
+.agent-auspicious-shell .agent-field{margin-bottom:0}.agent-auspicious-shell .agent-field>span{margin-bottom:5px}
+.agent-auspicious-shell .cemetery-needs{padding:12px 14px;margin:12px 0}.agent-auspicious-shell .cemetery-needs h2{font-size:19px;margin-bottom:12px}
+.agent-auspicious-shell .agent-form-grid{row-gap:12px}
+.auspicious-actions{display:flex;flex-direction:column;gap:8px;flex:0 0 auto;padding:12px 18px calc(12px + env(safe-area-inset-bottom));border-top:1px solid #e5e4d8;background:#fffef9;z-index:5}
+.auspicious-action-buttons>.agent-primary{flex:1;background:#45623a;border-color:#45623a;box-shadow:none;min-width:0}.auspicious-action-buttons>.agent-secondary{flex:0 0 auto;min-width:0}
+.auspicious-action-buttons>.agent-primary:disabled{background:#d8dfce;border-color:#d8dfce;color:#697960;opacity:1}
+@media(max-height:800px){.agent-auspicious-shell .agent-subpage-top{flex-basis:54px;min-height:54px}.agent-auspicious-shell .auspicious-intro{padding-bottom:8px}.agent-auspicious-shell .auspicious-mode{margin-bottom:8px}.agent-auspicious-shell .auspicious-mode button{min-height:44px}.agent-auspicious-shell .agent-field input,.agent-auspicious-shell .agent-field select{min-height:44px}.agent-auspicious-shell .cemetery-needs{margin-block:8px}.agent-auspicious-shell .agent-form-grid{row-gap:8px}}
+
+.auspicious-action-buttons{display:flex;gap:10px;width:100%}.auspicious-actions>.agent-error{margin:0;font-size:13px;line-height:1.65}
+.auspicious-result-context{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0 18px;border-bottom:1px solid #e2e6d7;margin-bottom:16px}.auspicious-result-context strong{font:600 21px/1.5 'Songti SC',serif}.auspicious-result-context span{font-size:12px;color:#78816c}
+.agent-auspicious-shell .auspicious-result-page .auspicious-results{margin-top:8px}.agent-auspicious-shell .auspicious-result-page .auspicious-results-heading{padding-top:0}.agent-auspicious-shell .auspicious-result-page .cemetery-results{margin-top:20px}
+
+.auspicious-fields{margin:0;padding:0;border:0;min-width:0}.cemetery-bazi-reference{padding:16px;background:#f0f3e9;border:1px solid #e0e6d6;border-radius:12px;margin-top:20px}.cemetery-bazi-reference h2{font-size:19px;margin:0 0 10px}.cemetery-bazi-reference p{font-size:14px;line-height:1.9;margin:0;color:#647459}
+
+.auspicious-toast{position:fixed;left:50%;top:50%;bottom:auto;transform:translate(-50%,-50%);z-index:100;max-width:min(380px,calc(100vw - 40px));width:max-content;padding:12px 18px;border-radius:10px;background:#28372eed;color:#fff;font-size:14px;line-height:1.7;text-align:center;box-shadow:0 6px 22px #12201624;pointer-events:none}.auspicious-profile-dialog .auspicious-toast{position:fixed;top:50%;bottom:auto;max-width:min(380px,calc(100vw - 40px))}
+
+.cemetery-evidence{padding:16px;background:#fffef9;border:1px solid #e1e6d7;border-radius:12px;margin:12px 0}.cemetery-evidence h3{font-size:18px;margin:0 0 12px}.cemetery-evidence dl{margin:0}.cemetery-evidence dl>div+div{border-top:1px solid #eceee5;margin-top:12px;padding-top:12px}.cemetery-evidence dt{font-size:12px;color:#79856d;margin-bottom:5px}.cemetery-evidence dd{margin:0;font-size:14px;line-height:1.85;color:#43533d}
+
+.auspicious-time-reference{padding:16px;background:#f0f3e9;border:1px solid #e0e6d6;border-radius:12px;margin:14px 0 18px}.auspicious-time-reference h2{font-size:19px;margin:0 0 10px}.auspicious-time-reference p,.auspicious-time-reference dd{font-size:13px;line-height:1.85;margin:5px 0;color:#647459}.auspicious-time-reference dl{margin:12px 0 0}.auspicious-time-reference dt{font-size:12px;font-weight:500;color:#43573c}.auspicious-time-reference dl>div+div{margin-top:10px}.auspicious-date-evidence{padding:0 16px;font-size:12px;line-height:1.85;color:#6e7b60;margin:0 0 12px}
+
+/* 安葬择吉结果：先选择，按需查看依据 */
+.auspicious-result-page [hidden]{display:none!important}
+.auspicious-result-page .auspicious-chart-panel>summary{padding:10px 14px}
+.auspicious-result-page .auspicious-chart-panel .agent-form-section{padding:10px 14px}
+.auspicious-result-page .agent-pillars{margin:0}
+.auspicious-result-tabs{display:flex;gap:4px;padding:4px;background:#ebece3;border-radius:12px;margin:14px 0}
+.auspicious-result-tabs button{flex:1;border:0;border-radius:9px;padding:11px;background:transparent;color:#7b8071;font-size:15px}
+.auspicious-result-tabs button[aria-selected=true]{background:#fffef9;color:#45563b;box-shadow:0 2px 6px #27351d0d;font-weight:600}
+.cemetery-compact-card{padding:16px;border:1px solid #e5e5d9;background:#fffef9;border-radius:14px;margin:12px 0}
+.cemetery-compact-card.is-selected{border-color:#687a56;background:#f4f6ed}
+.cemetery-open-detail{flex:1;text-align:left;border:0;background:none;padding:0;color:inherit;min-width:0}
+.cemetery-select{flex:0 0 26px;width:26px;height:26px;border:1px solid #a5ad98;border-radius:50%;background:white;display:grid;place-items:center;color:white;padding:0}
+.cemetery-select[aria-checked=true]{background:#526743;border-color:#526743}
+.cemetery-compact-card .cemetery-reason{font-size:13px;line-height:1.7;margin:10px 0;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}
+.cemetery-conclusion{display:flex;align-items:center;gap:8px;width:100%;text-align:left;border:0;border-top:1px solid #e8e8dd;background:none;padding:10px 0 0;color:#69775c;font-size:12px;line-height:1.7}
+.cemetery-conclusion span{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;flex:1}.cemetery-conclusion svg{flex-shrink:0}
+.auspicious-date-evidence summary,.auspicious-time-reference summary{cursor:pointer;font-size:12px;color:#7e896f}
+.auspicious-time-reference h2{font-size:14px}.auspicious-time-reference p{font-size:12px;line-height:1.7}
+.auspicious-selection-summary{display:flex;flex-direction:column;gap:3px;font-size:12px;color:#637153;line-height:1.5}
+
+.cemetery-gallery{margin:0 0 18px}.cemetery-gallery-hero{position:relative;aspect-ratio:16/10;overflow:hidden;border-radius:14px;background:#e9ece2}.cemetery-gallery-hero>img{width:100%;height:100%;object-fit:cover;display:block}.cemetery-gallery-hero>span{position:absolute;bottom:10px;right:10px;background:#19241699;color:white;border-radius:20px;padding:4px 9px;font-size:12px}.cemetery-gallery-thumbs{display:flex;gap:8px;margin-top:9px;overflow-x:auto}.cemetery-gallery-thumbs button{width:72px;height:50px;flex-shrink:0;border:2px solid transparent;background:none;border-radius:8px;padding:2px;overflow:hidden}.cemetery-gallery-thumbs button[aria-pressed=true]{border-color:#526743}.cemetery-gallery-thumbs img{width:100%;height:100%;object-fit:cover;border-radius:4px;display:block}.cemetery-location svg{flex-shrink:0}.cemetery-dialog .auspicious-sheet-body{padding-top:8px}
+
+.agent-current-product,.agent-product-detail .agent-product-upgrade{padding:18px;background:#fffdf9;border:1px solid #e8e1d5;border-radius:16px;margin-bottom:18px}
+.agent-product-section-heading,.agent-product-upgrade>header.agent-product-section-heading{display:flex;align-items:flex-start;gap:10px;margin:0 0 18px}
+.agent-product-section-heading>span{display:grid;place-items:center;width:28px;height:28px;flex:none;border-radius:8px;background:#ede7dc;color:#927449;font-size:12px}
+.agent-product-section-heading>div{flex:1;min-width:0}.agent-product-section-heading h3,.agent-product-upgrade>header.agent-product-section-heading h3{margin:0;font-size:17px;line-height:1.6}
+.agent-product-section-heading p,.agent-product-upgrade>header.agent-product-section-heading p{font-size:12px;line-height:1.7;color:#92836e;margin:4px 0 0}
+.agent-product-section-heading>b{font-size:11px;white-space:nowrap;font-weight:500;color:#55745b;background:#edf2ea;padding:4px 8px;border-radius:6px}
+.agent-product-upgrade .agent-product-section-heading>b{color:#967037;background:#f5eddf}
+.agent-current-product>.agent-product-hero{aspect-ratio:4/3;max-height:280px;background:#f6f3ed}
+.agent-current-product .agent-product-intro{padding:14px 0 0;border:0}.agent-current-product .agent-product-intro h2{font-size:21px;margin:0 0 8px}.agent-current-product .agent-product-description{padding:12px 0 0;border:0}.agent-current-product .agent-product-description h3{font-size:13px;color:#8d7e69;margin:0 0 6px}
+.agent-product-detail .agent-product-upgrade{border-color:#dfcda9;background:#fffcf5}.agent-product-detail .agent-upgrade-product-row{padding:0;background:transparent;margin:0 0 14px}.agent-candidate-spec,.agent-candidate-description{font-size:13px;line-height:1.8;color:#776b58;margin:8px 0}.agent-replacement-pricing{display:grid;grid-template-columns:1fr 1fr;gap:10px;background:#f5efe3;border-radius:10px;padding:12px;margin:16px 0}.agent-replacement-pricing>span{font-size:11px;color:#97866b}.agent-replacement-pricing strong{display:block;font-size:13px;color:#705b39;font-weight:500;margin-top:4px}.agent-product-upgrade .agent-product-reason{padding:14px;background:#fffdf9;border:1px solid #ede4d5;border-radius:10px}.agent-product-reason h3{font-size:14px;margin:0 0 8px}.agent-product-reason p{font-size:14px;line-height:1.85}.agent-upgrade-footnote,.agent-no-alternative{font-size:12px;color:#928570;line-height:1.7;margin:14px 0 0}
+
+/* Keep both current and optional products within a short comparison view. */
+.agent-current-summary{display:grid;grid-template-columns:76px minmax(0,1fr);gap:14px;align-items:center}
+.agent-current-summary>.agent-product-hero{width:76px;height:76px;aspect-ratio:1;border-radius:10px}
+.agent-current-summary .agent-product-intro{padding:0}.agent-current-summary .agent-product-intro h2{font-size:18px;margin:0 0 5px}.agent-current-summary .agent-product-intro p{font-size:12px;margin:0}
+.agent-product-detail .agent-current-product,.agent-product-detail .agent-product-upgrade{padding:15px;margin-bottom:12px}
+.agent-product-detail .agent-product-section-heading{margin-bottom:12px}.agent-product-detail .agent-product-section-heading h3{font-size:15px}.agent-product-detail .agent-product-section-heading p{margin:2px 0 0;font-size:11px}
+.agent-product-detail .agent-upgrade-product-row{grid-template-columns:76px minmax(0,1fr);gap:14px;margin:0 0 10px}.agent-product-detail .agent-upgrade-product-row>.agent-product-hero{width:76px;height:76px}.agent-product-detail .agent-product-upgrade-info h3{font-size:17px;margin:0 0 5px}.agent-product-detail .agent-product-upgrade-info>strong{font-size:22px}
+.agent-product-more{border-top:1px solid #eee7db;margin-top:12px;padding-top:8px;font-size:12px;color:#897b67}.agent-product-more summary{cursor:pointer;min-height:32px;display:flex;align-items:center;justify-content:space-between}.agent-product-more summary:after{content:'展开';font-size:11px;color:#a18a66}.agent-product-more[open] summary:after{content:'收起'}.agent-product-more p{font-size:13px;line-height:1.8;margin:8px 0}
+.agent-product-detail .agent-replacement-pricing{margin:10px 0;padding:10px}.agent-product-detail .agent-product-reason{padding:12px}.agent-product-detail .agent-upgrade-footnote{margin-top:10px;font-size:11px}
+
+.agent-comparison-demo{padding:13px 15px;border:1px dashed #c5a777;border-radius:12px;background:#fbf3e4;margin-bottom:12px;color:#816944}.agent-comparison-demo strong{font-size:13px}.agent-comparison-demo p{font-size:12px;line-height:1.7;margin:5px 0}.agent-comparison-demo button{padding:5px 10px;background:#fffdf9;border:1px solid #d9c6a3;border-radius:7px;color:#816944;font-size:12px}
+
+.agent-product-selection{margin-top:14px;padding:14px;border:1px solid #e5d8c2;border-radius:12px;background:#fffdf9}.agent-product-selection>label:first-child{display:grid;gap:7px;font-size:13px;color:#7d6d55}.agent-product-selection input[type=number]{min-height:46px;padding:10px;border:1px solid #ddd1bd;border-radius:9px;background:#fff;font:inherit;width:100%}.agent-product-selection .agent-check{font-size:12px;align-items:center}.agent-product-selection .agent-intake-actions{display:flex;gap:10px}.agent-product-selection .agent-intake-actions>button:first-child{flex:1}
+
+/* Commerce detail: one product canvas, integrated variant selection and purchase action. */
+.agent-commerce-detail{margin:-6px -14px 0;background:#f5f2ec;padding-bottom:0}
+.agent-commerce-detail>.agent-product-hero{aspect-ratio:4/3;max-height:220px;border-radius:0;background:#f0ece4}
+.agent-commerce-intro{padding:18px;background:#fffdf9}.agent-commerce-price{display:flex;align-items:center;gap:5px}.agent-commerce-price>strong{font-size:23px;line-height:1.4;color:#98713e}.agent-commerce-price>small{font-size:11px;color:#9a8a74}.agent-commerce-price>span{margin-left:auto;background:#f0ebe0;color:#8c744f;border-radius:5px;font-size:11px;padding:3px 7px}.agent-commerce-intro h2{font-size:21px;line-height:1.5;margin:10px 0 7px}.agent-commerce-intro p{font-size:13px;color:#8b7d68;margin:0;line-height:1.7}.agent-commerce-price-note{display:block;font-size:11px;color:#a18b6b;margin-top:7px}
+.agent-commerce-variants,.agent-commerce-recommend,.agent-commerce-description{margin:10px 0 0;padding:16px 18px;background:#fffdf9;border:0}.agent-commerce-variants header,.agent-commerce-recommend header{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:12px}.agent-commerce-detail h3{font-size:15px;margin:0}.agent-commerce-variants header small,.agent-commerce-recommend header>span{font-size:11px;color:#a18d70}.agent-commerce-variants [role=group]{display:grid;grid-template-columns:1fr 1fr;gap:10px}.agent-commerce-variants button{padding:12px;text-align:left;border:1px solid #e6dfd3;border-radius:10px;background:#faf8f3;color:#6c604e;min-width:0}.agent-commerce-variants button.is-selected{border-color:#ab8550;background:#f8f0e2;box-shadow:inset 0 0 0 1px #ab8550}.agent-commerce-variants button strong{display:block;font-size:13px}.agent-commerce-variants button span{display:block;font-size:12px;line-height:1.6;margin:6px 0;overflow-wrap:anywhere}.agent-commerce-variants button small{display:block;font-size:11px;color:#a1855e}.agent-commerce-recommend p{font-size:13px;line-height:1.9;color:#78684f;margin:0}.agent-commerce-recommend>button{display:flex;align-items:center;gap:4px;padding:8px 0 0;border:0;background:transparent;color:#a27c46;font-size:12px}.agent-commerce-description{padding-block:10px}.agent-commerce-description summary{font-size:13px;min-height:38px}.agent-commerce-detail>.agent-comparison-demo{margin:10px 18px;font-size:12px}.agent-commerce-demo-link{display:block;border:0;background:transparent;color:#a39276;font-size:11px;margin:12px auto;padding:7px}
+.agent-commerce-actions{position:sticky;bottom:-22px;z-index:5;background:#fffdf9;padding:12px 18px calc(14px + env(safe-area-inset-bottom));border-top:1px solid #e8dfd0;box-shadow:0 -4px 16px #46372108;margin-top:12px}.agent-commerce-actions .agent-wide{margin:0;min-height:48px}.agent-commerce-current-action{display:flex;align-items:center;justify-content:space-between;gap:12px}.agent-commerce-current-action>span{font-size:13px;color:#75654d}.agent-commerce-current-action small{display:block;color:#a49071;font-size:11px;margin-top:3px}.agent-commerce-current-action button{min-height:46px;font-size:14px}.agent-commerce-actions .agent-product-selection{margin:0;border:0;padding:0}.agent-commerce-actions .agent-help,.agent-commerce-actions .agent-hint{font-size:12px;margin:0;padding:6px 0}
+
+/* All commerce actions remain available while the detail scrolls. */
+.agent-commerce-detail{padding-bottom:100px}
+.agent-commerce-detail.is-choosing{padding-bottom:290px}
+.agent-commerce-detail .agent-commerce-actions{position:fixed;left:50%;right:auto;bottom:0;transform:translateX(-50%);width:min(100%,640px);margin:0;z-index:40;box-sizing:border-box}
+.agent-commerce-detail .agent-commerce-price>strong{font-size:23px}.agent-commerce-detail .agent-commerce-price>small{line-height:1.5}
+
+.agent-commerce-description h3{font-size:14px;margin:0 0 12px}.agent-commerce-description p{font-size:13px;line-height:1.9;color:#88785f;margin:8px 0}
+
+/* Reference homepage: quiet tinted labels, artwork confined to the right. */
+.agent-app.agent-home-view .agent-home-tools>button.agent-home-ai{background-image:linear-gradient(90deg,#f0f3ed 0%,#f0f3ed 52%,#f0f3edf0 59%,#f0f3ed00 80%),url('/agent-home/bg-ai-reception.png')}
+.agent-app.agent-home-view .agent-home-tools>button.agent-home-portrait{background-image:linear-gradient(90deg,#edf2f5 0%,#edf2f5 52%,#edf2f5ee 59%,#edf2f500 80%),url('/agent-home/bg-portrait.png')}
+.agent-app.agent-home-view .agent-home-tools>button.agent-home-notice{background-image:linear-gradient(90deg,#faf3e7 0%,#faf3e7 52%,#faf3e7ee 59%,#faf3e700 80%),url('/agent-home/bg-obituary.png')}
+.agent-app.agent-home-view .agent-home-tools>button.agent-home-auspicious{background-image:linear-gradient(90deg,#f6eedf 0%,#f6eedf 52%,#f6eedfee 59%,#f6eedf00 80%),url('/agent-home/bg-auspicious.png')}
+
+/* Separate burial planning from the obituary's warm ivory palette. */
+.agent-app.agent-home-view .agent-home-tools>button.agent-home-auspicious{background-image:linear-gradient(90deg,#e6f0ed 0%,#e6f0ed 52%,#e6f0edee 59%,#e6f0ed00 80%),url('/agent-home/bg-auspicious.png')}
+.agent-app.agent-home-view .agent-home-auspicious>.agent-home-tool-icon{background:#d7e6df;color:#3d6859}
+.agent-app.agent-home-view .agent-home-auspicious>.agent-home-arrow{background:#e5efea;color:#3d6859}

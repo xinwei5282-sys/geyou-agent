@@ -17,9 +17,9 @@ test('已确认清单发送冻结状态及拟定告别时间，不带另一客�
 test('reception stage separates material checklist, identity review, profile confirmation and quote confirmation',async()=>{
  const {emptyAgentProfile,confirmAgentProfile,saveAgentPaperPlan}=await import('./agentModel');
  const state=withDemoAccount(seedState()),staff=state.staff[0],fresh=startAgentConversation(state,staff),sid=fresh.session.id;
- const stage=(s:typeof state)=>agentChatRequest(s,staff,agentRecord(s,staff,sid)).staffContext.businessFacts[0];
+ const stage=(s:typeof state)=>agentChatRequest(s,staff,agentRecord(s,staff,sid)).staffContext.businessFacts.find(x=>x.startsWith('当前接待阶段：'))!;
  assert.match(stage(fresh.state),/identity-upload/);
- const profile={...emptyAgentProfile(),name:'阶段测试',gender:'男',birthDate:'1940-01-01',deathDate:'2026-10-20',relationship:'父亲',occupation:'教师',faith:'无特定信仰',interests:'书画'};
+ const profile={...emptyAgentProfile(),name:'阶段测试',gender:'男',birthDate:'1940-01-01',deathDate:'2026-10-20',relationship:'父亲',occupation:'教师',faith:'无特定信仰',interests:'书画',customs:'从简办理'};
  let s=putAgentData(fresh.state,staff,sid,{profile,materials:[]});assert.match(stage(s),/profile-review/);
  s=confirmAgentProfile(s,staff,sid,profile,'测试家属','');assert.match(stage(s),/quote-review/);
  const d=agentData(s,agentRecord(s,staff,sid));s=saveAgentPaperPlan(s,staff,sid,{...d.paperPlan!,pricesChecked:true,confirmedAt:'2026-10-23'});assert.match(stage(s),/content/);
