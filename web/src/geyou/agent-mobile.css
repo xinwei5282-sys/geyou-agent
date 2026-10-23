@@ -623,3 +623,13 @@
 .geyou-app.quality-app.agent-service-shell.agent-refined .main-content button.restoration-upload-drop{width:100%;font:inherit;touch-action:manipulation}.geyou-app.quality-app.agent-service-shell.agent-refined .main-content button.restoration-upload-drop:focus-visible{outline:2px solid #a47b48;outline-offset:3px}
 
 .agent-service-reminder{margin:12px 0 20px;padding:16px;border-radius:20px;background:#fffdf8;border:1px solid #e8e3d8}.agent-service-reminder>p{margin:0 0 12px;font-size:14px;line-height:1.7;color:#565e56}.agent-service-reminder .agent-result{width:100%;margin-bottom:10px}.agent-service-reminder>.agent-secondary{margin-top:2px}
+/* Document-first reception: one question at a time, with reachable touch choices. */
+.agent-intake{margin:14px 0 18px;border:1px solid #e6dccb;border-radius:18px;background:#fffdfa;overflow:hidden}
+.agent-intake-profile{display:flex;align-items:center;gap:11px;width:100%;min-height:66px;padding:15px 16px;border:0;background:transparent;color:#6f5131;text-align:left}
+.agent-intake-profile>span{display:grid;gap:5px;flex:1;min-width:0}.agent-intake-profile strong{font-size:16px;font-weight:600}.agent-intake-profile small{font-size:12px;line-height:1.6;color:#8c8070;white-space:normal}
+.agent-intake-followup{padding:0 16px 15px}.agent-intake-followup>p{margin:0 0 12px;font-size:14px;line-height:1.75;color:#625748}
+.agent-intake-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin:0 0 12px}
+.agent-intake-options button,.agent-chat-choices button{min-height:44px;padding:10px 12px;border:1px solid #d8c4a3;border-radius:12px;background:#fcf8ef;color:#6f5131;font-size:14px;line-height:1.5}
+.agent-intake-actions{display:flex;flex-wrap:wrap;gap:10px}.agent-intake-actions button{display:flex;align-items:center;justify-content:center;gap:6px;flex:1;min-width:110px;min-height:44px;border:1px solid #e2d6c2;border-radius:11px;background:#fff;color:#856844;font-size:13px}
+.agent-chat-choices{display:flex;flex-wrap:wrap;gap:9px;margin:12px 0 18px}.agent-chat-choices button{flex:1 1 120px}
+.agent-intake button:disabled{opacity:.55}.agent-intake button:focus-visible,.agent-chat-choices button:focus-visible{outline:2px solid #956d35;outline-offset:2px}.agent-intake button:active,.agent-chat-choices button:active{background:#f1e7d6}

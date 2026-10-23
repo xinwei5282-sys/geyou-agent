@@ -33,7 +33,7 @@ export function applyAgentReplyProfile(s:AppState,staff:Staff,sid:string,value:u
    if(to==='farewell'&&!/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}$/.test(v))continue;
    Object.assign(profile,{[to]:v});
   }
-  if((!profile.confirmedAt||!profile.budget)&&typeof raw.budgetYuan==='number'&&Number.isFinite(raw.budgetYuan)&&raw.budgetYuan>=0)profile.budget=String(raw.budgetYuan);
+  // Reception no longer collects budget; preserve legacy values without accepting model updates.
  }
  const contact={name:c.contact?.name||'',phone:c.contact?.phone||''};
  if(typeof raw.contactName==='string'&&raw.contactName.trim())contact.name=raw.contactName.trim().slice(0,100);
