@@ -26,3 +26,13 @@ test('bereaved family preparation appears after profile confirmation, before quo
  assert.ok(!currentFamilyForms(fresh.state,staff,fresh.session).some(x=>x.id==='family-preparation'));const f=fixture();const forms=currentFamilyForms(f.state,f.staff,agentRecord(f.state,f.staff,f.sid)),prep=forms.find(x=>x.id==='family-preparation');
  assert.ok(prep);assert.match(prep.title,/丧家.*提前准备/);assert.match(prep.lines.join(''),/门板\s*1块/);assert.match(prep.lines.join(''),/方凳\s*4张/);assert.match(prep.lines.join(''),/牙刷/);assert.match(prep.lines.join(''),/水果/);assert.equal(fresh.session.agent?.profile.confirmedAt,undefined);assert.doesNotMatch(prep.lines.join(''),/告别时间|告别地点/);const materials=forms.find(x=>x.id==='documents')!;assert.doesNotMatch(materials.lines.join(''),/告别时间|告别地点/);
 });
+
+test('both preparation forms follow updated profile, preferences and current package after refresh',()=>{
+ const f=fixture();const before=currentFamilyForms(f.state,f.staff,agentRecord(f.state,f.staff,f.sid));
+ const profile={...f.profile,name:'更新后的测试逝者',occupation:'教师',interests:'园艺',faith:'基督教',customs:'不安排宗教仪式',prepared:['毛巾']};
+ let s=confirmAgentProfile(f.state,f.staff,f.sid,profile,'更新家属','13933334444');s=JSON.parse(JSON.stringify(s));
+ const forms=currentFamilyForms(s,f.staff,agentRecord(s,f.staff,f.sid));
+ for(const id of ['documents','family-preparation']){const form=forms.find(x=>x.id===id)!;assert.equal(form.info?.name,profile.name);assert.match(form.lines.join(''),/教师/);assert.match(form.lines.join(''),/园艺/);assert.match(form.lines.join(''),/基督教/);assert.match(form.lines.join(''),/不安排宗教仪式/);assert.notDeepEqual(form.lines,before.find(x=>x.id===id)?.lines);assert.doesNotMatch(form.lines.join(''),/告别时间|告别地点/);}
+ const prep=forms.find(x=>x.id==='family-preparation')!;assert.match(prep.lines.join(''),/家属已备.*毛巾/);assert.ok(!prep.sections?.some(x=>x.title==='供品与礼俗用品'));
+ assert.match(JSON.stringify(familyFormSharePayload(prep,'测试机构',f.staff.phone)),/更新后的测试逝者/);
+});

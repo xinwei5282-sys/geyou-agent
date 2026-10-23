@@ -41,6 +41,19 @@ export function agentFamilyForms(s:AppState,staff:Staff,current:Consultation):Fa
  '供品、香烛、牌位等按家属信仰和意愿另行确认，不将地方习俗当作必备要求。'])];
  result[0].sections=[{title:'办理前请核对这些材料',hint:'文件识别已核对，不等于原件已备齐或手续已办结。具体要求以办理机构为准。',items:[{title:'逝者身份证',detail:'核对身份信息，按办理机构要求携带原件。'},{title:'逝者户口本',detail:'提前核对逝者所在页及户籍资料。'},{title:'死亡证明',detail:'核对姓名及死亡日期，按实际要求准备相应联次。'},{title:'经办人身份证',detail:'确认由哪位家属经办，核实经办资格及携带要求。'}]},{title:'原件保管',tone:'optional',items:[{title:'原件妥善保管',detail:'线上整理不保存证件号码。缺少材料时先联系代理核实。'}]}];
  result[1].sections=[{title:'先确认衣物怎么准备',hint:'按实际选择准备，套餐已含或家属已备的物品不重复购买。',items:[{title:'使用自己的衣服',detail:PAPER_PACKAGE.ownClothes.join('；')+'。'},{title:'使用套餐寿衣',detail:'按本次报价核对包含范围，向代理确认需要家属另备的物品。'}]},{title:'居家传统灵堂的准备',hint:'仅在家属选择该安排时准备，先核对场地及已备情况。',items:[{title:'门板',quantity:'1块'},{title:'方凳',quantity:'4张'},{title:'靠背椅',quantity:'1张'},{title:'供桌',quantity:'1张'}]},{title:'个人用品',items:[{title:'衣物',detail:'衣、裤、鞋、袜、帽，按实际使用核对。'},{title:'洗漱用品',detail:'脸盆、毛巾、牙刷、牙膏、牙杯。'}]},{title:'供品与礼俗用品',tone:'optional',hint:'按家属意愿选用，不属于人人必须准备的用品。',items:[{title:'供品参考',detail:'三种水果、两种糕饼。原表注明不选梨、桃及含芝麻糕饼，仅作当地礼俗参考，由家属决定。'},{title:'其他可选用品',detail:'香、蜡烛、雨伞、牌位、镜、梳，向代理确认实际需要后再准备。'}]}];
+ const preferences:FormSection={title:'本次资料与准备要求',items:[
+  {title:'生前职业',detail:p.occupation||'待补充'},
+  {title:'生前喜好',detail:p.interests||'待补充'},
+  {title:'本人信仰',detail:p.faithDetail||p.faith||'待确认'},
+  {title:'家属习俗',detail:p.customs||'待确认，以家属实际选择为准'},
+ ]};
+ result[0].sections!.push({...preferences,hint:'以上信息用于核对本次服务要求，不改变办理机构要求的法定材料。'});
+ const noTraditional=/基督教|天主教|伊斯兰教/.test(p.faith)||/不安排宗教|不采用.*(?:礼俗|习俗)|不要.*(?:香烛|供品)/.test(p.customs||'')||settings.customs==='no';
+ if(noTraditional)result[1].sections=result[1].sections!.filter(x=>!['居家传统灵堂的准备','供品与礼俗用品'].includes(x.title));
+ result[1].sections!.push({...preferences,hint:noTraditional?'按已填写信仰与习俗准备，不默认安排传统灵堂、供品或香烛。':'按已填写资料核对，不将喜好或职业转化为强制采购要求。'});
+ if(p.prepared.length)result[1].sections!.push({title:'家属已备物品',hint:'逐项核对数量和能否使用，不重复购买。',items:p.prepared.map(title=>({title}))});
+ const clothing=d.paperPlan?.adjustments?.find(a=>a.included.includes('寿衣'));
+ if(clothing){const item=result[1].sections!.find(x=>x.title==='先确认衣物怎么准备')?.items.find(x=>x.title==='使用套餐寿衣');if(item)item.detail='当前套餐选用：'+clothing.name+'。按最新套餐范围核对，不重复准备。';}
  for(const form of result){if(form.sections)form.lines=[...form.lines.slice(0,4),...form.sections.flatMap(section=>[section.title,...(section.hint?[section.hint]:[]),...section.items.map(item=>item.title+(item.quantity?' '+item.quantity:'')+(item.detail?'：'+item.detail:''))])];}
  if(!p.confirmedAt||!d.paperPlan)return result.slice(0,1);
  const plan=d.paperPlan;

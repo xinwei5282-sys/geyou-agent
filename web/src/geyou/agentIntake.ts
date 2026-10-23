@@ -32,7 +32,7 @@ export function reviewAgentIdentity(s:AppState,staff:Staff,sid:string,edited?:Ag
  const at=new Date().toISOString(),materials=data.materials.map(m=>m.id===review.material!.id?{...m,recognition:{...m.recognition!,reviewedAt:at}}:m);
  const next=syncAgentArchive(putAgentData(s,staff,sid,{...data,profile,materials,identityReviewPending:false,identityReviewedAt:at}),staff,sid);
  const ready=confirmAgentProfile(next,staff,sid,profile,c.contact?.name||profile.name+'家属（待补充）',c.contact?.phone||'');
- return agentMessage(ready,staff,sid,'识别资料已核对，基础报价单已生成，请核对项目和价格。');
+ return agentMessage(agentMessage(ready,staff,sid,edited?'已修改并确认识别资料':'识别正确，继续','user'),staff,sid,'识别资料已核对，基础套餐已生成，请核对项目和价格。');
 }
 export function agentIntake(data:Pick<AgentData,'profile'|'materials'|'preferenceReviewed'|'identityReviewPending'|'personalization'>){
  const missing=fields.filter(x=>{const value=data.profile[x.field]?.trim();return (!value||value==='待确认')&&!(preferenceFields.includes(x.field)&&data.preferenceReviewed?.includes(x.field))});
@@ -53,6 +53,6 @@ export function receptionQuickReplies(value:unknown):string[]{
 }
 
 export function chooseAgentPersonalization(s:AppState,staff:Staff,sid:string,value:'yes'|'no'){
- const d=agentData(s,agentRecord(s,staff,sid));if(!d.paperPlan||d.identityReviewPending)throw Error('请先核对身份资料并生成报价单');
- return agentMessage(putAgentData(s,staff,sid,{...d,personalization:value}),staff,sid,value==='yes'?'请完善逝者喜好、职业、信仰及习俗信息，用于调整报价建议。':'按基础报价继续，后续也可补充喜好和习俗。');
+ const d=agentData(s,agentRecord(s,staff,sid));if(!d.paperPlan||d.identityReviewPending)throw Error('请先核对身份资料并生成套餐');
+ return agentMessage(agentMessage(putAgentData(s,staff,sid,{...d,personalization:value}),staff,sid,value==='yes'?'是，完善信息':'按基础报价继续','user'),staff,sid,value==='yes'?'请完善逝者喜好、职业、信仰及习俗信息，用于调整报价建议。':'按基础报价继续，后续也可补充喜好和习俗。');
 }
