@@ -34,3 +34,7 @@ AI网关是本地Vite开发插件，生产构建只含前端。模型沿用机�
 首页AI接待每次新建独立会话，历史从沟通历史继续。新接待明确提交身份证、死亡证明或户口本逝者所在页；聊天显示个人信息完善入口、缺项引导和关系/性别选项。接待不采集预算，历史字段兼容保留。上传识别后回聊天，人工核对后保存。314项测试、类型检查、构建通过；真实Codex回复、本机OCR、选项保存及刷新恢复已实测，证据在 `/private/tmp/geyou-guided-intake-20261023/`。
 
 远端为私有仓库 https://github.com/xinwei5282-sys/geyou-agent 。GitHub Pages创建返回422：当前账号套餐不支持该私有仓库的Pages，尚未部署线上预览。
+
+## GitHub Pages预览
+
+用户已授权公开仓库，GitHub Pages已启用。`.github/workflows/pages.yml` 构建并发布静态预览，入口 `https://xinwei5282-sys.github.io/geyou-agent/#/agent`。`version.json` 用于核对提交版本。构建使用项目base，`scripts/prepare-pages.mjs`只修正产物中已知公共图片目录的绝对路径。静态预览不包含Vite网关，AI、OCR和图片生成仍需本机服务。
